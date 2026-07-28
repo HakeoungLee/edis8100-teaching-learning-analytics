@@ -57,7 +57,7 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 
 There is no class on 10/14, between weeks 7 and 8. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
 
-Guest speakers join us in weeks 3, 4, 5, 7, 8, and 10. Student-led discussion runs from week 3 through week 11, and each of you co-leads twice.
+Guest speakers join us in weeks 3, 4, 5, 7, 8, and 10. Student-led discussion runs from week 3 through week 11, which is nine weeks and eighteen leader slots, so each of the six of you co-leads three times with a different partner each time.
 
 ## 🧭 The arc of the semester
 

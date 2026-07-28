@@ -10,7 +10,7 @@ Week 13, Wednesday 12/2. Fifteen minutes each: 12 minutes of talk plus 3 for que
 | **Length** | 15 minutes total, 12 talk plus 3 questions. **Strict adherence to the time limit is required.** |
 | **Weight** | 10 percent of the course grade, scored out of 100 |
 | **Format** | Slides or handouts. Visual aids are encouraged, and clear, well-organized, low-text slides are expected. |
-| **What your peers do** | Complete a feedback slip for each speaker. Those go to you, not into your grade. |
+| **What your peers do** | Complete a feedback slip for each speaker, which in a class of six is five slips each. Those go to you, not into your grade. |
 | **What the instructor uses** | The rubric below |
 | **Full handout** | `Week 13 Presentation Guidelines and Rubric` on Canvas |
 

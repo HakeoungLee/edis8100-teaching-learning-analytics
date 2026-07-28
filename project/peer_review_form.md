@@ -8,7 +8,7 @@ Week 12, Project Day, Wednesday 11/18, 3:30 to 6:00 PM, Ridley 137. Two rounds, 
 |---|---|
 | **What you bring** | Your rough draft, uploaded to Canvas by the week 11 deadline, plus a printed or annotatable copy for each of your two reviewers |
 | **What you do before class** | Read both of your assigned partners' drafts and complete a written form for each. This is not classwork, it is homework. |
-| **What happens in class** | Round 1 in pairs (60 minutes), break, round 2 with a new partner (40 minutes), instructor mini-conferences (30 minutes) |
+| **What happens in class** | Round 1 in pairs (60 minutes), break, round 2 with a new partner (35 minutes), instructor mini-conferences and revision planning (35 minutes) |
 | **What you submit** | Both completed review forms, plus your own revision commitments, to Canvas. Peer review is a graded milestone. |
 | **Copies needed** | One form per draft you review. Complete two. |
 
@@ -34,6 +34,8 @@ Peer review in a doctoral seminar is not a proofreading service and it is not a 
 
 Both drafts are read in advance and both written forms are complete before you sit down. In-class time is for the conversation, which is the part that cannot be done alone.
 
+There are six of us, so each round is three pairs working in parallel on the same clock, and nobody is paired with the same person twice.
+
 ### Opening (3:30 to 3:40, 10 minutes)
 
 Protocol overview, pair assignments, and a reminder of the norms above.
@@ -53,24 +55,25 @@ Protocol overview, pair assignments, and a reminder of the norms above.
 
 ### Break (4:40 to 4:50, 10 minutes)
 
-### Round 2 (4:50 to 5:30, 40 minutes, new partner)
+### Round 2 (4:50 to 5:25, 35 minutes, new partner)
 
-| Minutes | What happens |
-|---|---|
-| 2 | Settle, re-skim the form. |
-| 2 | Author A frames, informed by what round 1 surfaced. |
-| 12 | Reviewer speaks, author A listens and writes. |
-| 4 | Dialogue. |
-| 2 | Author B frames. |
-| 12 | Reviewer speaks, author B listens and writes. |
-| 4 | Dialogue. |
-| 2 | Revision commitments, added to the round 1 list. |
+Round 2 does not take turns the way round 1 does. You both read at the same time, which is how the round fits in 35 minutes and still gives each reader twelve minutes with the pages and each author nine minutes of response.
+
+| Minutes | Clock | What happens |
+|---|---|---|
+| 0-2 | 4:50-4:52 | Exchange drafts. Each of you names your flagged section and your one question in under 60 seconds, then stops talking. |
+| 2-14 | 4:52-5:04 | Silent read, both of you at once. Read your partner's flagged pages plus their problem statement, and write the form as you go. |
+| 14-23 | 5:04-5:13 | First author receives the response. |
+| 23-32 | 5:13-5:22 | Second author receives the response. |
+| 32-35 | 5:22-5:25 | Both authors write one takeaway line; reviewers hand over the completed form. |
+
+Decide who receives first in the first thirty seconds. If you cannot decide quickly, whoever has the earlier mini-conference slot should go second, so their feedback is freshest when they sit down with the instructor.
 
 Round 2 is deliberately tighter. Your second reviewer has read the draft cold and did not hear round 1, which makes them the better test of whether the draft communicates without you in the room.
 
-### Instructor mini-conferences (5:30 to 6:00, 30 minutes)
+### Instructor mini-conferences and revision planning (5:25 to 6:00, 35 minutes)
 
-The instructor meets individually while everyone else works through their revision commitments. Bring the two forms and the question you still have.
+There are six of you, so everyone gets a five-minute slot and nobody has to decide whether their question is worth signing up for. The instructor meets one student at a time while everyone else works through their revision commitments, and the session ends with a short closing round. Bring the two forms and the one question you still have.
 
 ---
 
