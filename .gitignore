@@ -1,0 +1,6 @@
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+# runtime data generated inside week folders by notebook setup cells
+week*/data/
+*.pyc
