@@ -7,10 +7,10 @@ Week 12, Project Day, Wednesday 11/18, 3:30 to 6:00 PM, Ridley 137. Two rounds, 
 | | |
 |---|---|
 | **What you bring** | Your rough draft, uploaded to Canvas by the week 11 deadline, plus a printed or annotatable copy for each of your two reviewers |
-| **What you do before class** | Read both of your assigned partners' drafts and complete a written form for each. This is not classwork, it is homework. |
+| **What you do before class** | Read your Round 1 partner's whole draft twice and complete a written form for it. This is not classwork, it is homework. Your Round 2 partner is assigned in class, so that form is written in the room. |
 | **What happens in class** | Round 1 in pairs (60 minutes), break, round 2 with a new partner (35 minutes), instructor mini-conferences and revision planning (35 minutes) |
-| **What you submit** | Both completed review forms, plus your own revision commitments, to Canvas. Peer review is a graded milestone. |
-| **Copies needed** | One form per draft you review. Complete two. |
+| **What you submit** | Both completed review forms, plus your own revision plan, to Canvas. The packet is checked for completeness and specificity rather than scored on its own rubric, and it counts toward participation. |
+| **Copies needed** | Two copies of your Round 1 form, one for the author and one to submit, plus a blank form to fill in during Round 2. |
 
 ## Norms for feedback among doctoral peers
 
@@ -32,7 +32,7 @@ Peer review in a doctoral seminar is not a proofreading service and it is not a 
 
 ## ⏱️ Timeboxes for the two-round workshop
 
-Both drafts are read in advance and both written forms are complete before you sit down. In-class time is for the conversation, which is the part that cannot be done alone.
+The Round 1 draft is read in advance and its written form is complete before you sit down, so in-class time goes to the conversation, which is the part that cannot be done alone. Round 2 works differently: partners are assigned in the room, and you read a flagged section cold and write that form on the spot.
 
 There are six of us, so each round is three pairs working in parallel on the same clock, and nobody is paired with the same person twice.
 

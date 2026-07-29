@@ -9,7 +9,7 @@ Reading a group by its chat, then deciding what a dashboard should refuse to sho
 | **Session** | Wednesday, October 28, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Learning Analytics for Understanding and Supporting Collaboration |
 | **Guest speaker** | None this week. The 60-minute discussion block is entirely student led. |
-| **In-class time on this notebook** | About 35 minutes, in the hands-on block (4:30 to 5:00). Section 5 is written to spill into the 5:00 discussion on purpose. |
+| **In-class time on this notebook** | About 30 minutes, in the hands-on block (4:30 to 5:00). Section 5 is written to spill into the 5:00 discussion on purpose. |
 | **Deliverable** | None from this notebook. It is a lab, not a graded submission. |
 | **Due date** | The **Course Research Project Outline** is due this week via Canvas, submitted separately from this notebook, together with your AI interaction log and reflection. |
 | **Notebook** | `week09_collaboration_analytics_lab.ipynb` |
@@ -93,7 +93,7 @@ Total time is about 35 minutes if you keep moving, which is roughly the hands-on
 ## What this connects to in the readings
 
 - **Chen and Teasley (2022)**, *Learning analytics for understanding and supporting collaboration*: specify the construct before you specify the sensor. This notebook is a live demonstration of skipping that step. Speaking time equity relates to product quality, chat message equity does not, and the two are perfectly capable of being described with the same word.
-- **Praharaj, Scheffel, Drachsler, and Specht (2021)**, *Literature review on co-located collaboration modeling using multimodal learning analytics: Can we go the whole nine yards?*: the chain from sensing to feedback and the places it breaks. Section 5 hands you the cruelest version of the problem: the signal most related to product quality is human-coded idea units, which is also the one a school cannot afford to collect at scale.
+- **Praharaj, Scheffel, Drachsler, and Specht (2021)**, *Literature review on co-located collaboration modeling using multimodal learning analytics: Can we go the whole nine yards?*: the chain from sensing to feedback and the places it breaks. Section 5 hands you the cruelest version of the problem: the strongest positive signal is human-coded idea units, which is also the one a school cannot afford to collect at scale, while the strongest signal of any sign is speaking time inequality, which comes free with the microphones and is the one the equity check then catches misreading multilingual students.
 - **Martinez-Maldonado, Kay, Buckingham Shum, and Yacef (2019)**, *Collocated collaboration analytics: Principles and dilemmas for mining multimodal interaction data*: the dilemmas are not abstract here. Your turn 4 makes you resolve one of them per tile, ten times, and write down who sees the result.
 
 There is no guest this week, which means the full hour belongs to your discussion leaders. The closing question is the one worth bringing them: **what should a collaboration dashboard refuse to show, and to whom?**

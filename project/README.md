@@ -38,7 +38,7 @@ Each milestone is graded as part of the project and each one is designed so that
 
 | Milestone | Week | Class date | What you submit | Where the guidance lives |
 |---|---|---|---|---|
-| **Project outline** | 9 | 10/28 | The headed outline: problem, framework, research questions, literature positioning, methods plan, ethics and equity, actionability, working references. Two to four pages is typical. | [`proposal_outline_template.md`](proposal_outline_template.md) in this folder, and `Week 09 Course Research Project Outline Template` on Canvas |
+| **Project outline** | 9 | 10/28 | The headed outline: problem, framework, research questions, literature positioning, methods plan, ethics and equity, actionability, working references. Roughly three to five pages plus references. | [`proposal_outline_template.md`](proposal_outline_template.md) in this folder, and `Week 09 Course Research Project Outline Template` on Canvas |
 | **Literature review** | 10 | 11/4 | The literature section in draft form, synthesized rather than summarized, with the positioning argument visible. | `Week 10 Literature Review Guidelines` on Canvas |
 | **Rough draft** | 11 | 11/11 | A complete draft with every required section present, even where sections are thin. Completeness matters more than polish at this stage. | `Week 11 Rough Draft Guidelines` on Canvas |
 | **Peer review** | 12 | 11/18 | Written feedback on two peers' drafts, delivered in class in two rounds, plus your own revision notes. | [`peer_review_form.md`](peer_review_form.md) in this folder, and `Week 12 Peer Review Protocol and Form` on Canvas |

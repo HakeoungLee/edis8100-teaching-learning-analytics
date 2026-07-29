@@ -9,8 +9,8 @@ A forum text pipeline built one honest step at a time, ending in a disagreement 
 | **Session** | Wednesday, September 23, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Text-Based Analytics and Natural Language Processing |
 | **Guest speaker** | Jiayi (Joyce) Zhang, University of Pennsylvania |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). This is a launch, not the whole project. Plan on roughly 60 more minutes for the notebook and additional time for the memo. |
-| **Deliverable** | Mini Project 2: the executed notebook, a 300-word interpretation memo, and your AI interaction log |
+| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). This is a launch, not the whole project. The notebook's core path is roughly 60 more minutes; the hand coding in Task 6 and the memo take the rest, so plan about three focused hours outside class, as the Mini Project 2 Brief sets out. |
+| **Deliverable** | Mini Project 2: the executed notebook, a 300-word interpretation memo, and your AI interaction log plus the four reflection answers |
 | **Due date** | This week, via Canvas, by the deadline posted on the Canvas assignment page |
 | **Notebook** | `week05_miniproject2_text_analytics.ipynb` |
 | **Data used** | `forum_posts.csv`, `students.csv`, `gradebook.csv` (all synthetic, built by the notebook itself) |
@@ -144,9 +144,11 @@ Still stuck? Ask a classmate, then post on Canvas, then email the instructor. Do
 
 Per the course AI policy, AI use is **permitted** on this mini project and **must be documented**.
 
-- Upload your complete AI interaction log (prompts and responses, or a full export) to the **AI Interactions** submission on Canvas, alongside the notebook.
-- Include a short reflection: what you asked, what you accepted, what you rejected and why, and what you verified independently.
-- If you used no AI at all, submit a one-line statement saying so. A blank submission is not the same as a declaration.
+Both pieces go to the Canvas **AI Reflection** submission, in two different places on that page, and students routinely reverse them.
+
+- **The conversation record goes in a Word file, attached to that submission.** Every relevant exchange, across every session and every tool, pasted in full. Not a summary, not a link to a shared conversation, and not pasted into the text box.
+- **The reflection goes in the Canvas text box on the same page.** Copy in the four questions from the syllabus and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI from this week you would pass on to a friend or the class.
+- If you used no AI at all, say so in one line in the text box and attach nothing. A blank submission is not the same as a declaration.
 - Undisclosed AI use is an Honor Code violation. Disclosed use is not penalized.
 
 A note specific to this week. Text analysis is unusually easy to have an AI do for you, and unusually easy to get subtly wrong. If a model writes your sentiment lexicon or names your topics, say so, and then do the thing the model cannot do: read the posts and check whether the labels survive contact with them. That checking is the assignment.

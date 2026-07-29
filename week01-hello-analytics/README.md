@@ -54,21 +54,24 @@ no way to end up with the wrong version of a file.
 
 ## 🚀 Open it in Colab
 
-This repository is **private**, so the one-click badge only works after you have authorized
-Colab to see private repositories. Do the manual route once, and the badge works forever
-after.
+This repository is **private**, so the one-click badge only works after you have accepted the
+instructor's invitation and authorized Colab to see private repositories. Do the manual route
+once, and the badge works forever after.
 
 ### First time (do this once)
 
-1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the
-   Google account you gave the instructor.
-2. Choose **File > Open notebook**.
-3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**. In the GitHub permission screen, make sure the box for
+1. **Accept the repository invitation first.** Hand the instructor your GitHub username in class,
+   then click **Accept invitation** in the email GitHub sends you. Until you accept, this
+   repository is invisible to you and Colab reports that it does not exist.
+2. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the
+   Google account you will use for this course.
+3. Choose **File > Open notebook**.
+4. Click the **GitHub** tab.
+5. Click **Authorize with GitHub**. In the GitHub permission screen, make sure the box for
    **"Include private repositories"** is checked, then approve.
-5. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+6. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`.
    Leave the branch on `main`.
-6. In the file list, click `week01-hello-analytics/week01_hello_learning_analytics.ipynb`.
+7. In the file list, click `week01-hello-analytics/week01_hello_learning_analytics.ipynb`.
 
 The notebook opens. Run the first code cell and you are underway.
 
@@ -79,9 +82,9 @@ The notebook opens. Run the first code cell and you are underway.
 Direct link:
 `https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week01-hello-analytics/week01_hello_learning_analytics.ipynb`
 
-If that link shows a "404" or "could not find" message, you are almost certainly signed
-into a different Google account, or the private repository authorization in step 4 did not
-go through. Redo the first-time steps.
+If that link shows a "404" or "could not find" message, check three things in this order: the
+repository invitation is still unaccepted in your email, the private repositories box in step 5
+was not checked, or you are signed into a different Google account. Redo the first-time steps.
 
 ### To keep your own edits
 

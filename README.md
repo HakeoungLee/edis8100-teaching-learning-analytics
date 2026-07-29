@@ -12,17 +12,18 @@ If you have never written a line of code, you are exactly who this repository wa
 
 You need a Google account and a browser. That is all. There is nothing to install, nothing to download, and no CSV to keep track of.
 
-### Step 1. Authorize Colab to see this private repository (once, at the start of the semester)
+### Step 1. Get access to this private repository (once, at the start of the semester)
 
-This repository is **private**, so Colab cannot open anything in it until you grant permission. You do this one time and it keeps working all semester.
+This repository is **private**, so two things have to be true before Colab can open anything in it: you have accepted the instructor's invitation, and you have granted Colab permission to see private repositories. You do both one time and they keep working all semester.
 
-1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you gave the instructor.
-2. Choose **File > Open notebook**.
-3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**. On the GitHub permission screen, make sure the box for **"Include private repositories"** is checked before you approve. **This is the step people miss**, and it produces a confusing "repository not found" message later.
-5. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`. Leave the branch on `main`.
+1. **Accept the repository invitation.** Give the instructor your GitHub username in Week 1. She sends an invitation, which arrives as an email from GitHub and also appears at the top of [github.com](https://github.com) when you are signed in. Click **Accept invitation**. Until you accept, this repository is invisible to you and Colab reports that it does not exist.
+2. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you will use for this course.
+3. Choose **File > Open notebook**.
+4. Click the **GitHub** tab.
+5. Click **Authorize with GitHub** and sign in to GitHub. On the GitHub permission screen, make sure the box for **"Include private repositories"** is checked before you approve. **This is the step people miss**, and it produces a confusing "repository not found" message later.
+6. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`. Leave the branch on `main`.
 
-If you have already done this and Colab still cannot find the repository, you are almost certainly signed into a different Google account. Check the profile picture in the top right corner.
+If you have done all of this and Colab still cannot find the repository, work through three things in this order: the invitation is still sitting unaccepted in your email, the private repositories box was not checked, or you are signed into a different Google account. Check the profile picture in the top right corner for the last one.
 
 ### Step 2. Open the week's notebook
 
@@ -198,7 +199,10 @@ Course design, notebook design, and the data universe are by Dr. Hakeoung Hannah
 
 AI use is permitted in designated activities in this course and must be documented. Undisclosed use is an Honor Code violation.
 
-Starting with Mini Project 1 in week 4, every mini project submission and every course project milestone includes your **AI interaction log plus a short reflection**, uploaded to the Canvas "AI Reflection" submission alongside the work itself. The log is the full exchange, across every tool and every session. The reflection says where the assistant helped, where it misled you, and what you checked yourself.
+Starting with Mini Project 1 in week 4, every mini project submission and every course project milestone includes an **AI Reflection** submission on Canvas, and it has two parts that go in two different places on that page:
+
+- **The conversation record goes in a Word file, attached to the submission.** The full exchange, across every tool and every session, pasted in. Not a summary, and not into the text box.
+- **The reflection goes in the Canvas text box**, where you copy in the four questions from the syllabus and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI you would pass on to a friend or the class.
 
 You are not graded on how much or how little AI you used. You are graded on the work. Build the habit in weeks 1 through 3, while nothing is being collected, because starting it under a deadline is much harder.
 

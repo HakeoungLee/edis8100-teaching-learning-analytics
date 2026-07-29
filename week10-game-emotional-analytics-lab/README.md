@@ -9,7 +9,7 @@ Two hundred middle schoolers, one fractions game, and the week the learners stop
 | **Session** | Wednesday, November 4, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Game Learning Analytics and Emotional Learning Analytics |
 | **Guest speaker** | Chaewon Kim, Florida State University |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 30 minutes, so plan to finish sections 4 and 5 on your own before the discussion. |
+| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 45 minutes, so plan to finish sections 4 and 5 on your own before the discussion. |
 | **Deliverable from this notebook** | None. Week 10 is not a mini project. This lab is an in-class launch. |
 | **Due this week (separately)** | **Course Research Project Literature Review** plus your **AI interaction log and reflection**, uploaded to Canvas. Submitted on their own, not from this notebook. |
 | **Notebook** | `week10_game_emotional_analytics_lab.ipynb` |
@@ -64,7 +64,7 @@ You can also run the notebook locally with Jupyter if you prefer. It needs panda
 
 ## Step-by-step walkthrough
 
-Total time is about 30 minutes if you keep moving. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
+Total time is about 45 minutes if you keep moving, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
 
 **⚙️ Setup (2 minutes).** Run the first code cell. It is long, and it is meant to be collapsed and ignored. It builds the three synthetic FractionQuest files inside your runtime so that nothing has to be downloaded and no real child's play record is ever involved.
 

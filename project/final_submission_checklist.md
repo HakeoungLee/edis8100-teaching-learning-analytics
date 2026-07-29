@@ -45,14 +45,13 @@ The project is scored on eight criteria at 15, 12, 9, or 6 points each. Open [`R
 
 ## 3. Appendices
 
-Appendices do not count toward the 20-page minimum, and they are where two required items live.
+Appendices do not count toward the 20-page minimum.
 
 - [ ] **Appendix: Code.** If you wrote any, include it. Notebooks from this course count. Include the code you actually ran, as text rather than as a screenshot, with enough comments that a reader can follow the sequence. If you adapted a course notebook, say which one.
-- [ ] **Appendix: AI interactions.** The full record, per the course AI policy. All conversations connected to the work, across every tool and every session: reading, idea development, drafting, revision, code. If you used one tool to understand a reading and another to draft a summary, both go in.
 - [ ] **Appendix: additional figures and tables**, if you have material that supports the argument but would interrupt it.
 - [ ] Each appendix is **labeled and referred to from the body text** at the point where it becomes relevant.
-- [ ] The AI appendix is **also uploaded to the Canvas "AI Reflection" submission**, which is a separate upload from the paper itself.
-- [ ] Your AI reflection says **where the assistant helped, where it misled you, and what you checked yourself**. You are not graded on how much AI you used. You are graded on the work, and on having told the truth about the process.
+- [ ] **Your AI interactions go to Canvas, not here.** The full record, per the course AI policy, is pasted into a Word file and attached to the Canvas "AI Reflection" submission, which is a separate upload from the paper itself. The syllabus also allows the full exchange to be carried as an appendix in the paper; a copy here is welcome but does not replace the Canvas submission, which is required either way.
+- [ ] Your **reflection answers go in the Canvas text box** on that submission page, not in the Word file and not in the paper: the four questions from the syllabus, copied in and answered. You are not graded on how much AI you used. You are graded on the work, and on having told the truth about the process.
 
 ## 4. APA 7 mechanics
 

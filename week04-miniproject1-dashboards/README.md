@@ -9,7 +9,7 @@ Build a teacher-facing dashboard with plotly, then take it apart.
 | **Session** | Wednesday, September 16, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Teacher and Student Facing Learning Analytics and Dashboards |
 | **Guest speaker** | Yeonji Jung, Texas A&M University |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). This is a launch, not the whole assignment. Plan roughly two more hours outside class. |
+| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). This is a launch, not the whole assignment. Plan about three more focused hours outside class, as the Mini Project 1 Brief sets out. |
 | **Deliverable** | **Mini Project 1**: the completed notebook, a 300-word design memo inside it, and your AI interaction log plus reflection |
 | **Due date** | This week, via Canvas. Check Canvas for the exact time. |
 | **Notebook** | `week04_miniproject1_teacher_dashboard.ipynb` |
@@ -74,7 +74,7 @@ That is deliberate. Plotly charts do not render when a notebook is read on GitHu
 
 ## Step-by-step walkthrough
 
-Budget about 20 minutes for the in-class launch (through Part C) and two hours to finish. The three ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
+Budget about 20 minutes for the in-class launch (through Part C) and about three hours to finish, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything. They are numbered in the order you are asked to think about them rather than the order they appear, so Your turn 4 sits in Part D and Your turn 3 in Part E.
 
 **⚙️ Setup (2 minutes).** Run the first code cell. It is long and meant to be collapsed and ignored. It builds the synthetic roster, clickstream, and gradebook inside your runtime so nothing has to be downloaded and no real student is ever involved.
 
@@ -148,7 +148,12 @@ For students who finish early or who arrive with programming experience:
 
 Mini Project 1 is the first submission where the course AI policy applies in full.
 
-If you used an AI assistant at any point, to explain a line of code, to check your reading of a chart, to help you name a design flaw, or to draft the memo, save the full exchange and upload it, along with a short reflection, to the Canvas **AI Reflection** submission. If you used no AI at all, say so in one line. That is also documentation.
+If you used an AI assistant at any point, to explain a line of code, to check your reading of a chart, to help you name a design flaw, or to draft the memo, everything goes to the Canvas **AI Reflection** submission, in two different places on that page:
+
+- **The conversation record goes in a Word file, attached to that submission.** The full exchanges, across every session and every tool, pasted in. Not a summary and not into the text box.
+- **The four reflection questions from the syllabus are answered in the text box** on the same page: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI you would pass on to a friend or the class.
+
+If you used no AI at all, say so in one line in the text box and attach nothing. That is also documentation.
 
 AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation.
 
