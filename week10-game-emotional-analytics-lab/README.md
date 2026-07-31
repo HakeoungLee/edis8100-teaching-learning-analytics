@@ -9,7 +9,7 @@ Two hundred middle schoolers, one fractions game, and the week the learners stop
 | **Session** | Wednesday, November 4, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Game Learning Analytics and Emotional Learning Analytics |
 | **Guest speaker** | Chaewon Kim, Florida State University |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 45 minutes, so plan to finish sections 4 and 5 on your own before the discussion. |
+| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 50 minutes, so plan to finish sections 4 and 5 on your own before the discussion. |
 | **Deliverable from this notebook** | None. Week 10 is not a mini project. This lab is an in-class launch. |
 | **Due this week (separately)** | **Course Research Project Literature Review** plus your **AI interaction log and reflection**, uploaded to Canvas. Submitted on their own, not from this notebook. |
 | **Notebook** | `week10_game_emotional_analytics_lab.ipynb` |
@@ -23,11 +23,11 @@ This is the **only week that uses the FractionQuest data**. Everything else this
 By the end of this activity you will be able to:
 
 1. **Build a learning curve** from attempt level game telemetry, and explain why the pooled version of that curve points the wrong way while the per-level version does not.
-2. **Locate a difficulty cliff** using four independent signals (errors, retries, completion, time) and say what any one signal alone would have missed.
-3. **Compare productive strugglers with fast finishers** on pre to post test gains, and separate the claim "this group gained less" from the claim "this group had less to gain."
+2. **Locate a difficulty cliff** using four signals (errors, retries, completion, time), say what any one of them alone would have missed, and show why the comparison only holds once the population of players is held fixed.
+3. **Compare productive strugglers with fast finishers** on pre to post test gains, and separate three different things: the claim "this group gained less", the claim "this group had less to gain", and the tendency of any group selected on a low starting score to drift upward on its own.
 4. **Read an emotion self report stream as a sequence** rather than as a frequency table, and state what confusion that resolves and confusion that persists each predict.
 
-The through-line of the session: the counterintuitive result. The children who made more mistakes gained more on the fractions test, and the moment you adjust for how much room each child had above their pre-test score, the difference disappears. Both answers come from the same 95 children and the same code. Deciding which one you would put in an abstract is the work.
+The through-line of the session: the counterintuitive result, and then what survives inspecting it. The children who made more mistakes gained more on the fractions test, d = 0.69. Adjust for how much room each child had above their pre-test score and the difference disappears, d = 0.01. Model the post-test while holding the pre-test constant and it stays gone, a quarter of a point with an interval straddling zero. Three answers come from the same 95 children and the same code. Deciding which question each of them answers, and which one you would put in an abstract, is the work.
 
 The second through-line, and the reason this week matters beyond method: **the learners are children.** Every design proposal you have made this semester assumed a consenting adult. The reflection section asks you to rewrite one of them for an eleven year old.
 
@@ -64,7 +64,7 @@ You can also run the notebook locally with Jupyter if you prefer. It needs panda
 
 ## Step-by-step walkthrough
 
-Total time is about 45 minutes if you keep moving, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
+Total time is about 50 minutes if you keep moving, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
 
 **⚙️ Setup (2 minutes).** Run the first code cell. It is long, and it is meant to be collapsed and ignored. It builds the three synthetic FractionQuest files inside your runtime so that nothing has to be downloaded and no real child's play record is ever involved.
 
@@ -74,17 +74,27 @@ Total time is about 45 minutes if you keep moving, which is what the per-section
 
 **✏️ Your turn 1 (2 minutes).** Swap `errors` for `time_s` or `hints_used` and check whether the same trap appears.
 
-**📊 3. The difficulty cliff (5 minutes).** Four signals per level, in four panels. Errors at level 4 run 1.72 times the average of levels 3 and 5. Players need 1.73 attempts each instead of about 1.3. Half of all level 4 attempts fail. Attempts take nearly twice as long. Four measures that could have disagreed and did not.
+**📊 3. The difficulty cliff (5 minutes).** Four signals per level, in four panels. Errors at level 4 run 1.72 times the average of levels 3 and 5. Players need 1.73 attempts each instead of about 1.3. Half of all level 4 attempts fail. Attempts take nearly twice as long.
+
+Then the two things that make it an argument rather than a coincidence. The four signals are **not independent**: attempts per player is nearly one divided by the completion rate (r = 0.98 across levels) and errors track time at r = 0.99, so four agreeing measures are closer to one vote counted four times. And each level is played by a different set of children, level 4 by 135 and level 5 by only 108, so the raw neighbour comparison pits a mixed population against its own survivors and is biased *towards* finding a cliff. The cell therefore repeats the comparison on the fixed cohort of 108 who all reached level 5 (the ratios barely move) and then does the strictest version available: for those same 108 children, their own first-attempt errors at levels 3, 4, and 5. Level 4 costs each child about two extra errors relative to their own neighbouring levels, interval +1.50 to +2.66, and 78 of the 108 are above their own baseline. That is the version of the finding worth quoting.
 
 **✏️ Your turn 2 (2 minutes).** Point the same neighbour comparison at any other level and see how much weaker the case gets.
 
-**📊 4. Productive strugglers and fast finishers (8 minutes).** The heart of the lab. Two explicit design decisions (who is eligible, what window we measure) then two group definitions, then the outcome. Strugglers gain 4.17 points against 2.47 for the fast finishers, d = 0.69. Section 4.1 then draws the ceiling on a scatterplot and recomputes the gain as a share of available headroom: d = 0.01. Sit with both numbers. This is the teaching moment of the week.
+**📊 4. Productive strugglers and fast finishers (10 minutes).** The heart of the lab. Two explicit design decisions (who is eligible, what window we measure) then two group definitions, then the outcome. Strugglers gain 4.17 points against 2.47 for the fast finishers, d = 0.69, interval 0.26 to 1.11. Both group names describe a pattern in a play log and neither describes a kind of child, and nothing in the section licenses a sentence about what a fast finisher is like.
 
-**✏️ Your turn 3 (3 minutes).** Move all four thresholds and watch which of the two findings is stable and which is not.
+**Section 4.1** draws the ceiling on a scatterplot and recomputes the gain as a share of available headroom: d = 0.01, interval -0.40 to 0.43.
 
-**📊 5. Emotion pings (8 minutes).** Three moves. First, what children report level by level: at level 4, confusion jumps to 47 percent of pings and interest collapses from 49 to 27 percent. Second, six individual emotion streams drawn as lanes, so you can see what a frequency table deletes. Third, the sequence question: confusion resolved within two levels goes with a 3.78 point gain and a 34 percent quit rate, unresolved confusion goes with 2.71 points and 63 percent, and the children who quit at the confusing level are kept visible as their own group rather than quietly filed under "resolved."
+**Section 4.2** then names the second mechanism, which is not the ceiling and is constantly confused with it. Any group selected for a low starting score is partly a group that had a bad testing morning, and a bad morning does not repeat: that is **regression to the mean**, and it would still be here on a test with no ceiling at all. We did not select on the pre-test directly, we selected on errors in levels 1 to 4, but the two correlate at -0.60, so the machinery applies. The standard response is to stop analysing gains and model the post-test while holding the pre-test constant. That analysis of covariance puts the group difference at +0.25 post-test points with an interval from -1.03 to +1.54. The section also says plainly that with self-formed groups, gain scores and covariance adjustment answer different questions and are entitled to disagree, so the third analysis is not a tiebreaker. Sit with all three numbers. This is the teaching moment of the week.
+
+**✏️ Your turn 3 (3 minutes).** Move all four thresholds and watch which of the two findings is stable and which is not. Neither of the two removes regression to the mean, which is the point of doing it after section 4.2 rather than before.
+
+**📊 5. Emotion pings (8 minutes).** Three moves. First, what children report level by level: at level 4, confusion jumps to 47 percent of pings and interest collapses from 49 to 27 percent. Second, six individual emotion streams drawn as lanes, so you can see what a frequency table deletes. Third, the sequence question. Confusion resolved within two levels goes with a 3.78 point gain and a 34 percent quit rate; confusion that came back within those two levels goes with 2.71 points and 63 percent; the two unresolved groups together average 2.66 points and a 71 percent quit rate. The difference between resolved and unresolved is d = 0.45, interval 0.15 to 0.74.
+
+The children who quit at the confusing level are kept visible as their own group rather than quietly filed under "resolved", and the cell also runs the milder version of that same bug: only 2 of the 73 "resolved" children were seen for fewer than the full two levels, and dropping them moves d from 0.45 to 0.44. The section is careful about what it is entitled to claim. The first two bars are not circular, but they are not causal either, and the prompt makes you write the common-cause confound out in full.
 
 **✏️ Your turn 4 (2 minutes).** Change the resolution window and watch a construct dissolve.
+
+A note on the figures: the section-5 headline reads "Confusion is not the problem. Confusion the game never helps resolve is." The relocation is deliberate. The finding is about what the game did next, not about a property of the child who reported being confused.
 
 **💬 Reflection.** Five prompts tied to this week's readings, ending with the one everybody answers: rewrite one of your own design proposals for an eleven year old.
 
@@ -112,7 +122,7 @@ For students who finish early or who arrive with programming experience:
 2. **A real learning curve model.** Fit errors as a function of cumulative practice opportunities with a power law or exponential form, one curve per level, and report the fitted learning rate. Then argue about whether "opportunity" should mean attempts at a level or attempts across the whole game.
 3. **Condition on the cliff.** Restrict the entire section 4 analysis to what happened *at level 4 only*: errors, retries, and time on that level alone. Does the productive struggle finding get stronger or weaker when the measure is taken at the hardest moment rather than across four levels?
 4. **Emotion transitions.** Build a transition matrix over the four emotion labels within player, in timestamp order, and compare the matrix for children who gained a lot against those who gained little. Which transition separates them most, and is that transition one you used to define the groups?
-5. **A fairer gain measure.** Headroom gain and raw gain are two of several options. Implement a third (residual gain from a regression of post on pre, sometimes called a regression-adjusted gain) and compare all three on the same two groups. Write the paragraph explaining to a school district why the three disagree.
+5. **A fourth gain measure, and the ceiling on all of them.** Section 4 gives you raw gain, headroom gain, and the covariance-adjusted post-test. Add residual gain (the residual from regressing post on pre, which is the covariance model expressed per child) and compare all four on the same two groups. Then do the part that matters: simulate a world with no group difference at all, only measurement error in a pre-test with the reliability implied by the r = 0.73 test-retest correlation here, and see how large a raw-gain d you can manufacture out of nothing. Write the paragraph explaining to a school district why the four measures disagree, and what the simulation says about the first one.
 6. **The ethics of the intervention.** Design, in code, a detector that would flag a child for unresolved confusion in real time using only data available before level 5. Compute its false positive rate. Then write the memo arguing that it should not be deployed, and see whether you believe your own memo.
 
 ## Troubleshooting

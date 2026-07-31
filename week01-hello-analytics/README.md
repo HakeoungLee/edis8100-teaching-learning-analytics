@@ -117,18 +117,21 @@ Roughly 30 minutes of core work. Timings are a guide, not a race.
    scores. A distribution is always a distribution of somebody.
 2. **A histogram of every quiz score in the course.** The class average is 75.7. The
    histogram shows what that number is sitting on top of: a range from 33.8 to 100, a thin
-   tail of failing scores, and 46 scores stacked at exactly 100 because the quiz cannot
-   measure any higher.
+   tail of scores below the 60-point line this course chose, and 46 scores stacked at exactly
+   100 because the quiz cannot measure any higher.
 3. **A line chart of two students with the same average.** Both average 83.3. One is nearly
    flat, one swings across 30 points. Every gradebook export and every dashboard would put
-   them in the same bucket.
+   them in the same bucket. The notebook also subtracts each quiz's class average, so you can
+   see how much of a wobbly line belongs to the quizzes rather than to the student. For the
+   flat student most of it does.
 
 ### The closing question
 
 Section 6 asks you to write **one question these data cannot answer**. Not a question you
 ran out of time for: a question that no additional cleverness with `students.csv` and
-`gradebook.csv` would resolve. Bring it to Week 2, when we add roughly 41,000 clickstream
-events and find out whether more data actually helps.
+`gradebook.csv` would resolve. Bring it to Week 2, when the invented course is replaced by a
+real institutional export and we find out whether more data, and messier data, actually
+helps.
 
 Some of these questions become course research projects. Keep yours.
 
@@ -153,6 +156,9 @@ and none are graded.
 5. **Question the ceiling.** 46 quiz scores are exactly 100.0. Count how many distinct
    students produced them. Then argue, in two sentences, whether the ceiling is a property
    of the students or of the instrument.
+6. **Move the line.** The notebook counts scores below 60 because that is the line this
+   invented course wrote into its syllabus. Recount at 50 and at 65. Write one sentence about
+   what a headline count of people is really counting.
 
 Bring anything interesting to Week 2. Stretch work is a good source of discussion material.
 

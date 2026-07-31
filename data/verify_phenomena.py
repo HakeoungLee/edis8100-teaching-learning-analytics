@@ -395,10 +395,10 @@ def check_p6(data):
 
     ok = (0.25 <= r <= 0.65) and (d_spam <= -0.40) and order_ok
     check(
-        "P6 complete SRL loops go with steeper quiz-to-quiz growth; the hint-spam subgroup grows least",
+        "P6 complete SRL loops go with steeper quiz-to-quiz growth; the rapid hint run subgroup grows least",
         ok,
         f"r(loop_rate, quiz slope) = {r:.3f} (target 0.25 to 0.65); "
-        f"hint-spam students (n = {len(spammers)}) d = {d_spam:+.2f} (target <= -0.40); "
+        f"rapid hint run students (n = {len(spammers)}) d = {d_spam:+.2f} (target <= -0.40); "
         f"mean slope spam {spammers['slope'].mean():+.2f} < middle {middle['slope'].mean():+.2f} < loopers {loopers['slope'].mean():+.2f}",
     )
 

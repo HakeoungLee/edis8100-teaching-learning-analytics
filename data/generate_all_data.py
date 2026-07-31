@@ -21,7 +21,7 @@ Design contract for this module
   8100 plus a fixed offset, so any single file can be regenerated on its own
   and will be byte-identical every time.
 * make_students() computes every latent trait for the 120 students
-  (ability, engagement, srl_skill, procrastination, and friends). Latents are
+  (ability, engagement, srl_skill, deadline_proximity, and friends). Latents are
   returned in the DataFrame but are NOT written to students.csv. They exist so
   that every other dataset can be generated independently and still agree with
   the others about who each student is.
@@ -219,9 +219,9 @@ def make_students(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
     ability = rng.normal(0, 1, n)                       # what the assessments track
     engagement = _correlated(rng, ability, 0.20)        # how much they click
     srl_skill = _correlated(rng, ability, 0.35)         # planning, monitoring, reflecting
-    procrastination = -0.42 * srl_skill + np.sqrt(1 - 0.42**2) * rng.normal(0, 1, n)
+    deadline_proximity = -0.42 * srl_skill + np.sqrt(1 - 0.42**2) * rng.normal(0, 1, n)
     # Regularity is how many separate days a student touches the course. It helps
-    # learning, and it is also the feature the naive at-risk model leans on.
+    # learning, and it is also the feature the activity-only model in week 3 leans on.
     regularity = 0.35 * engagement + 0.30 * srl_skill + 0.85 * rng.normal(0, 1, n)
     talkativeness = rng.normal(0, 1, n)                 # studio floor time
     chat_propensity = 0.30 * talkativeness + 0.95 * rng.normal(0, 1, n)
@@ -238,22 +238,22 @@ def make_students(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
     prior_gpa = np.round(prior_gpa, 2)
 
     # Paid work. First generation students in this cohort work more hours, which
-    # is what makes the naive at-risk model in week 3 go wrong.
+    # is what makes the activity-only model in week 3 misread them.
     work_raw = rng.gamma(1.9, 4.3, n) + first_gen * rng.uniform(5.0, 14.0, n)
     work_hours = np.clip(np.round(work_raw), 0, 30).astype(int)
 
     # P2 group: works 15+ hours, first generation, studies in concentrated bursts.
-    burst_worker = ((first_gen == 1) & (work_hours >= 15)).astype(int)
+    concentrated_schedule = ((first_gen == 1) & (work_hours >= 15)).astype(int)
 
     # P1 group: high ability, low clickstream volume. The "efficient" cluster.
     efficient = np.zeros(n, dtype=int)
-    eligible = np.where((ability > 0.28) & (burst_worker == 0))[0]
+    eligible = np.where((ability > 0.28) & (concentrated_schedule == 0))[0]
     efficient[rng.choice(eligible, size=min(18, eligible.size), replace=False)] = 1
 
-    # P6 group: requests hints in rapid bursts instead of working the problem.
-    hint_spam = np.zeros(n, dtype=int)
+    # P6 group: requests hints in rapid succession, faster than anyone could read one.
+    rapid_hint_runs = np.zeros(n, dtype=int)
     eligible = np.where(srl_skill < 0.15)[0]
-    hint_spam[rng.choice(eligible, size=min(18, eligible.size), replace=False)] = 1
+    rapid_hint_runs[rng.choice(eligible, size=min(18, eligible.size), replace=False)] = 1
 
     # Forum structure for P4: three loose clusters plus four bridge builders.
     community = np.tile(np.arange(3), int(np.ceil(n / 3)))[:n]
@@ -318,15 +318,15 @@ def make_students(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
             "ability": ability,
             "engagement": engagement,
             "srl_skill": srl_skill,
-            "procrastination": procrastination,
+            "deadline_proximity": deadline_proximity,
             "regularity": regularity,
             "talkativeness": talkativeness,
             "chat_propensity": chat_propensity,
             "doc_propensity": doc_propensity,
             "forum_propensity": forum_propensity,
             "efficient": efficient,
-            "burst_worker": burst_worker,
-            "hint_spam": hint_spam,
+            "concentrated_schedule": concentrated_schedule,
+            "rapid_hint_runs": rapid_hint_runs,
             "community": community,
             "connector": connector,
             "silent_forum": silent_forum,
@@ -369,10 +369,10 @@ def make_clickstream(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
 
     ability = students["ability"].to_numpy()
     engagement = students["engagement"].to_numpy()
-    procrast = students["procrastination"].to_numpy()
+    proximity = students["deadline_proximity"].to_numpy()
     regularity_z = _z(students["regularity"].to_numpy())
     efficient = students["efficient"].to_numpy()
-    burst = students["burst_worker"].to_numpy()
+    concentrated = students["concentrated_schedule"].to_numpy()
 
     # Expected event count per student, lognormal so the tail is heavy.
     log_mu = (
@@ -381,7 +381,7 @@ def make_clickstream(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
         + 0.05 * ability
         + 0.10 * regularity_z
         + np.log(np.where(efficient == 1, 0.30, 1.0))
-        + np.log(np.where(burst == 1, 0.95, 1.0))
+        + np.log(np.where(concentrated == 1, 0.95, 1.0))
     )
     n_events = np.clip(
         np.round(np.exp(log_mu + rng.normal(0, 0.18, n))), 25, 4000
@@ -399,7 +399,7 @@ def make_clickstream(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
     # Probability that a given student touches the course on a given day.
     p_active = _sigmoid(0.45 + 0.95 * regularity_z)
     # Working 15+ hours compresses the week into a couple of long evenings.
-    p_active = np.where(burst == 1, p_active * 0.18, p_active)
+    p_active = np.where(concentrated == 1, p_active * 0.18, p_active)
 
     # Submit events crowd into the 48 hours before each Tuesday deadline.
     submit_day_w = np.where(np.isin(weekday, [0, 1]), 5.0, 0.70) * week_weight
@@ -431,7 +431,7 @@ def make_clickstream(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
         # Time of day: three loose study sessions, later for procrastinators.
         centers = rng.choice(
             [9.6, 14.2, 20.8], size=k, p=[0.27, 0.33, 0.40]
-        ) + 1.05 * procrast[i] * rng.random(k)
+        ) + 1.05 * proximity[i] * rng.random(k)
         hours = centers + rng.normal(0, 0.85, k)
         hours = np.clip(hours, 0.02, 23.97)
 
@@ -509,7 +509,7 @@ def make_gradebook(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
 
     Two planted structures live here. Quiz to quiz improvement tracks self
     regulated learning skill and is flattest for the hint spam subgroup (P6,
-    completed by srl_traces.csv). Submission timing tracks procrastination, which
+    completed by srl_traces.csv). Submission timing tracks the deadline_proximity latent, which
     also drags scores down, so last minute submissions score lower (P3). The link
     is correlational by construction: nothing about submitting late causes the
     lower score, which is exactly the inference students should have to argue about.
@@ -521,13 +521,13 @@ def make_gradebook(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
     ability = students["ability"].to_numpy()
     engagement = students["engagement"].to_numpy()
     srl = students["srl_skill"].to_numpy()
-    procrast = students["procrastination"].to_numpy()
-    hint_spam = students["hint_spam"].to_numpy()
-    burst = students["burst_worker"].to_numpy()
+    proximity = students["deadline_proximity"].to_numpy()
+    rapid_hint_runs = students["rapid_hint_runs"].to_numpy()
+    concentrated = students["concentrated_schedule"].to_numpy()
     sid = students["student_id"].to_numpy()
 
     srl_z = _z(srl)
-    procrast_z = _z(procrast)
+    procrast_z = _z(proximity)
     regularity_z = _z(students["regularity"].to_numpy())
 
     base = (
@@ -537,11 +537,11 @@ def make_gradebook(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
         + 0.3 * engagement
         + 4.2 * regularity_z
         - 4.1 * procrast_z
-        - 0.6 * burst
+        - 0.6 * concentrated
         + rng.normal(0, 2.0, n)
     )
     # Growth across the term: SRL loops pay off, hint spamming does not.
-    slope = 0.68 * srl_z - 0.62 * hint_spam + 0.12 * ability + rng.normal(0, 0.35, n)
+    slope = 0.68 * srl_z - 0.62 * rapid_hint_runs + 0.12 * ability + rng.normal(0, 0.35, n)
 
     rows = []
     for k in range(1, N_WEEKS + 1):
@@ -554,7 +554,7 @@ def make_gradebook(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
         score = np.round(np.clip(raw, 32.0, 100.0), 1)
 
         deadline_s = QUIZ_DEADLINE_DAY[k] * DAY_S + 23 * 3600 + 59 * 60
-        # Hours before the deadline: procrastinators cut it close.
+        # Hours before the deadline: some students submit close to the deadline.
         mu = 3.25 - 1.35 * procrast_z
         hours_before = np.exp(mu + rng.normal(0, 0.85, n))
         # A quiz cannot be submitted before it exists. It opens with its own
@@ -1782,10 +1782,10 @@ def make_srl(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
     ability = students["ability"].to_numpy()
     srl_z = _z(students["srl_skill"].to_numpy())
     engagement = students["engagement"].to_numpy()
-    hint_spam = students["hint_spam"].to_numpy()
+    rapid_hint_runs = students["rapid_hint_runs"].to_numpy()
 
-    p_goal = _sigmoid(1.55 * srl_z + 0.15 - 1.1 * hint_spam)
-    p_reflect = _sigmoid(1.60 * srl_z - 0.10 - 1.3 * hint_spam)
+    p_goal = _sigmoid(1.55 * srl_z + 0.15 - 1.1 * rapid_hint_runs)
+    p_reflect = _sigmoid(1.60 * srl_z - 0.10 - 1.3 * rapid_hint_runs)
     p_attend = np.clip(0.86 + 0.07 * engagement, 0.55, 0.99)
 
     rows = []
@@ -1830,7 +1830,7 @@ def make_srl(outdir=DEFAULT_OUTDIR, write: bool = True) -> pd.DataFrame:
                 difficulty = float(rng.uniform(-0.4, 1.1))
                 solved = False
                 for attempt in range(1, 4):
-                    if hint_spam[i] == 1 and rng.random() < 0.68:
+                    if rapid_hint_runs[i] == 1 and rng.random() < 0.68:
                         # Rapid fire hint requests, seconds apart.
                         for _ in range(int(rng.integers(3, 8))):
                             emit("request_hint", item_id)

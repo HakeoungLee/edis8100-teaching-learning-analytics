@@ -1,6 +1,6 @@
 # 🔍 Week 3: Ethics and Bias Audit
 
-Auditing an at-risk model before anyone acts on it, on real student records.
+Auditing a non-completion model before anyone acts on it, on real enrollment records. The week starts by refusing the field's usual name for the thing being predicted, and the refusal is the first lesson.
 
 ## At a glance
 
@@ -15,7 +15,7 @@ Auditing an at-risk model before anyone acts on it, on real student records.
 | **Notebook** | `week03_ethics_bias_audit.ipynb` |
 | **Data used** | **Real:** the Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J, downloaded from `HakeoungLee/edis8100-datasets`. CC BY 4.0. **Synthetic, for contrast:** `students.csv`, `lms_clickstream.csv`, `gradebook.csv`, built by the notebook itself. |
 | **Internet required** | Yes, for the first code cell only. Everything after it runs locally. |
-| **Libraries** | pandas, numpy, matplotlib, scikit-learn |
+| **Libraries** | pandas, numpy, matplotlib, scikit-learn, scipy (already installed in Colab, and a dependency of scikit-learn anyway) |
 
 ## The data, and where it came from
 
@@ -41,12 +41,23 @@ Every row is a person who enrolled in a distance-learning module in 2013 or 2014
 By the end of this activity you will be able to:
 
 1. **Load** a real, published, openly licensed learning dataset, and state where it came from and who collected it before you analyze a single row.
-2. **Train** a simple at-risk prediction model on activity data, and read its accuracy honestly against a do-nothing baseline.
-3. **Disaggregate** the model's errors by socioeconomic decile and by disability status, and say which of those gaps you can actually distinguish from noise.
-4. **Redesign** the feature set, re-run the same audit, and be precise about what the redesign fixed and what it did not.
-5. **Compare** what an audit can prove on real data against what it can prove on data whose mechanism was written down in advance.
+2. **Name** what a model actually predicts, and say why "an at-risk model" describes a person while "a model predicting non-completion" describes an outcome.
+3. **Train** that model on activity data, and read its accuracy honestly against a do-nothing baseline.
+4. **Disaggregate** the model's errors by socioeconomic decile and by disability status, and say which of those differences you can distinguish from noise once you have made thirty comparisons.
+5. **Redesign** the feature set, re-run the same audit, and be precise about what the redesign fixed and what it did not.
+6. **Compare** what an audit can prove on real data against what it can prove on data whose mechanism was written down in advance.
 
 The through-line of the session: a fairness audit measures a model, and a gap measures a world, and the two get reported in the same table as though they were the same kind of fact.
+
+## The naming decision, which is the first design decision
+
+The literature calls this an *at-risk model* producing a list of *at-risk students*. This notebook does not, and it spends a markdown cell saying why before any modelling code runs.
+
+The column it builds is `did_not_pass`, and it means one thing: this enrollment's `final_result` was `Fail` or `Withdrawn`. That is a fact about an outcome a registry recorded. "At risk" is not: it relocates the fact into the person, in the present tense, before any evidence has been examined, and it hides the three choices underneath it, namely the threshold, the population, and the outcome definition.
+
+The field's phrase stays in the notebook as an object of study, in quotation marks, with four questions attached every time it appears: **at risk of what, according to whom, measured how, and with what consequence for the person carrying the label?** Students should leave able to answer all four for this specific model.
+
+The reason this is a methods point and not a manners point is visible in the last section: "the model flagged 367 of the 591 enrollments in the most deprived decile" sends a reader to look at the model, and "62 percent of students in the poorest decile are at risk" sends them to look at the students. Only the first is supported by anything in the notebook.
 
 ## What is in this folder
 
@@ -85,23 +96,31 @@ The timings below add up to about 30 minutes for Part 1, which is what we do tog
 
 **⚙️ Setup (2 minutes).** Run the first code cell. It downloads six OULAD files and prints what arrived. If your connection is down it says so in plain language instead of showing a traceback. Then read the short provenance section that follows, which names the dataset, its license, its citation, and who collected it.
 
-**📊 1. Real data does not arrive clean (5 minutes).** The mess is the lesson. One deprivation label is written `10-20` without a percent sign, 29 enrollments have no deprivation recorded, 47 people took the module twice, 738 enrollments never appear in the clickstream at all, 46,884 click rows happen before the module officially starts, and the outcome column has four categories rather than two. Four decisions get made in front of you, each with its cost named.
+**📊 1. Real data does not arrive clean (5 minutes).** The mess is the lesson. One deprivation label is written `10-20` without a percent sign, 29 enrollments have no deprivation recorded, 47 people took the module twice, 738 enrollments never appear in the clickstream at all, 46,884 click rows happen before the module officially starts, and the outcome column has four categories rather than two. Four decisions get made in front of you, each with its cost named. Because 47 people appear twice, every join in the notebook keys on `(code_presentation, id_student)` rather than on the student id alone, including the join that attaches submitted coursework.
 
-**📊 2. The gaps before any model (4 minutes).** Pass rates by deprivation decile run from 36.9 percent in the most deprived tenth of neighborhoods to 61.9 percent in the least deprived. Students with a recorded disability pass at 40.3 percent against 50.0 percent. Median clicks in the first 60 days track the same gradient, 86 against 164. That third chart is the crux: an activity feature is partly a proxy for material circumstance.
+**📊 2. The gaps before any model (4 minutes).** Pass rates by deprivation decile run from 36.9 percent for enrollments from the most deprived tenth of neighbourhoods to 61.9 percent for the least deprived. Enrollments with a recorded disability pass at 40.3 percent against 50.0 percent. Median clicks in the first 60 days track the same gradient, 86 against 164.
 
-**📊 3. Train and read the accuracy (4 minutes).** A logistic regression on `clicks`, `active_days`, and `resources`, tested with five-fold cross validation so no student is scored by a model that already saw their outcome. Accuracy 0.735. "Never flag anybody" gets 0.491. Sit with that before you move on.
+The notebook is explicit about what these panels are evidence of, before it computes anything else. A gradient across deprivation deciles measures the conditions under which people studied and an institution that produced different outcomes for people in different circumstances. It does not measure the people, and the Index of Multiple Deprivation is an area-level index in the first place. The third chart is then the crux for the modelling: a recorded-activity feature is partly a proxy for material circumstance.
 
-**📊 4. The audit (7 minutes).** False positive rate, false negative rate, and share flagged, inside every decile and by recorded disability. Two panels disagree with each other on purpose: the error rates barely move across the deciles, while the share of a decile that gets flagged runs from 0.62 down to 0.47. A bootstrap cell then shows that the disability gap in error rates has a confidence interval straddling zero, on a group whose pass rate is nearly ten points lower. The audit came back clean on a group whose actual experience was measurably worse.
+**📊 3. Train and read the accuracy (4 minutes).** A logistic regression predicting `did_not_pass` from `clicks`, `active_days`, and `resources`, tested with five-fold cross validation so no enrollment is scored by a model that already saw its outcome. Accuracy 0.735. "Never flag anybody" gets 0.491. Every accuracy figure in this notebook is printed next to that baseline. Sit with the pair before you move on.
+
+**📊 4. The audit (7 minutes).** False positive rate, false negative rate, and share flagged, inside every decile and by recorded disability.
+
+Ten deciles times three rates is thirty numbers, and the eye goes straight to the largest and the smallest. The notebook guards against that twice. First it simulates what the max-minus-min *would* be if all ten deciles shared one identical rate: about 0.09 to 0.10 at these denominators, which is larger than either error-rate spread actually observed. Then it replaces the range with a **gradient**, a weighted least squares slope of the rate on decile number, which is one question rather than ten, and puts a bootstrap interval on it.
+
+The result is that two panels disagree on purpose, and now defensibly. The error-rate gradients are about -0.003 and +0.002 per decile step with intervals straddling zero: no detectable trend. The share-flagged gradient is about -0.014 with an interval nowhere near zero, and its observed spread of 0.151 is double what noise would produce. A bootstrap cell then shows the disability difference in error rates straddling zero, on a group whose pass rate is nearly ten points lower. The audit came back clean on a group whose recorded outcomes were measurably worse.
 
 **✏️ Your turn 1: the threshold (2 minutes).** Change one number, the cutoff that turns a risk score into a phone call, and watch a staffing decision move a fairness metric.
 
-**📊 5. Redesign and re-audit (5 minutes).** Drop the two schedule-shape features, add three about what a student produced by day 60, keep everything else identical. Accuracy rises to 0.785 and false positives fall in every decile. The gap in who gets flagged does not narrow at all. Be honest about that, then read the three cautions that follow, because an early mark is not innocent either.
+**📊 5. Redesign and re-audit (5 minutes).** Drop the two schedule-shape features, add three about what an enrollment produced by day 60, keep everything else identical. Accuracy rises from 0.735 to 0.788, a gain of +0.053 with a bootstrap interval of roughly [+0.040, +0.066], and the overall false positive rate falls from 0.287 to 0.082. The share-flagged gradient does not flatten: it goes from about -0.014 to about -0.018 per decile step, and the change between them has an interval that includes zero, so the honest sentence is that the redesign did not flatten it and may have steepened it. The overall false negative rate rises from 0.244 to 0.337, which is what fewer false alarms cost. Then read the three cautions that follow, because an early mark is not innocent either.
 
 **📊 6. What our one big decision bought us (3 minutes).** Rerun on only the students still registered at day 60. Accuracy falls from 0.735 to 0.692 while the do-nothing baseline rises from 0.491 to 0.631. Most of the impressive margin was bookkeeping about students the registry had already lost. Which number goes in the abstract is a reporting decision, and it is yours.
 
 **✏️ Your turn 3 (stretch).** Point the same audit at `age_band`, `gender`, `region`, or `highest_education`, and find a gap nobody asked you to look for.
 
-**🎯 Part 2: the synthetic contrast (5 minutes).** Rebuild EDUC 1010 and run the identical audit. Here the disparity does not narrow, it vanishes and reverses while accuracy climbs, because the mechanism was written into the generator: a `burst` flag multiplies a student's chance of appearing on any given day by 0.18 and moves their score by 0.6 points. The last cell reads the latent traits straight off the generator and proves it. Median active days 7 against 30, with total clicks and quiz scores effectively identical.
+**🎯 Part 2: the synthetic contrast (5 minutes).** Rebuild EDUC 1010 and run the identical audit on the 30 students who are first generation and work 15 or more hours a week. The point estimates behave as designed and the counts are printed next to them, which is the lesson. The share-flagged difference is 10 of 30 against 4 of 90, Fisher exact p around 0.0001. The false positive rate difference, the one a fairness report would headline, rests on four false positives against two, at p around 0.03.
+
+So the audit does not settle it. Section 8 does, because the generator hands back the latent traits: median active days 7 against 30 at p around 1e-15, while latent ability, total clicks, and quiz scores are all statistically indistinguishable. What makes the synthetic half certain is that somebody typed the mechanism, not that the audit was cleaner.
 
 **💬 Reflection.** Six prompts tied to this week's readings and to the dataset itself. Bring your answers to the 5:00 discussion block.
 
@@ -117,11 +136,11 @@ The timings below add up to about 30 minutes for Part 1, which is what we do tog
 
 For students who finish early or who arrive with programming experience:
 
-1. **Threshold sweep.** Instead of one cutoff, sweep the threshold from 0.05 to 0.95 and plot the flag-rate gap between the most and least deprived deciles against the threshold. Is there any threshold at which the activity-only model closes it? What does your answer imply about "just tune the cutoff" as a remedy?
+1. **Threshold sweep.** Instead of one cutoff, sweep the threshold from 0.05 to 0.95 and plot the share-flagged gradient across the deciles against the threshold, with bootstrap intervals. Is there any threshold at which the activity-only model closes it? What does your answer imply about "just tune the cutoff" as a remedy?
 2. **Move the checkpoint.** The notebook looks at days 0 to 60. Rerun it at day 30 and at day 120. Accuracy climbs steadily with the window, and so does the circularity: students who withdraw stop clicking. Say where you would stop, and why.
 3. **Build a better regularity feature.** `active_days` punishes compressed schedules. Design a feature that captures "this student has stopped showing up" without punishing "this student studies in long blocks," compute it from `studentVle.csv.gz`, and audit a model that uses it. Gaps between consecutive active days are a good place to start.
-4. **Calibration, not just error rates.** Bin the risk scores and compare predicted risk against observed at-risk rates separately for each decile. A model can have equal calibration and unequal error rates at the same time, and the fact that the two cannot generally both hold is a well-known impossibility result worth reading about. Section 4 is that result showing up in a real table.
-5. **Split the label.** `at_risk` merges Fail and Withdrawn. Build two models, one for each, and compare which students each one finds. If they disagree, the single label was hiding two different phenomena and one intervention was never going to serve both.
+4. **Calibration, not just error rates.** Bin the predicted probabilities and compare predicted against observed non-completion rates separately for each decile. A model can have equal calibration and unequal error rates at the same time, and the fact that the two cannot generally both hold is a well-known impossibility result worth reading about. Section 4 is that result showing up in a real table.
+5. **Split the label.** `did_not_pass` merges Fail and Withdrawn. Build two models, one for each, and compare which enrollments each one finds. If they disagree, the single label was hiding two different phenomena and one intervention was never going to serve both.
 6. **Use the resource catalogue.** `vle.csv` says what kind of thing each `id_site` is: forum, quiz, resource, subpage, and more. Build features from *what* students clicked rather than how much, and audit that model. Does looking at the kind of activity rather than the amount change who gets flagged?
 
 ## Troubleshooting

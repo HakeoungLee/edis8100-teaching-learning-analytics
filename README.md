@@ -4,7 +4,7 @@
 
 Wednesdays, 3:30 to 6:00 PM, Ridley 137. Department of Curriculum, Instruction, and Special Education.
 
-This repository holds the hands-on half of the seminar: eleven notebooks, one for each of weeks 1 through 11, that take the ideas from the readings and put them in your hands. You will train an at-risk model and then audit it, build a teacher dashboard and then argue with it, read a forum as text and as a network, watch a group's talk time and a group's product move together, and follow two hundred middle schoolers through a fractions game. The notebooks are the place where the seminar's claims stop being claims and start being things you can check.
+This repository holds the hands-on half of the seminar: eleven notebooks, one for each of weeks 1 through 11, that take the ideas from the readings and put them in your hands. You will train a model that predicts who does not complete a course and then audit it, build a teacher dashboard and then argue with it, read a forum as text and as a network, watch a group's talk time and a group's product move together, and follow two hundred middle schoolers through a fractions game. The notebooks are the place where the seminar's claims stop being claims and start being things you can check.
 
 If you have never written a line of code, you are exactly who this repository was designed for. Every notebook runs top to bottom without you typing anything, builds its own data inside your browser, and asks you to change small clearly marked values rather than to write code from scratch. Nothing here can break your computer, your grade, or the course data.
 
@@ -42,13 +42,13 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 | Week | Date | Topic | Folder | Notebook activity | Deliverable |
 |---|---|---|---|---|---|
 | 1 | 8/26 | Course Introduction and Planning | [`week01-hello-analytics`](week01-hello-analytics/) | Meet Colab, read two tables, make three charts | Discussion leader sign-ups |
-| 2 | 9/2 | Mapping the LA Landscape and Theoretical Lenses | [`week02-exploring-learning-data`](week02-exploring-learning-data/) | Merge clickstream with grades, ask what activity buys you | None |
-| 3 | 9/9 | Responsible and Human-Centered LA | [`week03-ethics-bias-audit`](week03-ethics-bias-audit/) | Train an at-risk model, then audit its errors by group | None |
+| 2 | 9/2 | Mapping the LA Landscape and Theoretical Lenses | [`week02-exploring-learning-data`](week02-exploring-learning-data/) | Merge real clickstream with grades, ask what activity buys you | None |
+| 3 | 9/9 | Responsible and Human-Centered LA | [`week03-ethics-bias-audit`](week03-ethics-bias-audit/) | Predict non-completion, then audit whose errors the model makes | None |
 | 4 | 9/16 | Teacher and Student Facing LA and Dashboards | [`week04-miniproject1-dashboards`](week04-miniproject1-dashboards/) | Build a teacher dashboard, then critique it | Mini Project 1 plus AI interactions |
-| 5 | 9/23 | Text-Based Analytics and NLP | [`week05-miniproject2-text-nlp`](week05-miniproject2-text-nlp/) | Forum text pipeline: frequencies, topics, discourse moves | Mini Project 2 plus AI interactions |
+| 5 | 9/23 | Text-Based Analytics and NLP | [`week05-miniproject2-text-nlp`](week05-miniproject2-text-nlp/) | Student essays: frequencies, topics, and human-annotated discourse moves | Mini Project 2 plus AI interactions |
 | 6 | 9/30 | Multimodal Learning Analytics | [`week06-miniproject3-multimodal`](week06-miniproject3-multimodal/) | Participation across speech, chat, gaze, and documents | Mini Project 3 plus AI interactions; mid-semester check-in |
-| 7 | 10/7 | LA for Self-Regulated Learning | [`week07-srl-traces-lab`](week07-srl-traces-lab/) | Find SRL loops and hint spam in tutor action sequences | None |
-| 8 | 10/21 | Networks and Temporal LA | [`week08-miniproject4-networks-temporal`](week08-miniproject4-networks-temporal/) | Forum reply network plus procrastination over time | Mini Project 4 plus AI interactions |
+| 7 | 10/7 | LA for Self-Regulated Learning | [`week07-srl-traces-lab`](week07-srl-traces-lab/) | Find regulation loops and rapid hint runs in tutor action sequences | None |
+| 8 | 10/21 | Networks and Temporal LA | [`week08-miniproject4-networks-temporal`](week08-miniproject4-networks-temporal/) | Forum reply network, survival, prediction horizon, and submission timing | Mini Project 4 plus AI interactions |
 | 9 | 10/28 | LA for Collaboration | [`week09-collaboration-analytics-lab`](week09-collaboration-analytics-lab/) | Turn taking, response latency, and what a dashboard should not show | Project outline plus AI interactions |
 | 10 | 11/4 | Game and Emotional LA | [`week10-game-emotional-analytics-lab`](week10-game-emotional-analytics-lab/) | FractionQuest learning curves and emotion streams | Literature review plus AI interactions |
 | 11 | 11/11 | Designing and Co-Designing LA Systems | [`week11-codesign-studio`](week11-codesign-studio/) | Persona-driven dashboard sketching and critique | Rough draft plus AI interactions |

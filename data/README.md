@@ -212,7 +212,7 @@ Every effect is noisy on purpose. Standardized differences sit roughly between 0
 | P3 | Submitting within 6 hours of the deadline goes with lower quiz scores | `gradebook.csv` | Week 8, teased in week 2 |
 | P4 | The reply network holds three loose clusters bridged by four connectors with high betweenness and unremarkable degree | `forum_posts.csv` | Week 8 |
 | P5 | Multilingual students speak less in studio and contribute as much or more through chat, ideas, and document edits | `mmla_studio.csv`, `group_chat.csv` | Week 6 |
-| P6 | Complete SRL loops go with steeper quiz-to-quiz growth; a hint-spam subgroup grows least | `srl_traces.csv` plus `gradebook.csv` | Week 7 |
+| P6 | Complete SRL loops go with steeper quiz-to-quiz growth; a rapid hint run subgroup grows least | `srl_traces.csv` plus `gradebook.csv` | Week 7 |
 | P7 | Productive strugglers gain more than error-free fast finishers, and level 4 is a difficulty cliff | `game_telemetry.csv`, `game_players.csv` | Week 10 |
 | P8 | Confusion that resolves within two levels predicts gains; unresolved confusion precedes quitting | `game_emotion.csv`, `game_telemetry.csv` | Week 10 |
 | P9 | Groups with balanced talk produce higher rated artifacts than dominated groups | `mmla_studio.csv`, `studio_artifacts.csv` | Week 6, revisited with chat in week 9 |
@@ -233,7 +233,7 @@ The point to land: nothing was wrong with the algorithm. The design decision abo
 
 ### P3: correlation, and a chance to say so out loud
 
-About 22 percent of quiz submissions arrive in the final 6 hours, and those submissions score lower by roughly d = 0.69. In the generator, procrastination lowers scores and shortens submission lead time separately. Nothing about submitting late causes the lower score. Students who propose a deadline-nudge intervention here have made a reasonable and unwarranted leap, which is a good thing to discover in week 8 rather than in a dissertation.
+About 22 percent of quiz submissions arrive in the final 6 hours, and those submissions score lower by roughly d = 0.69. In the generator, deadline_proximity lowers scores and shortens submission lead time separately. Nothing about submitting late causes the lower score. Students who propose a deadline-nudge intervention here have made a reasonable and unwarranted leap, which is a good thing to discover in week 8 rather than in a dissertation.
 
 ### P4: the bridge builders
 
@@ -247,11 +247,11 @@ Twenty-four multilingual students hold the floor less in studio (d = -0.59 on sp
 
 This is the dataset that echoes the instructor's own work on multimodal participation. The stretch goal, building a fairer composite index, is where the interesting arguments happen.
 
-### P6: loops beat hint spam
+### P6: loops beat rapid hint runs
 
 A student's loop rate, the share of tutor sessions containing `set_goal` before `reflect`, correlates with their quiz-to-quiz slope at about r = 0.52. Eighteen students fire `request_hint` three to eight times in a row with gaps of a few seconds; their mean slope is the lowest of any group (d = -0.54 against everyone else), and the ordering runs hint-spammers, then middle, then loopers.
 
-Detecting the hint spam requires looking at time gaps, not action counts, which is the methodological point of the week 7 lab.
+Detecting the rapid hint runs requires looking at time gaps, not action counts, which is the methodological point of the week 7 lab.
 
 ### P7: productive struggle, and the cliff at level 4
 
@@ -300,7 +300,7 @@ One master seed, 8100. Each dataset function seeds its own generator with 8100 p
 | `make_game_telemetry` | +11 | `game_telemetry.csv` |
 | `make_game_emotion` | +12 | `game_emotion.csv` |
 
-`make_students()` computes every latent trait for the 120 students: ability, engagement, self regulated learning skill, procrastination, regularity, talkativeness, and the group memberships and subgroup flags that carry the planted phenomena. Those latents are returned in the DataFrame and never written to `students.csv`, because students in the course are meant to discover the structure rather than read it off a column. Every other function calls `make_students(write=False)` to get them, which is why the files agree with each other without any of them having to run first.
+`make_students()` computes every latent trait for the 120 students: ability, engagement, self regulated learning skill, deadline_proximity, regularity, talkativeness, and the group memberships and subgroup flags that carry the planted phenomena. Those latents are returned in the DataFrame and never written to `students.csv`, because students in the course are meant to discover the structure rather than read it off a column. Every other function calls `make_students(write=False)` to get them, which is why the files agree with each other without any of them having to run first.
 
 `make_game_players()` plays the same role for FractionQuest.
 
