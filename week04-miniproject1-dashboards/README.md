@@ -1,6 +1,6 @@
 # 📊 Week 4: Mini Project 1, Teacher Dashboards
 
-Build a teacher-facing dashboard with plotly, then take it apart.
+Build a teacher-facing dashboard with plotly, on real student records, then take it apart.
 
 ## At a glance
 
@@ -13,37 +13,41 @@ Build a teacher-facing dashboard with plotly, then take it apart.
 | **Deliverable** | **Mini Project 1**: the completed notebook, a 300-word design memo inside it, and your AI interaction log plus reflection |
 | **Due date** | This week, via Canvas. Check Canvas for the exact time. |
 | **Notebook** | `week04_miniproject1_teacher_dashboard.ipynb` |
-| **Data used** | `students.csv`, `lms_clickstream.csv`, `gradebook.csv` (all synthetic, built by the notebook itself) |
+| **Data used** | **Real, not synthetic.** The Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J: 4,529 enrollments, 891,062 rows of daily clickstream, 21,783 assessment submissions. Loaded over the network from `github.com/HakeoungLee/edis8100-datasets`, nothing to download by hand. Licensed **CC BY 4.0**. Cite as Kuzilek, J., Hlosta, M., and Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data, 4*, 170171. |
 | **Libraries** | pandas, numpy, matplotlib, plotly, scikit-learn |
 
 ## Objectives
 
 By the end of this activity you will be able to:
 
-1. **Build** a three-panel teacher-facing dashboard in plotly from LMS, gradebook, and roster data, with a static snapshot of each panel for readers who cannot run the code.
-2. **Attach a reason to every automated flag**, decomposing a model's risk score into the per-feature contributions that produced it.
-3. **Evaluate** each panel against the decision a teacher would actually make from it, using van Leeuwen, Teasley, and Wise (2022) and Wise and Jung (2019).
-4. **Argue in writing**, in a 300-word design memo, for one specific design change and say who it protects.
+1. **Build** a three-panel teacher-facing dashboard in plotly from a real virtual learning environment export, with a static matplotlib snapshot of each panel for readers who cannot run the code.
+2. **State the provenance of your data**: who collected it, under what licence, and what it can be used for.
+3. **Attach a reason to every automated flag**, decomposing a model's risk score into the per-feature contributions that produced it, and disaggregate the resulting list by socioeconomic band.
+4. **Evaluate** each panel against the decision a teacher would actually make from it, using van Leeuwen, Teasley, and Wise (2022) and Wise and Jung (2019).
+5. **Argue in writing**, in a 300-word design memo, for one specific design change and say who it protects.
 
 The through-line of the session: a dashboard is not a report, it is an intervention in somebody's Monday morning. The design question is not "is this accurate" but "what will a teacher do because of this, and who pays if they are wrong."
 
 ## What is different about this week
 
-Weeks 2 and 3 were about finding things. This week is about designing while already knowing them.
+Two things change, and they change together.
 
-You come in holding two findings. From week 2: activity volume relates only weakly to achievement (r near 0.33), and a visible group of students posts low click counts alongside high scores. From week 3: an at-risk model built on activity features over-flagged first generation students who work long hours and study in bursts, and swapping the feature set closed most of that gap.
+**The data is real.** Weeks 1 through 3 ran on an invented roster, on purpose, so that you could practise without touching anyone. This week runs on records from a distance-teaching university in the United Kingdom: 2,237 people who registered for one module in October 2013, and 2,292 more who registered for the same module a year later. They were anonymized and released by the Open University's Knowledge Media Institute so that the field could check its own work on data more than one lab can see. They were not asked about a doctoral seminar in Virginia. What they were given is anonymity and banded categories, and what we owe them in return is that we do not pretend a row is a person, and we do not say anything about them we could not defend to them. A dashboard is a claim about people, and this week the people are real.
 
-Neither is a discovery to be re-made this week. Both are constraints your dashboard has to survive.
+**Real data does not arrange itself into a lesson.** Part A prints a decision log of six places the export was ragged: a column that spells its own categories two ways, 29 enrollments with no deprivation band, 738 enrollments with no recorded click at all, 1,062 with no first assignment, negative day numbers from students who read ahead, and 576 people who unregistered before day 1 and stayed in the roster anyway. Every one of those is a decision somebody has to make in public, and the notebook makes them in front of you and then says what each one cost. The last one, the roster, is the one that decides what the dashboard does on Monday.
+
+You also come in holding a finding from week 3: an at-risk model built on activity features falls unevenly, and swapping the feature set closes most of the gap. This week that finding survives contact with real data in a form week 3 could not produce. The false positive rate gap does close, and the flag list still draws 48.7 percent of its names from the 37.2 percent of the class living in the most deprived third of areas. Both are true at once. Part C makes you look at both, and the memo makes you say what a module team should do about it.
 
 ## What is in this folder
 
 | File | What it is |
 |---|---|
-| `week04_miniproject1_teacher_dashboard.ipynb` | The notebook. Self-contained: it builds its own data, needs no downloads, and runs top to bottom untouched. |
+| `week04_miniproject1_teacher_dashboard.ipynb` | The notebook. It downloads its data in the first code cell and writes nothing to disk. |
 | `README.md` | This file. |
-| `data/` | Created for you the first time you run the notebook. Not stored in the repo. |
 
-You do not need to clone anything or download a CSV. The first code cell writes the three datasets into the runtime.
+There is no `data/` folder this week and nothing to clone. The first code cell reads six CSV files straight from the course dataset repository, `github.com/HakeoungLee/edis8100-datasets`, and prints what arrived. No account, no authorization, no install. It takes a second or two.
+
+That repository is public and read-only. If it is unreachable, the cell prints a plain-English message naming the repository and telling you what to try, rather than a wall of red traceback.
 
 ## How to open this in Colab
 
@@ -64,7 +68,7 @@ Once you have authorized Colab, this badge works too:
 
 **This week, saving your copy is not optional.** Mini Project 1 is graded from your notebook, so before you change anything choose **File > Save a copy in Drive**. Work in that copy. When you are finished, **File > Download > Download .ipynb** and upload that file to Canvas.
 
-You can also run the notebook locally with Jupyter if you prefer. It needs pandas, numpy, matplotlib, plotly, and scikit-learn, all of which ship with Anaconda.
+You can also run the notebook locally with Jupyter if you prefer. It needs pandas, numpy, matplotlib, plotly, and scikit-learn, all of which ship with Anaconda, plus a working internet connection for the first cell.
 
 ### A note about the two kinds of chart
 
@@ -74,21 +78,21 @@ That is deliberate. Plotly charts do not render when a notebook is read on GitHu
 
 ## Step-by-step walkthrough
 
-Budget about 20 minutes for the in-class launch (through Part C) and about three hours to finish, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything. They are numbered in the order you are asked to think about them rather than the order they appear, so Your turn 4 sits in Part D and Your turn 3 in Part E.
+Budget about 20 minutes for the in-class launch (through Part C) and about three hours to finish, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells appear in reading order and already contain working answers, so the notebook runs start to finish without you typing anything.
 
-**⚙️ Setup (2 minutes).** Run the first code cell. It is long and meant to be collapsed and ignored. It builds the synthetic roster, clickstream, and gradebook inside your runtime so nothing has to be downloaded and no real student is ever involved.
+**⚙️ Setup (2 minutes).** Read the provenance cell before you run anything: who collected this data, under what licence, and what we owe the people in it. Then run the first code cell. It fetches six files and prints a line per file saying how many rows arrived and what one row means.
 
-**📊 Part A: orientation (10 minutes).** Load the files, collapse the clickstream to one row per student, and read the calendar boundaries. Two things to notice: `at_risk` is a line somebody drew at 70, and the clickstream export ends two days before quiz 8 and nine days before the final project. Then ✏️ **Your turn 1**: write one question these files can inform and one they cannot touch. Keep the second one in front of you all week.
+**📊 Part A: orientation (20 minutes).** Build the one table every panel needs, one row per enrollment, and watch the decision log print as it goes. Six ragged places in the export, six decisions made in public, and a stated cost for each. Three of them come back in Part E, and the one to hold on to is the roster: 576 enrollments unregistered on or before day 0 and are still sitting in the enrollment table. Then ✏️ **Your turn 1**: write one question these files can inform and one they cannot touch. Keep the second one in front of you all week.
 
-**📊 Part B: the class overview panel (25 minutes).** Four charts: the score distribution, the daily activity rhythm with quiz deadlines marked, the activity against achievement scatterplot from week 2, and the same data aggregated into thirds. Panels 3 and 4 use identical numbers. One is a cloud, the other is three clean descending bars. Sit with what aggregation did to your confidence.
+**📊 Part B: the class overview panel (25 minutes).** Four charts, each drawn once per presentation, because BBB ran twice and the archive can answer a question a teacher in the middle of a term never can: is this a property of my course, or of this particular group of people? How each run ended, when the module was worked, completion by fifth of first-30-day clicks, and completion by deprivation decile. Chart 3 replicates almost exactly across the two years. So does chart 4, and chart 4 is a different kind of finding: in 2013J the most deprived decile completes at 34.2 percent and the least deprived at 61.3.
 
-**📊 Part C: the early warning panel (35 minutes).** The audited week 3 model goes on screen, with a model card printed above it: features, accuracy, and the false positive rate gap next to the retired model's gap. Then the part most real systems skip: each flagged student's risk score is decomposed into what each feature contributed, so the panel can say why a name is on the list. Read the tally of leading reasons carefully. Then ✏️ **Your turn 2**: change the caseload and watch a staffing budget move a fairness metric.
+**📊 Part C: the early warning panel (35 minutes).** The audited week 3 model goes on screen, with a model card printed above it: features, the flag rule, the base rate, and the false positive rate gap next to the retired activity-only model's gap. Every risk score is out of sample. Then the part most real systems skip: each flagged student's risk score is decomposed into what each feature contributed, so the panel can say why a name is on the list. Read the three tallies underneath the chart carefully. They are the ones the memo argues from: 402 students the model cannot tell apart, 132 of the 150 flag slots going to that block, and 100 of the 150 names belonging to people who had already unregistered before the module opened. Then ✏️ **Your turn 2**: change the caseload and the roster rule, and watch a staffing budget move a fairness metric.
 
-**📊 Part D: the individual drilldown (25 minutes).** One student, four views: quiz trajectory against the class middle half, a profile card that lists what the model saw and what it did not, weekly LMS activity, and submission lead time. The default student is `S008`, first generation, 22 paid hours a week, two weeks with no LMS events at all, and rising quiz scores. She is flagged. Change the student and run it again on somebody you choose.
+**📊 Part D: the individual drilldown (25 minutes).** One student, four views: tutor-marked assignment trajectory against the class middle half, a profile card that lists what the model saw and what it never did, weekly clicks against the class mean, and submission lead time. The default is student `154570`, who clicked more in the first 30 days than anyone else in the presentation, received the second lowest risk score of all 2,237, and unregistered on day 117. The panel never mentioned this student and never could have. Then ✏️ **Your turn 3**: the cell prints six students worth drilling into and why each one breaks the panel in a different direction. Pick one that is not the default.
 
-**💬 Part E: take it apart (30 minutes).** A cell computes five things the dashboard never shows the teacher: how many struggling students the flag list misses, how much the list changes when only the random seed changes, what the reason column really says, what acting on the activity panel would cost, and the calendar problem again. Then ✏️ **Your turn 3**, the critique table, which is the analytic core of the assignment.
+**💬 Part E: take it apart (30 minutes).** A cell computes five things the dashboard never shows the teacher: how few of the struggling students the list reaches, how many flag slots go to people who had already left, how much the list changes when only the random seed changes, why the deprivation skew survives a closed fairness gap, and what a 30-day window cannot see. Then ✏️ **Your turn 4**, the critique table, which is the analytic core of the assignment.
 
-**✏️ Part F: the design memo (30 minutes).** 300 words, in the marked markdown cell. Argue for one specific change and defend it against the strongest objection you can think of.
+**✏️ Part F: the design memo (30 minutes).** 300 words, in the marked markdown cell. Argue for one specific change and defend it against the strongest objection you can think of. One requirement is not optional: say what the module team should do about the deprivation skew, and "fix the model" is not available as an answer.
 
 **✏️ Stretch (optional).** A working student-facing rewrite of the drilldown, and an invitation to make it better.
 
@@ -100,16 +104,17 @@ Budget about 20 minutes for the in-class launch (through Part C) and about three
 - **Wise and Jung (2019)**, *Teaching with analytics: Towards a situated model of instructional decision-making*: what an instructor does with a display depends more on their pedagogical situation than on the numbers. This is the standard the memo is graded against.
 - **Jung and Wise (2025)**, *How students engage with learning analytics*: access, action-taking, and the routines that form around received information. Directly relevant to the stretch goal.
 - **Li, Jung, and Wise (2025)**, *How instructors use learning analytics: the pivotal role of pedagogy*: listed as additional reading, and the source of reflection question 4.
+- **Kuzilek, Hlosta, and Zdrahal (2017)**, *Open University Learning Analytics dataset*: the data paper for the records you are working on. Reflection question 5 is about it. Worth ten minutes even if you read nothing else about the dataset.
 
 ## Rubric: Mini Project 1 (100 points)
 
 | Criterion | Integrated and Insightful (20) | Solid and Complete (16) | Developing (12) | Emerging (8) |
 |---|---|---|---|---|
 | **End-to-End Analytics Workflow** | Every part is completed and connected: the orientation questions shape the panels, and the panels feed the critique and the memo as one argument. | All parts completed and run cleanly, with the connections between them mostly explicit. | Most parts completed; the sections read as separate exercises rather than one workflow. | Parts missing or unrun; the notebook does not execute end to end. |
-| **Data Preparation and Technical Care** | Notebook runs top to bottom without error; the per-student table is correct; the calendar and threshold limits are noticed and stated. | Runs cleanly with correct aggregation; limits mentioned but not pursued. | Runs with minor errors or unexamined aggregation choices. | Does not run, or the data preparation is incorrect. |
+| **Data Preparation and Technical Care** | Notebook runs top to bottom without error; the per-enrollment table is correct; the decision log is understood, and the cost of at least one of those decisions is carried into the critique. | Runs cleanly with correct aggregation; the ragged places in the export are mentioned but not pursued. | Runs with minor errors, or the aggregation and missingness choices are accepted without examination. | Does not run, or the data preparation is incorrect. |
 | **Analysis and Visualization Choices** | Every figure is titled and labeled, colorblind-safe, and each design choice (aggregation, band versus rank, what is omitted) is defended. Static snapshots present and readable. | Figures are clear, titled, and labeled; snapshots present; choices mostly defended. | Figures readable but some are unlabeled, undefended, or missing snapshots. | Figures missing, mislabeled, or uninterpretable. |
 | **Interpretation and Educational Meaning** | The critique table names a specific teacher action for each panel and a specific way each could mislead, with evidence from your own outputs. | Actions and risks named for all three panels with some evidence. | Generic actions ("monitor the student") or risks asserted without evidence. | Interpretation absent or unconnected to the outputs. |
-| **Critical Reflection: Limits, Ethics, Equity** | The memo names a decision, cites at least two numbers from the notebook, proposes one concrete change, and states who is protected, what it costs, and the strongest objection. Draws on both required readings. | Memo makes a clear argument with evidence and cites at least one reading. | Memo describes the dashboard rather than arguing for a change, or omits the trade-off. | Memo missing, far off length, or unsupported by evidence. |
+| **Critical Reflection: Limits, Ethics, Equity** | The memo names a decision, cites at least two numbers from the notebook, proposes one concrete change, states who is protected, what it costs, and the strongest objection, and says what should be done about the deprivation skew without proposing a model fix. Draws on both required readings. | Memo makes a clear argument with evidence and cites at least one reading. | Memo describes the dashboard rather than arguing for a change, or omits the trade-off. | Memo missing, far off length, or unsupported by evidence. |
 
 The AI interaction log and reflection are required for the submission to be considered complete.
 
@@ -118,27 +123,28 @@ The AI interaction log and reflection are required for the submission to be cons
 For students who finish early or who arrive with programming experience:
 
 1. **The student-facing redesign (the one in the notebook).** Take the working example and go further: attach one available action to each point on the chart, and argue that a student-facing display without an available action is a report card that arrived early.
-2. **Show the uncertainty.** Replace the risk score bar with an interval built from the spread across cross validation splits, and sort the list into "consistently flagged" and "borderline" instead of ranking one to fifteen. Then say what a hurried teacher does with the borderline group, and whether that is better or worse than what they do now.
-3. **Build a feature a teacher can act on.** Every leading reason in the panel points at prior GPA, which no teaching move can change. Engineer a feature from this term only, for example the change in quiz score between the first half and the second half, add it to the model, and see whether the reason column starts saying something a teacher could do anything about.
-4. **The missing 21.** Twenty-one students below the cutoff never appear on the flag list. Characterise them. What do they have in common, and what panel would have surfaced them?
-5. **Design the refusal.** Write down three things this dashboard should refuse to display even though the data supports them, and defend each refusal to a hypothetical dean who wants them added.
-6. **Make it real.** Rebuild one panel for a course you have actually taught or taken. What data would you need, who owns it, and who would have to consent?
+2. **Show the uncertainty.** Replace the risk score bar with an interval built from the spread across cross validation splits, and sort the list into "consistently flagged" and "borderline" instead of ranking one to fifteen. Part E already shows why this matters: across five random splits, only 6 students appear on all five lists and 410 distinct students compete for 150 slots. Then say what a hurried teacher does with the borderline group, and whether that is better or worse than what they do now.
+3. **Move the window.** The model sees days 0 to 29 and assignment 1, and then never looks again. 134 students withdrew after day 100 and the panel had flagged 3 of them. Build a second model that also sees days 30 to 59 and the second tutor-marked assignment, score the same class, and report what it gains, what it costs in lateness, and whether the reason column starts saying something different.
+4. **The 1,019 who never appear.** The list reaches 12.5 percent of the students who go on to fail or withdraw. Characterise the rest. What do the missed students have in common, and what panel would have surfaced them?
+5. **Rebuild the panel for 2014J.** Change `FOCAL_TERM` and run everything again. Which findings hold and which were properties of one cohort? This is the replication question the two presentations exist to let you ask.
+6. **Design the refusal.** Write down three things this dashboard should refuse to display even though the data supports them, and defend each refusal to a hypothetical dean who wants them added.
+7. **Make it real.** Rebuild one panel for a course you have actually taught or taken. What data would you need, who owns it, and who would have to consent?
 
 ## Troubleshooting
 
 **"NameError: name 'dash' is not defined" or something similar.** You ran a cell out of order. Use `Runtime > Restart and run all` in Colab, or `Kernel > Restart & Run All` in Jupyter. This fixes the large majority of problems.
 
-**"FileNotFoundError: data/students.csv".** The setup cell did not run, or you restarted the runtime and skipped it. Scroll up, run the setup cell, then continue.
+**The first cell says the download did not work.** It will tell you so in plain English rather than a traceback, and it names the repository it was trying to reach. Check that the runtime has internet (Colab always does; a locked-down campus network sometimes does not), then run the cell again, since short network hiccups are common. If it still fails, download the six CSV files from `github.com/HakeoungLee/edis8100-datasets` by hand, put them beside the notebook, and change `BASE` to `"."` so pandas reads them from disk.
 
-**The setup cell looks terrifying.** It is supposed to be ignored. Click the arrow at its left edge to collapse it. It is only there so the notebook works with no downloads and no accounts.
+**The first cell is slow.** It is fetching about 4 MB, most of it the compressed clickstream. On a normal connection it takes a couple of seconds. It runs once; later cells reuse what is already in memory.
 
 **A plotly chart is blank, or nothing appears where a chart should be.** In Colab this is almost always a stale runtime: `Runtime > Restart and run all`. If you are reading the notebook on GitHub rather than in Colab, plotly charts will never appear, by design. Look at the matplotlib snapshot immediately below each one.
 
-**My matplotlib charts do not appear.** Make sure you ran the first code cell of Part A, which contains `%matplotlib inline`.
+**My matplotlib charts do not appear.** Make sure you ran the first code cell, which contains `%matplotlib inline`.
 
-**"KeyError: 'S0...'" in Part D.** You typed a student ID that is not on the roster. The cell catches this and falls back to `S008`, but check your spelling: IDs run `S001` to `S120`, always three digits.
+**Part D says it cannot find my student.** Student IDs in this dataset are plain numbers, not `S001` style codes, and they are not consecutive: `154570` and `2625315` are both real. The cell catches an id that is not in the presentation, says so, and falls back to `154570`. If you want a valid id to try, take one from the six-student comparison table the cell prints.
 
-**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all: the data is seeded, so a clean run reproduces the same numbers every time.
+**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all. The dataset is fixed and published, and the model's cross validation is seeded, so a clean run reproduces the same numbers every time.
 
 **Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
 
@@ -158,6 +164,14 @@ If you used no AI at all, say so in one line in the text box and attach nothing.
 AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation.
 
 The reflection carries more weight than the log. The question worth answering is not whether you used an assistant, it is what you accepted from it and how you checked. A memo that repeats a plausible sounding critique the assistant produced, without you verifying it against your own printed numbers, is exactly the failure mode this course is about.
+
+## Attribution for the data
+
+If you reuse any figure or number from this notebook outside this course, cite the dataset:
+
+> Kuzilek, J., Hlosta, M., and Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data, 4*, 170171.
+
+Licensed CC BY 4.0: you may use, share, and adapt it, including commercially, as long as you credit the source. Attribution is not a formality here. It is the condition on which a research team made records about real students available to people like you.
 
 ---
 
