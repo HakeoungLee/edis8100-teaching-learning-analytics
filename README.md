@@ -169,7 +169,7 @@ The synthetic weeks are not a fallback for the weeks we could not find data for,
 
 The deeper reason is in week 3, where you run the same fairness audit twice. In the synthetic data the mechanism was written down before the data existed, so you can prove where the bias came from. In OULAD you find a real gap, from real students, and its cause is contested and always will be. Verifying a mechanism you already know and arguing about one you cannot see are different skills, and a researcher who has only ever done one of them has a blind spot.
 
-Week 8 makes the same point from the other direction. Six weeks of synthetic data will have taught you that submitting close to a deadline goes with lower scores. Then you test it on 15,229 real submissions and it is not there.
+Week 8 makes the same point from the other direction, and only after doing the work that earns it. You build a withdrawal curve from real unregistration dates, watch prediction accuracy climb as the term supplies more evidence, and sort a term's worth of weekly activity into four shapes. Then you test the one thing six weeks of synthetic data taught you to expect, that submitting close to a deadline goes with lower scores, on 15,347 real submissions, and it is not there. The honest closing sentence is not that the effect does not exist. It is that this file showed you a great deal and could not show you this.
 
 ### The ethics note, which is not boilerplate
 
