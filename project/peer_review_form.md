@@ -100,7 +100,14 @@ There are six of you, so everyone gets a five-minute slot and nobody has to deci
 
 ## 3. Methods feasibility
 
-*Could a person actually do this? Check the chain: data source, access, unit of analysis, cleaning, analysis, output. Name the weakest link. Then say what would have to be added or narrowed for the plan to be executable in the horizon the author has in mind. Be concrete about scale: if the sample, the time frame, or the coding load looks like more than one person can carry, say so now rather than politely.*
+| | |
+|---|---|
+| **The data source, as you can name it from the draft alone** | |
+| **Is it real, and obtainable in the time this author has?** | yes / not sure / no |
+
+*Answer that line first, before anything else in this section. If the draft says only "LMS data" or "student writing," or names a route with no duration attached, write that down: it is the most useful thing you will tell this author today.*
+
+*Then the rest of the chain. Could a person actually do this? Check it end to end: data source, access, unit of analysis, cleaning, analysis, output. Name the weakest link. Then say what would have to be added or narrowed for the plan to be executable in the horizon the author has in mind. Be concrete about scale: if the sample, the time frame, or the coding load looks like more than one person can carry, say so now rather than politely.*
 
 ## 4. Ethics and equity engagement
 
