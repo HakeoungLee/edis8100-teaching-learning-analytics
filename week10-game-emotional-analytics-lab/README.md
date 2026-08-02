@@ -1,6 +1,6 @@
 # 🎮 Week 10: Game and Emotional Analytics Lab
 
-Two hundred middle schoolers, one fractions game, and the week the learners stop being adults.
+Two real games, sixteen thousand children's codenames, and the week a finding fails to travel from one game to the next.
 
 ## At a glance
 
@@ -9,25 +9,43 @@ Two hundred middle schoolers, one fractions game, and the week the learners stop
 | **Session** | Wednesday, November 4, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Game Learning Analytics and Emotional Learning Analytics |
 | **Guest speaker** | Chaewon Kim, Florida State University |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 50 minutes, so plan to finish sections 4 and 5 on your own before the discussion. |
+| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 55 minutes, so plan to finish sections 5, 6, and 7 on your own before the discussion. |
 | **Deliverable from this notebook** | None. Week 10 is not a mini project. This lab is an in-class launch. |
 | **Due this week (separately)** | **Course Research Project Literature Review** plus your **AI interaction log and reflection**, uploaded to Canvas. Submitted on their own, not from this notebook. |
 | **Notebook** | `week10_game_emotional_analytics_lab.ipynb` |
-| **Data used** | `game_players.csv`, `game_telemetry.csv`, `game_emotion.csv` (all synthetic, built by the notebook itself) |
-| **Libraries** | pandas, numpy, matplotlib. Nothing else this week. |
+| **Data used** | **Open Game Data**, Field Day Lab, University of Wisconsin-Madison. `fieldday-aqualab/players.csv.gz` (19,031 rows by 145 columns), `fieldday-aqualab/player_jobs.csv.gz` (96,322 by 11), `fieldday-waves/sessions.csv.gz` (1,581 by 870). Public domain, **CC0 1.0**. Downloaded by the notebook, nothing to install. |
+| **Libraries** | pandas, numpy, matplotlib. Nothing else this week, and every statistic is built from those three in front of the student. |
+| **Runtime** | About 15 seconds end to end on a normal connection. |
 
-This is the **only week that uses the FractionQuest data**. Everything else this semester comes from EDUC 1010 at Blue Ridge University. Section 1 of the notebook orients you to the new setting before any analysis starts, so do not skip it.
+This is the **only week that uses the Field Day data**, and the only week whose learners are children. Sections 1 and 2 of the notebook establish what one row is and what is wrong with the files before any analysis begins, so do not skip them.
+
+## The data
+
+| | |
+|---|---|
+| **What** | Play logs from two educational games: **AQUALAB** (*Wake: Tales from the Aqualab*), a marine-science adventure in which players run experiments and then argue for a conclusion from evidence, and **WAVES** (*Wave Combinator*), a 35-level signal-matching puzzle |
+| **Who collected it** | **Field Day Lab**, Wisconsin Center for Educational Research, **University of Wisconsin-Madison**, through their Open Game Data infrastructure |
+| **Who is in it** | Children. Of the 6,092 player-months that answered the in-game age item, 86.5 percent said they were 15 or younger and the largest single group said 12 to 13; 79.4 percent of those who answered said they were playing at school |
+| **When** | Ten monthly AQUALAB extracts, September 2025 through June 2026, plus a set of individual WAVES sessions |
+| **Licence** | **CC0 1.0 Universal**, the Creative Commons public domain dedication. No rights reserved, no permission needed, no attribution legally required |
+| **Citation** | Gagnon, D., and Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In *Serious Games* (pp. 1-23). Springer. https://doi.org/10.1007/978-3-031-44751-8_1 |
+| **Source** | Field Day Lab, University of Wisconsin-Madison. https://opengamedata.fielddaylab.wisc.edu |
+| **This extract** | Course-sized subsets, redistributed unchanged, at github.com/HakeoungLee/edis8100-datasets |
+
+CC0 means the class is legally free to do anything with these files. The notebook spends a section on why that makes the ethical question louder rather than quieter, given who is in them.
 
 ## Objectives
 
 By the end of this activity you will be able to:
 
-1. **Build a learning curve** from attempt level game telemetry, and explain why the pooled version of that curve points the wrong way while the per-level version does not.
-2. **Locate a difficulty cliff** using four signals (errors, retries, completion, time), say what any one of them alone would have missed, and show why the comparison only holds once the population of players is held fixed.
-3. **Compare productive strugglers with fast finishers** on pre to post test gains, and separate three different things: the claim "this group gained less", the claim "this group had less to gain", and the tendency of any group selected on a low starting score to drift upward on its own.
-4. **Read an emotion self report stream as a sequence** rather than as a frequency table, and state what confusion that resolves and confusion that persists each predict.
+1. **State where a dataset came from** before analysing it: who logged it, from whom, under what licence, and what the file cannot see.
+2. **Find and repair the mess in a real telemetry extract**, meaning columns that hold one value, a category that is not an activity, durations that run backwards, rows with no player at all, and answers in two languages, and say out loud what each repair costs.
+3. **Summarise a heavily skewed count honestly**, and explain why the mean is the wrong number for the hardest job in AQUALAB and the median is not obviously the right one either.
+4. **Separate a selection question from an effect question** when the same event switches both variables on, and carry an interval that respects rows nested inside people.
+5. **Read an in-game affect item** without treating a feeling word as a property of a child, and show that a difference between two feelings is really a difference in how much of the game each child saw.
+6. **Attempt a replication in a second game**, put both answers on one scale, and report honestly that they disagree.
 
-The through-line of the session: the counterintuitive result, and then what survives inspecting it. The children who made more mistakes gained more on the fractions test, d = 0.69. Adjust for how much room each child had above their pre-test score and the difference disappears, d = 0.01. Model the post-test while holding the pre-test constant and it stays gone, a quarter of a point with an interval straddling zero. Three answers come from the same 95 children and the same code. Deciding which question each of them answers, and which one you would put in an abstract, is the work.
+The through-line of the session: **the same question, asked of two games, gets two answers, and neither of them was planted.** In AQUALAB, children who argued more than ten times at the hardest job in the game completed 14.81 more jobs that month, interval [+12.24, +17.24]. Take that apart and 67.1 percent of the persisting group went on to attempt another job against 3.1 percent of the others, and among the children whose record demonstrably continued, argumentation tries and later completions are uncorrelated (rho = -0.007, n = 210). Carry the same question to WAVES, where the game supplies the next level whether or not you struggled, and the effect is +0.85 levels out of 25 (rho = +0.055). On one common scale the three answers are **0.749**, **0.454**, and **0.531**. The work is deciding which question each of them answers.
 
 The second through-line, and the reason this week matters beyond method: **the learners are children.** Every design proposal you have made this semester assumed a consenting adult. The reflection section asks you to rewrite one of them for an eleven year old.
 
@@ -35,11 +53,11 @@ The second through-line, and the reason this week matters beyond method: **the l
 
 | File | What it is |
 |---|---|
-| `week10_game_emotional_analytics_lab.ipynb` | The notebook. Self-contained: it builds its own data, needs no downloads, and runs top to bottom untouched. |
+| `week10_game_emotional_analytics_lab.ipynb` | The notebook. It downloads its three data files from the course dataset repository on first run and writes nothing to your machine. |
 | `README.md` | This file. |
-| `data/` | Created for you the first time you run the notebook. Not stored in the repo. |
+| `data/` | Not used any more. If it exists on your machine it holds leftovers from an earlier synthetic version of this lab, it is git-ignored, and it is safe to delete. The notebook reads directly from the dataset repository. |
 
-You do not need to clone anything or download a CSV. The first code cell writes the three FractionQuest datasets into the runtime.
+Nothing to clone and no CSV to fetch by hand. The first code cell reads three compressed files over the internet, a few megabytes in total, in a couple of seconds. If the download fails it prints a plain sentence naming `github.com/HakeoungLee/edis8100-datasets` rather than a wall of red text.
 
 ## How to open this in Colab
 
@@ -60,47 +78,59 @@ Once you have authorized Colab, this badge works too:
 
 **Want to keep your edits?** In Colab choose **File > Save a copy in Drive** before you start changing cells. Your copy is yours, and nothing you do to it affects the course repository.
 
-You can also run the notebook locally with Jupyter if you prefer. It needs pandas, numpy, and matplotlib, all of which ship with Anaconda.
+You can also run the notebook locally with Jupyter if you prefer. It needs pandas, numpy, and matplotlib, all of which ship with Anaconda, plus an internet connection for the three files.
 
 ## Step-by-step walkthrough
 
-Total time is about 50 minutes if you keep moving, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
+Total time is about 55 minutes if you keep moving, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
 
-**⚙️ Setup (2 minutes).** Run the first code cell. It is long, and it is meant to be collapsed and ignored. It builds the three synthetic FractionQuest files inside your runtime so that nothing has to be downloaded and no real child's play record is ever involved.
+**⚙️ Setup (2 minutes).** One short code cell. It downloads three files and prints their shapes. Read the provenance table immediately after it: who logged this, from whom, under what licence, with what citation. The rule the course keeps repeating is that you should never analyse data whose origin you cannot state out loud.
 
-**📊 1. A new setting, and a new kind of learner (4 minutes).** Meet FractionQuest: 200 players in grades 6 and 7, eight levels, a 20 item pre-test and post-test, October 2026. Read the short section on why the learners being children changes the ethics of everything you have proposed so far. Then load the three files and count who is still playing at each level. The roster is 200 and only 81 reach level 8, which reframes every average that follows.
+**📊 1. What is one row, and who is in it? (4 minutes).** The dataset repository calls `players.csv.gz` "one row per player." It is not. It is 19,031 rows over 16,384 codenames across ten monthly extracts, and 1,922 codenames appear in more than one month with no way to tell whether that is a child returning or a name collision. Two panels draw the shape. The section ends by naming the unit of analysis as the **player-month** and by explaining why every interval later in the notebook resamples codenames rather than rows.
 
-**📊 2. Learning curves, and the one that lies (6 minutes).** Three panels of the same 1,428 attempts. The pooled curve says errors go **up** with practice. The per-level curves say level 4 is in its own world. The rescaled curve says errors fall about 16 percent by the third try. All three are arithmetically correct, and the printed table above the figure shows exactly why the first one misleads: level 4 supplies 13 percent of first attempts and 36 percent of third attempts. This is the methodological spine of the session.
+**📊 2. Real data is messy, and the mess is the lesson (7 minutes).** The cheapest check in data analysis, run first: how many distinct values does each column hold? It finds `attempted` (one value, `True`, in all 96,322 rows), `argtime` (one value, `0:00:00`, in all of them), and five `JobTriesInArgumentPerDifficulty` columns that are zero in all 19,031 rows. Then the pseudo-category `no-active-job` (10,340 rows, 10.7 percent), ten rows with no codename at all and hundreds of sessions each, thirteen values of `ExperimentalCondition` of which only four are production, 2,631 player-months with a negative duration (worst: about minus 3.27 million seconds), and an affect column carrying both English and Spanish.
 
-**✏️ Your turn 1 (2 minutes).** Swap `errors` for `time_s` or `hints_used` and check whether the same trap appears.
+Three exclusions follow, each with its own line in a costs table, and one consistency check that earns the right to use `priorcomplete` for temporal ordering later: the largest "completed before" count in a player-month equals that month's total in 100.0 percent of cases.
 
-**📊 3. The difficulty cliff (5 minutes).** Four signals per level, in four panels. Errors at level 4 run 1.72 times the average of levels 3 and 5. Players need 1.73 attempts each instead of about 1.3. Half of all level 4 attempts fail. Attempts take nearly twice as long.
+**📊 3. The hardest thing in the game (5 minutes).** `coral-hunting-lions` averages **31.98** argumentation tries against a median of **8**, while the median job in AQUALAB has a median of 1. Two panels: mean against median for the ten hardest jobs, and the raw distribution with both lines drawn on it. 42.3 percent of the player-months that took this job logged zero tries and the busiest 5 percent supply 29.1 percent of them all. The prompt does not let students pick a winner between mean and median; it makes them say what is wrong with each.
 
-Then the two things that make it an argument rather than a coincidence. The four signals are **not independent**: attempts per player is nearly one divided by the completion rate (r = 0.98 across levels) and errors track time at r = 0.99, so four agreeing measures are closer to one vote counted four times. And each level is played by a different set of children, level 4 by 135 and level 5 by only 108, so the raw neighbour comparison pits a mixed population against its own survivors and is biased *towards* finding a cliff. The cell therefore repeats the comparison on the fixed cohort of 108 who all reached level 5 (the ratios barely move) and then does the strictest version available: for those same 108 children, their own first-attempt errors at levels 3, 4, and 5. Level 4 costs each child about two extra errors relative to their own neighbouring levels, interval +1.50 to +2.66, and 78 of the 108 are above their own baseline. That is the version of the finding worth quoting.
+**✏️ Your turn 1 (2 minutes).** Point the same three summaries at another job. The appendix solution then scores all 51 common jobs and shows the busiest 5 percent supply a **median of 37.4 percent** of a job's tries, with a floor of 20.5 percent. The skew is not a property of the hard job; it is a property of voluntary-play counts.
 
-**✏️ Your turn 2 (2 minutes).** Point the same neighbour comparison at any other level and see how much weaker the case gets.
+**📊 4. Did persisting pay? Two questions that look like one (10 minutes).** The heart of the lab. The trap is named before any code runs: argumentation tries and jobs completed are both counts of activity, so some association is arithmetic rather than finding.
 
-**📊 4. Productive strugglers and fast finishers (10 minutes).** The heart of the lab. Two explicit design decisions (who is eligible, what window we measure) then two group definitions, then the outcome. Strugglers gain 4.17 points against 2.47 for the fast finishers, d = 0.69, interval 0.26 to 1.11. Both group names describe a pattern in a play log and neither describes a kind of child, and nothing in the section licenses a sentence about what a fast finisher is like.
+The headline arrives anyway and it is large. Children who argued more than ten times completed **32.76** jobs against **17.96**, gap **+14.81** [+12.24, +17.24], from a cluster bootstrap over the 508 codenames rather than the 617 rows. `priorcomplete` then splits that gap in time: only **+3.52** [+1.12, +5.90] was banked before the job, and **+11.29** [+9.67, +12.91] came after.
 
-**Section 4.1** draws the ceiling on a scatterplot and recomputes the gain as a share of available headroom: d = 0.01, interval -0.40 to 0.43.
+Then the boring question that dissolves it. **67.1 percent** of the persisting group attempted another job afterwards; **3.1 percent** of the others did. The rank correlation between tries and jobs-completed-afterwards is +0.654, and between tries and record-continues-at-all it is +0.649, because those are nearly the same variable. Among the **210** player-months that demonstrably kept playing, the correlation is **-0.007** and the four try-quartiles average 17.22, 17.75, 16.81, and 18.55 jobs afterwards. Flat.
 
-**Section 4.2** then names the second mechanism, which is not the ceiling and is constantly confused with it. Any group selected for a low starting score is partly a group that had a bad testing morning, and a bad morning does not repeat: that is **regression to the mean**, and it would still be here on a test with no ceiling at all. We did not select on the pre-test directly, we selected on errors in levels 1 to 4, but the two correlate at -0.60, so the machinery applies. The standard response is to stop analysing gains and model the post-test while holding the pre-test constant. That analysis of covariance puts the group difference at +0.25 post-test points with an interval from -1.03 to +1.54. The section also says plainly that with self-formed groups, gain scores and covariance adjustment answer different questions and are entitled to disagree, so the third analysis is not a tiebreaker. Sit with all three numbers. This is the teaching moment of the week.
+The section states the honest conclusion in full, including that the two-group comparison inside the still-playing subset has only 10 player-months on one side and therefore cannot rule out a modest effect. The interpretation prompt puts the instrument, the setting, and the circumstances on the table before the child, by name and in that order.
 
-**✏️ Your turn 3 (3 minutes).** Move all four thresholds and watch which of the two findings is stable and which is not. Neither of the two removes regression to the mean, which is the point of doing it after section 4.2 rather than before.
+**✏️ Your turn 2 (2 minutes).** Move the threshold. The appendix solution sweeps it from 1 to 80 and finds the raw gap correlates with the difference in "share still playing" at **r = 0.961** across thresholds. Stability across a sweep tells you the definition is not fragile. It tells you nothing about whether the thing you defined is what you think it is.
 
-**📊 5. Emotion pings (8 minutes).** Three moves. First, what children report level by level: at level 4, confusion jumps to 47 percent of pings and interest collapses from 49 to 27 percent. Second, six individual emotion streams drawn as lanes, so you can see what a frequency table deletes. Third, the sequence question. Confusion resolved within two levels goes with a 3.78 point gain and a 34 percent quit rate; confusion that came back within those two levels goes with 2.71 points and 63 percent; the two unresolved groups together average 2.66 points and a 71 percent quit rate. The difference between resolved and unresolved is d = 0.45, interval 0.15 to 0.74.
+**📊 5. What children said they felt (9 minutes).** AQUALAB interrupts children and asks what they are feeling and **why**. Three quarters of the file never answered; the median respondent answered exactly once.
 
-The children who quit at the confusing level are kept visible as their own group rather than quietly filed under "resolved", and the cell also runs the milder version of that same bug: only 2 of the 73 "resolved" children were seen for fewer than the full two levels, and dropping them moves d from 0.45 to 0.44. The section is careful about what it is entitled to claim. The first two bars are not circular, but they are not causal either, and the prompt makes you write the common-cause confound out in full.
+The counterintuitive comparison the field likes: children who said "frustrated" and never "bored" completed **18.32** jobs, children who said "bored" and never "frustrated" completed **11.42**, gap **+6.89** [+5.26, +8.50]. Then the exposure control. The frustration group answered 3.66 prompts to the boredom group's 2.23 and played 14.6 median hours to their 3.4, and "frustrated" was said by only 9.2 percent of respondents, so a child who answers eight times has eight shots at a rare word. Hold the number of answers fixed and the four bands read 5.17 against 5.52, 12.79 against 13.32, 18.74 against 18.98, 30.16 against 32.48. The size-weighted gap falls from +6.89 to **+0.75** [+0.02, +1.44]. **Eighty-nine percent of the effect was how much of the game each child saw**, and the section is candid that the residue in the widest band is the same confound not yet fully held fixed.
 
-**✏️ Your turn 4 (2 minutes).** Change the resolution window and watch a construct dissolve.
+Then the part that needed no statistics. Asked **why** they felt bored, children chose "I don't find this topic interesting" (14.1 percent), "This is too easy" (13.8 percent), and "I'm not sure why I need to know this" (12.3 percent). Asked why they felt frustrated, they chose "I don't know what to do next" (14.9 percent), "This is too hard" (11.8 percent), and "The game isn't working properly" (9.2 percent). Boredom here is a property of the game at least as much as of the player, and for once the course is not inferring that: the children said so.
 
-A note on the figures: the section-5 headline reads "Confusion is not the problem. Confusion the game never helps resolve is." The relocation is deliberate. The finding is about what the game did next, not about a property of the child who reported being confused.
+**✏️ Your turn 3 (2 minutes).** Compare any two of the six feeling words. The appendix solution runs all six at once: raw gaps of +10.47, +10.24, +6.61, +4.85, +3.93, and +2.03, all of which collapse into the range -0.39 to +1.03 once the number of answers is held fixed. The ordering of the raw column is the ordering of "mean answers given" and has nothing to do with what the words mean.
 
-**💬 Reflection.** Five prompts tied to this week's readings, ending with the one everybody answers: rewrite one of your own design proposals for an eleven year old.
+**📊 6. The second game, and the disagreement (8 minutes).** WAVES has a sharper spike: level 9 costs a mean of **17.29** fails against 1.31 to 5.65 for every level before it, about 3.1 times the worst of them. It also has a denominator trap, because level 9 is optional. Averaged over the 1,041 sessions that met it the answer is 17.29; averaged over all 1,581 it is 11.38. Both are correct and they answer different questions.
+
+Then the structural fact that decides the section: **100.0 percent** of the sessions that began level 9 went on to begin level 10. In WAVES the game moves you on. In AQUALAB the child decides, and at `coral-hunting-lions` there was no next job 66.0 percent of the time against 21.9 percent across all job rows.
+
+The replication gives **+0.85** levels [+0.13, +1.60] out of 25, rho = **+0.055**, with failure quartiles averaging 14.09, 14.67, 14.92, and 15.00. Same direction, negligible size. A rank-based common scale then puts all three answers side by side with intervals: **0.749** [0.709, 0.787] in AQUALAB across everyone who attempted the job, **0.454** [0.307, 0.606] among those still playing, **0.531** [0.496, 0.567] in WAVES. The notebook explicitly refuses to resolve the disagreement, offers a mechanism, and then names three rival explanations that the two files cannot separate.
+
+**Section 6.4** is a free extra trap. WAVES ships `pre`, `post`, and `gain`. `pre` is two questions, `post` is two **different** questions, and mean `gain` is **-0.42** with 45.9 percent of sessions below zero. The sentence "playing WAVES made children worse at waves" is available, arithmetically correct, and false.
+
+**✏️ Your turn 4 (2 minutes).** Try the other optional levels. The appendix solution runs all four (9, 17, 29, 32) split at each level's own median, and shows both that the two denominators diverge by a factor running 1.5, 2.5, 8.3, 9.8 as the levels get rarer, and that all four persistence intervals contain zero.
+
+**📊 7. These are children (2 minutes).** The demographic items in the file settle what kind of data this is: 86.5 percent of those who answered said 15 or younger, largest group 12 to 13, and 79.4 percent said they were playing at school. The section then says plainly what changes when the user is eleven: who consented and who was logged, that "voluntary use" does not survive a class period, that the affect item is the most intimate data in this course, and that a child who stops playing is not deficient. The final point is the one section 5 proved rather than asserted.
+
+**💬 Reflection.** Five prompts tied to this week's readings, ending with the one everybody answers: rewrite one of your own design proposals for an eleven year old. Plus two suggested questions for the guest, both drawn from something the student has just done.
 
 **✅ Before you leave.** A checklist, plus the reminder that the literature review and AI log go to Canvas separately.
 
-**Appendix.** Worked solutions to all four ✏️ Your turn cells, including a 16 cell threshold sweep of the productive struggle finding and a window sweep of the confusion finding.
+**Appendix.** Worked solutions to all four ✏️ Your turn cells: the skew of all 51 common jobs, a seven-point threshold sweep with the confound plotted beside the finding, all six feeling words before and after the exposure control, and all four optional WAVES levels.
 
 ## Assessment
 
@@ -110,38 +140,39 @@ What **is** graded this week is the **Course Research Project Literature Review*
 
 ## What this connects to in the readings
 
-- **Reardon, Kumar, and Revelle (2022)**, *Game learning analytics*: learning curves, telemetry grain, and what games give learning analytics that a course platform cannot.
-- **D'Mello and Jensen (2022)**, *Emotional learning analytics*: affect as a dynamic state rather than a trait, and why confusion that resolves is a different event from confusion that does not.
-- **Kim, Knowles, Scianna, Lin, and Ruiperez-Valiente (2023)**, *Learning analytics application to examine validity and generalizability of game-based assessment for spatial reasoning*: whether a game measures what it claims to, and whether that holds beyond the sample it was built on.
+- **Reardon, Kumar, and Revelle (2022)**, *Game learning analytics*: telemetry grain, and what games give learning analytics that a course platform cannot. This week the answer is complicated by the fact that the analysis nearly went wrong four separate times on data of exactly that grain.
+- **D'Mello and Jensen (2022)**, *Emotional learning analytics*: affect as a dynamic state rather than a trait. Section 5 tests that with an item most respondents answered exactly once, which is its own lesson about what dynamic analysis requires.
+- **Kim, Knowles, Scianna, Lin, and Ruiperez-Valiente (2023)**, *Learning analytics application to examine validity and generalizability of game-based assessment for spatial reasoning*: whether a game measures what it claims to, and whether it holds beyond the sample it was built on. Section 6 is a small version of exactly that study, and it does not hold.
 
 ## Stretch goals
 
 For students who finish early or who arrive with programming experience:
 
-1. **Survival analysis of quitting.** Treat each player's last level as a right-censored survival time and estimate a discrete-time hazard of quitting at each level. Which level has the highest hazard once you account for the fact that fewer players are exposed later? Compare that answer to the raw attrition bar chart.
-2. **A real learning curve model.** Fit errors as a function of cumulative practice opportunities with a power law or exponential form, one curve per level, and report the fitted learning rate. Then argue about whether "opportunity" should mean attempts at a level or attempts across the whole game.
-3. **Condition on the cliff.** Restrict the entire section 4 analysis to what happened *at level 4 only*: errors, retries, and time on that level alone. Does the productive struggle finding get stronger or weaker when the measure is taken at the hardest moment rather than across four levels?
-4. **Emotion transitions.** Build a transition matrix over the four emotion labels within player, in timestamp order, and compare the matrix for children who gained a lot against those who gained little. Which transition separates them most, and is that transition one you used to define the groups?
-5. **A fourth gain measure, and the ceiling on all of them.** Section 4 gives you raw gain, headroom gain, and the covariance-adjusted post-test. Add residual gain (the residual from regressing post on pre, which is the covariance model expressed per child) and compare all four on the same two groups. Then do the part that matters: simulate a world with no group difference at all, only measurement error in a pre-test with the reliability implied by the r = 0.73 test-retest correlation here, and see how large a raw-gain d you can manufacture out of nothing. Write the paragraph explaining to a school district why the four measures disagree, and what the simulation says about the first one.
-6. **The ethics of the intervention.** Design, in code, a detector that would flag a child for unresolved confusion in real time using only data available before level 5. Compute its false positive rate. Then write the memo arguing that it should not be deployed, and see whether you believe your own memo.
+1. **Survival analysis of the record ending.** Section 4 uses a crude binary, "did the record continue." Treat each player-month's position in the job graph as a discrete-time survival process and estimate the hazard of the record ending at each job, handling right-censoring at the month boundary properly. Which job has the highest hazard once exposure is accounted for, and does `coral-hunting-lions` stay on top?
+2. **The month boundary, directly.** Every AQUALAB extract is a calendar month, which truncates play arbitrarily. Restrict section 4 to player-months whose codename also appears in the following month's file, so that the record demonstrably continues past the boundary. How many player-months survive that restriction, what does it do to the +14.81, and what new selection problem have you just created?
+3. **Non-response in the affect item.** 75.1 percent of player-months never answered. Model who answered as a function of the play measures, then reweight the section 5 comparison by the inverse of the estimated response probability. Report the reweighted gap beside the unweighted one, and say plainly what assumption the reweighting requires and whether you believe it.
+4. **The `argfails` column, unused here.** Section 3 built everything on `tries`. Repeat it on `argfails`, which counts failed arguments rather than attempts, and see whether the same job comes out hardest. Where the two disagree, work out which one the game designer would want.
+5. **WAVES slider behaviour.** The WAVES extract carries `PercentAmplitudeMoves`, `PercentOffsetMoves`, `PercentWavelengthMoves`, and slider ranges per level. Build a measure of strategy rather than effort (are the moves systematic or scattered?) and ask whether *that* predicts progress where sheer failure count did not. This is the most promising unexplored thing in either file.
+6. **Two games, one model.** Fit the same specification to both games with the outcome standardized within game, and report the interaction between game and persistence with an interval. Then argue with yourself about whether pooling two games with different logging, different children, and different session lengths into one model is a defensible thing to do at all.
+7. **The ethics of the intervention.** Design, in code, a detector that would flag a child in real time for the pattern section 4 found. Compute its false positive rate against the base rate. Then write the memo arguing that it should not be deployed, and see whether you believe your own memo.
 
 ## Troubleshooting
 
-**"NameError: name 'level_summary' is not defined" or something similar.** You ran a cell out of order. Use `Runtime > Restart and run all` in Colab, or `Kernel > Restart & Run All` in Jupyter. This fixes the large majority of problems.
+**"Could not download this week's data."** You are offline, or a firewall is blocking `raw.githubusercontent.com`. Check your connection and rerun the first code cell. Nothing else in the notebook can run until it succeeds.
 
-**"FileNotFoundError: data/game_telemetry.csv".** The setup cell did not run, or you restarted the runtime and skipped it. Scroll up, run the setup cell, then continue.
+**"NameError: name 'jobs' is not defined" or something similar.** You ran a cell out of order. Use `Runtime > Restart and run all` in Colab, or `Kernel > Restart & Run All` in Jupyter. This fixes the large majority of problems.
 
-**The setup cell looks terrifying.** It is supposed to be ignored. Click the arrow at its left edge to collapse it. It is only in the notebook so that the notebook works with no downloads and no accounts.
+**The download is slow.** The three files are a few megabytes compressed. On a poor connection this can take a minute. It only happens once per session.
 
-**My charts do not appear.** Make sure you ran the first code cell of section 1, which contains `%matplotlib inline`. If they still do not appear, restart and run all.
+**My charts do not appear.** Make sure you ran the first code cell, which begins with `%matplotlib inline`. Without it the notebook can compute everything and show you nothing. If they still do not appear, restart and run all.
 
 **Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
 
-**"One of the groups has fewer than 5 players."** You tightened the thresholds in ✏️ Your turn 3 past the point where a comparison is meaningful. That message is the cell protecting you from reporting a d computed on three children. Loosen a threshold and rerun.
+**"One of those groups has fewer than 30 player-months."** or **"one persistence group is under 20 sessions."** You moved a ✏️ Your turn setting past the point where a comparison is meaningful. Those messages are the cells protecting you from reporting a result computed on four people. Loosen the setting and rerun.
 
-**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all: the data generator is seeded, so a clean run reproduces the same numbers every time.
+**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all. Every interval in this notebook is seeded (`SEED = 8100`), so a clean run reproduces the same numbers every time. If the underlying files in the dataset repository were ever updated, the notebook's numbers would move and the text would not; that is a real risk of working from live URLs and it is worth knowing about.
 
-**I got a different answer than my neighbor about who learned more.** Compare which gain measure you are each looking at. That is almost always the difference, and noticing it is the point of the session.
+**A `SettingWithCopyWarning` or similar yellow text.** Warnings are not errors. If the cell printed its output and drew its chart, it worked.
 
 ## A reminder about documenting AI use
 
@@ -155,4 +186,6 @@ If you used an AI assistant on this notebook as well, to explain a line of panda
 
 EDIS 8100: Teaching and Learning Analytics · Fall 2026 · Dr. Hakeoung Hannah Lee · University of Virginia School of Education and Human Development
 
-All data in this activity are synthetic. No child was measured to make it.
+The data in this activity are real play logs from AQUALAB (*Wake: Tales from the Aqualab*) and WAVES (*Wave Combinator*), collected and released into the public domain under CC0 1.0 by Field Day Lab at the Wisconsin Center for Educational Research, University of Wisconsin-Madison. https://opengamedata.fielddaylab.wisc.edu
+
+Gagnon, D., and Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In *Serious Games* (pp. 1-23). Springer. https://doi.org/10.1007/978-3-031-44751-8_1
