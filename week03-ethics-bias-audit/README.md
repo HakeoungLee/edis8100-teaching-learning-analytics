@@ -1,6 +1,6 @@
 # 🔍 Week 3: Ethics and Bias Audit
 
-Auditing a non-completion model before anyone acts on it, on real enrollment records. The week starts by refusing the field's usual name for the thing being predicted, and the refusal is the first lesson.
+Auditing a non-completion model before anyone acts on it, on real enrollment records, and then running the identical audit on a second real setting on another continent to see which of its findings survive the journey. The week starts by refusing the field's usual name for the thing being predicted, and the refusal is the first lesson.
 
 ## At a glance
 
@@ -9,17 +9,18 @@ Auditing a non-completion model before anyone acts on it, on real enrollment rec
 | **Session** | Wednesday, September 9, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Responsible and Human-Centered Learning Analytics |
 | **Guest speaker** | Hansol Lee, Stanford University |
-| **In-class time on this notebook** | About 30 minutes, launched in the hands-on studio block (4:40 to 5:00). Finish the last sections on your own if you run out of room. |
+| **In-class time on this notebook** | About 30 minutes for Part 1, launched in the hands-on studio block (4:40 to 5:00), and about 10 more for Part 2. Finish Part 2 on your own if you run out of room. |
 | **Deliverable** | None. Week 3 is an in-class launch, not a graded submission. |
 | **Due date** | Not applicable. The first Canvas deliverable is Mini Project 1 in week 4. |
 | **Notebook** | `week03_ethics_bias_audit.ipynb` |
-| **Data used** | **Real:** the Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J, downloaded from `HakeoungLee/edis8100-datasets`. CC BY 4.0. **Synthetic, for contrast:** `students.csv`, `lms_clickstream.csv`, `gradebook.csv`, built by the notebook itself. |
-| **Internet required** | Yes, for the first code cell only. Everything after it runs locally. |
+| **Data used** | **Two real datasets, no synthetic data anywhere.** Part 1: the Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J, CC BY 4.0. Part 2: UCI Student Performance, the mathematics file, 395 Portuguese secondary students, CC BY 4.0, the same file students met in week 1. Both downloaded from `HakeoungLee/edis8100-datasets`. |
+| **Internet required** | Yes, for two cells: the setup cell at the top and the Part 2 setup cell. Both fail politely with a plain message naming the repository. |
 | **Libraries** | pandas, numpy, matplotlib, scikit-learn, scipy (already installed in Colab, and a dependency of scikit-learn anyway) |
+| **Runtime** | Under a minute end to end on a laptop. The two 200-run loops in section 8 are the slow part and they are the point of the section. |
 
 ## The data, and where it came from
 
-This is the first notebook in the course that leaves the invented world of Blue Ridge University.
+Two datasets, both real, both openly licensed, both already familiar. Part 1 audits the Open University module you read in week 2. Part 2 runs the same audit on the Portuguese file you read in week 1.
 
 | | |
 |---|---|
@@ -32,9 +33,23 @@ This is the first notebook in the course that leaves the invented world of Blue 
 
 A university that teaches almost entirely online already holds a complete record of what every student clicked, when they submitted, and how it ended. A research group inside that university pulled two years of one module, stripped the names, replaced them with numbers, aggregated the clicks to daily counts, and published the result so that people outside the institution could study early warning systems without needing a data-sharing agreement.
 
-Every row is a person who enrolled in a distance-learning module in 2013 or 2014. None of them enrolled in order to be a teaching example in Charlottesville in 2026. Anonymization and an open license are real protections, and they are not consent. The notebook says this out loud in its second markdown cell, and the ask is the same as it was in weeks 1 and 2, only now it is not a rehearsal: **treat these rows as people.**
+Every row is a person who enrolled in a distance-learning module in 2013 or 2014. None of them enrolled in order to be a teaching example in Charlottesville in 2026. Anonymization and an open license are real protections, and they are not consent. The notebook says this out loud in its second markdown cell, and the ask is the same as it was in weeks 1 and 2, and it has been a real ask every time: **treat these rows as people.**
 
-**Why the synthetic course is still here.** Part 2 of the notebook rebuilds the EDUC 1010 data from weeks 1 and 2 and runs the identical audit on it. That is not nostalgia. It is the argument of the session: on synthetic data you can read the mechanism off the generator and prove where a disparity came from, and on real data you cannot. Neither dataset is the honest one on its own.
+### The second setting
+
+| | |
+|---|---|
+| **Dataset** | UCI Student Performance, the mathematics file `student-mat.csv`, **semicolon delimited** |
+| **Who collected it** | Paulo Cortez and Alice Silva, from school reports and a questionnaire at two Portuguese secondary schools |
+| **Size** | 395 students, 349 at school GP and 46 at school MS, 33 columns |
+| **When** | The 2005 to 2006 school year |
+| **License** | CC BY 4.0. Free to use and share, with attribution. |
+| **Citation** | Cortez, P., & Silva, A. (2008). Using data mining to predict secondary school student performance. In *Proceedings of 5th FUture BUsiness TEchnology Conference*, 5-12. |
+| **Loaded from** | `https://raw.githubusercontent.com/HakeoungLee/edis8100-datasets/main/uci-student-performance/student-mat.csv` |
+
+**Why the audit runs twice, and why the second dataset is this one.** A fairness result from one course at one university is a hypothesis. The next thing anyone should do with it is take the recipe somewhere else and see whether it survives, and that is what Part 2 does. It picks a setting about as unlike OULAD as a learning dataset gets: 3,136 adults studying at a distance in the United Kingdom, measured by a server log, against 395 teenagers in two buildings in Portugal, measured by a school register and a paper questionnaire. Different country, different decade, different age group, different instrument.
+
+Students also arrive at it already knowing something a stranger downloading the file would not. In week 1 they found that 38 of the 395 final grades are exactly 0, that all 38 belong to students with zero recorded absences, and that most of those students were being graded normally in the second period. Those 38 look like records that were never entered. Part 2 makes the decision about them out loud, keeps them, and then reruns the whole audit without them, which changes one of the two headline findings.
 
 ## Objectives
 
@@ -45,9 +60,11 @@ By the end of this activity you will be able to:
 3. **Train** that model on activity data, and read its accuracy honestly against a do-nothing baseline.
 4. **Disaggregate** the model's errors by socioeconomic decile and by disability status, and say which of those differences you can distinguish from noise once you have made thirty comparisons.
 5. **Redesign** the feature set, re-run the same audit, and be precise about what the redesign fixed and what it did not.
-6. **Compare** what an audit can prove on real data against what it can prove on data whose mechanism was written down in advance.
+6. **Repeat** the identical audit in a second real setting, and say which findings travelled, which did not, and which of your own protocol choices was doing the work.
 
 The through-line of the session: a fairness audit measures a model, and a gap measures a world, and the two get reported in the same table as though they were the same kind of fact.
+
+And the one Part 2 adds: **which metric you audit determines whether you see unfairness at all**, which is a claim students verify twice with their own arithmetic rather than take on trust.
 
 ## The naming decision, which is the first design decision
 
@@ -63,11 +80,10 @@ The reason this is a methods point and not a manners point is visible in the las
 
 | File | What it is |
 |---|---|
-| `week03_ethics_bias_audit.ipynb` | The notebook. Downloads the real data in its first code cell, then builds the synthetic contrast dataset itself. Runs top to bottom untouched. |
+| `week03_ethics_bias_audit.ipynb` | The notebook. Downloads both real datasets over the internet, one in its first code cell and one at the start of Part 2. Runs top to bottom untouched. |
 | `README.md` | This file. |
-| `data/` | Created for you when you reach Part 2. Holds the three synthetic CSVs only. Not stored in the repo. |
 
-The OULAD files are never written to disk. They are read straight from the internet into memory each time you run the notebook.
+Nothing is written to disk. Both datasets are read straight from the internet into memory each time you run the notebook, and there is no local `data/` folder for this week.
 
 ## How to open this in Colab
 
@@ -92,7 +108,7 @@ You can also run the notebook locally with Jupyter if you prefer. It needs panda
 
 ## Step-by-step walkthrough
 
-The timings below add up to about 30 minutes for Part 1, which is what we do together in class, and about 5 more for Part 2, which is a short finish on your own if we run out of room. The three ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
+The timings below add up to about 30 minutes for Part 1, which is what we do together in class, and about 10 more for Part 2, which is a finish on your own if we run out of room. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
 
 **⚙️ Setup (2 minutes).** Run the first code cell. It downloads six OULAD files and prints what arrived. If your connection is down it says so in plain language instead of showing a traceback. Then read the short provenance section that follows, which names the dataset, its license, its citation, and who collected it.
 
@@ -118,11 +134,33 @@ The result is that two panels disagree on purpose, and now defensibly. The error
 
 **✏️ Your turn 3 (stretch).** Point the same audit at `age_band`, `gender`, `region`, or `highest_education`, and find a gap nobody asked you to look for.
 
-**🎯 Part 2: the synthetic contrast (5 minutes).** Rebuild EDUC 1010 and run the identical audit on the 30 students who are first generation and work 15 or more hours a week. The point estimates behave as designed and the counts are printed next to them, which is the lesson. The share-flagged difference is 10 of 30 against 4 of 90, Fisher exact p around 0.0001. The false positive rate difference, the one a fairness report would headline, rests on four false positives against two, at p around 0.03. The cell then re-runs the whole audit across 200 cross-validation splits, changing nothing but `random_state`: the share-flagged difference clears p < 0.05 in 98 percent of them and the false positive difference in 58 percent. One finding is a property of the data and the other is partly a property of a number the analyst typed.
+**🎯 Part 2: does the unfairness travel? (10 minutes).** One recipe, held fixed, run on both settings. Same outcome definition, same algorithm, same threshold, same protocol, activity and support features only and **no prior grades on either side**, because `G1` and `G2` would predict `G3` by being a grade and would mirror nothing in Part 1. OULAD is rebuilt to match: the 1,393 withdrawn enrollments come out, leaving 3,136 that ran to a graded end, and activity is counted over the first four weeks rather than sixty days. The Portuguese outcome is `G3 < 10`, the Portuguese pass mark.
 
-So the audit does not settle it. Section 8 does, because the generator hands back both the latent traits and the coefficients: median active days 7 against 30 at p around 1e-15, against three other comparisons that all return a large p-value for three different reasons. Latent ability was set to differ by exactly zero. Event volume and quiz score were **not**: the generator multiplies volume by 0.95 and subtracts 0.6 points, and 30 students against 90 cannot see either, missing even the sign. Three identical-looking null results, one of which is a true null and two of which are hiding a real effect, is the single most transferable thing in the notebook. What makes the synthetic half certain is that somebody typed the mechanism, not that the audit was cleaner.
+**📊 7. One recipe, two settings.** The two models are almost indistinguishable. AUC **0.688** in both. Accuracy **0.714** in Portugal against a do-nothing rule of 0.671, and **0.724** in OULAD against 0.709. Base rates 0.329 and 0.291. That is an ordinary published early warning model, twice, on two continents, and the second panel of figure 4 is the part worth sitting with: the do-nothing rule is four points behind one of them and one and a half points behind the other.
 
-**💬 Reflection.** Six prompts tied to this week's readings and to the dataset itself. Bring your answers to the 5:00 discussion block.
+The grouping column gets a paragraph of its own, because it has to. Portugal is audited by the higher of the two parents' education, split at 9th grade, 135 students against 260. OULAD is audited by the student's own prior qualification, split at A level, 1,355 against 1,781. Those are not the same construct, one being a fact about a household and the other a fact about the adult sitting the module, and the notebook says so rather than letting "educational background" quietly cover both.
+
+**📊 8. The seed lottery, which is the most valuable cell in Part 2.** Before any fairness claim, a demonstration. The notebook measures one quantity, the rural minus urban false positive gap in the Portuguese file, two hundred times under each of two protocols. Under a single stratified 70/30 split, changing nothing but the seed, the answer ranges from **-0.169 to +0.457**, standard deviation 0.098, with 65.5 percent of seeds saying rural students who passed were flagged more often and the rest saying the opposite. **Seed 42 gives +0.327, larger than 99 percent of the other 199 seeds.** Under the protocol the notebook actually uses, twenty-five fresh five-fold splits averaged, the two hundred answers all land between +0.004 and +0.064.
+
+Then the cell says what the tight histogram does not mean, because this is where people over-read. All 200 of those runs measure the same 395 students, so they agree by construction. The averaged gap on the whole file is **+0.027 with a 95 percent bootstrap interval of [-0.065, +0.125]**, which contains zero. Repeating the split removes the seed. Only the bootstrap shows you the students. Both are needed, and 55 rural students passed in total.
+
+**📊 9 and 10. The audit, and what travelled.** Five metrics, two settings, every rate beside the denominator it rests on, every gap with a 95 percent bootstrap interval, figure 6 plotting all ten at once against a line at zero.
+
+- **The accuracy gap replicates.** Lower band minus higher band is **-0.117, 95% [-0.214, -0.020]** in Portugal and **-0.150, [-0.182, -0.120]** in OULAD, and it survives a random forest and gradient boosting in both settings.
+- **The false alarm gap does not.** Portugal: **+0.115, [+0.025, +0.209]**, from 0.185 against 0.071. OULAD: **+0.009, [-0.006, +0.024]**, an order of magnitude smaller and straddling zero.
+- **Being missed is close to even in both**, at -0.041 and +0.017, both intervals containing zero, on models whose false negative rates are 0.63 and 0.67 in Portugal and 0.88 and 0.86 in OULAD. The OULAD model misses about seven of every eight enrollments that ended in a Fail, evenly. A fairness metric can be satisfied by a model that does not work.
+
+**📊 11. What the accuracy gap is actually made of, and what cannot be settled.** Two stories produce the same accuracy gap: base-rate arithmetic, or a genuine measurement failure. The notebook separates them. Put each band's own do-nothing rule beside its accuracy and the gap between the two lifts is **-0.009, [-0.109, +0.086]** in Portugal and **+0.015, [-0.003, +0.032]** in OULAD. In both settings the accuracy gap that replicated so convincingly is, once the base rate is accounted for, no longer distinguishable from zero.
+
+AUC is the base-rate-free version. In OULAD the two bands rank identically, 0.687 [0.656, 0.716] against 0.689 [0.659, 0.719]. In Portugal the point estimates differ a great deal, 0.624 [0.525, 0.718] against 0.728 [0.659, 0.793], and the gap of -0.104 has an interval of [-0.226, +0.020] that contains zero, on 135 students of whom 81 passed and 54 did not. The same gap shrinks from -0.100 to -0.058 and -0.054 when the model class changes. So the contested question, whether these instruments genuinely read students in the lower band worse or whether this is what 135 students look like when you cut them in half, **does not get an answer**, and the notebook says so rather than picking one.
+
+Then the last honest turn. Week 1's 38 zero grades are not spread evenly: **21 of the 135 students in the lower band against 17 of the 260 in the higher band**, 15.6 percent against 6.5 percent, Fisher exact p = 0.006. Rerun the whole of setting two without them and the one clean finding, the false alarm gap, falls from **+0.115 [+0.025, +0.209] to +0.046 [-0.028, +0.124]** and stops clearing zero. The audit measured a model, and part of what it measured was a filing cabinet.
+
+**✏️ Your turn 4.** Point the same two-group audit at any column of the Portuguese file. `sex` is the working default and it produces a gap nobody went looking for: a false negative gap of **+0.219, [+0.053, +0.378]**. `higher` splits 375 against 20 and the 20 contribute 7 students who passed, which is what a fragile rate looks like. Three of the offered columns are model inputs, and the cell says so in its heading when you pick one.
+
+**💬 Why the course runs the audit twice.** The synthesis: one replication, one failure to replicate, and one metric that was clean in both settings on models that miss most of the students they are looking for. A single-setting fairness result is a hypothesis, and the next thing anyone should do with it is take the recipe somewhere else. The section closes with a one-paragraph coda pointing at week 5, where the same audit is run on **human raters** rather than a model, using PERSUADE 2.0. You cannot rerun a rater with a different seed.
+
+**💬 Reflection.** Seven prompts tied to this week's readings and to both datasets. Bring your answers to the 5:00 discussion block.
 
 ## What this connects to in the readings
 
@@ -130,7 +168,7 @@ So the audit does not settle it. Section 8 does, because the generator hands bac
 - **Holstein and Doroudi (2022)**, *Equity and artificial intelligence in education*: what a narrow fairness metric can and cannot see. Section 4 is the concrete version: three fairness numbers, three different answers, about the same predictions.
 - **Lee and Gargroetzi (2023)**, *"It's like a double-edged sword": Mentor perspectives on ethics and responsibility in a learning analytics-supported virtual mentoring program*: what it feels like on the receiving end of a flag, for the mentor as well as for the student.
 - **Borchers, Liu, Lee, and Zhang (2024)**, *Ethical AIED and AIED ethics*: where in a workflow like this one an ethical framework would actually have to intervene.
-- **Kuzilek, Hlosta, and Zdrahal (2017)**, *Open University Learning Analytics dataset*: not on the reading list, but worth skimming. It is the paper that made today's session possible, and reflection prompt 5 asks what you would require of anyone who downloaded a dataset like it from your own institution.
+- **Kuzilek, Hlosta, and Zdrahal (2017)**, *Open University Learning Analytics dataset*, and **Cortez and Silva (2008)**, *Using data mining to predict secondary school student performance*: neither is on the reading list, and both are worth skimming. They are the papers that made today's session possible, and reflection prompt 5 asks what you would require of anyone who downloaded a dataset like either of them from your own institution.
 
 ## Stretch goals
 
@@ -143,22 +181,26 @@ For students who finish early or who arrive with programming experience:
 5. **Calibration, not just error rates.** Bin the predicted probabilities and compare predicted against observed non-completion rates separately for each decile. A model can have equal calibration and unequal error rates at the same time, and the fact that the two cannot generally both hold is a well-known impossibility result worth reading about. Section 4 is that result showing up in a real table.
 6. **Split the label.** `did_not_pass` merges Fail and Withdrawn. Build two models, one for each, and compare which enrollments each one finds. If they disagree, the single label was hiding two different phenomena and one intervention was never going to serve both.
 7. **Use the resource catalogue.** `vle.csv` says what kind of thing each `id_site` is: forum, quiz, resource, subpage, and more. Build features from *what* students clicked rather than how much, and audit that model. Does looking at the kind of activity rather than the amount change who gets flagged?
+8. **A third setting.** The same repository holds `student-por.csv`, the Portuguese-language course from the same project, 649 students, many of whom also appear in the mathematics file. Run the Part 2 recipe on it unchanged. Then say what the overlap between the two files does to the phrase "replicated in a third setting," and how you would report it honestly.
+9. **Sweep the threshold in both settings at once.** Section 8 fixed the threshold at 0.50. Sweep it and plot the false alarm gap against the threshold for both settings on one pair of axes, with bootstrap intervals. Does the Portuguese gap survive every threshold, and does the OULAD gap appear at any of them?
+10. **Match the sample sizes.** Much of the difference between the two audits is that one rests on 395 rows and the other on 3,136. Subsample OULAD down to 395, repeatedly, and see how often its false alarm gap would have looked like Portugal's by chance. That is the cleanest available test of whether the two settings really differ or whether one of them is simply better measured.
+11. **Calibration by band, in both settings.** Bin the predicted probabilities and compare predicted against observed rates inside each education band, in Portugal and in OULAD. Equal calibration and equal error rates cannot generally both hold when base rates differ, and here they differ by 11 and 17 points.
 
 ## Troubleshooting
 
-**"Could not download the OULAD files."** The first cell prints a message naming the repository and three likely causes. In order of likelihood: this machine is offline or the campus network is blocking `raw.githubusercontent.com`; GitHub is briefly unhappy, so wait a minute and run the cell again; or you are on a restricted network, in which case open the notebook in Google Colab instead.
+**"Could not download the OULAD files."** or **"Could not download the second dataset."** Both download cells print a message naming `github.com/HakeoungLee/edis8100-datasets` and three likely causes, instead of a traceback. In order of likelihood: this machine is offline or the campus network is blocking `raw.githubusercontent.com`; GitHub is briefly unhappy, so wait a minute and run the cell again; or you are on a restricted network, in which case open the notebook in Google Colab instead. The Part 2 cell is a separate download, so it can fail on its own even if Part 1 worked half an hour earlier.
 
 **"NameError: name 'data' is not defined" or something similar.** You ran a cell out of order, or the download cell failed and you carried on anyway. Use `Runtime > Restart and run all` in Colab, or `Kernel > Restart & Run All` in Jupyter. This fixes the large majority of problems.
 
-**"FileNotFoundError: data/students.csv".** That is the Part 2 synthetic data. Scroll up to the collapsed generator cell in Part 2, run it, then continue. It only affects Part 2; Part 1 needs no local files at all.
+**The Portuguese file loaded as one enormous column.** You changed `sep=";"` or copied the read into a new cell without it. That file is semicolon delimited, and pandas does not warn you: it hands back a single column of 33 things glued together and no error at all. It is worth doing once on purpose so you recognise the shape of the mistake.
 
-**The generator cell looks terrifying.** It is supposed to be ignored. Click the arrow at its left edge to collapse it. It is only in the notebook so that Part 2 works with no downloads and no accounts.
+**Section 8 takes about twenty seconds.** That is correct. It fits the model 200 times under one protocol and 5,000 times under the other. The wait is the argument of the section.
 
 **My charts do not appear.** Make sure you ran the first code cell, which contains `%matplotlib inline`. If they still do not appear, restart and run all.
 
 **Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
 
-**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all. The download is a fixed snapshot and the models are seeded, so a clean run reproduces the same numbers every time.
+**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all. Both downloads are fixed snapshots, every fold sequence is seeded, and every bootstrap function carries its own generator so that running a cell twice or out of order cannot change the interval it prints. A clean run reproduces the same numbers every time.
 
 **I got a different answer than my neighbor.** Compare feature lists first, then thresholds. That is almost always the difference, and noticing it is the point of the session.
 
@@ -174,4 +216,8 @@ Building the habit this week, when nothing is being graded, is much easier than 
 
 EDIS 8100: Teaching and Learning Analytics · Fall 2026 · Dr. Hakeoung Hannah Lee · University of Virginia School of Education and Human Development
 
-OULAD is used under CC BY 4.0. Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data, 4*, 170171.
+Both datasets are used under CC BY 4.0, with attribution and no modification to the published files.
+
+Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data, 4*, 170171.
+
+Cortez, P., & Silva, A. (2008). Using data mining to predict secondary school student performance. In *Proceedings of 5th FUture BUsiness TEchnology Conference*, 5-12.
