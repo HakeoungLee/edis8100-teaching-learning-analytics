@@ -12,7 +12,7 @@ A study proposal you would actually want to keep, built one milestone at a time 
 | **Format** | Microsoft Word, double spaced, 11 or 12 point font, 1 inch margins, APA 7 |
 | **Milestones** | Week 9 outline, week 10 literature review, week 11 rough draft, week 12 peer review, week 13 presentation, week 14 final draft |
 | **Individually or in pairs** | Either. If you want to work with a peer, talk to the instructor in advance so expectations can be adjusted. |
-| **AI documentation** | Required with every milestone submission, in the Canvas "AI Reflection" upload |
+| **AI documentation** | An "AI Reflection" submission accompanies the three written milestones (weeks 9, 10, 11) and the week 14 final draft. Weeks 12 and 13 have no separate upload; that AI use goes into the week 14 one |
 | **Due dates** | Every milestone is due on the date and time posted in Canvas. This page gives the week, Canvas gives the clock. |
 
 ## What this project is
@@ -34,7 +34,7 @@ A strong submission demonstrates all of the following, which are the syllabus ex
 
 ## 📅 The milestone calendar
 
-Each milestone is graded as part of the project and each one is designed so that the next one is easier. Nothing here is a separate assignment bolted on. The outline becomes the draft, the draft becomes the final, and the peer review week exists so that you find the problems before the instructor does.
+Each milestone is designed so that the next one is easier. Four of the six feed the 30 percent project grade (the outline, the literature review, the rough draft, and the final draft); the week 12 peer review packet is checked for completeness and specificity and counts toward participation; and the week 13 presentation carries its own 10 percent. Nothing here is a separate assignment bolted on. The outline becomes the draft, the draft becomes the final, and the peer review week exists so that you find the problems before the instructor does.
 
 | Milestone | Week | Class date | What you submit | Where the guidance lives |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@ Each milestone is graded as part of the project and each one is designed so that
 | **Final presentation** | 13 | 12/2 | Fifteen minutes: 12 minutes of talk plus 3 for questions. Worth 10 percent of the course grade on its own. | [`final_presentation_rubric.md`](final_presentation_rubric.md) in this folder, and `Week 13 Presentation Guidelines and Rubric` on Canvas |
 | **Final draft** | 14 | finals week, no class | The complete proposal, minimum 20 pages, with appendices. | [`final_submission_checklist.md`](final_submission_checklist.md) in this folder, and `Week 14 Final Submission Checklist` on Canvas |
 
-Every milestone submission includes your **AI interaction log** in the Canvas "AI Reflection" upload. That is course policy, it applies to reading and drafting as well as to code, and it applies across every tool and every session you used.
+Four of these six milestones carry an **AI Reflection** submission on Canvas: the week 9 outline, the week 10 literature review, the week 11 rough draft, and the week 14 final draft. Weeks 12 and 13 do not have one of their own, so AI use connected to the peer review or to the presentation is saved and included in the week 14 submission. The requirement applies to reading and drafting as well as to code, and across every tool and every session you used.
 
 The instructor's Course Weekly Materials folder holds the full handout for each milestone, and each one is posted to the Canvas module for its week. This folder mirrors the four handouts that are most useful to have open while you work. Where the two ever disagree, the Canvas handout is the one that counts.
 
@@ -60,8 +60,8 @@ These come from the syllabus and they are checked.
 - **APA 7 throughout**: heading levels, in-text citations, reference list formatting. The Purdue OWL is the fastest reference when you are unsure.
 - **Appendices**, which do not count toward the page minimum, should include:
   - **Code**, if you wrote any. Notebooks from this course count. Include what you ran, not a screenshot of it.
-  - **AI interactions**, the full exchange, per the course AI policy.
   - Any additional figures or tables that support but do not belong in the main text.
+  - **Optionally, your AI interactions.** The syllabus permits the full exchange to be carried here. It is welcome and it does not replace the Canvas AI Reflection submission, which is required either way.
 - **Copyedited.** Read it out loud before you submit. See the checklist.
 
 ## 🧭 How the project is graded
@@ -99,11 +99,13 @@ You will be inside this topic from week 9 through finals week, and if it goes we
 
 ## 🤖 A reminder about documenting AI use
 
-Every milestone in this project requires an AI interaction log, uploaded to the Canvas "AI Reflection" submission for that week. The requirement covers all AI use connected to the work, not only code: understanding a reading, brainstorming a research question, drafting a paragraph, tightening prose. If you used ChatGPT to make sense of a reading and a different tool to draft a summary, both conversations go in.
+The three written milestones (weeks 9, 10, 11) and the week 14 final draft each carry an AI Reflection submission on Canvas. The requirement covers all AI use connected to the work, not only code: understanding a reading, brainstorming a research question, drafting a paragraph, tightening prose. If you used ChatGPT to make sense of a reading and a different tool to draft a summary, both conversations go in. Weeks 12 and 13 have no separate upload, so save those exchanges and carry them into week 14.
+
+Each submission has two parts in two places: the **conversation record in an attached Word file**, and the **four reflection questions from the syllabus answered in the Canvas text box** (how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI you would pass on to a friend or the class). Do not reverse them.
 
 The instructor is explicit that this is not a judgment of how much you used AI. Evaluation is based on the rubric and on the quality of the final product. Extensive use will not lower your score. Undisclosed use is an Honor Code violation, which is a different matter entirely.
 
-The final draft carries the whole record in an appendix. Saving exchanges as you go is much easier than reconstructing four months of them in finals week.
+The syllabus also permits, but does not require, a copy of the full exchange as an appendix in the final draft. An appendix copy is welcome and never replaces the Canvas AI Reflection submission, which is required either way. Saving exchanges as you go is much easier than reconstructing four months of them in finals week.
 
 ---
 

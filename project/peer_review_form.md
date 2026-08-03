@@ -147,7 +147,7 @@ There are six of you, so everyone gets a five-minute slot and nobody has to deci
 
 ## 🤖 A reminder about documenting AI use
 
-If you used an AI assistant to help you read a peer's draft, to organize your feedback, or to work through your own revision plan, that exchange goes in your Canvas "AI Reflection" upload for week 12 like any other. The policy covers reading and thinking, not only code.
+There is no separate AI Reflection submission for week 12. If you used an AI assistant to help you read a peer's draft, to organize your feedback, or to work through your own revision plan, that exchange still has to be documented: keep it, and include it in the AI Reflection submission you upload with your week 14 final draft, along with everything else connected to the project. The policy covers reading and thinking, not only code.
 
 One caution specific to this week: your peers' drafts are their unpublished work. Do not paste a classmate's draft into an AI tool. Comment on it yourself.
 

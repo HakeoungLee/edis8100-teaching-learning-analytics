@@ -9,7 +9,7 @@ Finding out how far a column in a CSV is from a thing that matters, using record
 | **Session** | Wednesday, September 2, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Mapping the Learning Analytics Landscape and Theoretical Lenses |
 | **Guest speaker** | None. Dr. Lee leads the discussion this week so that you can watch the facilitation moves you will be using from Week 3 onward. |
-| **In-class time on this notebook** | About 35 minutes, in the hands-on block (4:35 to 5:10). The core path is built to fit that window; Section 7b is the designated cut if it does not. |
+| **In-class time on this notebook** | 25 minutes, in the hands-on block (4:35 to 5:00). The core path runs about 35 minutes, so treat the studio as a launch and finish the last stretch at home. Section 7b is the designated cut if the room is short. |
 | **Deliverable** | None. Week 2 is in-class work only. |
 | **Due date** | Not applicable. The first Canvas deliverable is Mini Project 1 in Week 4. |
 | **Notebook** | `week02_exploring_learning_data.ipynb` |
@@ -20,9 +20,9 @@ Finding out how far a column in a CSV is from a thing that matters, using record
 
 ## Something changed this week
 
-Week 1 ran on invented students. From Week 2 the data is real: enrollment records and daily click counts from a UK distance-teaching university, describing people who actually studied, some of whom passed and many of whom left.
+Week 1 was one flat file of 395 students in two Portuguese schools, and you could read a row out loud as a sentence. This week is an institutional export: six files, 922,449 rows, enrollment records and daily click counts from a UK distance-teaching university, describing people who actually studied, some of whom passed and many of whom left. Both are real. What changes is the scale and the raggedness.
 
-That switch is the point, not a convenience. Students in this seminar should know where real data comes from, what it cost somebody to publish it, and that real data does not arrange itself into a clean lesson. Section 2 of the notebook is built entirely around what an institutional export looks like when it arrives.
+That switch is the point, not a convenience. Students in this seminar should know what an institutional export looks like when it arrives, what it cost somebody to publish it, and that real data does not arrange itself into a clean lesson. Section 2 of the notebook is built entirely around that.
 
 ## Objectives
 
@@ -35,7 +35,7 @@ By the end of this activity you will be able to:
 
 The through-line of the session: **the claim ladder is a Week 2 idea and the whole semester leans on it.** A feature is arithmetic and free. An indicator is a feature you have argued stands in for something educational, and that argument is the work. A construct is the thing you actually care about, and no column contains it. Week 3 audits a model built on features that were promoted to indicators without an argument. Week 6 asks which sensor deserves the word "participation." Week 7 asks whether a loop rate reaches self-regulation. Every one of those weeks points back here, so it is worth being able to say the three rungs from memory.
 
-Real data adds a rung below the ladder that synthetic data hid: before a number is even a feature, somebody decided it existed. The notebook names that rung explicitly.
+An institutional export adds a rung below the ladder: before a number is even a feature, somebody decided to record it, in a format somebody chose, for a purpose that was not research. The notebook names that rung explicitly.
 
 ## What is in this folder
 
@@ -67,7 +67,7 @@ You do not need to clone anything, download a CSV, or create an account. The fir
 | `studentRegistration.csv` | 4,529 | one enrollment: when they registered, when they left |
 | `vle.csv` | 528 | one resource in the course website |
 
-**The stance we take.** In Week 1 the data were invented precisely so that nobody could be harmed by our practice. This data is real. The people in it studied a real module, and none of them are in the room to correct you. The ask is the same one as Week 1, only sharper: say who could be harmed by a claim before you make it.
+**The stance we take.** The people in this file studied a real module, and none of them are in the room to correct you. The ask is the same one as Week 1, and it gets sharper each week as the files get larger and the people in them get further away: say who could be harmed by a claim before you make it, and say what was measured rather than what a person is.
 
 ## How to open this in Colab
 
@@ -94,7 +94,7 @@ You can also run the notebook locally with Jupyter if you prefer. It needs panda
 
 ## Step-by-step walkthrough
 
-The core path is about 35 minutes if you keep moving, which is the 4:35 to 5:10 block. The per-section estimates below sum to more than that on purpose: they assume you stop and argue at every 💬 prompt, and the arguing continues in the 5:10 discussion block. If the room is running behind, **Section 7b is the one to read aloud rather than run**, because it is the only section whose numbers are all printed in the walkthrough above. The three ✏️ **Your turn** cells already contain working values, so the notebook runs start to finish without you typing anything. The reading is the work. The code is short.
+The core path is about 35 minutes if you keep moving, and the studio block is 4:35 to 5:00, so the last stretch is yours to finish at home. The per-section estimates below sum to more than 35 minutes on purpose: they assume you stop and argue at every 💬 prompt, and the arguing continues in the 5:10 discussion block. If the room is running behind, **Section 7b is the one to read aloud rather than run**, because it is the only section whose numbers are all printed in the walkthrough above. The three ✏️ **Your turn** cells already contain working values, so the notebook runs start to finish without you typing anything. The reading is the work. The code is short.
 
 **⚙️ Setup (1 minute).** Run the first code cell. It downloads six files and prints a table of what arrived: 922,449 rows in total, module BBB, presentations 2013J and 2014J. Read the "Where this data came from" cell above it before you run anything. You should never analyze data whose origin you cannot state.
 
@@ -183,7 +183,12 @@ For students who finish early or who arrive with programming experience:
 
 There is nothing to upload for Week 2. Even so, if you used an AI assistant while working through this notebook, to explain what `groupby` does, to check your reading of the scatterplot, or to help you draft a reflection, save that exchange now.
 
-Starting with Mini Project 1 in Week 4, the course AI policy requires you to upload your **AI interaction log plus a short reflection** alongside your notebook, in the Canvas "AI Reflection" submission. AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation.
+Starting with Mini Project 1 in Week 4, the course AI policy requires an **AI Reflection** submission on Canvas alongside your notebook, and it has two parts that go in two different places on that page:
+
+- **The conversation record goes in a Word file, attached to the submission.** The full exchange, across every tool and every session, pasted in. Not a summary, and not into the text box.
+- **The reflection goes in the Canvas text box.** Copy in the four questions from the syllabus and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI you would pass on to a friend or the class.
+
+AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation.
 
 Building the habit this week, when nothing is being graded, is much easier than starting it under a deadline.
 

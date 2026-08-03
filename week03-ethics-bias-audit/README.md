@@ -208,7 +208,12 @@ For students who finish early or who arrive with programming experience:
 
 There is nothing to upload for week 3. Even so, if you used an AI assistant while working through this notebook, to explain a line of code, to check your reading of a chart, or to help you draft a reflection, save that exchange now.
 
-Starting with Mini Project 1 in week 4, the course AI policy requires you to upload your **AI interaction log plus a short reflection** alongside your notebook, in the Canvas "AI Reflection" submission. AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation.
+Starting with Mini Project 1 in week 4, the course AI policy requires an **AI Reflection** submission on Canvas alongside your notebook, and it has two parts that go in two different places on that page:
+
+- **The conversation record goes in a Word file, attached to the submission.** The full exchange, across every tool and every session, pasted in. Not a summary, and not into the text box.
+- **The reflection goes in the Canvas text box.** Copy in the four questions from the syllabus and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI you would pass on to a friend or the class.
+
+AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation.
 
 Building the habit this week, when nothing is being graded, is much easier than starting it under a deadline.
 

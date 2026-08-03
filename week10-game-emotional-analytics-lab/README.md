@@ -28,7 +28,7 @@ This is the **only week that uses the Field Day data**, and the only week whose 
 | **Who is in it** | Children. Of the 6,092 player-months that answered the in-game age item, 86.5 percent said they were 15 or younger and the largest single group said 12 to 13; 79.4 percent of those who answered said they were playing at school |
 | **When** | Ten monthly AQUALAB extracts, September 2025 through June 2026, plus a set of individual WAVES sessions |
 | **Licence** | **CC0 1.0 Universal**, the Creative Commons public domain dedication. No rights reserved, no permission needed, no attribution legally required |
-| **Citation** | Gagnon, D., and Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In *Serious Games* (pp. 1-23). Springer. https://doi.org/10.1007/978-3-031-44751-8_1 |
+| **Citation** | For the data, the form Field Day's own per-game readme asks for: Field Day. (2019). *Open educational game play logs: AQUALAB and WAVES* [Data set]. Field Day Lab, University of Wisconsin-Madison. Retrieved from https://opengamedata.fielddaylab.wisc.edu <br> For the infrastructure, the paper the site names: Gagnon, D., & Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In M. Haahr, A. Rojas-Salazar, & S. Göbel (Eds.), *Serious Games. JCSG 2023* (Lecture Notes in Computer Science, Vol. 14309, pp. 3-19). Springer. https://doi.org/10.1007/978-3-031-44751-8_1 |
 | **Source** | Field Day Lab, University of Wisconsin-Madison. https://opengamedata.fielddaylab.wisc.edu |
 | **This extract** | Course-sized subsets, redistributed unchanged, at github.com/HakeoungLee/edis8100-datasets |
 
@@ -55,7 +55,6 @@ The second through-line, and the reason this week matters beyond method: **the l
 |---|---|
 | `week10_game_emotional_analytics_lab.ipynb` | The notebook. It downloads its three data files from the course dataset repository on first run and writes nothing to your machine. |
 | `README.md` | This file. |
-| `data/` | Not used any more. If it exists on your machine it holds leftovers from an earlier synthetic version of this lab, it is git-ignored, and it is safe to delete. The notebook reads directly from the dataset repository. |
 
 Nothing to clone and no CSV to fetch by hand. The first code cell reads three compressed files over the internet, a few megabytes in total, in a couple of seconds. If the download fails it prints a plain sentence naming `github.com/HakeoungLee/edis8100-datasets` rather than a wall of red text.
 
@@ -100,7 +99,7 @@ Three exclusions follow, each with its own line in a costs table, and one consis
 
 The headline arrives anyway and it is large. Children who argued more than ten times completed **32.76** jobs against **17.96**, gap **+14.81** [+12.24, +17.24], from a cluster bootstrap over the 508 codenames rather than the 617 rows. `priorcomplete` then splits that gap in time: only **+3.52** [+1.12, +5.90] was banked before the job, and **+11.29** [+9.67, +12.91] came after.
 
-Then the boring question that dissolves it. **67.1 percent** of the persisting group attempted another job afterwards; **3.1 percent** of the others did. The rank correlation between tries and jobs-completed-afterwards is +0.654, and between tries and record-continues-at-all it is +0.649, because those are nearly the same variable. Among the **210** player-months that demonstrably kept playing, the correlation is **-0.007** and the four try-quartiles average 17.22, 17.75, 16.81, and 18.55 jobs afterwards. Flat.
+Then the boring question that dissolves it, asked precisely. **67.1 percent** of the persisting group completed at least one further job that month; **3.1 percent** of the others did. The rank correlation between tries and jobs-completed-afterwards is +0.654, and between tries and that flag it is +0.649, because they are nearly the same variable: they agree on 607 of the 617 rows. The notebook says so out loud rather than calling the flag "was the child still there", and then measures the limit: **64 percent** of the player-months the flag calls "no further completion" took other jobs at the same completion depth, so they attempted more and finished nothing more, and with no timestamps on job rows nothing can order them. The panel is a decomposition of the outcome, not an independent check on who was in the room. Among the **210** player-months that completed at least one more job, the correlation is **-0.007** and the four try-quartiles average 17.22, 17.75, 16.81, and 18.55 jobs afterwards. Flat.
 
 The section states the honest conclusion in full, including that the two-group comparison inside the still-playing subset has only 10 player-months on one side and therefore cannot rule out a modest effect. The interpretation prompt puts the instrument, the setting, and the circumstances on the table before the child, by name and in that order.
 
@@ -188,4 +187,6 @@ EDIS 8100: Teaching and Learning Analytics · Fall 2026 · Dr. Hakeoung Hannah L
 
 The data in this activity are real play logs from AQUALAB (*Wake: Tales from the Aqualab*) and WAVES (*Wave Combinator*), collected and released into the public domain under CC0 1.0 by Field Day Lab at the Wisconsin Center for Educational Research, University of Wisconsin-Madison. https://opengamedata.fielddaylab.wisc.edu
 
-Gagnon, D., and Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In *Serious Games* (pp. 1-23). Springer. https://doi.org/10.1007/978-3-031-44751-8_1
+Field Day. (2019). *Open educational game play logs: AQUALAB and WAVES* [Data set]. Field Day Lab, University of Wisconsin-Madison. Retrieved from https://opengamedata.fielddaylab.wisc.edu
+
+Gagnon, D., & Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In M. Haahr, A. Rojas-Salazar, & S. Göbel (Eds.), *Serious Games. JCSG 2023* (Lecture Notes in Computer Science, Vol. 14309, pp. 3-19). Springer. https://doi.org/10.1007/978-3-031-44751-8_1

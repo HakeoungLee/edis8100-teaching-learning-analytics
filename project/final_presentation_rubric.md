@@ -80,7 +80,7 @@ A workable shape, with times. Adjust the proportions to your project, but keep t
 
 ## 🤖 A reminder about documenting AI use
 
-If you used an AI assistant to plan the talk, tighten a slide headline, rehearse likely questions, or draft speaker notes, include that exchange in your Canvas "AI Reflection" upload for the presentation, and carry it forward into the appendix of the final draft. The policy covers the whole record of AI use connected to your work, not only code, and not only writing that ends up in the paper.
+There is no separate AI Reflection submission for week 13. If you used an AI assistant to plan the talk, tighten a slide headline, rehearse likely questions, or draft speaker notes, save the exchange and include it in the AI Reflection submission you upload with your week 14 final draft. The policy covers the whole record of AI use connected to your work, not only code, and not only writing that ends up in the paper.
 
 ---
 

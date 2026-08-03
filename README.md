@@ -4,9 +4,9 @@
 
 Wednesdays, 3:30 to 6:00 PM, Ridley 137. Department of Curriculum, Instruction, and Special Education.
 
-This repository holds the hands-on half of the seminar: eleven notebooks, one for each of weeks 1 through 11, that take the ideas from the readings and put them in your hands. You will train a model that predicts who does not complete a course and then audit it, build a teacher dashboard and then argue with it, read a forum as text and as a network, watch a group's talk time and a group's product move together, and follow two hundred middle schoolers through a fractions game. The notebooks are the place where the seminar's claims stop being claims and start being things you can check.
+This repository holds the hands-on half of the seminar: eleven notebooks, one for each of weeks 1 through 11, that take the ideas from the readings and put them in your hands. You will train a model that predicts who does not complete a course and then audit it in two countries, build a teacher dashboard and then argue with it, read a MOOC forum as a network, put a microphone and an event log side by side on the same twenty children, and follow children through two science games that disagree with each other. The notebooks are the place where the seminar's claims stop being claims and start being things you can check.
 
-If you have never written a line of code, you are exactly who this repository was designed for. Every notebook runs top to bottom without you typing anything, builds its own data inside your browser, and asks you to change small clearly marked values rather than to write code from scratch. Nothing here can break your computer, your grade, or the course data.
+If you have never written a line of code, you are exactly who this repository was designed for. Every notebook runs top to bottom without you typing anything, downloads its own published dataset over the internet, and asks you to change small clearly marked values rather than to write code from scratch. Nothing here can break your computer, your grade, or the course data.
 
 ## 🚀 Quickstart for students (three steps)
 
@@ -31,7 +31,7 @@ After the authorization above, either use **File > Open notebook > GitHub** and 
 
 ### Step 3. Run it, then save your own copy
 
-Click into the first cell and press **Shift + Enter**. That runs the cell and moves you to the next one. Keep going, top to bottom, reading the text between the code cells as you go. The first cell takes a second or two because it is building the datasets. Everything after that is close to instant.
+Click into the first cell and press **Shift + Enter**. That runs the cell and moves you to the next one. Keep going, top to bottom, reading the text between the code cells as you go. The first cell takes a second or two because it is downloading this week's dataset. Everything after that is close to instant.
 
 Before you start changing anything you want to keep, choose **File > Save a copy in Drive**. That copy is yours. Nothing you do to it can affect the course repository or anybody else's work.
 
@@ -41,16 +41,15 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 
 | Week | Date | Topic | Folder | Notebook activity | Deliverable |
 |---|---|---|---|---|---|
-| 1 | 8/26 | Course Introduction and Planning | [`week01-hello-analytics`](week01-hello-analytics/) | Meet Colab, read two tables, make three charts | Discussion leader sign-ups |
-| 2 | 9/2 | Mapping the LA Landscape and Theoretical Lenses | [`week02-exploring-learning-data`](week02-exploring-learning-data/) | Merge real clickstream with grades, ask what activity buys you | None |
+| 1 | 8/26 | Course Introduction and Planning | [`week01-hello-analytics`](week01-hello-analytics/) | Meet Colab, read one real table, find what the summary was hiding | Discussion leader sign-ups |
 | 3 | 9/9 | Responsible and Human-Centered LA | [`week03-ethics-bias-audit`](week03-ethics-bias-audit/) | Predict non-completion, then audit whose errors the model makes | None |
 | 4 | 9/16 | Teacher and Student Facing LA and Dashboards | [`week04-miniproject1-dashboards`](week04-miniproject1-dashboards/) | Build a teacher dashboard, then critique it | Mini Project 1 plus AI interactions |
 | 5 | 9/23 | Text-Based Analytics and NLP | [`week05-miniproject2-text-nlp`](week05-miniproject2-text-nlp/) | Student essays: frequencies, topics, and human-annotated discourse moves | Mini Project 2 plus AI interactions |
-| 6 | 9/30 | Multimodal Learning Analytics | [`week06-miniproject3-multimodal`](week06-miniproject3-multimodal/) | Participation across speech, chat, gaze, and documents | Mini Project 3 plus AI interactions; mid-semester check-in |
-| 7 | 10/7 | LA for Self-Regulated Learning | [`week07-srl-traces-lab`](week07-srl-traces-lab/) | Find regulation loops and rapid hint runs in tutor action sequences | None |
+| 6 | 9/30 | Multimodal Learning Analytics | [`week06-miniproject3-multimodal`](week06-miniproject3-multimodal/) | Two ledgers of the same session: speech against interface actions | Mini Project 3 plus AI interactions; mid-semester check-in |
+| 7 | 10/7 | LA for Self-Regulated Learning | [`week07-srl-traces-lab`](week07-srl-traces-lab/) | Sessions, order, and dwell in 1.9 million tutor actions, and two logging artifacts | None |
 | 8 | 10/21 | Networks and Temporal LA | [`week08-miniproject4-networks-temporal`](week08-miniproject4-networks-temporal/) | Forum reply network, survival, prediction horizon, and submission timing | Mini Project 4 plus AI interactions |
-| 9 | 10/28 | LA for Collaboration | [`week09-collaboration-analytics-lab`](week09-collaboration-analytics-lab/) | Turn taking, response latency, and what a dashboard should not show | Project outline plus AI interactions |
-| 10 | 11/4 | Game and Emotional LA | [`week10-game-emotional-analytics-lab`](week10-game-emotional-analytics-lab/) | FractionQuest learning curves and emotion streams | Literature review plus AI interactions |
+| 9 | 10/28 | LA for Collaboration | [`week09-collaboration-analytics-lab`](week09-collaboration-analytics-lab/) | Unevenness against its chance floor, a clock that cannot support latency, and what a dashboard should refuse to show | Project outline plus AI interactions |
+| 10 | 11/4 | Game and Emotional LA | [`week10-game-emotional-analytics-lab`](week10-game-emotional-analytics-lab/) | Persistence at a difficulty spike in two games, and an in-game affect item | Literature review plus AI interactions |
 | 11 | 11/11 | Designing and Co-Designing LA Systems | [`week11-codesign-studio`](week11-codesign-studio/) | Persona-driven dashboard sketching and critique | Rough draft plus AI interactions |
 | 12 | 11/18 | Project Day: Peer Review and Instructor Feedback | [`project/`](project/) | No notebook. Two rounds of structured peer review | Peer review |
 | 13 | 12/2 | Final Presentations | [`project/`](project/) | No notebook. Fifteen minutes each, 12 talk plus 3 questions | Final presentation |
@@ -102,25 +101,9 @@ edis8100-teaching-learning-analytics/
 ├── README.md                       you are here
 ├── LICENSE                         MIT for code, CC BY-NC 4.0 for course materials
 ├── requirements.txt                only needed if you run notebooks locally
-├── data/
-│   ├── README.md                   the data dictionary and the ethics note. Read this one.
-│   ├── generate_all_data.py        one seeded generator, eleven CSVs, about one second
-│   ├── verify_phenomena.py         statistical checks that the data still behave
-│   ├── students.csv                the EDUC 1010 roster
-│   ├── lms_clickstream.csv         41,117 LMS events
-│   ├── gradebook.csv               1,080 scores
-│   ├── forum_posts.csv             1,456 posts
-│   ├── group_chat.csv              6,379 studio backchannel messages
-│   ├── mmla_studio.csv             960 student-by-session multimodal rows
-│   ├── studio_artifacts.csv        192 group products
-│   ├── srl_traces.csv              30,150 tutor actions
-│   ├── game_players.csv            200 FractionQuest players with pre and post scores
-│   ├── game_telemetry.csv          1,428 level attempts
-│   └── game_emotion.csv            2,175 in-game emotion pings
 ├── week01-hello-analytics/
 │   ├── README.md                   at a glance, walkthrough, stretch goals, troubleshooting
-│   ├── week01_hello_learning_analytics.ipynb
-│   └── data/                       built by the notebook when you run it, not stored in git
+│   └── week01_hello_learning_analytics.ipynb
 ├── week02-exploring-learning-data/
 ├── week03-ethics-bias-audit/
 ├── week04-miniproject1-dashboards/
@@ -130,78 +113,84 @@ edis8100-teaching-learning-analytics/
 ├── week08-miniproject4-networks-temporal/
 ├── week09-collaboration-analytics-lab/
 ├── week10-game-emotional-analytics-lab/
-├── week11-codesign-studio/
-│                                   each week folder holds one notebook, one README,
-│                                   and a data/ folder the notebook creates for itself
-└── project/
-    ├── README.md                   the Course Research Project guide
-    ├── proposal_outline_template.md
-    ├── peer_review_form.md
-    ├── final_presentation_rubric.md
-    └── final_submission_checklist.md
+├── week11-codesign-studio/          each week folder has the same two files
+└── project/                        research project guide, outline template,
+                                    peer review form, presentation rubric, checklist
 ```
 
-Nothing needs to be cloned, uploaded, or authorized. The synthetic weeks carry their own generator inside the notebook, and the real-data weeks pull their files over plain HTTPS from a public companion repository.
+No data file needs to be cloned, uploaded, or authorized. Every notebook pulls its own files over plain HTTPS from a public companion repository, with no account and no password. The one authorization in this course is Step 1 above, which is about opening the *notebooks* in this private repository, and it is a one-time step.
 
 ## 🌍 The data
 
-This course uses two real published datasets and one invented world, and which one you are holding matters, so every notebook says so before it does anything else.
+**Every lab in every week runs on real, published, openly licensed data. There is no synthetic data anywhere in this course.** Nine sources carry the semester under four licenses, each one collected by somebody else for their own reasons and released so that people outside the institution could work on it. Every notebook states its origin, its licence, and its citation before it loads a single row, because you should never analyze data whose origin you cannot state.
 
-### The real data
+| Source | Weeks | What one row is | Licence |
+|---|---|---|---|
+| **UCI Student Performance** (mathematics file), 395 Portuguese secondary students, 2005-06 | 1, and the second setting of 3 | one student | CC BY 4.0 |
+| **OULAD**, UK Open University, module BBB, presentations 2013J and 2014J: 4,529 enrollments, 891,062 daily click rows, 21,783 submissions, with an area-level deprivation decile | 2, 3, 4, and the temporal half of 8 | one enrollment, or one student-resource-day | CC BY 4.0 |
+| **PERSUADE 2.0**, a four-prompt subset: 5,531 argumentative essays by United States students in grades 8 to 12, 63,211 human-marked spans, each rated for effectiveness | 5 | one essay, or one annotated span | CC BY-NC-SA 4.0, non-commercial only |
+| **JUSThink Dialogue and Actions Corpus** and **PE-HRI / PE-HRI-temporal**, CHILI lab at EPFL: 78 children aged 9 to 12, in 39 pairs, working with a robot | 6, and the second setting of 9 | one child, one team, or one 10-second window | CC BY 4.0 |
+| **EdNet KT3**, a 500-user extract of the Santa TOEIC tutor in South Korea: 1,893,105 timestamped interface events | 7 | one interface event | CC BY-NC 4.0, non-commercial only |
+| **edX discussion forum records** from one run of `UC3Mx IT.1.2x`: 1,478 posts by 311 people, with reply threading | the network half of 8 | one forum act | CC BY 4.0 |
+| **Online collaborative learning chat log**, eight groups of undergraduates in a Spanish computer networks course, February 2021: 1,374 messages | 9 | one message | CC BY 4.0 |
+| **Field Day Lab Open Game Data**: AQUALAB (*Wake: Tales from the Aqualab*) and WAVES (*Wave Combinator*), play logs from children in classrooms | 10 | one player-month, or one session | CC0 1.0 |
+| **Canvas Network Person-Course (1/2014 - 9/2015)**: 325,199 rows across 238 open courses, including what registrants said they intended to do | 11 | one person in one course | CC BY 4.0 |
 
-**OULAD**, the Open University Learning Analytics Dataset. Used in **weeks 2, 3, 4, and the temporal half of week 8**. Virtual learning environment clickstream, assessment submissions, and demographics from the UK Open University, including an area-level deprivation decile. The labs work with module BBB across two presentations, which is 4,529 enrollments, 891,062 daily click rows, and 21,783 submissions. Released **CC BY 4.0**.
+Course-sized extracts of all nine, with their licences and the scripts that rebuild them from the originals, live at **[HakeoungLee/edis8100-datasets](https://github.com/HakeoungLee/edis8100-datasets)**.
 
+Full citations:
+
+> Cortez, P., & Silva, A. (2008). Using data mining to predict secondary school student performance. In *Proceedings of 5th FUture BUsiness TEchnology Conference*, 5-12.
+>
 > Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data*, 4, 170171.
+>
+> Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scale corpus for assessing written argumentation: PERSUADE 2.0. *Assessing Writing*, 61, 100865.
+>
+> Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink Dialogue and Actions Corpus* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4627104
+>
+> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092
+>
+> Nasir, J., Bruno, B., & Dillenbourg, P. (2024). *PE-HRI-temporal* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13834073
+>
+> Choi, Y., Lee, Y., Shin, D., Cho, J., Park, S., Lee, S., Baek, J., Bae, C., Kim, B., & Heo, J. (2020). EdNet: A large-scale hierarchical dataset in education. In *Artificial intelligence in education (AIED 2020)*, LNCS 12164 (pp. 69-73). Springer.
+>
+> Alario-Hoyos, C. (2021). *Dataset MOOC Forum edX* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5115573
+>
+> Villa-Torrano, C. (2021). *Dataset on an online collaborative learning situation in a computer networks course* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5150537
+>
+> Field Day. (2019). *Open educational game play logs: AQUALAB and WAVES* [Data set]. Field Day Lab, University of Wisconsin-Madison. Retrieved from https://opengamedata.fielddaylab.wisc.edu
+>
+> Gagnon, D., & Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In M. Haahr, A. Rojas-Salazar, & S. Göbel (Eds.), *Serious Games. JCSG 2023* (Lecture Notes in Computer Science, Vol. 14309, pp. 3-19). Springer.
+>
+> Canvas Network. (2016). *Canvas Network Person-Course (1/2014 - 9/2015) De-Identified Open Dataset* [Data set]. Harvard Dataverse. https://doi.org/10.7910/DVN/1XORAL
 
-**PERSUADE 2.0**. Used in **week 5**. Argumentative essays written by United States students in grades 6 to 12, with every discourse element annotated by a human and rated for effectiveness, plus writer demographics. The lab works with four prompts, which is 5,531 essays and 63,211 annotated spans. Released **CC BY-NC-SA 4.0, non-commercial use only**.
+### Two weeks use two sources, and the pairing is the argument
 
-> Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scale corpus for assessing written argumentation: PERSUADE 2.0. *Assessing Writing*, 61.
+**Week 3** runs one fairness audit twice, once on OULAD and once on the Portuguese file. Two countries, two school systems, two decades, one recipe held fixed. One finding replicates and turns out to be mostly a base rate, one fails to replicate, and the failure is the more useful of the two.
 
-Course-sized extracts of both, with their licenses and the script that rebuilds them from the originals, live at **[HakeoungLee/edis8100-datasets](https://github.com/HakeoungLee/edis8100-datasets)**.
-
-### The invented world
-
-**EDUC 1010: Learning How to Learn** at the fictional Blue Ridge University. Used in **weeks 1, 6, 7, 9, and 11, the network half of week 8, and as the deliberate contrast case in week 3**. One hundred and twenty students, eight instructional weeks, a Canvas-style LMS, a threaded forum, twenty-four studio groups meeting Thursday afternoons, and an adaptive practice tutor. **FractionQuest**, a middle school fractions game with two hundred players, is used in **week 10**. Every row was generated by `data/generate_all_data.py` with numpy seed 8100.
-
-### Why both, on purpose
-
-The synthetic weeks are not a fallback for the weeks we could not find data for, though that is part of it. Multimodal sensor data, threaded forum networks, and tutor traces with goal-setting actions have no openly licensed equivalent you can download without a data use agreement, and saying so is part of what this course teaches about the field.
-
-The deeper reason is in week 3, where you run the same fairness audit twice. In the synthetic data the mechanism was written down before the data existed, so you can prove where the bias came from. In OULAD you find a real gap, from real students, and its cause is contested and always will be. Verifying a mechanism you already know and arguing about one you cannot see are different skills, and a researcher who has only ever done one of them has a blind spot.
-
-Week 8 makes the same point from the other direction, and only after doing the work that earns it. You build a withdrawal curve from real unregistration dates, watch prediction accuracy climb as the term supplies more evidence, and sort a term's worth of weekly activity into four shapes. Then you test the one thing six weeks of synthetic data taught you to expect, that submitting close to a deadline goes with lower scores, on 15,347 real submissions, and it is not there. The honest closing sentence is not that the effect does not exist. It is that this file showed you a great deal and could not show you this.
+**Week 8** needs a column no single open dataset has. Reply threading survives in a discussion record; term-long withdrawal dates survive in a registry; almost nothing carries both. So the network half runs on the edX forum and the temporal half on OULAD, and the fact that they are two different courses on two continents is itself the week's first lesson about what open data makes possible.
 
 ### The ethics note, which is not boilerplate
 
-Learning analytics runs on data about people who usually did not get to weigh in on being measured. The synthetic data exists so that you can rehearse the judgment without surveilling anyone. The real data exists because at some point the rehearsal has to end.
+Learning analytics runs on data about people who usually did not get to weigh in on being measured. Every person in every file this semester is real. Most of them were students, several of them were children, and none of them were asked whether a doctoral seminar in Virginia should take their records apart in 2026. Anonymisation and an open licence are real protections, and they are not consent.
 
-The people in OULAD and PERSUADE are real. They were students. They consented to being taught, and their records were anonymized and released by researchers who thought the field would learn something. **Treat both datasets as if they were real**, because one of them is. Ask who could be harmed by a claim before you make it. Notice when a metric flattens a person. Notice when your model is confidently wrong about a group.
+So the standing ask, from week 1 to week 11: **ask who could be harmed by a claim before you make it.** Notice when a metric flattens a person. Notice when a model is confidently wrong about a group. And say what was measured rather than what a person is, because the second sentence is not only kinder, it is the one the data supports.
 
-Full documentation of the synthetic universe, including the row-by-row data dictionary, is in [`data/README.md`](data/README.md). For where to find data for your own project, see the course guide *Finding and Evaluating Learning Analytics Data*.
+For where to find data for your own project, see the course guide *Finding and Evaluating Learning Analytics Data*.
 
 ## 🔧 Instructor quickstart
 
 Tested with `/opt/anaconda3/bin/python3` (Python 3.12, numpy 1.26, pandas 2.2). Run everything from the repository root.
 
-**Regenerate the datasets.** One seed, deterministic, about one second. The CSVs land next to the script in `data/`.
-
-```bash
-/opt/anaconda3/bin/python3 data/generate_all_data.py
-```
-
-**Verify the planted phenomena.** This checks correlation magnitudes, the direction and size of the false positive rate gap, cluster and group mean differences, the Gini to artifact relationship, and the pre to post gain comparisons. **All nine must print PASS**, and the script exits nonzero if any single phenomenon has drifted out of the range the notebooks depend on.
-
-```bash
-/opt/anaconda3/bin/python3 data/verify_phenomena.py
-```
-
-**Execute every notebook end to end.** Nothing is committed until it runs clean with zero errors.
+**Execute every notebook end to end.** Nothing is committed until it runs clean with zero errors. Every notebook downloads its own data, so this needs a working internet connection.
 
 ```bash
 for nb in week*/week*.ipynb; do /opt/anaconda3/bin/python3 -m jupyter nbconvert --to notebook --execute --inplace "$nb" || echo "FAILED: $nb"; done
 ```
 
-If you change a generator function in `data/generate_all_data.py`, run the verifier before committing, then update the embedded copy of that function in every notebook that uses it and re-run those notebooks. The embedded copies are what make the notebooks work in Colab with no network access.
+Because every number in the narrative text was computed from a published file rather than from a generator, a re-run cannot change what the notebooks say. If an extract at [HakeoungLee/edis8100-datasets](https://github.com/HakeoungLee/edis8100-datasets) is ever repackaged, re-run everything and re-read the prose against the new output, since the prose quotes the numbers.
+
+**There is no synthetic data in this course.** Every notebook loads a published dataset over the network, and the generator that several weeks once used has been removed. If you want to see it, it is in the git history at commit 3e46d20 and earlier, where the retired notebooks that used it also live.
 
 For local student use rather than Colab, `pip install -r requirements.txt` covers everything. Anaconda already ships all of it.
 
@@ -209,13 +198,15 @@ For local student use rather than Colab, `pip install -r requirements.txt` cover
 
 The code in this repository is released under the **MIT License**. The instructional materials, meaning the notebook narrative text, the READMEs, the project templates, and the rest of the writing, are released under **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. Full text and details in [`LICENSE`](LICENSE).
 
-Course design, notebook design, and the data universe are by Dr. Hakeoung Hannah Lee, School of Education and Human Development, University of Virginia.
+Course design and notebook design are by Dr. Hakeoung Hannah Lee, School of Education and Human Development, University of Virginia. The datasets are other people's work, cited above and in every notebook that uses them.
 
 ## 🤖 A reminder about documenting AI use
 
 AI use is permitted in designated activities in this course and must be documented. Undisclosed use is an Honor Code violation.
 
-Starting with Mini Project 1 in week 4, every mini project submission and every course project milestone includes an **AI Reflection** submission on Canvas, and it has two parts that go in two different places on that page:
+An **AI Reflection** submission on Canvas accompanies each of the four mini projects (weeks 4, 5, 6 and 8) and the three written project milestones (week 9 outline, week 10 literature review, week 11 rough draft), plus the week 14 final draft. That is eight of them, and the syllabus schedule is the list. Weeks 12 and 13 have no separate AI upload: AI use connected to the peer review or to the presentation goes into the week 14 submission with everything else.
+
+Each one has two parts that go in two different places on the page:
 
 - **The conversation record goes in a Word file, attached to the submission.** The full exchange, across every tool and every session, pasted in. Not a summary, and not into the text box.
 - **The reflection goes in the Canvas text box**, where you copy in the four questions from the syllabus and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI you would pass on to a friend or the class.

@@ -293,7 +293,7 @@ Mini Project 4 has two Canvas submissions, and it is worth being precise about w
 1. **The Mini Project 4 assignment**: your completed `.ipynb` file (in Colab, `File > Download > Download .ipynb`), containing your memo and your reflection answers.
 2. **The AI Reflection submission**: this one has two parts, and students routinely reverse them.
    - **The conversation record goes in an attached Word file.** Copy your actual exchanges with the AI assistant into a `.docx` and attach it. Transcripts, prompts, and the responses you got. Not a summary, the record itself.
-   - **The four reflection questions are answered in the Canvas text box**, directly, not in the attachment. What you asked for, what you accepted, what you rejected, and how you verified anything you kept.
+   - **The four reflection questions from the syllabus are answered in the Canvas text box**, directly, not in the attachment. Copy them in and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI from this week you would pass on to a friend or the class.
 
 If you used no AI at all, say so in one line in the text box and attach nothing. That is a complete and acceptable submission.
 
