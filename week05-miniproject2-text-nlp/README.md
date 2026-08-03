@@ -14,7 +14,7 @@ A text analytics pipeline built one honest step at a time on 5,531 real student 
 | **Due date** | This week, via Canvas, by the deadline posted on the Canvas assignment page |
 | **Notebook** | `week05_miniproject2_text_analytics.ipynb` |
 | **Data used** | **PERSUADE 2.0**, a real, published, openly licensed corpus of argumentative essays by United States students. A four-prompt subset: 5,531 essays and 63,211 human-annotated stretches of text, 55,070 of them named as a specific argumentative move. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`. **Not synthetic.** |
-| **License and citation** | CC BY-NC-SA 4.0 (attribution, non-commercial, share-alike). Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scaled corpus for assessing text readability and writing quality: The PERSUADE corpus. *Assessing Writing, 61*, 100849. |
+| **License and citation** | CC BY-NC-SA 4.0 (attribution, non-commercial, share-alike). Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scale corpus for assessing written argumentation: PERSUADE 2.0. *Assessing Writing, 61*, 100865. https://doi.org/10.1016/j.asw.2024.100865 |
 | **Libraries** | pandas, numpy, matplotlib, scikit-learn. No installs. You do need an internet connection this week. |
 
 ## The data, and why it changed
@@ -173,7 +173,7 @@ Both pieces go to the Canvas **AI Reflection** submission, in two different plac
 - **The conversation record goes in a Word file, attached to that submission.** Every relevant exchange, across every session and every tool, pasted in full. Not a summary, not a link to a shared conversation, and not pasted into the text box.
 - **The reflection goes in the Canvas text box on the same page.** Copy in the four questions from the syllabus and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI from this week you would pass on to a friend or the class.
 - If you used no AI at all, say so in one line in the text box and attach nothing. A blank submission is not the same as a declaration.
-- Undisclosed AI use is an Honor Code violation. Disclosed use is not penalized.
+- Undisclosed or inappropriate AI use is an Honor Code violation. Disclosed, policy-compliant use is not penalized.
 
 A note specific to this week. Text analysis is unusually easy to have an AI do for you, and unusually easy to get subtly wrong. If a model writes your lexicon, names your topics, or drafts your interpretation of the Section 7 gap, say so, and then do the thing the model cannot do: open the spans, read what the students actually wrote, and check whether the interpretation survives contact with them. That checking is the assignment.
 
@@ -181,4 +181,4 @@ A note specific to this week. Text analysis is unusually easy to have an AI do f
 
 *EDIS 8100: Teaching and Learning Analytics, Fall 2026, University of Virginia School of Education and Human Development. Course design by Dr. Hakeoung Hannah Lee.*
 
-*Data: PERSUADE 2.0, a four-prompt subset, licensed CC BY-NC-SA 4.0. Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scaled corpus for assessing text readability and writing quality: The PERSUADE corpus. Assessing Writing, 61, 100849. These are real essays by real students. Attribute the corpus, do not redistribute the text, and do not use it commercially.*
+*Data: PERSUADE 2.0, a four-prompt subset, licensed CC BY-NC-SA 4.0. Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scale corpus for assessing written argumentation: PERSUADE 2.0. Assessing Writing, 61, 100865. https://doi.org/10.1016/j.asw.2024.100865 These are real essays by real students. Attribute the corpus, do not redistribute the text, and do not use it commercially.*

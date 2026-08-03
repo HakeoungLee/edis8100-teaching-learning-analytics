@@ -13,7 +13,7 @@ Who answered whom, who was still in the room in week 20, how early a term become
 | **Deliverable** | **Mini Project 4**: the completed notebook, the network reading memo (600 to 750 words), and the reflection answers. The AI interaction log and reflection are a separate Canvas submission. |
 | **Due date** | This week, via Canvas. Check the assignment page for the exact time. |
 | **Notebook** | `week08_miniproject4_networks_temporal.ipynb` |
-| **Data used, Part 1** | **edX discussion forum records from `UC3Mx IT.1.2x`, one course run (2016T2).** 1,478 forum posts from 311 people, 520 ordered reply pairs, 124 course areas, 79 countries. Licence: **CC BY 4.0**. Cite as Alario-Hoyos, C. (2021). *Anonymized forum data from a UC3Mx MOOC on edX.* Zenodo, record 5115573. Loaded by the notebook's first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `edx-mooc-forum`. No account, no password. |
+| **Data used, Part 1** | **edX discussion forum records from `UC3Mx IT.1.2x`, one course run (2016T2).** 1,478 forum posts from 311 people, 520 ordered reply pairs, 124 course areas, 79 countries. Licence: **CC BY 4.0**. Cite as Alario-Hoyos, C. (2021). *Dataset MOOC Forum edX* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5115573 Loaded by the notebook's first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `edx-mooc-forum`. No account, no password. |
 | **Data used, Part 2** | **Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J.** 4,529 enrolments, 18 assessments, 21,783 assignment submissions, 891,062 rows of daily click data, 528 course resources. Licence: **CC BY 4.0**. Cite as Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data, 4*, 170171. Loaded by the notebook's second code cell from the same repository, folder `oulad-bbb`. |
 | **Data used, synthetic** | None. Every number in this notebook came from somebody's real course. |
 | **Libraries** | pandas, numpy, matplotlib, networkx, scikit-learn |
@@ -233,7 +233,7 @@ Where the points live in this particular notebook: **End-to-End Analytics Workfl
 - **Molenaar and Wise (2022)**, *Temporal aspects of learning analytics: Grounding analyses in concepts of time*: time as a container to be filled is not the same construct as time as passage, order, or rhythm. Part 2 uses at least three of these without announcing the switch, and the reflection asks you to say which one the survival curve in 2A rests on, which the rolling engagement chart in 2C.1 uses, and which the timing analysis in 2D.3 uses, then to consider whether that difference is part of why two of them found structure and one did not.
 - **Yan, Martinez-Maldonado, Swiecki, Zhao, Li, and Gašević (2025)**, *Dissecting the temporal dynamics of embodied collaborative learning using multimodal learning analytics*: what it looks like to treat sequence rather than frequency as the unit of analysis. The reflection asks you to redesign the submission timing question as a question about sequence, and to say what data OULAD does not have and who would have to agree to collect it.
 - **Kuzilek, Hlosta, and Zdrahal (2017)**, *Open University Learning Analytics dataset*: the data paper behind Part 2. Cite it whenever you report one of those results, and read the reflection question about what open educational data makes possible and what it costs.
-- **Alario-Hoyos (2021)**, *Anonymized forum data from a UC3Mx MOOC on edX*, Zenodo record 5115573: the release behind Part 1. Cite it whenever you report a network result. Read its provenance the way the notebook asks you to, as a record of forum acts rather than a picture of a forum.
+- **Alario-Hoyos (2021)**, *Dataset MOOC Forum edX*, Zenodo record 5115573 (doi:10.5281/zenodo.5115573): the release behind Part 1. Cite it whenever you report a network result. Read its provenance the way the notebook asks you to, as a record of forum acts rather than a picture of a forum.
 
 Your guest this week, **Yukyeong Song** (University of Tennessee, Knoxville), works on fairness in behavioral pattern detection, which is the seam between this week and week 3. Every threshold in this notebook (the bridge share cutoff, the decision to keep or drop the 234 who left before day 0, the 20 percent flag rate, `k = 4`, the seven-day window) is a place where a group of students could be systematically misclassified. Section 2B.2 makes that concrete: the week 1 flag list has a false positive rate twice as high in the most deprived third of neighbourhoods as in the least.
 
@@ -305,7 +305,7 @@ Both datasets are real, openly licensed, and cited in full. There is no syntheti
 
 Part 1: **edX discussion forum records from `UC3Mx IT.1.2x`**, one course run in 2016. Licensed **CC BY 4.0**.
 
-> Alario-Hoyos, C. (2021). *Anonymized forum data from a UC3Mx MOOC on edX.* Zenodo, record 5115573.
+> Alario-Hoyos, C. (2021). *Dataset MOOC Forum edX* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5115573
 
 Part 2: **Open University Learning Analytics Dataset (OULAD)**, module BBB, presentations 2013J and 2014J. Licensed **CC BY 4.0**.
 

@@ -14,7 +14,7 @@ Thirty-nine pairs of children, two independent ledgers of the same forty minutes
 | **Due date** | This week, per the Canvas due date. The **Mid-Semester Check-In** is also due this week, so start early. |
 | **Notebook** | `week06_miniproject3_multimodal_participation.ipynb` |
 | **Data used** | **Real, published, openly licensed.** The **JUSThink Dialogue and Actions Corpus** and its **PE-HRI** companions, from the CHILI lab at EPFL: `per_participant.csv` (78 children), `participant_with_team_channels.csv` (68 children joined to team channels), `pehri_team_outcomes.csv` (34 teams), `pehri_temporal.csv.gz` (4,676 ten-second windows). Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`. **CC BY 4.0.** |
-| **Citation** | Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink Dialogue and Actions Corpus* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4627104 <br> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal dataset for the study of productive engagement in a robot-mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092 |
+| **Citation** | Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink Dialogue and Actions Corpus* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4627104 <br> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal dataset for the study of productive engagement in a robot-mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092 <br> Nasir, J., Bruno, B., & Dillenbourg, P. (2024). *PE-HRI-temporal: A multimodal temporal dataset in a robot mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13834073 |
 | **Libraries** | pandas, numpy, matplotlib, scipy |
 | **Estimated total time** | 30 minutes to launch in class, 2 to 3 hours to finish including the memo |
 
@@ -186,9 +186,11 @@ This project is built entirely on other people's work, released openly so that i
 
 > Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink Dialogue and Actions Corpus* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4627104
 
-> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal dataset for the study of productive engagement in a robot-mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092
+> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal dataset for the study of productive engagement in a robot mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092
 
-CHILI lab, École Polytechnique Fédérale de Lausanne. Both **CC BY 4.0**. The licence requires attribution, and so does the fact that seventy-eight nine-to-twelve-year-olds and their families agreed to be recorded.
+> Nasir, J., Bruno, B., & Dillenbourg, P. (2024). *PE-HRI-temporal: A multimodal temporal dataset in a robot mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13834073
+
+CHILI lab, École Polytechnique Fédérale de Lausanne. All three **CC BY 4.0**. The licence requires attribution, and so does the fact that seventy-eight nine-to-twelve-year-olds and their families agreed to be recorded.
 
 ---
 
