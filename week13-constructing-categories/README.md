@@ -1,6 +1,6 @@
-# November 18 · The Category and the Log
+# Week 13 · Constructing Categories in Learning Analytics
 
-**Notebook:** `week12b_your_own_trace.ipynb` · about 30 minutes for the core path
+**Notebook:** `week13_constructing_categories.ipynb` · about 30 minutes for the core path
 
 At 3:40 the session takes apart three published papers by asking one question of each: where did the category come from, and what is it holding up? This notebook turns the same instrument around and points it at the person running it.
 

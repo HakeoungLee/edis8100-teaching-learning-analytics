@@ -52,9 +52,9 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 | 10 | 10/28 | Game and Emotional LA | [`week10-game-emotional-analytics-lab`](week10-game-emotional-analytics-lab/) | Persistence at a difficulty spike in two games, and an in-game affect item | Literature review plus AI interactions |
 | 11 | 11/4 | Designing and Co-Designing LA Systems | [`week11-codesign-studio`](week11-codesign-studio/) | Persona-driven dashboard sketching and critique | Rough draft plus AI interactions |
 | 12 | 11/11 | Project Day: Peer Review and Instructor Feedback | [`project/`](project/) | No notebook. Two rounds of structured peer review | Peer review |
-| (no number) | 11/18 | The Category and the Log | [`week12b-your-own-trace`](week12b-your-own-trace/) | Three published papers' categories, then one built from your own trace | None |
-| 13 | 12/2 | Final Presentations | [`project/`](project/) | No notebook. A full 15 minutes of talk each, then 9 minutes of questions | Final presentation |
-| 14 | finals week | No class | [`project/`](project/) | No notebook. Revision week | Final draft plus AI interactions |
+| 13 | 11/18 | Constructing Categories in Learning Analytics | [`week13-constructing-categories`](week13-constructing-categories/) | Three published papers' categories, then one built from your own trace | None |
+| 14 | 12/2 | Final Presentations | [`project/`](project/) | No notebook. A full 15 minutes of talk each, then 9 minutes of questions | Final presentation |
+| 15 | finals week | No class | [`project/`](project/) | No notebook. Revision week | Final draft plus AI interactions |
 
 There is no class on 10/14, between weeks 7 and 8. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
 
@@ -115,7 +115,7 @@ edis8100-teaching-learning-analytics/
 ├── week09-collaboration-analytics-lab/
 ├── week10-game-emotional-analytics-lab/
 ├── week11-codesign-studio/
-├── week12b-your-own-trace/          each week folder has the same two files
+├── week13-constructing-categories/          each week folder has the same two files
 └── project/                        research project guide, outline template,
                                     peer review form, presentation rubric, checklist
 ```
