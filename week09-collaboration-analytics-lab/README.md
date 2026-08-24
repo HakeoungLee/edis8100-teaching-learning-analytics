@@ -9,7 +9,7 @@ Reading a group by its chat, in two settings, then deciding what a dashboard sho
 | **Session** | Wednesday, October 28, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Learning Analytics for Understanding and Supporting Collaboration |
 | **Guest speaker** | None this week. The 60-minute discussion block is entirely student led. |
-| **In-class time on this notebook** | About 40 minutes, in the hands-on block (4:30 to 5:00). Section 6 is written to spill into the 5:00 discussion on purpose. |
+| **In-class time on this notebook** | About 30 minutes, in the hands-on block (4:30 to 5:00). Section 6 is written to spill into the 5:00 discussion on purpose. |
 | **Deliverable** | None from this notebook. It is a lab, not a graded submission. |
 | **Due date** | The **Course Research Project Outline** is due this week via Canvas, submitted separately from this notebook, together with your AI interaction log and reflection. |
 | **Notebook** | `week09_collaboration_analytics_lab.ipynb` |

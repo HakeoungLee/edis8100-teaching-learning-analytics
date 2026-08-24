@@ -9,7 +9,7 @@ Auditing a non-completion model before anyone acts on it, on real enrollment rec
 | **Session** | Wednesday, September 9, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Responsible and Human-Centered Learning Analytics |
 | **Guest speaker** | Hansol Lee, Stanford University |
-| **In-class time on this notebook** | About 30 minutes for Part 1, launched in the hands-on studio block (4:40 to 5:00), and about 10 more for Part 2. Finish Part 2 on your own if you run out of room. |
+| **In-class time on this notebook** | About 30 minutes for Part 1, launched in the hands-on studio block (4:30 to 5:00), and about 10 more for Part 2. Finish Part 2 on your own if you run out of room. |
 | **Deliverable** | None. Week 3 is an in-class launch, not a graded submission. |
 | **Due date** | Not applicable. The first Canvas deliverable is Mini Project 1 in week 4. |
 | **Notebook** | `week03_ethics_bias_audit.ipynb` |

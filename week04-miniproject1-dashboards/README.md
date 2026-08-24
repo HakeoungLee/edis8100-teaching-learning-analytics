@@ -9,7 +9,7 @@ Build a teacher-facing dashboard with plotly, on real student records, then take
 | **Session** | Wednesday, September 16, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Teacher and Student Facing Learning Analytics and Dashboards |
 | **Guest speaker** | Yeonji Jung, Texas A&M University |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). This is a launch, not the whole assignment. Plan about three more focused hours outside class, as the Mini Project 1 Brief sets out. |
+| **In-class time on this notebook** | About 35 minutes, launched in the hands-on studio block (3:35 to 4:10). This is a launch, not the whole assignment. Plan about three more focused hours outside class, as the Mini Project 1 Brief sets out. |
 | **Deliverable** | **Mini Project 1**: the completed notebook, a 300-word design memo inside it, and your AI interaction log plus reflection |
 | **Due date** | This week, via Canvas. Check Canvas for the exact time. |
 | **Notebook** | `week04_miniproject1_teacher_dashboard.ipynb` |

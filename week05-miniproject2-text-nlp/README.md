@@ -9,7 +9,7 @@ A text analytics pipeline built one honest step at a time on 5,531 real student 
 | **Session** | Wednesday, September 23, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Text-Based Analytics and Natural Language Processing |
 | **Guest speaker** | Jiayi (Joyce) Zhang, Worcester Polytechnic Institute |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). This is a launch, not the whole project. The notebook's core path is about 75 more minutes; the memo takes the rest, so plan about three focused hours outside class, as the Mini Project 2 Brief sets out. |
+| **In-class time on this notebook** | About 35 minutes, launched in the hands-on studio block (3:35 to 4:10). This is a launch, not the whole project. The notebook's core path is about 75 more minutes; the memo takes the rest, so plan about three focused hours outside class, as the Mini Project 2 Brief sets out. |
 | **Deliverable** | Mini Project 2: the executed notebook, a 300-word interpretation memo, and your AI interaction log plus the four reflection answers |
 | **Due date** | This week, via Canvas, by the deadline posted on the Canvas assignment page |
 | **Notebook** | `week05_miniproject2_text_analytics.ipynb` |

@@ -9,7 +9,7 @@ Who answered whom, who was still in the room in week 20, how early a term become
 | **Session** | Wednesday, October 21, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Cacophony of Networks in Learning Analytics and Temporal Learning Analytics |
 | **Guest speaker** | None. Week 8 is a standard content week: a 40-minute lecture, then the longest studio of the semester at fifty minutes |
-| **In-class time on this notebook** | About 20 minutes, launched in the studio block (4:40 to 5:00). This is a launch, not a completion. Plan on finishing at home. |
+| **In-class time on this notebook** | About 40 minutes, launched in the studio block (4:20 to 5:00). This is a launch, not a completion. Plan on finishing at home. |
 | **Deliverable** | **Mini Project 4**: the completed notebook, the network reading memo (600 to 750 words), and the reflection answers. The AI interaction log and reflection are a separate Canvas submission. |
 | **Due date** | This week, via Canvas. Check the assignment page for the exact time. |
 | **Notebook** | `week08_miniproject4_networks_temporal.ipynb` |
