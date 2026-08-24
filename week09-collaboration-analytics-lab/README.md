@@ -122,7 +122,7 @@ Then the question the chat data cannot ask, because it records no outcome at all
 - **Praharaj, Scheffel, Drachsler, and Specht (2021)**, *Literature review on co-located collaboration modeling using multimodal learning analytics: Can we go the whole nine yards?*: the chain from sensing to feedback and the places it breaks. Here the chain breaks at the first link for one measure and holds for another, and the section that separates them is worth the discussion. Note also which channel turned out to be affordable: in the JUSThink data the interface log is complete for all 39 teams and unrelated to the outcome, while the speech transcript exists for 10 teams and cannot be evaluated at that size. Neither cost nor completeness rescued the finding.
 - **Martinez-Maldonado, Kay, Buckingham Shum, and Yacef (2019)**, *Collocated collaboration analytics: Principles and dilemmas for mining multimodal interaction data*: the dilemmas are concrete in Section 6. You resolve one per tile, ten times, and write down who sees the result. The sharpest one this year is the roster: the notebook's participation shares have a denominator that cannot be observed, and a tile displaying them to a group presents a lower bound as if it were a fact about people.
 
-There is no guest this week, which means the full hour belongs to your discussion leaders. The closing question is the one worth bringing them: **what should a collaboration dashboard refuse to show, and to whom?**
+There is no guest this week, which means the full hour belongs to your discussion leader. The closing question is the one worth bringing them: **what should a collaboration dashboard refuse to show, and to whom?**
 
 ## Stretch goals
 
