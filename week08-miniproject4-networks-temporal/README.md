@@ -235,7 +235,7 @@ Where the points live in this particular notebook: **End-to-End Analytics Workfl
 - **Kuzilek, Hlosta, and Zdrahal (2017)**, *Open University Learning Analytics dataset*: the data paper behind Part 2. Cite it whenever you report one of those results, and read the reflection question about what open educational data makes possible and what it costs.
 - **Alario-Hoyos (2021)**, *Dataset MOOC Forum edX*, Zenodo record 5115573 (doi:10.5281/zenodo.5115573): the release behind Part 1. Cite it whenever you report a network result. Read its provenance the way the notebook asks you to, as a record of forum acts rather than a picture of a forum.
 
-**Yukyeong Song** (University of Tennessee, Knoxville) appears on this week's additional reading list, on fairness in behavioral pattern detection, which is the seam between this week and week 3.
+Fairness sits underneath every threshold in this notebook: the bridge share cutoff, the decision to keep or drop the 234 who left before day 0, and the choice of what counts as a tie.
 
 ## Stretch goals
 

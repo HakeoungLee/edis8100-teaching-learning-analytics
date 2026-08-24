@@ -8,8 +8,8 @@ Can a stream of timestamped clicks tell you anything real about how a person reg
 |---|---|
 | **Session** | Wednesday, October 7, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Learning Analytics for Self-Regulated Learning |
-| **Guest speaker** | Conrad Borchers, Carnegie Mellon University |
-| **In-class time on this notebook** | About 45 minutes for the core path, launched in the hands-on studio block (4:40 to 5:00). Sections 6 and 7 are the designated finish-at-home if the room runs out of time. |
+| **Guest speaker** | Conrad Borchers, Vanderbilt University, 5:00 to 6:00 |
+| **In-class time on this notebook** | About 25 minutes, and only Sections 1.1 and 3. Week 7's guest holds the last hour of class, so the lecture and the studio merge into one block with the file open, and the rest of the notebook is yours this week. Sections 5 and 6, the two logging artifacts, are the ones worth the time if the week gets away from you |
 | **Deliverable** | None. Week 7 is an in-class launch, not a graded submission. |
 | **Due date** | Not applicable. The next Canvas deliverable is Mini Project 4 in Week 8. |
 | **Notebook** | `week07_srl_traces_lab.ipynb` |
