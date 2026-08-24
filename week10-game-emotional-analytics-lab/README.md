@@ -8,8 +8,8 @@ Two real games, sixteen thousand children's codenames, and the week a finding fa
 |---|---|
 | **Session** | Wednesday, November 4, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Game Learning Analytics and Emotional Learning Analytics |
-| **Guest speaker** | Chaewon Kim, Southern Illinois University |
-| **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 55 minutes, so plan to finish sections 5, 6, and 7 on your own before the discussion. |
+| **Guest speaker** | Chaewon Kim, Southern Illinois University, 5:00 to 6:00 ET |
+| **In-class time on this notebook** | About 15 minutes, and only the AQUALAB result in section 4. Week 10's guest holds the last hour, so the lecture and the studio merge into one short block with the file open and the student-led hour keeps its full sixty minutes. **WAVES is homework, deliberately:** the second game is where the persistence result fails to come back, and meeting that alone before Week 11 is the point of the week |
 | **Deliverable from this notebook** | None. Week 10 is not a mini project. This lab is an in-class launch. |
 | **Due this week (separately)** | **Course Research Project Literature Review** plus your **AI interaction log and reflection**, uploaded to Canvas. Submitted on their own, not from this notebook. |
 | **Notebook** | `week10_game_emotional_analytics_lab.ipynb` |
