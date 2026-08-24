@@ -8,7 +8,7 @@ Two real games, sixteen thousand children's codenames, and the week a finding fa
 |---|---|
 | **Session** | Wednesday, November 4, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Game Learning Analytics and Emotional Learning Analytics |
-| **Guest speaker** | Chaewon Kim, Florida State University |
+| **Guest speaker** | Chaewon Kim, Southern Illinois University |
 | **In-class time on this notebook** | About 20 minutes, launched in the hands-on studio block (4:40 to 5:00). The full core path runs about 55 minutes, so plan to finish sections 5, 6, and 7 on your own before the discussion. |
 | **Deliverable from this notebook** | None. Week 10 is not a mini project. This lab is an in-class launch. |
 | **Due this week (separately)** | **Course Research Project Literature Review** plus your **AI interaction log and reflection**, uploaded to Canvas. Submitted on their own, not from this notebook. |

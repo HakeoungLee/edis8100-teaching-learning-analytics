@@ -56,9 +56,9 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 | 14 | 12/2 | Final Presentations | [`project/`](project/) | No notebook. A full 15 minutes of talk each, then 9 minutes of questions | Final presentation |
 | 15 | finals week | No class | [`project/`](project/) | No notebook. Revision week | Final draft plus AI interactions |
 
-There is no class on 10/14, between weeks 7 and 8. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
+Fall reading days run Saturday to Tuesday, so no Wednesday meeting is affected and the class meets every week from 8/26 to 11/18. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
 
-Guest speakers join us in weeks 3, 4, 5, 7, 8, and 10. Student-led discussion runs from week 3 through week 11, which is nine weeks and eighteen leader slots, so each of the six of you co-leads three times with a different partner each time.
+Guest speakers join us in weeks 4, 5, and 10, each holding 4:30 to 5:30. Eight weeks carry a student-led discussion block, which is weeks 2, 3, 6, 7, 9, 10, 11, and 13, so each of the four of you leads twice, alone.
 
 ## The arc of the semester
 

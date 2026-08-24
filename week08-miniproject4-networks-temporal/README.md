@@ -8,7 +8,7 @@ Who answered whom, who was still in the room in week 20, how early a term become
 |---|---|
 | **Session** | Wednesday, October 21, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Cacophony of Networks in Learning Analytics and Temporal Learning Analytics |
-| **Guest speaker** | Yukyeong Song, University of Tennessee, Knoxville |
+| **Guest speaker** | None. Week 8 is a standard content week: a 40-minute lecture, then the longest studio of the semester at fifty minutes |
 | **In-class time on this notebook** | About 20 minutes, launched in the studio block (4:40 to 5:00). This is a launch, not a completion. Plan on finishing at home. |
 | **Deliverable** | **Mini Project 4**: the completed notebook, the network reading memo (600 to 750 words), and the reflection answers. The AI interaction log and reflection are a separate Canvas submission. |
 | **Due date** | This week, via Canvas. Check the assignment page for the exact time. |
@@ -235,7 +235,7 @@ Where the points live in this particular notebook: **End-to-End Analytics Workfl
 - **Kuzilek, Hlosta, and Zdrahal (2017)**, *Open University Learning Analytics dataset*: the data paper behind Part 2. Cite it whenever you report one of those results, and read the reflection question about what open educational data makes possible and what it costs.
 - **Alario-Hoyos (2021)**, *Dataset MOOC Forum edX*, Zenodo record 5115573 (doi:10.5281/zenodo.5115573): the release behind Part 1. Cite it whenever you report a network result. Read its provenance the way the notebook asks you to, as a record of forum acts rather than a picture of a forum.
 
-Your guest this week, **Yukyeong Song** (University of Tennessee, Knoxville), works on fairness in behavioral pattern detection, which is the seam between this week and week 3. Every threshold in this notebook (the bridge share cutoff, the decision to keep or drop the 234 who left before day 0, the 20 percent flag rate, `k = 4`, the seven-day window) is a place where a group of students could be systematically misclassified. Section 2B.2 makes that concrete: the week 1 flag list has a false positive rate twice as high in the most deprived third of neighbourhoods as in the least.
+**Yukyeong Song** (University of Tennessee, Knoxville) appears on this week's additional reading list, on fairness in behavioral pattern detection, which is the seam between this week and week 3.
 
 ## Stretch goals
 
