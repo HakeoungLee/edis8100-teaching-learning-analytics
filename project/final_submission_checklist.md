@@ -1,6 +1,6 @@
 # ✅ Final Submission Checklist
 
-The last hour before you upload, spent well. Week 14, finals week, due at the date and time posted in Canvas.
+The last hour before you upload, spent well. Week 15, finals week, due at the date and time posted in Canvas.
 
 ## At a glance
 
@@ -11,7 +11,7 @@ The last hour before you upload, spent well. Week 14, finals week, due at the da
 | **Minimum length** | 20 pages, excluding references and appendices |
 | **When to start this checklist** | The day before you submit, not the hour before. Several items below take longer than they look. |
 | **Late policy** | Unexcused late work forfeits 10 percent of the assignment score per day. If you need a different date, email the instructor **before** the deadline with a proposed one. |
-| **Full handout** | `Week 14 Final Submission Checklist` on Canvas |
+| **Full handout** | `Week 15 Final Submission Checklist` on Canvas |
 
 Work through the sections in order. The first section is the one that changes grades, and it is the one people skip because it is the hardest to do to your own writing.
 

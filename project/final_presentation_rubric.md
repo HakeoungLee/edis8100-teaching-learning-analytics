@@ -1,18 +1,18 @@
 # 🎤 Final Presentation Guidelines and Rubric
 
-Week 13, Wednesday 12/2. Fifteen minutes each: 12 minutes of talk plus 3 for questions. Worth 10 percent of the course grade.
+Week 14, Wednesday 12/2. A full 15 minutes of talk each, then 9 minutes of questions. Worth 10 percent of the course grade.
 
 ## At a glance
 
 | | |
 |---|---|
-| **When** | Week 13, 12/2, in class. The schedule of speaking slots is posted to Canvas in advance. |
+| **When** | Week 14, 12/2, in class. The schedule of speaking slots is posted to Canvas in advance. |
 | **Length** | 15 minutes of talk, then 9 minutes of questions. **Strict adherence to the time limit is required.** With four presenters the talk is the full 15 minutes the syllabus specifies rather than a 15-minute slot split with the question period. |
 | **Weight** | 10 percent of the course grade, scored out of 100 |
 | **Format** | Slides or handouts. Visual aids are encouraged, and clear, well-organized, low-text slides are expected. |
 | **What your peers do** | Complete a feedback slip for each speaker, which in a class of four is three slips each. Those go to you, not into your grade. |
 | **What the instructor uses** | The rubric below |
-| **Full handout** | `Week 13 Presentation Guidelines and Rubric` on Canvas |
+| **Full handout** | `Week 14 Presentation Guidelines and Rubric` on Canvas |
 
 ## What the presentation has to cover
 
@@ -80,7 +80,7 @@ A workable shape, with times. Adjust the proportions to your project, but keep t
 
 ## 🤖 A reminder about documenting AI use
 
-There is no separate AI Reflection submission for week 13. If you used an AI assistant to plan the talk, tighten a slide headline, rehearse likely questions, or draft speaker notes, save the exchange and include it in the AI Reflection submission you upload with your week 14 final draft. The policy covers the whole record of AI use connected to your work, not only code, and not only writing that ends up in the paper.
+There is no separate AI Reflection submission for week 14. If you used an AI assistant to plan the talk, tighten a slide headline, rehearse likely questions, or draft speaker notes, save the exchange and include it in the AI Reflection submission you upload with your week 15 final draft. The policy covers the whole record of AI use connected to your work, not only code, and not only writing that ends up in the paper.
 
 ---
 

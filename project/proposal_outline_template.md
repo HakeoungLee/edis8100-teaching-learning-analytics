@@ -1,6 +1,6 @@
 # 📝 Course Research Project: Outline Template
 
-Due week 9 (10/28), on the date and time posted in Canvas. Roughly three to five pages plus references.
+Due week 9 (10/21), on the date and time posted in Canvas. Roughly three to five pages plus references.
 
 ## How to use this template
 
