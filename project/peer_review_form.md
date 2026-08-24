@@ -1,4 +1,4 @@
-# 🤝 Peer Review Form and Protocol
+# Peer Review Form and Protocol
 
 Week 12, Project Day, Wednesday 11/11, 3:30 to 6:00 PM, Ridley 137. Two rounds, two different readers, one draft that gets better.
 
@@ -30,7 +30,7 @@ Peer review in a doctoral seminar is not a proofreading service and it is not a 
 
 **Authors: you own the revision.** You are not required to take any piece of advice. You are required to be able to say why you did not.
 
-## ⏱️ Timeboxes for the two-round workshop
+## Timeboxes for the two-round workshop
 
 The Round 1 draft is read in advance and its written form is complete before you sit down, so in-class time goes to the conversation, which is the part that cannot be done alone. Round 2 works differently: partners are assigned in the room, and you read a flagged section cold and write that form on the spot.
 
@@ -145,7 +145,7 @@ There are six of you, so everyone gets a five-minute slot and nobody has to deci
 
 **One thing a reviewer suggested that I am choosing not to do, and why:**
 
-## 🤖 A reminder about documenting AI use
+## A reminder about documenting AI use
 
 There is no separate AI Reflection submission for week 12. If you used an AI assistant to help you read a peer's draft, to organize your feedback, or to work through your own revision plan, that exchange still has to be documented: keep it, and include it in the AI Reflection submission you upload with your week 15 final draft, along with everything else connected to the project. The policy covers reading and thinking, not only code.
 

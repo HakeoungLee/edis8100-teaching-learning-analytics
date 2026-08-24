@@ -1,4 +1,4 @@
-# ✅ Final Submission Checklist
+# Final Submission Checklist
 
 The last hour before you upload, spent well. Week 15, finals week, due at the date and time posted in Canvas.
 

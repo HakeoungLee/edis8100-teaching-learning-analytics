@@ -1,4 +1,4 @@
-# 🎤 Final Presentation Guidelines and Rubric
+# Final Presentation Guidelines and Rubric
 
 Week 14, Wednesday 12/2. A full 15 minutes of talk each, then 9 minutes of questions. Worth 10 percent of the course grade.
 
@@ -41,7 +41,7 @@ One hundred points, five criteria, each scored at 20, 16, 12, or 8.
 
 Note what the top level of the first two criteria rewards: **concise** and **coherent**, not comprehensive. A presentation that covers everything at a sprint scores lower than one that covers the argument at a pace people can follow.
 
-## ⏱️ Structuring the twelve minutes
+## Structuring the twelve minutes
 
 A workable shape, with times. Adjust the proportions to your project, but keep the shape: the audience needs the problem before the framework, and the framework before the methods, or none of it lands.
 
@@ -60,7 +60,7 @@ A workable shape, with times. Adjust the proportions to your project, but keep t
 
 **On timing.** Twelve minutes is short and it is enforced. Rehearse out loud with a timer at least twice, all the way through, because reading slides silently underestimates your real pace by about a third. If you run long in rehearsal, cut a segment rather than speaking faster. The most common cut is the literature strand you are least invested in, and it is usually the right one.
 
-## 🎨 Slide design
+## Slide design
 
 **Roughly eight to fourteen slides.** That is about one slide per sixty to ninety seconds. Slides that go by faster than that are not being read, and slides that sit for four minutes have stopped helping.
 
@@ -78,7 +78,7 @@ A workable shape, with times. Adjust the proportions to your project, but keep t
 
 **Number your slides.** It makes question time enormously easier for everyone.
 
-## 🤖 A reminder about documenting AI use
+## A reminder about documenting AI use
 
 There is no separate AI Reflection submission for week 14. If you used an AI assistant to plan the talk, tighten a slide headline, rehearse likely questions, or draft speaker notes, save the exchange and include it in the AI Reflection submission you upload with your week 15 final draft. The policy covers the whole record of AI use connected to your work, not only code, and not only writing that ends up in the paper.
 

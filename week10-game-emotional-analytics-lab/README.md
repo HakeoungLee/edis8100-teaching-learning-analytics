@@ -1,4 +1,4 @@
-# 🎮 Week 10: Game and Emotional Analytics Lab
+# Week 10: Game and Emotional Analytics Lab
 
 Two real games, sixteen thousand children's codenames, and the week a finding fails to travel from one game to the next.
 
@@ -81,21 +81,21 @@ You can also run the notebook locally with Jupyter if you prefer. It needs panda
 
 ## Step-by-step walkthrough
 
-Total time is about 55 minutes if you keep moving, which is what the per-section budgets below add up to. The four ✏️ **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
+Total time is about 55 minutes if you keep moving, which is what the per-section budgets below add up to. The four **Your turn** cells already contain working answers, so the notebook runs start to finish without you typing anything.
 
-**⚙️ Setup (2 minutes).** One short code cell. It downloads three files and prints their shapes. Read the provenance table immediately after it: who logged this, from whom, under what licence, with what citation. The rule the course keeps repeating is that you should never analyse data whose origin you cannot state out loud.
+**Setup (2 minutes).** One short code cell. It downloads three files and prints their shapes. Read the provenance table immediately after it: who logged this, from whom, under what licence, with what citation. The rule the course keeps repeating is that you should never analyse data whose origin you cannot state out loud.
 
-**📊 1. What is one row, and who is in it? (4 minutes).** The dataset repository calls `players.csv.gz` "one row per player." It is not. It is 19,031 rows over 16,384 codenames across ten monthly extracts, and 1,922 codenames appear in more than one month with no way to tell whether that is a child returning or a name collision. Two panels draw the shape. The section ends by naming the unit of analysis as the **player-month** and by explaining why every interval later in the notebook resamples codenames rather than rows.
+**1. What is one row, and who is in it? (4 minutes).** The dataset repository calls `players.csv.gz` "one row per player." It is not. It is 19,031 rows over 16,384 codenames across ten monthly extracts, and 1,922 codenames appear in more than one month with no way to tell whether that is a child returning or a name collision. Two panels draw the shape. The section ends by naming the unit of analysis as the **player-month** and by explaining why every interval later in the notebook resamples codenames rather than rows.
 
-**📊 2. Real data is messy, and the mess is the lesson (7 minutes).** The cheapest check in data analysis, run first: how many distinct values does each column hold? It finds `attempted` (one value, `True`, in all 96,322 rows), `argtime` (one value, `0:00:00`, in all of them), and five `JobTriesInArgumentPerDifficulty` columns that are zero in all 19,031 rows. Then the pseudo-category `no-active-job` (10,340 rows, 10.7 percent), ten rows with no codename at all and hundreds of sessions each, thirteen values of `ExperimentalCondition` of which only four are production, 2,631 player-months with a negative duration (worst: about minus 3.27 million seconds), and an affect column carrying both English and Spanish.
+**2. Real data is messy, and the mess is the lesson (7 minutes).** The cheapest check in data analysis, run first: how many distinct values does each column hold? It finds `attempted` (one value, `True`, in all 96,322 rows), `argtime` (one value, `0:00:00`, in all of them), and five `JobTriesInArgumentPerDifficulty` columns that are zero in all 19,031 rows. Then the pseudo-category `no-active-job` (10,340 rows, 10.7 percent), ten rows with no codename at all and hundreds of sessions each, thirteen values of `ExperimentalCondition` of which only four are production, 2,631 player-months with a negative duration (worst: about minus 3.27 million seconds), and an affect column carrying both English and Spanish.
 
 Three exclusions follow, each with its own line in a costs table, and one consistency check that earns the right to use `priorcomplete` for temporal ordering later: the largest "completed before" count in a player-month equals that month's total in 100.0 percent of cases.
 
-**📊 3. The hardest thing in the game (5 minutes).** `coral-hunting-lions` averages **31.98** argumentation tries against a median of **8**, while the median job in AQUALAB has a median of 1. Two panels: mean against median for the ten hardest jobs, and the raw distribution with both lines drawn on it. 42.3 percent of the player-months that took this job logged zero tries and the busiest 5 percent supply 29.1 percent of them all. The prompt does not let students pick a winner between mean and median; it makes them say what is wrong with each.
+**3. The hardest thing in the game (5 minutes).** `coral-hunting-lions` averages **31.98** argumentation tries against a median of **8**, while the median job in AQUALAB has a median of 1. Two panels: mean against median for the ten hardest jobs, and the raw distribution with both lines drawn on it. 42.3 percent of the player-months that took this job logged zero tries and the busiest 5 percent supply 29.1 percent of them all. The prompt does not let students pick a winner between mean and median; it makes them say what is wrong with each.
 
-**✏️ Your turn 1 (2 minutes).** Point the same three summaries at another job. The appendix solution then scores all 51 common jobs and shows the busiest 5 percent supply a **median of 37.4 percent** of a job's tries, with a floor of 20.5 percent. The skew is not a property of the hard job; it is a property of voluntary-play counts.
+**Your turn 1 (2 minutes).** Point the same three summaries at another job. The appendix solution then scores all 51 common jobs and shows the busiest 5 percent supply a **median of 37.4 percent** of a job's tries, with a floor of 20.5 percent. The skew is not a property of the hard job; it is a property of voluntary-play counts.
 
-**📊 4. Did persisting pay? Two questions that look like one (10 minutes).** The heart of the lab. The trap is named before any code runs: argumentation tries and jobs completed are both counts of activity, so some association is arithmetic rather than finding.
+**4. Did persisting pay? Two questions that look like one (10 minutes).** The heart of the lab. The trap is named before any code runs: argumentation tries and jobs completed are both counts of activity, so some association is arithmetic rather than finding.
 
 The headline arrives anyway and it is large. Children who argued more than ten times completed **32.76** jobs against **17.96**, gap **+14.81** [+12.24, +17.24], from a cluster bootstrap over the 508 codenames rather than the 617 rows. `priorcomplete` then splits that gap in time: only **+3.52** [+1.12, +5.90] was banked before the job, and **+11.29** [+9.67, +12.91] came after.
 
@@ -103,17 +103,17 @@ Then the boring question that dissolves it, asked precisely. **67.1 percent** of
 
 The section states the honest conclusion in full, including that the two-group comparison inside the still-playing subset has only 10 player-months on one side and therefore cannot rule out a modest effect. The interpretation prompt puts the instrument, the setting, and the circumstances on the table before the child, by name and in that order.
 
-**✏️ Your turn 2 (2 minutes).** Move the threshold. The appendix solution sweeps it from 1 to 80 and finds the raw gap correlates with the difference in "share still playing" at **r = 0.961** across thresholds. Stability across a sweep tells you the definition is not fragile. It tells you nothing about whether the thing you defined is what you think it is.
+**Your turn 2 (2 minutes).** Move the threshold. The appendix solution sweeps it from 1 to 80 and finds the raw gap correlates with the difference in "share still playing" at **r = 0.961** across thresholds. Stability across a sweep tells you the definition is not fragile. It tells you nothing about whether the thing you defined is what you think it is.
 
-**📊 5. What children said they felt (9 minutes).** AQUALAB interrupts children and asks what they are feeling and **why**. Three quarters of the file never answered; the median respondent answered exactly once.
+**5. What children said they felt (9 minutes).** AQUALAB interrupts children and asks what they are feeling and **why**. Three quarters of the file never answered; the median respondent answered exactly once.
 
 The counterintuitive comparison the field likes: children who said "frustrated" and never "bored" completed **18.32** jobs, children who said "bored" and never "frustrated" completed **11.42**, gap **+6.89** [+5.26, +8.50]. Then the exposure control. The frustration group answered 3.66 prompts to the boredom group's 2.23 and played 14.6 median hours to their 3.4, and "frustrated" was said by only 9.2 percent of respondents, so a child who answers eight times has eight shots at a rare word. Hold the number of answers fixed and the four bands read 5.17 against 5.52, 12.79 against 13.32, 18.74 against 18.98, 30.16 against 32.48. The size-weighted gap falls from +6.89 to **+0.75** [+0.02, +1.44]. **Eighty-nine percent of the effect was how much of the game each child saw**, and the section is candid that the residue in the widest band is the same confound not yet fully held fixed.
 
 Then the part that needed no statistics. Asked **why** they felt bored, children chose "I don't find this topic interesting" (14.1 percent), "This is too easy" (13.8 percent), and "I'm not sure why I need to know this" (12.3 percent). Asked why they felt frustrated, they chose "I don't know what to do next" (14.9 percent), "This is too hard" (11.8 percent), and "The game isn't working properly" (9.2 percent). Boredom here is a property of the game at least as much as of the player, and for once the course is not inferring that: the children said so.
 
-**✏️ Your turn 3 (2 minutes).** Compare any two of the six feeling words. The appendix solution runs all six at once: raw gaps of +10.47, +10.24, +6.61, +4.85, +3.93, and +2.03, all of which collapse into the range -0.39 to +1.03 once the number of answers is held fixed. The ordering of the raw column is the ordering of "mean answers given" and has nothing to do with what the words mean.
+**Your turn 3 (2 minutes).** Compare any two of the six feeling words. The appendix solution runs all six at once: raw gaps of +10.47, +10.24, +6.61, +4.85, +3.93, and +2.03, all of which collapse into the range -0.39 to +1.03 once the number of answers is held fixed. The ordering of the raw column is the ordering of "mean answers given" and has nothing to do with what the words mean.
 
-**📊 6. The second game, and the disagreement (8 minutes).** WAVES has a sharper spike: level 9 costs a mean of **17.29** fails against 1.31 to 5.65 for every level before it, about 3.1 times the worst of them. It also has a denominator trap, because level 9 is optional. Averaged over the 1,041 sessions that met it the answer is 17.29; averaged over all 1,581 it is 11.38. Both are correct and they answer different questions.
+**6. The second game, and the disagreement (8 minutes).** WAVES has a sharper spike: level 9 costs a mean of **17.29** fails against 1.31 to 5.65 for every level before it, about 3.1 times the worst of them. It also has a denominator trap, because level 9 is optional. Averaged over the 1,041 sessions that met it the answer is 17.29; averaged over all 1,581 it is 11.38. Both are correct and they answer different questions.
 
 Then the structural fact that decides the section: **100.0 percent** of the sessions that began level 9 went on to begin level 10. In WAVES the game moves you on. In AQUALAB the child decides, and at `coral-hunting-lions` there was no next job 66.0 percent of the time against 21.9 percent across all job rows.
 
@@ -121,15 +121,15 @@ The replication gives **+0.85** levels [+0.13, +1.60] out of 25, rho = **+0.055*
 
 **Section 6.4** is a free extra trap. WAVES ships `pre`, `post`, and `gain`. `pre` is two questions, `post` is two **different** questions, and mean `gain` is **-0.42** with 45.9 percent of sessions below zero. The sentence "playing WAVES made children worse at waves" is available, arithmetically correct, and false.
 
-**✏️ Your turn 4 (2 minutes).** Try the other optional levels. The appendix solution runs all four (9, 17, 29, 32) split at each level's own median, and shows both that the two denominators diverge by a factor running 1.5, 2.5, 8.3, 9.8 as the levels get rarer, and that all four persistence intervals contain zero.
+**Your turn 4 (2 minutes).** Try the other optional levels. The appendix solution runs all four (9, 17, 29, 32) split at each level's own median, and shows both that the two denominators diverge by a factor running 1.5, 2.5, 8.3, 9.8 as the levels get rarer, and that all four persistence intervals contain zero.
 
-**📊 7. These are children (2 minutes).** The demographic items in the file settle what kind of data this is: 86.5 percent of those who answered said 15 or younger, largest group 12 to 13, and 79.4 percent said they were playing at school. The section then says plainly what changes when the user is eleven: who consented and who was logged, that "voluntary use" does not survive a class period, that the affect item is the most intimate data in this course, and that a child who stops playing is not deficient. The final point is the one section 5 proved rather than asserted.
+**7. These are children (2 minutes).** The demographic items in the file settle what kind of data this is: 86.5 percent of those who answered said 15 or younger, largest group 12 to 13, and 79.4 percent said they were playing at school. The section then says plainly what changes when the user is eleven: who consented and who was logged, that "voluntary use" does not survive a class period, that the affect item is the most intimate data in this course, and that a child who stops playing is not deficient. The final point is the one section 5 proved rather than asserted.
 
-**💬 Reflection.** Five prompts tied to this week's readings, ending with the one everybody answers: rewrite one of your own design proposals for an eleven year old. Plus two suggested questions for the guest, both drawn from something the student has just done.
+**Reflection.** Five prompts tied to this week's readings, ending with the one everybody answers: rewrite one of your own design proposals for an eleven year old. Plus two suggested questions for the guest, both drawn from something the student has just done.
 
-**✅ Before you leave.** A checklist, plus the reminder that the literature review and AI log go to Canvas separately.
+**Before you leave.** A checklist, plus the reminder that the literature review and AI log go to Canvas separately.
 
-**Appendix.** Worked solutions to all four ✏️ Your turn cells: the skew of all 51 common jobs, a seven-point threshold sweep with the confound plotted beside the finding, all six feeling words before and after the exposure control, and all four optional WAVES levels.
+**Appendix.** Worked solutions to all four Your turn cells: the skew of all 51 common jobs, a seven-point threshold sweep with the confound plotted beside the finding, all six feeling words before and after the exposure control, and all four optional WAVES levels.
 
 ## Assessment
 
@@ -167,9 +167,9 @@ For students who finish early or who arrive with programming experience:
 
 **Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
 
-**"One of those groups has fewer than 30 player-months."** or **"one persistence group is under 20 sessions."** You moved a ✏️ Your turn setting past the point where a comparison is meaningful. Those messages are the cells protecting you from reporting a result computed on four people. Loosen the setting and rerun.
+**"One of those groups has fewer than 30 player-months."** or **"one persistence group is under 20 sessions."** You moved a Your turn setting past the point where a comparison is meaningful. Those messages are the cells protecting you from reporting a result computed on four people. Loosen the setting and rerun.
 
-**My numbers do not match the ones in the text.** If you changed a ✏️ **Your turn** cell, that is expected and good. If you did not, restart and run all. Every interval in this notebook is seeded (`SEED = 8100`), so a clean run reproduces the same numbers every time. If the underlying files in the dataset repository were ever updated, the notebook's numbers would move and the text would not; that is a real risk of working from live URLs and it is worth knowing about.
+**My numbers do not match the ones in the text.** If you changed a **Your turn** cell, that is expected and good. If you did not, restart and run all. Every interval in this notebook is seeded (`SEED = 8100`), so a clean run reproduces the same numbers every time. If the underlying files in the dataset repository were ever updated, the notebook's numbers would move and the text would not; that is a real risk of working from live URLs and it is worth knowing about.
 
 **A `SettingWithCopyWarning` or similar yellow text.** Warnings are not errors. If the cell printed its output and drew its chart, it worked.
 

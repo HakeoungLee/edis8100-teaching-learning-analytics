@@ -1,4 +1,4 @@
-# 📊 EDIS 8100: Teaching and Learning Analytics
+# EDIS 8100: Teaching and Learning Analytics
 
 **Fall 2026 · Dr. Hakeoung Hannah Lee · University of Virginia School of Education and Human Development**
 
@@ -8,7 +8,7 @@ This repository holds the hands-on half of the seminar: eleven notebooks, one fo
 
 If you have never written a line of code, you are exactly who this repository was designed for. Every notebook runs top to bottom without you typing anything, downloads its own published dataset over the internet, and asks you to change small clearly marked values rather than to write code from scratch. Nothing here can break your computer, your grade, or the course data.
 
-## 🚀 Quickstart for students (three steps)
+## Quickstart for students (three steps)
 
 You need a Google account and a browser. That is all. There is nothing to install, nothing to download, and no CSV to keep track of.
 
@@ -37,7 +37,7 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 
 **If something goes wrong**, the answer is almost always **Runtime > Restart session and run all**. It costs about ten seconds and fixes the large majority of notebook problems. Red error text is wordy, but it is not damage. Read the last line first, then raise your hand.
 
-## 🗓️ Semester map
+## Semester map
 
 | Week | Date | Topic | Folder | Notebook activity | Deliverable |
 |---|---|---|---|---|---|
@@ -52,7 +52,7 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 | 10 | 10/28 | Game and Emotional LA | [`week10-game-emotional-analytics-lab`](week10-game-emotional-analytics-lab/) | Persistence at a difficulty spike in two games, and an in-game affect item | Literature review plus AI interactions |
 | 11 | 11/4 | Designing and Co-Designing LA Systems | [`week11-codesign-studio`](week11-codesign-studio/) | Persona-driven dashboard sketching and critique | Rough draft plus AI interactions |
 | 12 | 11/11 | Project Day: Peer Review and Instructor Feedback | [`project/`](project/) | No notebook. Two rounds of structured peer review | Peer review |
-| 13 | 11/18 | Constructing Categories in Learning Analytics | [`week13-constructing-categories`](week13-constructing-categories/) | Three published papers' categories, then one built from your own trace | None |
+| 13 | 11/18 | Reading Research Critically, and Your Own AI Trace | [`week13-reading-critically`](week13-reading-critically/) | Deficit framing, a reference-list audit, then your own AI logs | None |
 | 14 | 12/2 | Final Presentations | [`project/`](project/) | No notebook. A full 15 minutes of talk each, then 9 minutes of questions | Final presentation |
 | 15 | finals week | No class | [`project/`](project/) | No notebook. Revision week | Final draft plus AI interactions |
 
@@ -60,7 +60,7 @@ There is no class on 10/14, between weeks 7 and 8. Thanksgiving break runs 11/25
 
 Guest speakers join us in weeks 3, 4, 5, 7, 8, and 10. Student-led discussion runs from week 3 through week 11, which is nine weeks and eighteen leader slots, so each of the six of you co-leads three times with a different partner each time.
 
-## 🧭 The arc of the semester
+## The arc of the semester
 
 ```mermaid
 flowchart TD
@@ -95,7 +95,7 @@ flowchart TD
 
 Read it as four movements. **Foundations** asks what learning analytics can and cannot see, and week 3 puts the first real crack in the assumption that a good model is a fair one. **Methods** hands you one family of methods per week and asks you to complete a full workflow with each: four mini projects, four chances to make something and then criticize it. **Integration** is where the methods start talking to each other and where your own project begins to take shape, one milestone per week. **The research project** is what the other eleven weeks were for.
 
-## 📁 Repository structure
+## Repository structure
 
 ```
 edis8100-teaching-learning-analytics/
@@ -115,14 +115,14 @@ edis8100-teaching-learning-analytics/
 ├── week09-collaboration-analytics-lab/
 ├── week10-game-emotional-analytics-lab/
 ├── week11-codesign-studio/
-├── week13-constructing-categories/          each week folder has the same two files
+├── week13-reading-critically/          each week folder has the same two files
 └── project/                        research project guide, outline template,
                                     peer review form, presentation rubric, checklist
 ```
 
 No data file needs to be cloned, uploaded, or authorized. Every notebook pulls its own files over plain HTTPS from a public companion repository, with no account and no password. The one authorization in this course is Step 1 above, which is about opening the *notebooks* in this private repository, and it is a one-time step.
 
-## 🌍 The data
+## The data
 
 **Every lab in every week runs on real, published, openly licensed data. There is no synthetic data anywhere in this course.** Nine sources carry the semester under four licenses, each one collected by somebody else for their own reasons and released so that people outside the institution could work on it. Every notebook states its origin, its licence, and its citation before it loads a single row, because you should never analyze data whose origin you cannot state.
 
@@ -180,7 +180,7 @@ So the standing ask, from week 1 to week 11: **ask who could be harmed by a clai
 
 For where to find data for your own project, see the course guide *Finding and Evaluating Learning Analytics Data*.
 
-## 🔧 Instructor quickstart
+## Instructor quickstart
 
 Tested with `/opt/anaconda3/bin/python3` (Python 3.12, numpy 1.26, pandas 2.2). Run everything from the repository root.
 
@@ -196,13 +196,13 @@ Because every number in the narrative text was computed from a published file ra
 
 For local student use rather than Colab, `pip install -r requirements.txt` covers everything. Anaconda already ships all of it.
 
-## 📄 License and credit
+## License and credit
 
 The code in this repository is released under the **MIT License**. The instructional materials, meaning the notebook narrative text, the READMEs, the project templates, and the rest of the writing, are released under **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. Full text and details in [`LICENSE`](LICENSE).
 
 Course design and notebook design are by Dr. Hakeoung Hannah Lee, School of Education and Human Development, University of Virginia. The datasets are other people's work, cited above and in every notebook that uses them.
 
-## 🤖 A reminder about documenting AI use
+## A reminder about documenting AI use
 
 AI use is permitted in designated activities in this course and must be documented. Undisclosed use is an Honor Code violation.
 

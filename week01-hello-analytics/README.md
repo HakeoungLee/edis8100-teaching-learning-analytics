@@ -1,4 +1,4 @@
-# 👋 Week 1: Hello, Learning Analytics
+# Week 1: Hello, Learning Analytics
 
 The first hands-on session of EDIS 8100. You will open Google Colab, run a notebook end to
 end on a real published dataset, make two figures, find something the summary numbers were
@@ -27,7 +27,7 @@ and you change one clearly marked value to watch two headline numbers move.
 Mini projects start in Week 4. This week is for getting the tools working and getting your
 bearings.
 
-## 🎯 Objectives
+## Objectives
 
 By the end of the session you will be able to:
 
@@ -43,7 +43,7 @@ By the end of the session you will be able to:
 
 Objectives 4 and 5 are the ones that matter most, and neither is a coding objective.
 
-## 📁 What is in this folder
+## What is in this folder
 
 | File | What it is |
 |---|---|
@@ -55,7 +55,7 @@ file over plain HTTPS in about a second and prints how many rows and columns arr
 download fails, the cell prints a plain-English message naming the repository it was trying
 to reach rather than a wall of red.
 
-## 🚀 Open it in Colab
+## Open it in Colab
 
 This repository is **private**, so the one-click badge only works after you have accepted the
 instructor's invitation and authorized Colab to see private repositories. Do the manual route
@@ -101,23 +101,23 @@ keep a personal version, or **File > Download > Download .ipynb** for a local co
 is lost if you forget: the dataset is a fixed published file, so re-running the notebook from
 the top reproduces exactly the same numbers, on any machine, for everyone in the room.
 
-## 🧭 Step-by-step walkthrough
+## Step-by-step walkthrough
 
 Roughly 30 minutes of core work. Timings are a guide, not a race.
 
 | Step | Section | Minutes | What you do |
 |---|---|---|---|
 | 1 | Banner and "how this notebook works" | 3 | Read the orientation lines. Learn Shift + Enter. |
-| 2 | ⚙️ Setup | 2 | Run the first code cell. It downloads `student-mat.csv` and prints `Loaded 395 students and 33 columns.` |
-| 3 | 📇 Where this data came from | 3 | Read the provenance table before any number appears. Note `sep=";"`: a CSV is a convention, not a law. |
-| 4 | 📊 1. Meet the table | 5 | `students.head()`. Read one row aloud as a sentence about a person, then name three things the file never recorded. |
-| 5 | 📊 2. Your first chart | 7 | Mean final grade by mother's education, then the same chart with group sizes on the bars. Work the interpretation prompt: instrument, setting, circumstances, in that order. |
-| 6 | 📊 3. A histogram | 4 | All 395 final grades. Find the spike at exactly 0 and the empty space at 1, 2, and 3. |
-| 7 | 📊 4. What the summary was hiding | 4 | Look at the 38 zeros and at their absence records. |
-| 8 | ✏️ Your turn | 2 | Flip `TREAT_ZEROS_AS_MISSING` and watch the mean and the pass rate move. |
-| 9 | 💬 5. The gap that shrinks | 3 | The same recording decision, applied to a group comparison. |
-| 10 | 💬 6. Reflection | 5 | Four prompts. Write in the cell. Bring them to the 5:00 block. |
-| 11 | ✅ 7. Before you leave | 1 | Run the checklist. Sign up for three discussion leadership weeks. |
+| 2 | Setup | 2 | Run the first code cell. It downloads `student-mat.csv` and prints `Loaded 395 students and 33 columns.` |
+| 3 | Where this data came from | 3 | Read the provenance table before any number appears. Note `sep=";"`: a CSV is a convention, not a law. |
+| 4 | 1. Meet the table | 5 | `students.head()`. Read one row aloud as a sentence about a person, then name three things the file never recorded. |
+| 5 | 2. Your first chart | 7 | Mean final grade by mother's education, then the same chart with group sizes on the bars. Work the interpretation prompt: instrument, setting, circumstances, in that order. |
+| 6 | 3. A histogram | 4 | All 395 final grades. Find the spike at exactly 0 and the empty space at 1, 2, and 3. |
+| 7 | 4. What the summary was hiding | 4 | Look at the 38 zeros and at their absence records. |
+| 8 | Your turn | 2 | Flip `TREAT_ZEROS_AS_MISSING` and watch the mean and the pass rate move. |
+| 9 | 5. The gap that shrinks | 3 | The same recording decision, applied to a group comparison. |
+| 10 | 6. Reflection | 5 | Four prompts. Write in the cell. Bring them to the 5:00 block. |
+| 11 | 7. Before you leave | 1 | Run the checklist. Sign up for three discussion leadership weeks. |
 
 ### The two figures you will make
 
@@ -167,7 +167,7 @@ and messier data, actually helps.
 
 Some of these questions become course research projects. Keep yours.
 
-## 📈 Stretch goals
+## Stretch goals
 
 For students who finish early or arrive with coding experience. None of these are required
 and none are graded.
@@ -189,7 +189,7 @@ and none are graded.
 
 Bring anything interesting to Week 2. Stretch work is a good source of discussion material.
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 **"The data did not download."**
 The setup cell prints a plain-English message naming the repository it was trying to reach.
@@ -223,7 +223,7 @@ Colab discards untitled sessions. **File > Save a copy in Drive** at the start o
 where you plan to keep something.
 
 **My chart looks different from my neighbor's**
-One of you flipped the ✏️ Your turn value. Compare the two settings and explain the
+One of you flipped the Your turn value. Compare the two settings and explain the
 difference to each other. That is the exercise.
 
 **Red text appeared and I panicked**
@@ -231,7 +231,7 @@ Python errors are wordy but they are not damage. Nothing here can harm your comp
 course data, or your grade. Read the **last line** of the error first, it usually names the
 real problem. Then raise your hand.
 
-## 🤖 A note on AI use
+## A note on AI use
 
 The course permits AI use in designated activities and requires that you document it.
 Undisclosed AI use is an Honor Code violation.
@@ -253,7 +253,7 @@ If you use an assistant to make sense of anything in this notebook today, save t
 transcript. Learning to read what an AI tells you about data, with appropriate suspicion, is
 itself a course skill.
 
-## 📚 Connections to this week's readings
+## Connections to this week's readings
 
 The reflection section of the notebook ties directly to the required readings:
 

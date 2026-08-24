@@ -1,4 +1,4 @@
-# 🎓 The Course Research Project
+# The Course Research Project
 
 A study proposal you would actually want to keep, built one milestone at a time from week 9 to finals week.
 
@@ -32,7 +32,7 @@ A strong submission demonstrates all of the following, which are the syllabus ex
 7. **Sociotechnical and sociocultural affordances and limitations**, including ethical and equity considerations.
 8. **A rationale for actionability**: who could act on this, in what setting, and what would change.
 
-## 📅 The milestone calendar
+## The milestone calendar
 
 Each milestone is designed so that the next one is easier. Four of the six feed the 30 percent project grade (the outline, the literature review, the rough draft, and the final draft); the week 12 peer review packet is checked for completeness and specificity and counts toward participation; and the week 14 presentation carries its own 10 percent. Nothing here is a separate assignment bolted on. The outline becomes the draft, the draft becomes the final, and the peer review week exists so that you find the problems before the instructor does.
 
@@ -49,7 +49,7 @@ Four of these six milestones carry an **AI Reflection** submission on Canvas: th
 
 The instructor's Course Weekly Materials folder holds the full handout for each milestone, and each one is posted to the Canvas module for its week. This folder mirrors the four handouts that are most useful to have open while you work. Where the two ever disagree, the Canvas handout is the one that counts.
 
-## 📐 Formatting requirements
+## Formatting requirements
 
 These come from the syllabus and they are checked.
 
@@ -64,7 +64,7 @@ These come from the syllabus and they are checked.
   - **Optionally, your AI interactions.** The syllabus permits the full exchange to be carried here. It is welcome and it does not replace the Canvas AI Reflection submission, which is required either way.
 - **Copyedited.** Read it out loud before you submit. See the checklist.
 
-## 🧭 How the project is graded
+## How the project is graded
 
 One hundred points, eight criteria, each scored at 15, 12, 9, or 6.
 
@@ -81,7 +81,7 @@ One hundred points, eight criteria, each scored at 15, 12, 9, or 6.
 
 Two of these eight criteria, ethics and equity, and actionability, are the ones most often treated as a paragraph near the end. In this course they are load bearing. The seminar spends fourteen weeks arguing that a learning analytics claim is a sociotechnical claim, and a proposal that treats ethics as a compliance appendix has not made that argument.
 
-## 💡 Choosing a topic worth living with
+## Choosing a topic worth living with
 
 You will be inside this topic from week 9 through finals week, and if it goes well you will be inside it much longer than that. Some honest advice.
 
@@ -97,7 +97,7 @@ You will be inside this topic from week 9 through finals week, and if it goes we
 
 **Signs your topic is the right size**: you can state the problem in two sentences without hedging, you can name at least three studies that would have to be discussed, you can name the dataset or system you would use and the route by which you would get hold of it, you can imagine the figure that would answer your main research question, and you have a specific worry about who could be harmed if the analysis went into production. If you have all five, start writing.
 
-## 🤖 A reminder about documenting AI use
+## A reminder about documenting AI use
 
 The three written milestones (weeks 9, 10, 11) and the week 15 final draft each carry an AI Reflection submission on Canvas. The requirement covers all AI use connected to the work, not only code: understanding a reading, brainstorming a research question, drafting a paragraph, tightening prose. If you used ChatGPT to make sense of a reading and a different tool to draft a summary, both conversations go in. Weeks 12, 13 and 14 have no separate upload, so save those exchanges and carry them into week 15.
 

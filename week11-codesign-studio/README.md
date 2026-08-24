@@ -1,4 +1,4 @@
-# 🎨 Week 11: Co-Design Studio
+# Week 11: Co-Design Studio
 
 Whose dashboard is this, and who was in the room when we decided?
 
@@ -73,9 +73,9 @@ Colab needs internet access for the first cell, which it has. You can also run t
 
 Total time is about 30 minutes of code, which is the point: today the code is short so the conversation can be long. Every edit in this notebook is changing a word inside quotes or a number in a list. Nothing asks you to write code from scratch. A few cells pause for five or ten seconds because they repeat a calculation two hundred times to put an honest interval around it.
 
-**⚙️ Setup: where this data comes from (2 minutes).** Read the provenance table before you run anything: the dataset, who collected it, the licence, the citation, and one paragraph on what these people were told, which is close to nothing. Instructure published this file under no obligation to do so, and the people in it did not choose to be a dataset. Then run the first code cell. It downloads the file and prints 325,199 rows, 26 columns, 238 courses, 224,914 distinct people.
+**Setup: where this data comes from (2 minutes).** Read the provenance table before you run anything: the dataset, who collected it, the licence, the citation, and one paragraph on what these people were told, which is close to nothing. Instructure published this file under no obligation to do so, and the people in it did not choose to be a dataset. Then run the first code cell. It downloads the file and prints 325,199 rows, 26 columns, 238 courses, 224,914 distinct people.
 
-**🧹 1. The mess, before anything else (5 minutes).** On purpose, first, because two decisions made here change every number afterwards.
+**1. The mess, before anything else (5 minutes).** On purpose, first, because two decisions made here change every number afterwards.
 
 Three columns hold one value on every row: `registered` is 1 because the file only contains registrations, and `final_cc_cname_DI` (country) and `gender` were withheld to protect the people in it. That is the price of publishing at all, and it means any fairness question about gender or country cannot be asked here. Week 3 asked those questions of a dataset that allowed them.
 
@@ -83,25 +83,25 @@ Then the figure that sets up the whole notebook: how much of each column is actu
 
 Then the column that speaks two languages. `learner_type` contains both `Active` and `Active participant`, and both `Passive` and `Passive participant`. Before merging them the notebook checks whether any single course used both wordings: 112 courses use the short labels, 33 use the long ones, and **not one uses both**, which is what a one-time change of survey wording looks like. So we merge, and we write down what the merge costs: there is no overlap anywhere in the file where we could verify it. The 3,261 rows that literally say `Missing` are dropped, out loud, with the count.
 
-**🧑‍🤝‍🧑 2. Four people, written down as data (4 minutes).** Dana Okonkwo built and ran an open course. Malik Ferrer enrolled in one. Tobias Lindqvist runs analytics at the company hosting them. Ana Whitfield is the programme officer at the foundation that paid for several to be built. Each card carries goals, fears, decision rights, what they cannot change, the grain they think in, their access reality, and **the one measure they would reach for first**, which is what makes the rest of the notebook possible.
+**2. Four people, written down as data (4 minutes).** Dana Okonkwo built and ran an open course. Malik Ferrer enrolled in one. Tobias Lindqvist runs analytics at the company hosting them. Ana Whitfield is the programme officer at the foundation that paid for several to be built. Each card carries goals, fears, decision rights, what they cannot change, the grain they think in, their access reality, and **the one measure they would reach for first**, which is what makes the rest of the notebook possible.
 
 Read the access-reality lines together. Three of the four can change something. The fourth can change only which tab he has open, and he is the one every row of the file is about.
 
 Read the goals as carefully as the decision rights, because a persona card is where a deficit assumption hides most comfortably. Dana's third stated fear is reading a low grade as a fact about a person rather than about her own assessment design. Malik's first is being counted as somebody's "dropout" for doing exactly what he said he would do. Neither card treats a learner as a problem to be detected, and if yours does when you write a fifth persona, that is the thing to notice.
 
-**📊 3. The metric menu (4 minutes).** Seven metrics computed from the file, and a decision made in front of you. The four persona measures are recorded on four different subsets, so comparing lists drawn from them would confound any disagreement with the file's silence. From here on the notebook works on the **common population**: the 21,693 enrolments, 6.7 percent of the file, from 19,924 people in 156 of the 238 courses, where all four are recorded. The cost is printed rather than buried: the kept rows are not a random sample, and the median grade among rows that have one is 0.12 across the file and 0.37 here.
+**3. The metric menu (4 minutes).** Seven metrics computed from the file, and a decision made in front of you. The four persona measures are recorded on four different subsets, so comparing lists drawn from them would confound any disagreement with the file's silence. From here on the notebook works on the **common population**: the 21,693 enrolments, 6.7 percent of the file, from 19,924 people in 156 of the 238 courses, where all four are recorded. The cost is printed rather than buried: the kept rows are not a random sample, and the median grade among rows that have one is 0.12 across the file and 0.37 here.
 
 The *mistaken for* column does the framing work. Page views are mistaken for effort, active days for commitment, modules reached for having understood the modules, and the platform's `explored` flag for seriousness. Each label describes what was measured and each annotation names the leap you are not entitled to make. Note also what is missing: **not one metric on this menu is "lower is better"**, because on a platform nobody was required to use there is no measure where less of it is straightforwardly worse. Be suspicious of any dashboard here that flags a person for having too little of something.
 
 Then the diagnostic that decides what section 5 is allowed to claim: can each measure even produce a ranking? Page views can, with essentially no ties. Active days can, with 52 tied at the cut. Grade cannot cleanly, with 1,370 tied at a perfect 1.0. And modules reached cannot at all, because **10,587 of the 21,693 enrolments, 48.8 percent, reached 100 percent of the modules.** The learner's own measure is the one measure here that cannot make a leaderboard, which may be part of why nobody builds one on it.
 
-**✏️ 4. Pick a persona and pick your metrics (3 minutes).** Four values to change: `MY_PERSONA`, `MY_METRICS`, `FOCUS_COURSE`, `FOCUS_USER`. Maximum four metrics, fewer is braver. The cell validates your choices and tells you plainly if you mistype one.
+**4. Pick a persona and pick your metrics (3 minutes).** Four values to change: `MY_PERSONA`, `MY_METRICS`, `FOCUS_COURSE`, `FOCUS_USER`. Maximum four metrics, fewer is braver. The cell validates your choices and tells you plainly if you mistype one.
 
 The sketch is two matplotlib panels: the population distribution of your first metric, and the focus enrolment's percentile on each metric you chose, **shown twice**, once against all 21,693 and once against only the people in the same course. That second bar is the point. Of the 66 courses here with at least 30 such enrolments, 17 have a median final grade at or below 0.10 and 7 have a median at or above 0.95, so a percentile computed across courses is quietly averaging over an enormous difference in how courses grade.
 
 The default focus enrolment is chosen because it embarrasses every easy story. This person said at registration that they intended to do the assignments. They then produced the highest page-view count among all 436 registrations in their course, were the only one of the 64 with a modules-reached number to reach every module, and the course's own `completed_%` column says they completed 75 percent of the required modules. Their grade is 0.00, in a course whose median grade is a perfect 1.00. The prompt walks the instrument, the setting, and the circumstances before it will let you say anything about the person, and it points out that the file never says whether a 0.00 means "submitted and scored zero" or "never submitted anything gradeable".
 
-**📊 5. Four leaderboards, one file (8 minutes).** The centre of the session, in four steps, because the first answer is wrong in an instructive way.
+**5. Four leaderboards, one file (8 minutes).** The centre of the session, in four steps, because the first answer is wrong in an instructive way.
 
 *Step 1.* Sort the whole file and take the top 500 by each measure, which is literally what a leaderboard query does. The top 500 by grade and the top 500 by page views **share nobody at all**. Grade against active days, also zero.
 
@@ -115,7 +115,7 @@ The default focus enrolment is chosen because it embarrasses every easy story. T
 
 The section closes with the objection a good colleague will raise: surely they just correlate? Spearman rank correlations among the four run from 0.22 to 0.56, and the notebook reports Pearson beside them for contrast, because page views run from 1 to 530,411 and a Pearson correlation on raw counts is dominated by a handful of enormous values (grade against page views: Spearman 0.51, Pearson 0.17). So the objection is half right, and the half it gets wrong is the important half. **Moderate agreement across a whole population is perfectly compatible with almost complete disagreement about who is at the top, and a dashboard lives at the end of the distribution where the agreement has run out.**
 
-**🔁 6. The swap (6 minutes).** First the mechanical part: for each of the other three personas, what they could actually do with your chosen metrics and which of their stated fears each one touches. Then the actionability figure over all seven metrics and all four people, where a `!` marks a metric that touches that person's fear. Out of a maximum of 14, the platform can act on 11, the course team on 10, the funder on 9, and the learner on 6. The person every row is about can act **directly** on exactly one metric of the seven; the company that owns the file can act directly on four.
+**6. The swap (6 minutes).** First the mechanical part: for each of the other three personas, what they could actually do with your chosen metrics and which of their stated fears each one touches. Then the actionability figure over all seven metrics and all four people, where a `!` marks a metric that touches that person's fear. Out of a maximum of 14, the platform can act on 11, the course team on 10, the funder on 9, and the learner on 6. The person every row is about can act **directly** on exactly one metric of the seven; the company that owns the file can act directly on four.
 
 Then the file answers back, which is why this dataset is here.
 
@@ -127,7 +127,7 @@ Last, what they said they came for. 36,495 enrolments gave a reason, and the mos
 
 The interpretation prompt then draws the boundary hard. The survey is 10.8 percent of the file. The defensible sentence is "of the people who answered, a majority said they were not planning to do the assignments", not "most learners were not trying to complete", and the difference between those two sentences is the whole of what this course teaches about range restriction.
 
-**🕰️ 7. Retroactive design audit (5 minutes).** Every artifact this course built from week 1 to week 11, **with the real dataset each one used**, the design decision each one quietly made, and a score from 0 to 3 for how much voice each persona should have had: none, informed, consulted, veto. Week 1 on UCI student performance, weeks 2, 3, 4 and 8 on OULAD, week 5 on PERSUADE 2.0, week 6 on JUSThink, week 7 on EdNet KT3, week 9 on JUSThink and a computer-networks chat corpus, week 10 on Open Game Data from the Field Day Lab, and week 11 on this file.
+**7. Retroactive design audit (5 minutes).** Every artifact this course built from week 1 to week 11, **with the real dataset each one used**, the design decision each one quietly made, and a score from 0 to 3 for how much voice each persona should have had: none, informed, consulted, veto. Week 1 on UCI student performance, weeks 2, 3, 4 and 8 on OULAD, week 5 on PERSUADE 2.0, week 6 on JUSThink, week 7 on EdNet KT3, week 9 on JUSThink and a computer-networks chat corpus, week 10 on Open Game Data from the Field Day Lab, and week 11 on this file.
 
 The four personas travel across the weeks under different names: somebody who built the learning experience, somebody it was for, an institution or company whose system did the recording, and somebody who paid for the work. The names change and the four positions do not.
 
@@ -135,11 +135,11 @@ In the default scoring the learner column totals 32 out of 33 and no learner was
 
 The last row is today. This notebook ranked 21,693 enrolments four ways and put 500 names on each list without asking one of them which measure they would have chosen, and the second prompt asks the only useful version of the question: not what would have felt better, but what would have been **different on the screen**.
 
-**✏️ 8. Stretch (optional, only if you finish early).** Add a persona this platform has no column for, write the refusal list, or read the worked scatter of page views against grade for the 4,213 survey respondents in the common population, coloured by what they said they intended to do. It prints two numbers worth carrying into the discussion: 1,217 enrolments sit in the many-page-views, low-grade corner and 649 of them, 53 percent, had said they intended to do the assignments; 275 sit in the mirror corner. Neither corner is an anomaly to explain away. Each is a list of specific people, and the two dashboards would do opposite things to them.
+**8. Stretch (optional, only if you finish early).** Add a persona this platform has no column for, write the refusal list, or read the worked scatter of page views against grade for the 4,213 survey respondents in the common population, coloured by what they said they intended to do. It prints two numbers worth carrying into the discussion: 1,217 enrolments sit in the many-page-views, low-grade corner and 649 of them, 53 percent, had said they intended to do the assignments; 275 sit in the mirror corner. Neither corner is an anomaly to explain away. Each is a list of specific people, and the two dashboards would do opposite things to them.
 
-**💬 Reflection.** Four prompts, one per reading plus one that turns the lens on your own project. These are the questions the discussion block opens with, and they are directly usable in your Rough Draft.
+**Reflection.** Four prompts, one per reading plus one that turns the lens on your own project. These are the questions the discussion block opens with, and they are directly usable in your Rough Draft.
 
-**✅ Submission checklist.** Nothing here is submitted. Save your copy, and paste three things into your project notes: your metric set with a one-sentence defense, the one audit cell you moved with your reason, and the sentence you would say to Malik with your dashboard on the screen.
+**Submission checklist.** Nothing here is submitted. Save your copy, and paste three things into your project notes: your metric set with a one-sentence defense, the one audit cell you moved with your reason, and the sentence you would say to Malik with your dashboard on the screen.
 
 ## What this connects to in the readings
 
@@ -172,7 +172,7 @@ For students who finish early or who arrive with programming experience:
 
 **A cell is taking ten seconds.** Expected, three times. The chance baseline simulates 2,000 random pairs of lists, each overlap matrix rebuilds the four top-500 lists 200 times with different random tie-breaks, and the grade-by-plan figure resamples 145 courses 400 times. Each of those is buying you an interval instead of a single number, which is the difference between a finding and an anecdote. The whole notebook runs in well under a minute.
 
-**My numbers are slightly different from the ones in this README.** If you changed a ✏️ **Your turn** cell, expected and good. If you did not, check the third digit: every resampling step is seeded, so a clean run reproduces the same numbers every time. If a whole column has changed, restart and run all.
+**My numbers are slightly different from the ones in this README.** If you changed a **Your turn** cell, expected and good. If you did not, check the third digit: every resampling step is seeded, so a clean run reproduces the same numbers every time. If a whole column has changed, restart and run all.
 
 **My audit numbers are different from the ones in the printout.** They should be. The dictionary in section 7 is the instructor's first guess and you were asked to argue with it. Bring one moved cell and your reason to the discussion.
 
