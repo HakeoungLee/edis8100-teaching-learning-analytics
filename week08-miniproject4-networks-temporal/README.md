@@ -70,14 +70,13 @@ You do not need to clone anything or download a CSV by hand. The first code cell
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week08-miniproject4-networks-temporal/week08_miniproject4_networks_temporal.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week08-miniproject4-networks-temporal/week08_miniproject4_networks_temporal.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -280,7 +279,7 @@ For students who finish early or who arrive with programming experience:
 
 **My weekly network in Your turn 2 gives a completely different top five.** Yes. That is the finding, not the error. A single week holds a fraction of the ties, and betweenness on a sparse graph is unstable. Note that weekly **density goes up** rather than down, 0.049 in week 3 against 0.027 pooled, because a weekly graph is a smaller set of people who were all active at once. Density falls as a graph grows, so comparing a big graph's density with a small one's mostly compares their sizes. Say all of that in your memo rather than picking the week that agrees with you.
 
-**Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox. Note that this applies to the course repository holding the notebook, not to the dataset repository, which is public.
+**Colab says it cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 **My numbers do not match the ones in the text.** If you changed a **Your turn** cell, that is expected and good. If you did not, restart and run all. Both datasets are fixed published files, the layout and the clustering are seeded, and greedy modularity is deterministic, so a clean run reproduces the same numbers every time, for everyone.
 

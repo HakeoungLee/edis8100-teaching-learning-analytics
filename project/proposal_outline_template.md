@@ -1,12 +1,12 @@
 # Course Research Project: Outline Template
 
-Due week 9 (10/21), on the date and time posted in Canvas. Roughly three to five pages plus references.
+The outline is due in week 9 (10/21), at the date and time posted in Canvas, and runs roughly three to five pages plus references.
 
 ## How to use this template
 
 Copy everything below the line into a Word document and write under each heading, keeping the headings. The italic prompt under each one says what belongs there and roughly how long it should be **at outline stage**. Delete the prompts as you replace them.
 
-This is an outline, not a draft. Bullet points are welcome in most sections. The exceptions are the problem statement and the research questions, which should be written as finished sentences, because those two are the ones everything else has to hang from.
+This is an outline rather than a draft. Bullet points are welcome in most sections. The exceptions are the problem statement and the research questions, which should be written as finished sentences, because everything else follows from them.
 
 Where a section is genuinely undecided, write what you are choosing between and what would settle it. "I am deciding between an existing LMS export and a small interview study, and the deciding factor is whether the district will share attendance data" is a useful outline entry. A blank heading is not.
 
@@ -20,7 +20,7 @@ Your name · EDIS 8100 · Fall 2026 · Course Research Project Outline
 
 ## 1. Problem and Context
 
-*What problem are you addressing, and where does it live? Name the setting concretely: a grade level, a course, an institution type, a platform, a program. Say who is currently affected and what currently happens. State the problem in two to four sentences you would be willing to read aloud, then add a short paragraph on the context that makes it a problem here rather than everywhere. Roughly half a page. If you find yourself writing "in today's rapidly changing educational landscape," delete the sentence and start with the setting instead.*
+*What problem are you addressing, and where does it occur? Name the setting concretely: a grade level, a course, an institution type, a platform, a program. Say who is currently affected and what currently happens. State the problem in two to four sentences you would be willing to read aloud, then add a short paragraph on the context that makes it a problem here rather than everywhere. Roughly half a page. If you find yourself writing "in today's rapidly changing educational landscape," delete the sentence and start with the setting instead.*
 
 ## 2. Conceptual Framework
 
@@ -32,7 +32,7 @@ Your name · EDIS 8100 · Fall 2026 · Course Research Project Outline
 
 ## 4. Literature Positioning
 
-*Not a literature review. This is the map of the conversation you are entering. Identify two or three strands of work relevant to your problem, and for each, name the two or three studies that define it and say in a sentence what that strand has established. Then write the positioning claim: the gap, tension, or unexamined assumption your study addresses. One paragraph per strand plus the positioning claim, so roughly three quarters of a page. Cite in APA 7 and put everything you name in the reference list at the end.*
+*This is the positioning section rather than the literature review itself. Identify two or three strands of work relevant to your problem, and for each, name the two or three studies that define it and say in a sentence what that strand has established. Then write the positioning claim: the gap, tension, or unexamined assumption your study addresses. One paragraph per strand plus the positioning claim, so roughly three quarters of a page. Cite in APA 7 and put everything you name in the reference list at the end.*
 
 ## 5. Methodological Plan
 
@@ -40,7 +40,7 @@ Your name · EDIS 8100 · Fall 2026 · Course Research Project Outline
 
 ### 5a. Data sources and collection
 
-*Name the source. Which dataset in which repository, or which system held by whom, with its citation if it has one. "LMS data" and "student writing" are categories, not sources. Then: what data, over what period, about how many people, and at what unit. Say whether each source already exists or would have to be collected, and give the access pathway with a duration attached, whether that is a public download, a free account, a data use agreement, an IRB determination, or an email to an author. A public download takes an afternoon, a restricted-use file at ICPSR takes four to twelve weeks, and an IRB submission takes as long as your board takes. A pathway with no duration attached is a wish. Then four things about the data itself: the specific columns or measures that would stand in for your construct, the size of your smallest analytic subgroup (counted, not assumed, because it sets the limit on what you can claim), what is likely to be missing and for which learners, and the population boundary, meaning who is in this data, who is out, and who was never eligible. Include what would have to be collected new, such as surveys, interviews, or observations, and say why the trace data alone would not be enough. Work through the checklist at the end of the course handout* Finding and Evaluating Learning Analytics Data *before you write this subsection, and use its repository list if you do not yet have a source.*
+*Name the source. Which dataset in which repository, or which system held by whom, with its citation if it has one. "LMS data" and "student writing" name categories rather than sources. Then: what data, over what period, about how many people, and at what unit. Say whether each source already exists or would have to be collected, and give the access pathway with a duration attached, whether that is a public download, a free account, a data use agreement, an IRB determination, or an email to an author. A public download takes an afternoon, a restricted-use file at ICPSR takes four to twelve weeks, and an IRB submission takes as long as your board takes. Then, about the data itself: the specific columns or measures that would stand in for your construct, the size of your smallest analytic subgroup (counted rather than assumed, because it sets the limit on what you can claim), what is likely to be missing and for which learners, and the population boundary, meaning who is in this data, who is out, and who was never eligible. Include what would have to be collected new, such as surveys, interviews, or observations, and say why the trace data alone would not be enough. Work through the checklist at the end of the course handout* Finding and Evaluating Learning Analytics Data *before you write this subsection, and use its repository list if you do not yet have a source.*
 
 ### 5b. Cleaning and preparation
 
@@ -52,23 +52,23 @@ Your name · EDIS 8100 · Fall 2026 · Course Research Project Outline
 
 ### 5d. Visualization and reporting
 
-*How will the findings be shown, and to whom? Sketch in words the one or two figures that would carry the argument, and say what each figure's axes are. If your project involves a dashboard or a tool, describe the audience and the decision it supports. If visualization is not central to your project, say that and say why in one sentence.*
+*How will the findings be shown, and to whom? Sketch in words the one or two figures that would present the main result, and say what each figure's axes are. If your project involves a dashboard or a tool, describe the audience and the decision it supports. If visualization is not central to your project, say that and say why in one sentence.*
 
 ## 6. Hypotheses or Expected Findings
 
-*What do you expect to find, and what would surprise you? State expectations for each research question, and be willing to be specific enough to be wrong. Then add the important sentence: what result would count as evidence against your framework? A proposal that cannot be disappointed by any outcome is not making a claim. A quarter page, bullets fine.*
+*What do you expect to find, and what would surprise you? State expectations for each research question, in specific terms. Then add the important sentence: what result would count as evidence against your framework? If no outcome could contradict the proposal, it is not making a claim. A quarter page, bullets fine.*
 
 ## 7. Sociotechnical and Equity Considerations
 
-*Who is measured, who does the measuring, and who bears the cost if the analysis is wrong? Address at least these: whose data is used and under what consent or policy basis; which groups your measures could systematically misrepresent, and why; what the analysis makes visible and what it renders invisible; what happens to a person once a number is attached to them in this system. Draw on the course readings by name. Half a page, and treat this as a design section rather than a disclaimer. Week 3 is the model: the harm entered through a feature choice, and feature choices have authors.*
+*Who is measured, who does the measuring, and who bears the cost if the analysis is wrong? Address at least these: whose data is used and under what consent or policy basis; which groups your measures could systematically misrepresent, and why; what the analysis makes visible and what it renders invisible; what happens to a person once a number is attached to them in this system. Draw on the course readings by name. Half a page, and treat this as a design section rather than a disclaimer. Week 3 gives the example, where the harm followed from a choice about which features to include.*
 
 ## 8. Actionability Rationale
 
-*Who could act on this, in what setting, and what would change? Name the decision, the person or role who makes it, and the point in their workflow where your evidence would arrive. Then name the condition for it mattering: what would have to be true about the institution for the finding to be usable, and what would make it useless. Scholarly contribution counts as actionability too, but it has to be stated as a contribution to a specific conversation rather than "adds to the literature." A quarter page.*
+*Who could act on this, in what setting, and what would change? Name the decision, the person or role who makes it, and the point in their workflow where your evidence would be used. Then name the condition for it mattering: what would have to be true about the institution for the finding to be usable, and what would make it useless. Scholarly contribution counts as actionability too, but it has to be stated as a contribution to a specific conversation rather than "adds to the literature." A quarter page.*
 
-## 9. Timeline and Feasibility (optional at outline stage)
+## 9. Timeline and Feasibility (optional)
 
-*If your project has a real intended horizon, a dissertation study, a pilot next spring, an implementation at your site, sketch it in five or six lines. If the proposal is purely hypothetical, skip this section and delete the heading.*
+*If your project has a real intended timeline, a dissertation study, a pilot next spring, an implementation at your site, sketch it in five or six lines. If the proposal is purely hypothetical, skip this section and delete the heading.*
 
 ## References
 

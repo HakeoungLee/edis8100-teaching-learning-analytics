@@ -60,14 +60,13 @@ Nothing to clone and no CSV to fetch by hand. The first code cell reads three co
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -165,7 +164,7 @@ For students who finish early or who arrive with programming experience:
 
 **My charts do not appear.** Make sure you ran the first code cell, which begins with `%matplotlib inline`. Without it the notebook can compute everything and show you nothing. If they still do not appear, restart and run all.
 
-**Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
+**Colab says it cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 **"One of those groups has fewer than 30 player-months."** or **"one persistence group is under 20 sessions."** You moved a Your turn setting past the point where a comparison is meaningful. Those messages are the cells protecting you from reporting a result computed on four people. Loosen the setting and rerun.
 

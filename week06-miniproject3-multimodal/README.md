@@ -55,14 +55,13 @@ You do not need to clone anything or download a CSV by hand. The first code cell
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -160,7 +159,7 @@ For students who finish early or who arrive with programming experience:
 
 > **Note for the instructor.** Resolved. The Week 9 notebook used to open its unevenness section with "Week 6 introduced the **Gini coefficient** properly, so one sentence of recall is enough." That sentence has been rewritten: Week 9 now defines the coefficient itself and says why Week 6 does not use it, which is that a Gini on two people carries no information the larger share does not already carry.
 
-**Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
+**Colab says it cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 **The notebook will not download as `.ipynb`.** In Colab use **File > Download > Download .ipynb**. Do not submit a `.py` export or a PDF: the graders need to see the outputs, which is why the checklist asks you to run it top to bottom one last time before downloading.
 
@@ -170,10 +169,10 @@ Mini Project 3 has a Canvas **AI Reflection** submission alongside the project i
 
 1. **The conversation record goes in a Word file, attached to the AI Reflection submission.** Ask your AI tool to copy out only the back-and-forth messages between you and it, in full, with no summarizing and no system or tool messages. Paste that into a Word document and attach the document. Do not paste your interactions into the Canvas text box.
 2. **The reflection goes in the Canvas text box, not in the Word file.** Copy the four questions into your reply and answer each one:
-   1. How did you use it?
-   2. Did AI help you with your work this week? If so, how?
-   3. Did it make your work more challenging in any way? If so, how?
-   4. What new lessons, if any, could you share with a friend or the class that summarize what you learned about AI through this week's work?
+   3. How did you use it?
+   4. Did AI help you with your work this week? If so, how?
+   5. Did it make your work more challenging in any way? If so, how?
+   6. What new lessons, if any, could you share with a friend or the class that summarize what you learned about AI through this week's work?
 
 Two things worth checking specifically this week, because both are common failure modes rather than hypotheticals. First, if an AI tool computed or interpreted a correlation for you, did it mention that the rows are children nested inside pairs? Most will not unless you tell them. Say what you had to add to the prompt to get a correct answer. Second, if you asked a tool about the equity implications of this dataset, check whether it **invented a demographic variable**. There is no such column anywhere in the 125, and a confident answer that assumes one is the exact failure Section 7 is built to catch.
 

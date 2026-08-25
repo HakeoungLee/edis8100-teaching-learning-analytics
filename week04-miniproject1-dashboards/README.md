@@ -56,14 +56,13 @@ That repository is public and read-only. If it is unreachable, the cell prints a
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week04-miniproject1-dashboards/week04_miniproject1_teacher_dashboard.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week04-miniproject1-dashboards/week04_miniproject1_teacher_dashboard.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -157,7 +156,7 @@ For students who finish early or who arrive with programming experience:
 
 **My numbers do not match the ones in the text.** If you changed a **Your turn** cell, that is expected and good. If you did not, restart and run all. The dataset is fixed and published, and the model's cross validation is seeded, so a clean run reproduces the same numbers every time.
 
-**Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
+**Colab says it cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 **I lost my work.** Colab does not save changes back to GitHub. Use `File > Save a copy in Drive` at the start, not at the end.
 

@@ -1,6 +1,6 @@
 # Week 3: Ethics and Bias Audit
 
-Auditing a non-completion model before anyone acts on it, on real enrollment records, and then running the identical audit on a second real setting on another continent to see which of its findings survive the journey. The week starts by refusing the field's usual name for the thing being predicted, and the refusal is the first lesson.
+You audit a non-completion model before anyone acts on it, on real enrollment records, and then run the identical audit on a second real setting on another continent to see which of its findings hold there. The week starts by refusing the field's usual name for the thing being predicted.
 
 ## At a glance
 
@@ -87,14 +87,13 @@ Nothing is written to disk. Both datasets are read straight from the internet in
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week03-ethics-bias-audit/week03_ethics_bias_audit.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week03-ethics-bias-audit/week03_ethics_bias_audit.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -198,7 +197,7 @@ For students who finish early or who arrive with programming experience:
 
 **My charts do not appear.** Make sure you ran the first code cell, which contains `%matplotlib inline`. If they still do not appear, restart and run all.
 
-**Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
+**Colab says it cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 **My numbers do not match the ones in the text.** If you changed a **Your turn** cell, that is expected and good. If you did not, restart and run all. Both downloads are fixed snapshots, every fold sequence is seeded, and every bootstrap function carries its own generator so that running a cell twice or out of order cannot change the interval it prints. A clean run reproduces the same numbers every time.
 

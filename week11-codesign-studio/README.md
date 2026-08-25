@@ -50,14 +50,13 @@ There is no `data/` folder and nothing to clone. The first code cell reads one 3
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week11-codesign-studio/week11_codesign_studio.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week11-codesign-studio/week11_codesign_studio.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -180,7 +179,7 @@ For students who finish early or who arrive with programming experience:
 
 **I have no idea which metrics to choose.** Start from your persona's question, not from the menu. If you are stuck, the appendix at the end of the notebook has a defensible set for each of the four personas with the reasoning attached. Read it after you have made an attempt, not before.
 
-**Colab says it cannot find the repository.** You are signed into a different Google account, or you authorized GitHub without ticking the option that includes private repositories. Repeat the authorization step and watch for that checkbox.
+**Colab says it cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 ## A reminder about documenting AI use
 

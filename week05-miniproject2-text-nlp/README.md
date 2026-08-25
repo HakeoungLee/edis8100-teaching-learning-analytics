@@ -56,14 +56,13 @@ Nothing here is downloaded by hand. The first code cell pulls both files straigh
 
 ## How to open this in Colab
 
-The course repository is **private**, so the ordinary Colab badge will not work until you have authorized Colab to see private repositories. Do this once and it keeps working all semester.
+The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
 2. Choose **File > Open notebook**.
 3. Click the **GitHub** tab.
-4. Click **Authorize with GitHub**, and on the permissions screen make sure you **include private repositories**. This is the step people miss.
-5. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-6. Select `week05-miniproject2-text-nlp/week05_miniproject2_text_analytics.ipynb`.
+4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
+5. Select `week05-miniproject2-text-nlp/week05_miniproject2_text_analytics.ipynb`.
 
 Once you have authorized Colab, this badge works too:
 
@@ -158,7 +157,7 @@ For anyone who finishes the core path early or wants a stronger analysis section
 
 **The notebook runs but a figure looks empty.** Re-run the cell. If a figure is genuinely blank, the cell that produces its data probably did not run.
 
-**Colab cannot see the repository.** You authorized GitHub without checking the box that includes private repositories. Redo the authorization from **File > Open notebook > GitHub**, and grant access to private repositories this time.
+**Colab cannot find the notebook.** You are signed into a different Google account. Check the profile picture in the top right corner.
 
 **I edited something and now nothing works.** Every "Your turn" cell has a working default. Compare against the appendix, or open a fresh copy of the notebook from Colab and paste your work back in.
 

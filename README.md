@@ -4,26 +4,23 @@
 
 Wednesdays, 3:30 to 6:00 PM, Ridley 137. Department of Curriculum, Instruction, and Special Education.
 
-This repository holds the hands-on half of the seminar: eleven notebooks, one for each of weeks 1 through 11, that take the ideas from the readings and put them in your hands. You will train a model that predicts who does not complete a course and then audit it in two countries, build a teacher dashboard and then argue with it, read a MOOC forum as a network, put a microphone and an event log side by side on the same twenty children, and follow children through two science games that disagree with each other. The notebooks are the place where the seminar's claims stop being claims and start being things you can check.
+This repository holds the hands-on half of the seminar: eleven notebooks, one for each of weeks 1 through 11, that turn the ideas from the readings into analyses you run yourself. You will train a model that predicts who does not complete a course and then audit it in two countries, build a teacher dashboard and then critique it, read a MOOC forum as a network, put a microphone and an event log side by side on the same twenty children, and follow children through two science games that disagree with each other. In the notebooks you check the seminar's claims against the data.
 
 If you have never written a line of code, you are exactly who this repository was designed for. Every notebook runs top to bottom without you typing anything, downloads its own published dataset over the internet, and asks you to change small clearly marked values rather than to write code from scratch. Nothing here can break your computer, your grade, or the course data.
 
-## Quickstart for students (three steps)
+## Quickstart for students
 
 You need a Google account and a browser. That is all. There is nothing to install, nothing to download, and no CSV to keep track of.
 
-### Step 1. Get access to this private repository (once, at the start of the semester)
+### Step 1. Open a notebook
 
-This repository is **private**, so two things have to be true before Colab can open anything in it: you have accepted the instructor's invitation, and you have granted Colab permission to see private repositories. You do both one time and they keep working all semester.
+This repository is public, so a notebook link opens in Colab with nothing to accept and no permission to grant. You need a Google account and a browser.
+1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you will use for this course.
+2. Choose **File > Open notebook**.
+3. Click the **GitHub** tab.
+4. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`. Leave the branch on `main`.
 
-1. **Accept the repository invitation.** Give the instructor your GitHub username in Week 1. She sends an invitation, which arrives as an email from GitHub and also appears at the top of [github.com](https://github.com) when you are signed in. Click **Accept invitation**. Until you accept, this repository is invisible to you and Colab reports that it does not exist.
-2. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you will use for this course.
-3. Choose **File > Open notebook**.
-4. Click the **GitHub** tab.
-5. Click **Authorize with GitHub** and sign in to GitHub. On the GitHub permission screen, make sure the box for **"Include private repositories"** is checked before you approve. **This is the step people miss**, and it produces a confusing "repository not found" message later.
-6. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`. Leave the branch on `main`.
-
-If you have done all of this and Colab still cannot find the repository, work through three things in this order: the invitation is still sitting unaccepted in your email, the private repositories box was not checked, or you are signed into a different Google account. Check the profile picture in the top right corner for the last one.
+If Colab still cannot find the notebook, you are probably signed into a different Google account. Check the profile picture in the top right corner.
 
 ### Step 2. Open the week's notebook
 
@@ -35,9 +32,9 @@ Click into the first cell and press **Shift + Enter**. That runs the cell and mo
 
 Before you start changing anything you want to keep, choose **File > Save a copy in Drive**. That copy is yours. Nothing you do to it can affect the course repository or anybody else's work.
 
-**If something goes wrong**, the answer is almost always **Runtime > Restart session and run all**. It costs about ten seconds and fixes the large majority of notebook problems. Red error text is wordy, but it is not damage. Read the last line first, then raise your hand.
+**If something goes wrong**, the answer is almost always **Runtime > Restart session and run all**. It costs about ten seconds and fixes the large majority of notebook problems. Red error text is long, and none of it means anything has been damaged. Read the last line first, then raise your hand.
 
-## Semester map
+## Semester schedule
 
 | Week | Date | Topic | Folder | Notebook activity | Deliverable |
 |---|---|---|---|---|---|
@@ -58,9 +55,9 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 
 Fall reading days run Saturday to Tuesday, so no Wednesday meeting is affected and the class meets every week from 8/26 to 11/18. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
 
-Guest speakers join us in weeks 4, 5, 7, and 10. Weeks 4 and 5 hold 4:30 to 5:30. Weeks 7 and 10 hold 5:00 to 6:00, which moves everything else in those sessions forward and is why those two weeks keep a student-led hour while weeks 4 and 5 do not. Eight weeks carry a student-led discussion block, which is weeks 2, 3, 6, 7, 9, 10, 11, and 13, so each of the four of you leads twice, alone.
+Guest speakers join us in weeks 4, 5, 7, and 10. Weeks 4 and 5 hold 4:30 to 5:30. Weeks 7 and 10 hold 5:00 to 6:00, which moves everything else in those sessions forward and is why those two weeks keep a student-led hour while weeks 4 and 5 do not. Weeks 2, 3, 6, 7, 9, 10, 11, and 13 include a student-led discussion block, so each of the four of you leads twice, alone.
 
-## The arc of the semester
+## Sequence of the semester
 
 ```mermaid
 flowchart TD
@@ -93,7 +90,7 @@ flowchart TD
     FOUND --> METH --> INTEG --> PROJ
 ```
 
-Read it as four movements. **Foundations** asks what learning analytics can and cannot see, and week 3 puts the first real crack in the assumption that a good model is a fair one. **Methods** hands you one family of methods per week and asks you to complete a full workflow with each: four mini projects, four chances to make something and then criticize it. **Integration** is where the methods start talking to each other and where your own project begins to take shape, one milestone per week. **The research project** is what the other eleven weeks were for.
+**Foundations** asks what learning analytics can and cannot see, and week 3 tests the assumption that a good model is a fair one. **Methods** gives you one family of methods per week and asks you to complete a full workflow with each, in four mini projects that ask you to build something and then criticize it. **Integration** combines the methods and moves your own project forward by one milestone a week. **The research project** draws on what the other eleven weeks covered.
 
 ## Repository structure
 
@@ -124,7 +121,7 @@ No data file needs to be cloned, uploaded, or authorized. Every notebook pulls i
 
 ## The data
 
-**Every lab in every week runs on real, published, openly licensed data. There is no synthetic data anywhere in this course.** Nine sources carry the semester under four licenses, each one collected by somebody else for their own reasons and released so that people outside the institution could work on it. Every notebook states its origin, its licence, and its citation before it loads a single row, because you should never analyze data whose origin you cannot state.
+**Every lab in every week runs on real, published, openly licensed data. There is no synthetic data anywhere in this course.** The labs run on nine sources released under four licenses, each one collected by somebody else for their own reasons and released so that people outside the institution could work on it. Every notebook states its origin, its licence, and its citation before it loads a single row, because you should never analyze data whose origin you cannot state.
 
 | Source | Weeks | What one row is | Licence |
 |---|---|---|---|
@@ -166,17 +163,17 @@ Full citations:
 >
 > Canvas Network. (2016). *Canvas Network Person-Course (1/2014 - 9/2015) De-Identified Open Dataset* [Data set]. Harvard Dataverse. https://doi.org/10.7910/DVN/1XORAL
 
-### Two weeks use two sources, and the pairing is the argument
+### Weeks that use two sources
 
-**Week 3** runs one fairness audit twice, once on OULAD and once on the Portuguese file. Two countries, two school systems, two decades, one recipe held fixed. One finding replicates and turns out to be mostly a base rate, one fails to replicate, and the failure is the more useful of the two.
+**Week 3** runs one fairness audit twice, once on OULAD and once on the Portuguese file. The two settings differ in country, school system, and decade, while the procedure stays fixed. One finding replicates and turns out to be mostly a base rate, one fails to replicate, and the failure is the more useful of the two.
 
-**Week 8** needs a column no single open dataset has. Reply threading survives in a discussion record; term-long withdrawal dates survive in a registry; almost nothing carries both. So the network half runs on the edX forum and the temporal half on OULAD, and the fact that they are two different courses on two continents is itself the week's first lesson about what open data makes possible.
+**Week 8** needs a column no single open dataset has. Reply threading is recorded in discussion data, term-long withdrawal dates are recorded in registry data, and almost no dataset has both. So the network half runs on the edX forum and the temporal half on OULAD, and the week takes up what it means that they are two different courses on two continents.
 
-### The ethics note, which is not boilerplate
+### Ethics
 
-Learning analytics runs on data about people who usually did not get to weigh in on being measured. Every person in every file this semester is real. Most of them were students, several of them were children, and none of them were asked whether a doctoral seminar in Virginia should take their records apart in 2026. Anonymisation and an open licence are real protections, and they are not consent.
+Learning analytics runs on data about people who usually did not get to weigh in on being measured. Every person in every file this semester is real. Most of them were students, several of them were children, and none of them were asked whether a doctoral seminar in Virginia should analyze their records in 2026. Anonymisation and an open licence protect the people in these files. Consent is a separate matter, and it was never given.
 
-So the standing ask, from week 1 to week 11: **ask who could be harmed by a claim before you make it.** Notice when a metric flattens a person. Notice when a model is confidently wrong about a group. And say what was measured rather than what a person is, because the second sentence is not only kinder, it is the one the data supports.
+So the standing ask, from week 1 to week 11: **ask who could be harmed by a claim before you make it.** Notice when a metric reduces a person to one number. Notice when a model is confidently wrong about a group. And say what was measured rather than what a person is, because that is what the data supports.
 
 For where to find data for your own project, see the course guide *Finding and Evaluating Learning Analytics Data*.
 
@@ -202,11 +199,11 @@ The code in this repository is released under the **MIT License**. The instructi
 
 Course design and notebook design are by Dr. Hakeoung Hannah Lee, School of Education and Human Development, University of Virginia. The datasets are other people's work, cited above and in every notebook that uses them.
 
-## A reminder about documenting AI use
+## Documenting AI use
 
 AI use is permitted in designated activities in this course and must be documented. Undisclosed use is an Honor Code violation.
 
-An **AI Reflection** submission on Canvas accompanies each of the four mini projects (weeks 4, 5, 6 and 8) and the three written project milestones (week 9 outline, week 10 literature review, week 11 rough draft), plus the week 14 final draft. That is eight of them, and the syllabus schedule is the list. Weeks 12 and 13 have no separate AI upload: AI use connected to the peer review or to the presentation goes into the week 14 submission with everything else.
+An **AI Reflection** submission on Canvas accompanies each of the four mini projects (weeks 4, 5, 6 and 8) and the three written project milestones (week 9 outline, week 10 literature review, week 11 rough draft), plus the week 14 final draft. The syllabus schedule lists all eight. Weeks 12 and 13 have no separate AI upload: AI use connected to the peer review or to the presentation goes into the week 14 submission with everything else.
 
 Each one has two parts that go in two different places on the page:
 
