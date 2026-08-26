@@ -1,47 +1,41 @@
 # Week 1: Hello, Learning Analytics
 
-This is the first hands-on session of EDIS 8100. You will open Google Colab, run a notebook
-end to end on a real published dataset, make two figures, find something the summary numbers
-were hiding, and leave with one question the data cannot answer.
+This is the first hands-on session of EDIS 8100. Together we will open Google Colab, run a notebook
+on a real published dataset, make a couple of figures, take a closer look at something the summary
+numbers were smoothing over, and end with a question the data cannot answer.
 
-If you have never written a line of code, this notebook was designed for you. Nothing in
-the core path asks you to write code from scratch. You run cells, you read what comes out,
-and you change one clearly marked value to watch two headline numbers move.
+If you have never written a line of code, this notebook was written with you in mind. Nothing in it
+asks you to write code from scratch, today or in any later week. You run cells, read what comes out,
+and change one clearly marked value to see two headline numbers move. Questions are welcome at any
+point, including questions about a single line of code.
 
 ## At a glance
 
 | | |
 |---|---|
-| **Session** | Week 1, Wednesday, August 26, 2026, 3:30 to 6:00 PM, Ridley 137 |
+| **Session** | Week 1, Wednesday, August 26, 2026, Ridley Hall 137 |
 | **Topic** | Course Introduction and Planning |
-| **Hands-on block** | 5:00 to 5:40 PM (40 minutes), about 30 minutes of core work |
+| **Notebook portion** | Approximately 4:50 to 5:30 PM. Week 1 is an introduction week and ends early. |
 | **Notebook** | `week01_hello_learning_analytics.ipynb` |
 | **Data** | **Real, published, openly licensed.** UCI Student Performance, the mathematics file: 395 students in two Portuguese secondary schools, one flat file, 33 columns, semicolon delimited. CC BY 4.0. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `uci-student-performance` |
 | **Citation** | Cortez, P., & Silva, A. (2008). Using data mining to predict secondary school student performance. *Proceedings of the 5th Future Business Technology Conference*, 5-12. |
 | **Libraries** | pandas, matplotlib |
-| **Needs internet?** | **Yes**, for the first code cell. Every notebook in this course downloads its data, so this is true in all eleven lab weeks |
-| **Deliverable** | None. This is in-class work only, nothing goes to Canvas |
-| **Due** | Nothing due. Discussion leader sign-ups happen in class today |
+| **Needs internet?** | **Yes**, for the first code cell. Every notebook in this course downloads its data. |
+| **Deliverable** | None. This is in-class work, and nothing goes to Canvas. |
+| **Due** | Nothing. Discussion Leadership sign-ups happen in class today: each of the four of you signs up for **two** weeks across the semester. |
 | **Prior coding experience needed** | None |
 
-Mini projects start in Week 4. This week is for getting the tools working and getting
-oriented.
+Mini projects begin in Week 4. This week is for getting oriented and getting the tools working.
 
-## Objectives
+## What I hope you leave with
 
-By the end of the session you will be able to:
+1. A sense of what a notebook is and how to run a cell.
+2. Being able to say what one row and one column of a dataset represent.
+3. Seeing how one analytic decision can change what a summary number says.
+4. A feeling for why interpretation needs context that the file may not hold.
+5. The idea that data traces are representations of learning activity rather than learning itself.
 
-1. **Run a notebook.** Execute cells in order in Colab and tell whether a cell is waiting,
-   running, or finished.
-1. **Read a DataFrame.** Load a semicolon-delimited CSV into pandas and say in one sentence
-   what a single row represents.
-1. **Make a plot.** Produce a bar chart and a histogram with a title and labeled axes.
-2. **Find what a summary hid.** Explain why the tallest bar in your first chart was
-   misleading, and why a gradient across parental education bands is evidence about
-   conditions rather than about people.
-1. **Form a question the data cannot answer.**
-
-Objectives 4 and 5 are the ones that matter most, and neither is a coding objective.
+None of these is a coding objective.
 
 ## What is in this folder
 
@@ -50,218 +44,199 @@ Objectives 4 and 5 are the ones that matter most, and neither is a coding object
 | `week01_hello_learning_analytics.ipynb` | The notebook. Everything happens here. |
 | `README.md` | This file. |
 
-There is nothing to download by hand and nothing to upload. The first code cell fetches one
-file over plain HTTPS in about a second and prints how many rows and columns arrived. If the
-download fails, the cell prints a plain-English message naming the repository it was trying
-to reach rather than a long error trace.
+There is nothing to download by hand and nothing to upload. The first code cell fetches one file
+over plain HTTPS in about a second and prints how many rows and columns arrived. If the download
+fails, the cell prints a plain-English message naming the repository it was trying to reach rather
+than a long error trace.
 
-## Open it in Colab
+## Opening it in Colab
 
-This repository is public, so the badge above opens the notebook directly. You need a
-Google account and a browser, and there is nothing to accept or authorize.
-
-If you would rather not use the badge, go to [colab.research.google.com](https://colab.research.google.com), sign in, choose
-**File > Open notebook**, click the **GitHub** tab, and enter
-`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`.
-
-The notebook opens. Run the first code cell to begin.
-
-### Every time after that
+This repository is public, so you need only a Google account and a browser. There is nothing to
+accept or authorize.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week01-hello-analytics/week01_hello_learning_analytics.ipynb)
 
 Direct link:
 `https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week01-hello-analytics/week01_hello_learning_analytics.ipynb`
 
-If that link shows a "404" or "could not find" message, check these in order: the
+If you would rather not use the badge, go to
+[colab.research.google.com](https://colab.research.google.com), sign in, choose
+**File > Open notebook**, click the **GitHub** tab, and enter
+`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`.
 
-### To keep your own edits
+The notebook opens. Run the first code cell to begin.
 
-Colab discards the session when you close the tab. Use **File > Save a copy in Drive** to
-keep a personal version, or **File > Download > Download .ipynb** for a local copy. Nothing
-is lost if you forget: the dataset is a fixed published file, so re-running the notebook from
-the top reproduces exactly the same numbers, on any machine, for everyone in the room.
+### Keeping your own copy
 
-## Step-by-step walkthrough
+Colab discards the session when you close the tab. **File > Save a copy in Drive** keeps a personal
+version, and **File > Download > Download .ipynb** saves a local one. Nothing is lost if you forget:
+the dataset is a fixed published file, so re-running the notebook from the top reproduces the same
+numbers on any machine.
 
-The core work takes roughly 30 minutes. The timings are a guide rather than a target.
+## Walkthrough
 
-| Step | Section | Minutes | What you do |
+We will move through this together in class. The timings below are a rough guide rather than a
+target, and it is fine if we spend longer somewhere and skip something else.
+
+| Step | Section | Minutes | What happens |
 |---|---|---|---|
-| 1 | Banner and "how this notebook works" | 3 | Read the orientation lines. Learn Shift + Enter. |
+| 1 | Welcome and how the notebook works | 3 | Orientation, and Shift + Enter. |
 | 2 | Setup | 2 | Run the first code cell. It downloads `student-mat.csv` and prints `Loaded 395 students and 33 columns.` |
-| 3 | Where this data came from | 3 | Read the provenance table before any number appears. Note `sep=";"`: the comma in CSV is a convention that files do not always follow. |
-| 4 | 1. Meet the table | 5 | `students.head()`. Read one row aloud as a sentence about a person, then name three things the file never recorded. |
-| 5 | 2. Your first chart | 7 | Mean final grade by mother's education, then the same chart with group sizes on the bars. Work the interpretation prompt: instrument, setting, circumstances, in that order. |
-| 6 | 3. A histogram | 4 | All 395 final grades. Find the spike at exactly 0 and the empty space at 1, 2, and 3. |
-| 7 | 4. What the summary was hiding | 4 | Look at the 38 zeros and at their absence records. |
-| 8 | Your turn | 2 | Flip `TREAT_ZEROS_AS_MISSING` and watch the mean and the pass rate move. |
-| 9 | 5. The gap that shrinks | 3 | The same recording decision, applied to a group comparison. |
-| 10 | 6. Reflection | 5 | Answer the four prompts in the cell, and bring them to the 5:00 block. |
-| 11 | 7. Before you leave | 1 | Run the checklist. Sign up for three discussion leadership weeks. |
+| 3 | Where this data came from | 3 | The provenance table, before any number appears. Note `sep=";"`: the comma in CSV is a convention that files do not always follow. |
+| 4 | 1. Meet the table | 5 | `students.head()`. Read one row aloud as a sentence about a person, then consider what the file never recorded. |
+| 5 | 2. A first look at a group difference | 8 | Mean final grade by mother's education, then the same chart with group sizes on the bars, then a discussion of what a recorded group difference does and does not tell us. |
+| 6 | 3. The shape of one variable | 4 | A histogram of all 395 final grades, and the unusual spike at 0. |
+| 7 | 4. Looking at the zeros | 6 | The 38 zero records, their absence and earlier-period grades, and several plausible explanations. |
+| 8 | Your turn | 3 | Change `TREAT_ZEROS_AS_MISSING` and watch the mean and the pass rate move. |
+| 9 | 5. Reflection | 5 | Four short prompts, written in the notebook and brought to the closing discussion. |
+| 10 | Before you leave | 1 | The checklist, and Discussion Leadership sign-ups. |
 
-### The figures you will make
+**Going further** is a clearly marked optional section at the end. It is not part of the class time
+and nobody needs to work through it today.
 
-1. **Mean final grade by mother's education, twice.** The first version climbs neatly across
-   bands 1 to 4 and then has its tallest bar at band 0. The second version puts the group
-   sizes on the bars, and band 0 turns out to be three students with grades of 9, 15 and 15.
-   That gives the first rule of the course: put the n next to the mean.
-   The second half of that section is harder, and the semester returns to it
-   repeatedly: bands 1 to 4 really do climb, from 8.68 to 11.76 on 59, 103, 99 and 131 students,
-   and before you write a sentence about that you name what the instrument could not see,
-   what the setting produces, and what the file does not record about these households.
-   A gradient across parental education bands is evidence about the conditions under which
-   people study and about a school that produces different outcomes for different
-   circumstances. It is not evidence about the people.
-1. **A histogram of all 395 final grades.** The distribution is roughly a bell centred near
-   11, with a tall spike at exactly 0 and nothing at all at 1, 2 or 3. Grades do not usually
-   drop to zero with nothing in between, and the next section finds out why.
+## The figures we will make
 
-### The finding
+1. **Mean final grade by mother's education, twice.** The first version rises across bands 1 to 4
+   and then has its tallest bar at band 0. The second version puts the group sizes on the bars, and
+   band 0 turns out to be three students with grades of 9, 15 and 15. That gives a habit worth
+   keeping: put the group size next to the mean.
+   The discussion that follows is the part the semester returns to. Bands 1 to 4 do rise, from 8.68
+   to 11.76 on 59, 103, 99 and 131 students, and before writing a sentence about that it is worth
+   asking what the instrument could not see, what the setting might produce, and what the file does
+   not record about these households. A difference between recorded groups is, in the first
+   instance, evidence about the conditions under which people studied and about how a school
+   recorded outcomes. Whether it is evidence about the people themselves is a separate question that
+   this file cannot settle.
+2. **A histogram of all 395 final grades.** Roughly a bell centred near 11, with a tall spike at
+   exactly 0 and nothing at 1, 2 or 3. That is an unusual shape for a grade distribution, and the
+   next section takes a closer look.
 
-All 38 students with a final grade of exactly 0 have zero recorded absences, and not one of
-the 280 students with any recorded absence scored 0. That looks like third-period records
-that were never entered and stored as zeros rather than like 38 people failing. Treating
-those 38 as missing moves the mean from 10.42 to 11.52 and the pass rate from 67.1 percent
-to 74.2 percent. Both numbers are defensible, as long as you say which choice you made.
+## The pattern we look at
 
-Then the same decision is applied to a group comparison, with the intervals attached
-because a difference between two means cannot be read without one. The recorded gap between
-the two sex groups' mean grades is 0.95 of a point, 95 percent interval 0.05 to 1.85, on all
-395 students. Take the 38 non-records out, which fall 23 to 15 across the two groups rather
-than evenly, and what is left is 0.66 of a point with an interval of **-0.01 to 1.33**. That
-interval contains zero, so the recording artifact shrank the gap by a third and also removed
-the only reason this file had to report one. Nobody did anything wrong; the number changed
-because a recording decision changed.
+All 38 students with a final grade of exactly 0 have zero recorded absences, none of the 280
+students with any recorded absence scored 0, and every one of the 38 has a first period grade above
+zero. For comparison, 115 students in the file have zero recorded absences in total, so a zero
+absence record does not by itself go with a zero grade.
 
-Those 38 zeros come back in Week 3, where removing them decides whether the one clean
-fairness finding in the Portuguese half of the audit exists at all.
+Several explanations are plausible: a third period record that was never entered and stored as a
+zero, students who left the course partway through the year, an administrative rule the file does
+not describe, or something about how absences were recorded in that situation. **The dataset
+documentation does not say which is the case**, so each remains a hypothesis rather than a finding.
+Distinguishing what the data show, what is a plausible interpretation, and what the file cannot
+establish is one of the main ideas of the session.
 
-### The closing question
+Treating those 38 as missing moves the mean from 10.42 to 11.52 and the pass rate from 67.1 percent
+to 74.2 percent. Both numbers are defensible, as long as the choice is named.
 
-Section 6 asks you to write **one question these data cannot answer**. Write one that no
-further work with this file would resolve, rather than one you simply ran out of time for.
-Please bring it to Week 2, when the setting changes to a UK distance-teaching university and one
-flat file of 395 rows becomes six files and 922,449 rows, and we find out whether more data,
+Those 38 records come back in Week 3, where how they are handled affects a fairness comparison.
+
+## The closing question
+
+The reflection asks you to write **one question these data cannot answer**. A good one is a question
+that no further work with this particular file would resolve, rather than one you simply ran out of
+time for. Please bring it to Week 2, when the setting changes to a UK distance-teaching university
+and one flat file of 395 rows becomes six files and 922,449 rows, and we look at whether more data,
 and messier data, actually helps.
 
-Some of these questions become course research projects. Keep yours.
-
-## Stretch goals
-
-These are for students who finish early or arrive with coding experience. None of them are
-required and none are graded.
-
-1. **The other zeros.** `absences` has a mean of 5.71, a median of 4, a maximum of 75, and
-   29 percent of students at exactly zero. Ask whether every one of those zeros
-   means the same thing, and say how you would tell.
-1. **G1 and G2, before the gap.** Redo the mother's-education chart on the first-period
-   grade instead of the final one. Is the gradient already there in period 1, or does it
-   open up over the year? Those are different findings about different things.
-1. **Put an interval on it.** Bootstrap the difference between band 1 and band 4 mean
-   grades. With 59 and 131 students, how much of the gradient survives resampling?
-1. **The other 24 columns.** The file records travel time, study time, internet at home,
-   family support, and paid tutoring, among others. Pick two, cross them, and then write
-   the sentence you would have to defend before that cross went into a report.
-1. **Whose absence is recorded.** Compare the recorded absence distribution across the two
-   schools in the file. Then write two sentences: one about students, one about how two
-   schools record.
-
-Please bring anything interesting to Week 2. Stretch work is a good source of discussion material.
+Some of these questions become course research projects. Please keep yours.
 
 ## Troubleshooting
 
 **"The data did not download."**
-The setup cell prints a plain-English message naming the repository it was trying to reach.
-The usual cause is no internet connection in the runtime. Run the cell again, since brief
-network failures are common, then check `github.com/HakeoungLee/edis8100-datasets` in a
-browser tab. That repository is **public**, so this failure is never about your GitHub
-account or your invitation.
+The setup cell prints a plain-English message naming the repository it was trying to reach. The
+usual cause is no internet connection in the runtime. Run the cell again, since brief network
+failures are common, then check `github.com/HakeoungLee/edis8100-datasets` in a browser tab. That
+repository is public, so this is never about a GitHub account or an invitation.
 
 **"NameError: name 'students' is not defined" or "name 'pd' is not defined"**
-You ran a cell out of order, or the runtime restarted. Fix: **Runtime > Restart session and
-run all**, then wait for every cell to finish. This is the answer to most notebook problems
-and it costs about ten seconds.
+A cell ran out of order, or the runtime restarted. **Runtime > Restart session and run all**, then
+wait for every cell to finish. This resolves most notebook problems and takes about ten seconds.
 
 **"KeyError: 'gendr'"**
-A typo in a column name. The valid names are printed by the cell that lists the columns.
-Python is exact about spelling and does not guess.
+A typo in a column name. The valid names are printed by the cell that lists the columns. Python is
+exact about spelling and does not guess.
 
 **The cell shows `[*]` and nothing happens**
-It is still running. The setup cell takes a second or two, everything else is instant. If
-`[*]` persists for more than a minute, the runtime probably disconnected: **Runtime >
-Restart session and run all**.
+It is still running. The setup cell takes a second or two and the rest are close to instant. If
+`[*]` persists for more than a minute, the runtime has probably disconnected: **Runtime > Restart
+session and run all**.
 
 **Colab says "Cannot find notebook" or shows a 404**
-You are signed into a different Google account. Check the profile picture in the top right corner.
-notebook** instead.
+You are most likely signed into a different Google account. Check the profile picture in the top
+right corner, switch to the account you want, and open the link again.
 
 **I lost my edits**
-Colab discards untitled sessions. **File > Save a copy in Drive** at the start of any session
-where you plan to keep something.
+Colab discards untitled sessions. **File > Save a copy in Drive** at the start of any session where
+you plan to keep something.
 
-**My chart looks different from my neighbor's**
-One of you flipped the Your turn value. Compare the two settings and explain the
-difference to each other.
+**My chart looks different from my neighbour's**
+One of you has flipped the Your turn value. Comparing the two settings and explaining the difference
+to each other is a useful thing to do.
 
-**Red text appeared and I panicked**
-Python errors are wordy, and none of them means something has been damaged. Nothing here
-can harm your computer, the course data, or your grade. Read the **last line** of the error
-first, it usually names the real problem. Then raise your hand.
+**Red text appeared**
+Python errors are wordy, and none of them means something has been damaged. Nothing here can harm
+your computer, the course data, or your grade. The **last line** of the error usually names the real
+problem. Please ask, and we will read it together.
 
 ## Documenting AI use
 
-The course permits AI use in designated activities and requires that you document it.
-Undisclosed AI use is an Honor Code violation.
+The course permits AI use in designated activities and asks that you document it. Undisclosed AI use
+is an Honor Code violation.
 
-There is **nothing to submit this week**, so there is nothing to document. Start the habit
-now anyway. Beginning with Mini Project 1 in Week 4, every mini project and every course
-project milestone requires an **AI Reflection** submission on Canvas, and it has two parts
-that go in two different places on that page:
+There is **nothing to submit this week**, so there is nothing to document. It is still worth starting
+the habit. Beginning with Mini Project 1 in Week 4, every mini project and every course project
+milestone asks for an **AI Reflection** submission on Canvas, with two parts in two places:
 
-- **The conversation record goes in a Word file, attached to the submission.** The full
-  exchange, across every tool and every session, pasted in. Not a summary, and not into the
-  text box.
-- **The reflection goes in the Canvas text box**, where you copy in the four questions from
-  the syllabus and answer each one: how you used it; whether it helped and how; whether it
-  made your work more challenging in any way; and what lesson about AI you would pass on to
-  a friend or the class.
+- **The conversation record goes in a Word file, attached to the submission.** The full exchange,
+  across every tool and every session, pasted in rather than summarized.
+- **The reflection goes in the Canvas text box**, where you copy in the four questions from the
+  syllabus and answer each one: how you used it; whether it helped and how; whether it made your
+  work more challenging in any way; and what lesson about AI you would pass on to a friend or the
+  class.
 
-If you use an assistant to make sense of anything in this notebook today, save the
-transcript. Learning to read what an AI tells you about data, with appropriate suspicion, is
-itself a course skill.
+If you use an assistant to make sense of anything in this notebook, please save the transcript.
+Reading what an AI tells you about data, with appropriate care, is itself a course skill.
 
 ## Connections to this week's readings
 
-The reflection section of the notebook ties directly to the required readings:
+The required readings are Siemens (2013), Wise (2019), Lang and colleagues (2022), and the SoLAR
+(2025) definition taskforce report. The notebook draws on them briefly at a few points, and the
+reflection returns to them:
 
-- **Lang, Wise, Merceron, Gašević, and Siemens (2022)**, "What is learning analytics?" Their
-  definition includes learners *and their contexts*. Ask which columns in this file are
-  about context, and which contexts it has no column for at all.
-- **Wise (2019)**, on data-informed decision making. An administrator asks you for "the pass
-  rate." You have two defensible answers, 67.1 percent and 74.2 percent. Name one decision
-  you would make from this file and one you would refuse to make from it.
-- **Siemens (2013)**, on learning analytics as an emerging discipline. After thirty minutes
-  of it, what would you add to the field's definitions about the gap between what happened
-  and what got recorded?
+- **Siemens (2013)** describes digital traces as offering real opportunities while remaining
+  ambiguous, since the same trace can support more than one interpretation. The zero grades in this
+  file are a small example.
+- **Wise (2019)** distinguishes activity, artifact, association, and contextual data, and notes that
+  more data do not automatically mean more information. Her account of proxy indicators, which need
+  a justified link between what is observed and the construct of interest, is worth holding onto
+  when we look at the mother's education column. Her framing of data-informed decision-making is
+  what the pass rate question is about: the number contributes to a decision rather than dictating
+  it.
+- **Lang and colleagues (2022)** present learning analytics as a concern, an opportunity, a field of
+  inquiry, and a community, and describe it as dealing with learners *and their contexts*. It may be
+  useful to ask which columns in this file are context, and which contexts have no column at all.
+- **SoLAR (2025)** describes the work as collection, analysis, interpretation, and communication,
+  and emphasizes insights that are theoretically relevant and actionable, a human-centered and
+  multidisciplinary field, closing the loop with stakeholders, and attention to responsibility,
+  equity, and context.
 
 ## Data and ethics
 
-Everything you touch this semester is real. Nine published, openly licensed datasets are
-used across the eleven lab weeks, and no notebook in this course generates a row.
+Everything we touch this semester is real. Nine published, openly licensed datasets are used across
+the lab weeks, and no notebook in this course generates a row.
 
-Today's file holds records for real teenagers in two Portuguese secondary schools, assembled
-from school reports and a student questionnaire in the 2005 to 2006 school year. They
-answered questions about their households and their lives. Their records were anonymised and
-published under CC BY 4.0 so that people could learn from them, which is what we are about
-to do, and the only reason you can open the file at all is that somebody chose to release it.
+Today's file holds records for real teenagers in two Portuguese secondary schools, assembled from
+school reports and a student questionnaire in the 2005 to 2006 school year. They answered questions
+about their households and their lives. Their records were anonymised and published under CC BY 4.0
+so that others could learn from them, which is what we are about to do, and the only reason the file
+can be opened at all is that somebody chose to release it.
 
-None of them agreed to be a teaching example. Ask who could be harmed by a claim before you
-make it. Notice when a metric reduces a person to one number. Notice which people are not in
-this file at all. That stance is one of the course's arguments, and it runs through every week of the course.
+None of them agreed to be a teaching example. It is worth asking who could be harmed by a claim
+before making it, noticing when a metric reduces a person to one number, and noticing which people
+are not in the file at all. That stance runs through every week of the course.
 
-Where every dataset in the course comes from, who is in it, and how it is licensed is in the
-course guide *Finding and Evaluating Learning Analytics Data*.
+Where every dataset in the course comes from, who is in it, and how it is licensed is in the course
+guide *Finding and Evaluating Learning Analytics Data*.
 
 ---
 
