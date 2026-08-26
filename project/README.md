@@ -85,7 +85,7 @@ Ethics and equity, and actionability, are the criteria most often treated as a p
 
 You will be working on this topic from week 9 through finals week, and possibly for much longer than that.
 
-**Pick the thing you already cannot stop thinking about.** The syllabus says it plainly: choose a project that genuinely resonates with your interests and goals, one you might want to expand after the course ends, instead of settling for what feels easiest to complete. Projects go badly more often because the author was not interested in them than because they were too ambitious.
+**Please pick the thing you already cannot stop thinking about.** The syllabus says it plainly: choose a project that genuinely resonates with your interests and goals, one you might want to expand after the course ends, instead of settling for what feels easiest to complete. Projects go badly more often because the author was not interested in them than because they were too ambitious.
 
 **A good topic has a real setting attached to it.** "Learning analytics for engagement" names a subject area rather than a project. "What would a middle school math department need to see before it would change how it groups students, and could trace data provide it?" is a project, because it names people, a decision, and a setting the evidence would inform. If you cannot say who would act on your findings, the actionability criterion will be hard to satisfy later.
 
@@ -93,7 +93,7 @@ You will be working on this topic from week 9 through finals week, and possibly 
 
 **Your prior work is allowed to count.** A dissertation idea in progress, a problem from your job, a study you keep meaning to run: any of these can become this proposal, as long as the learning analytics contribution is genuinely new work rather than a relabeling of something already written.
 
-**Bring it to the instructor early.** Office hours by request, and the mid-semester check-in in week 6 asks for a project idea seed precisely so that week 9 is not the first time anyone hears your topic.
+**Please bring it to the instructor early.** Office hours by request, and the mid-semester check-in in week 6 asks for a project idea seed precisely so that week 9 is not the first time anyone hears your topic.
 
 **Signs your topic is the right size**: you can state the problem in two sentences without hedging, you can name at least three studies that would have to be discussed, you can name the dataset or system you would use and the route by which you would get hold of it, you can imagine the figure that would answer your main research question, and you have a specific worry about who could be harmed if the analysis went into production.
 

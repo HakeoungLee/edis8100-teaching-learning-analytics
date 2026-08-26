@@ -25,7 +25,7 @@ Our guest this week, Conrad Borchers, is a **coauthor of one of the required rea
 
 Weeks 2 through 6 worked with data collected by universities: enrollment registries, virtual learning environments, a research studio. This week the collector is a **company**, and the log was written to run a product rather than to answer a research question.
 
-That changes what is in the file and what is missing from it. There is no answer key, because correctness lived elsewhere in Riiid's systems. There is no demographic column, no score, and no name. What there is, in enormous quantity, is exactly what the interface did and exactly when. The lab is built on that asymmetry, and by the end of it you will have found two patterns that look like learner behaviour and turn out to be the application.
+That changes what is in the file and what is missing from it. There is no answer key, because correctness lived elsewhere in Riiid's systems. There is no demographic column, no score, and no name. What there is, in enormous quantity, is what the interface did and exactly when. The lab is built on that asymmetry, and by the end of it you will have found two patterns that look like learner behaviour and turn out to be the application.
 
 ## Objectives
 
@@ -66,14 +66,14 @@ You do not need to clone anything, download a CSV, or create an account. The fir
 |---|---|---|
 | `actions.csv.gz` | one interface event by one person at one millisecond | 1,893,105 rows x 7 columns, 500 learners |
 
-Nothing is sampled or thinned inside the notebook. Loaded with sensible column types the whole file is about 225 MB in memory and every computation finishes in seconds, so the notebook keeps all 1,893,105 rows and says so. Where a step drops rows, it drops them in front of you with a count and a reason, and the largest such drop is 178 rows.
+Nothing is sampled or thinned inside the notebook. Loaded with sensible column types the whole file is about 225 MB in memory and every computation finishes in seconds, so the notebook keeps all 1,893,105 rows and says so. Where a step drops rows, it drops them in view with a count and a reason, and the largest such drop is 178 rows.
 
 ## How to open this in Colab
 
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week07-srl-traces-lab/week07_srl_traces_lab.ipynb`.

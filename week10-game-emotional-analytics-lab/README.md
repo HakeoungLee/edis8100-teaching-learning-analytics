@@ -63,7 +63,7 @@ Nothing to clone and no CSV to fetch by hand. The first code cell reads three co
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`.
@@ -151,7 +151,7 @@ For students who finish early or who arrive with programming experience:
 3. **Non-response in the affect item.** 75.1 percent of player-months never answered. Model who answered as a function of the play measures, then reweight the section 5 comparison by the inverse of the estimated response probability. Report the reweighted gap beside the unweighted one, and say plainly what assumption the reweighting requires and whether you believe it.
 4. **The `argfails` column, unused here.** Section 3 built everything on `tries`. Repeat it on `argfails`, which counts failed arguments rather than attempts, and see whether the same job comes out hardest. Where the two disagree, work out which one the game designer would want.
 5. **WAVES slider behaviour.** The WAVES extract carries `PercentAmplitudeMoves`, `PercentOffsetMoves`, `PercentWavelengthMoves`, and slider ranges per level. Build a measure of strategy rather than effort (are the moves systematic or scattered?) and ask whether *that* predicts progress where sheer failure count did not. This is the most promising unexplored thing in either file.
-6. **Two games, one model.** Fit the same specification to both games with the outcome standardized within game, and report the interaction between game and persistence with an interval. Then argue with yourself about whether pooling two games with different logging, different children, and different session lengths into one model is a defensible thing to do at all.
+6. **Two games, one model.** Fit the same specification to both games with the outcome standardized within game, and report the interaction between game and persistence with an interval. Then work through the question of whether pooling two games with different logging, different children, and different session lengths into one model is a defensible thing to do at all.
 7. **The ethics of the intervention.** Design, in code, a detector that would flag a child in real time for the pattern section 4 found. Compute its false positive rate against the base rate. Then write the memo arguing that it should not be deployed, and see whether you believe your own memo.
 
 ## Troubleshooting
@@ -176,7 +176,7 @@ For students who finish early or who arrive with programming experience:
 
 There is nothing to upload from **this notebook**. There is something to upload this week: your **literature review**, and alongside it your **AI interaction log plus a short reflection**, in the Canvas "AI Reflection" submission.
 
-The course AI policy is straightforward. AI use is permitted in designated activities and must be documented. If an assistant helped you find sources, summarize a paper, tighten a paragraph, or argue with your framing, log the exchange and write a few sentences on what it did for you and what you verified yourself. Undisclosed use is an Honor Code violation.
+The course AI policy is straightforward. AI use is permitted in designated activities and must be documented. If an assistant helped you find sources, summarize a paper, tighten a paragraph, or question your framing, log the exchange and write a few sentences on what it did for you and what you verified yourself. Undisclosed use is an Honor Code violation.
 
 If you used an AI assistant on this notebook as well, to explain a line of pandas or to check your reading of a chart, save that exchange now. It costs nothing today and it is much easier than reconstructing it later.
 

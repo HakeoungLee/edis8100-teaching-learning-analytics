@@ -90,7 +90,7 @@ Nothing is written to disk. Both datasets are read straight from the internet in
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week03-ethics-bias-audit/week03_ethics_bias_audit.ipynb`.
@@ -111,7 +111,7 @@ The timings below add up to about 30 minutes for Part 1, which is what we do tog
 
 **Setup (2 minutes).** Run the first code cell. It downloads six OULAD files and prints what arrived. If your connection is down it says so in plain language instead of showing a traceback. Then read the short provenance section that follows, which names the dataset, its license, its citation, and who collected it.
 
-**1. Real data does not arrive clean (5 minutes).** The mess is the lesson. One deprivation label is written `10-20` without a percent sign, 29 enrollments have no deprivation recorded, 47 people took the module twice, 738 enrollments never appear in the clickstream at all, 46,884 click rows happen before the module officially starts, and the outcome column has four categories rather than two. Four decisions get made in front of you, each with its cost named. Because 47 people appear twice, every join in the notebook keys on `(code_presentation, id_student)` rather than on the student id alone, including the join that attaches submitted coursework. All 47 did not pass in 2013J, which is why they were back in 2014J, and section 4 later checks whether their double-counting moves the headline interval. It does not. The section also names an asymmetry the two presentations carry into the redesign: three assignments fall on or before day 60 in 2013J and two in 2014J, so a feature built from submitted work is not on the same scale in the two cohorts.
+**1. Real data does not arrive clean (5 minutes).** The mess is the lesson. One deprivation label is written `10-20` without a percent sign, 29 enrollments have no deprivation recorded, 47 people took the module twice, 738 enrollments never appear in the clickstream at all, 46,884 click rows happen before the module officially starts, and the outcome column has four categories rather than two. Four decisions are made visibly, each with its cost named. Because 47 people appear twice, every join in the notebook keys on `(code_presentation, id_student)` rather than on the student id alone, including the join that attaches submitted coursework. All 47 did not pass in 2013J, which is why they were back in 2014J, and section 4 later checks whether their double-counting moves the headline interval. It does not. The section also names an asymmetry the two presentations carry into the redesign: three assignments fall on or before day 60 in 2013J and two in 2014J, so a feature built from submitted work is not on the same scale in the two cohorts.
 
 **2. The gaps before any model (4 minutes).** Pass rates by deprivation decile run from 36.9 percent for enrollments from the most deprived tenth of neighbourhoods to 61.9 percent for the least deprived. Enrollments with a recorded disability pass at 40.3 percent against 50.0 percent. Median clicks in the first 60 days track the same gradient, 86 against 164.
 

@@ -16,7 +16,7 @@ Peer review runs in week 12, Project Day, Wednesday 11/11, 3:30 to 6:00 PM, Ridl
 
 Peer review in a doctoral seminar is neither proofreading nor a compliment exchange. You are being asked to do what reviewers, committee members, and collaborators will do to your work for the rest of your career, and to do it well enough to be useful to the author.
 
-**Read the draft the author wrote, not the one you would have written.** The most common failure in peer review is redesigning someone else's project. If you find yourself proposing a different study, stop and ask instead what would make this study stronger on its own terms. Then, separately and briefly, you may say "have you considered."
+**Please read the draft the author wrote, not the one you would have written.** The most common failure in peer review is redesigning someone else's project. If you find yourself proposing a different study, stop and ask instead what would make this study stronger on its own terms. Then, separately and briefly, you may say "have you considered."
 
 **Locate your feedback.** "The framework is weak" is not usable. "The framework section names self-regulated learning on page 3, but the analysis on page 9 only measures activity volume, and I cannot see which construct that volume is standing in for" is usable, because the author knows where to go and what to fix.
 
@@ -105,9 +105,9 @@ There are six of you, so everyone gets a five-minute slot and nobody has to deci
 | **The data source, as you can name it from the draft alone** | |
 | **Is it real, and obtainable in the time this author has?** | yes / not sure / no |
 
-*Answer that line first, before anything else in this section. If the draft says only "LMS data" or "student writing," or names a route with no duration attached, write that down: it is the most useful thing you can tell this author.*
+*Please answer that line first, before anything else in this section. If the draft says only "LMS data" or "student writing," or names a route with no duration attached, write that down: it is the most useful information you can tell this author.*
 
-*Then check the rest of the plan. Could a person actually do this? Go through it end to end: data source, access, unit of analysis, cleaning, analysis, output. Name the step least likely to work. Then say what would have to be added or narrowed for the plan to be executable in the time the author has. Be concrete about scale: if the sample, the time frame, or the coding load looks like more than one person can complete, say so now.*
+*Then check the rest of the plan. Could a person do this? Go through it end to end: data source, access, unit of analysis, cleaning, analysis, output. Name the step least likely to work. Then say what would have to be added or narrowed for the plan to be executable in the time the author has. Be concrete about scale: if the sample, the time frame, or the coding load looks like more than one person can complete, say so now.*
 
 ## 4. Ethics and equity engagement
 

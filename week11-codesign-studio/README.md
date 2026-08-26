@@ -53,7 +53,7 @@ There is no `data/` folder and nothing to clone. The first code cell reads one 3
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week11-codesign-studio/week11_codesign_studio.ipynb`.
@@ -84,11 +84,11 @@ Then the column that speaks two languages. `learner_type` contains both `Active`
 
 **2. Four people, written down as data (4 minutes).** Dana Okonkwo built and ran an open course. Malik Ferrer enrolled in one. Tobias Lindqvist runs analytics at the company hosting them. Ana Whitfield is the programme officer at the foundation that paid for several to be built. Each card carries goals, fears, decision rights, what they cannot change, the grain they think in, their access reality, and **the one measure they would reach for first**, which is what makes the rest of the notebook possible.
 
-Read the access-reality lines together. Three of the four can change something. The fourth can change only which tab he has open, and he is the one every row of the file is about.
+Please read the access-reality lines together. Three of the four can change something. The fourth can change only which tab he has open, and he is the one every row of the file is about.
 
-Read the goals as carefully as the decision rights, because a persona card is where a deficit assumption hides most comfortably. Dana's third stated fear is reading a low grade as a fact about a person rather than about her own assessment design. Malik's first is being counted as somebody's "dropout" for doing exactly what he said he would do. Neither card treats a learner as a problem to be detected, and if yours does when you write a fifth persona, that is the thing to notice.
+Please read the goals as carefully as the decision rights, because a persona card is where a deficit assumption hides most comfortably. Dana's third stated fear is reading a low grade as a fact about a person rather than about her own assessment design. Malik's first is being counted as somebody's "dropout" for doing exactly what he said he would do. Neither card treats a learner as a problem to be detected, and if yours does when you write a fifth persona, that is the thing to notice.
 
-**3. The metric menu (4 minutes).** Seven metrics computed from the file, and a decision made in front of you. The four persona measures are recorded on four different subsets, so comparing lists drawn from them would confound any disagreement with the file's silence. From here on the notebook works on the **common population**: the 21,693 enrolments, 6.7 percent of the file, from 19,924 people in 156 of the 238 courses, where all four are recorded. The cost is printed rather than buried: the kept rows are not a random sample, and the median grade among rows that have one is 0.12 across the file and 0.37 here.
+**3. The metric menu (4 minutes).** Seven metrics computed from the file, and a decision made visibly. The four persona measures are recorded on four different subsets, so comparing lists drawn from them would confound any disagreement with the file's silence. From here on the notebook works on the **common population**: the 21,693 enrolments, 6.7 percent of the file, from 19,924 people in 156 of the 238 courses, where all four are recorded. The cost is printed rather than buried: the kept rows are not a random sample, and the median grade among rows that have one is 0.12 across the file and 0.37 here.
 
 The *mistaken for* column does the framing work. Page views are mistaken for effort, active days for commitment, modules reached for having understood the modules, and the platform's `explored` flag for seriousness. Each label describes what was measured and each annotation names the leap you are not entitled to make. Note also what is missing: **not one metric on this menu is "lower is better"**, because on a platform nobody was required to use there is no measure where less of it is straightforwardly worse. Be suspicious of any dashboard here that flags a person for having too little of something.
 
@@ -114,7 +114,7 @@ The default focus enrolment is chosen because it embarrasses every easy story. T
 
 The section closes with the objection a good colleague will raise: surely they just correlate? Spearman rank correlations among the four run from 0.22 to 0.56, and the notebook reports Pearson beside them for contrast, because page views run from 1 to 530,411 and a Pearson correlation on raw counts is dominated by a handful of enormous values (grade against page views: Spearman 0.51, Pearson 0.17). So the objection is half right, and the half it gets wrong is the important half. **Moderate agreement across a whole population is perfectly compatible with almost complete disagreement about who is at the top, and a dashboard lives at the end of the distribution where the agreement has run out.**
 
-**6. The swap (6 minutes).** First the mechanical part: for each of the other three personas, what they could actually do with your chosen metrics and which of their stated fears each one touches. Then the actionability figure over all seven metrics and all four people, where a `!` marks a metric that touches that person's fear. Out of a maximum of 14, the platform can act on 11, the course team on 10, the funder on 9, and the learner on 6. The person every row is about can act **directly** on exactly one metric of the seven; the company that owns the file can act directly on four.
+**6. The swap (6 minutes).** First the mechanical part: for each of the other three personas, what they could do with your chosen metrics and which of their stated fears each one touches. Then the actionability figure over all seven metrics and all four people, where a `!` marks a metric that touches that person's fear. Out of a maximum of 14, the platform can act on 11, the course team on 10, the funder on 9, and the learner on 6. The person every row is about can act **directly** on exactly one metric of the seven; the company that owns the file can act directly on four.
 
 Then the file answers back, which is why this dataset is here.
 
@@ -130,7 +130,7 @@ The interpretation prompt then draws the boundary hard. The survey is 10.8 perce
 
 The four personas travel across the weeks under different names: somebody who built the learning experience, somebody it was for, an institution or company whose system did the recording, and somebody who paid for the work. The names change and the four positions do not.
 
-In the default scoring the learner column totals 32 out of 33 and no learner was in the room for any of it. The dictionary is the instructor's first guess and you are expected to argue with it.
+In the default scoring the learner column totals 32 out of 33 and no learner was in the room for any of it. The dictionary is the instructor's first guess and you are expected to revise it.
 
 The last row is today. This notebook ranked 21,693 enrolments four ways and put 500 names on each list without asking one of them which measure they would have chosen, and the second prompt asks the only useful version of the question: not what would have felt better, but what would have been **different on the screen**.
 
@@ -173,7 +173,7 @@ For students who finish early or who arrive with programming experience:
 
 **My numbers are slightly different from the ones in this README.** If you changed a **Your turn** cell, expected and good. If you did not, check the third digit: every resampling step is seeded, so a clean run reproduces the same numbers every time. If a whole column has changed, restart and run all.
 
-**My audit numbers are different from the ones in the printout.** They should be. The dictionary in section 7 is the instructor's first guess and you were asked to argue with it. Bring one moved cell and your reason to the discussion.
+**My audit numbers are different from the ones in the printout.** They should be. The dictionary in section 7 is the instructor's first guess and you were asked to revise it. Bring one moved cell and your reason to the discussion.
 
 **I cannot tell the shades of the heatmaps apart.** Do not try. Every cell prints its value as text on top of the colour, and both heatmaps have the same numbers printed as a plain table in the cell above or below. Read the numbers and the column totals, which is where the finding lives anyway.
 

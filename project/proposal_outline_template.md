@@ -10,7 +10,7 @@ This is an outline rather than a draft. Bullet points are welcome in most sectio
 
 Where a section is genuinely undecided, write what you are choosing between and what would settle it. "I am deciding between an existing LMS export and a small interview study, and the deciding factor is whether the district will share attendance data" is a useful outline entry. A blank heading is not.
 
-Submit as a Word document. Double spaced, 11 or 12 point, 1 inch margins, APA 7 for anything you cite. Upload your AI interaction log to the Canvas "AI Reflection" submission at the same time.
+Please submit as a Word document. Double spaced, 11 or 12 point, 1 inch margins, APA 7 for anything you cite. Upload your AI interaction log to the Canvas "AI Reflection" submission at the same time.
 
 ---
 

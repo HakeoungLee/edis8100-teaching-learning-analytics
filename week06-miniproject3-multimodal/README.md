@@ -58,7 +58,7 @@ You do not need to clone anything or download a CSV by hand. The first code cell
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`.
@@ -81,7 +81,7 @@ The studio block gets you through Section 4, which is where the central case lan
 
 **1. Four files, four grains (5 minutes).** Know what one row of each file means before you compute anything. `children` is one row per child. `joined` is one row per child with that team's channel summary repeated on both rows, so two children in the same pair carry identical gaze and affect values that are not about either of them. `team_out` is one row per team. `temporal` is one row per team per window. The notebook then **checks the window size rather than trusting a README**: the gap between consecutive rows of a team is 10 seconds, in every team, with no other value. Sessions run 10.7 to 36.0 minutes, median 23.2, and 13.0 hours in total. And the temporal file has no `who` column, which becomes Section 8.
 
-**1.1 The mess, in front of you (6 minutes).** Fifty-eight of seventy-eight children have no speech record, and the gaps are not scattered: **10 whole teams were transcribed and 29 were not**. A two-panel figure shows the channel counts and all 39 teams as a labelled grid. The notebook then makes the decision in front of you and prices it: analyse the 20 children with both channels, accept that ten pairs is a small study, accept that nothing in the released files says how those ten were chosen, and recompute on all 78 children wherever that is possible. The interpretation prompt asks for a reason the transcribed teams look the way they do that has nothing to do with the children.
+**1.1 The mess, in view (6 minutes).** Fifty-eight of seventy-eight children have no speech record, and the gaps are not scattered: **10 whole teams were transcribed and 29 were not**. A two-panel figure shows the channel counts and all 39 teams as a labelled grid. The notebook then makes the decision visibly and prices it: analyse the 20 children with both channels, accept that ten pairs is a small study, accept that nothing in the released files says how those ten were chosen, and recompute on all 78 children wherever that is possible. The interpretation prompt asks for a reason the transcribed teams look the way they do that has nothing to do with the children.
 
 **2. Two ledgers of the same session (10 minutes).** Each child gets their **share of their own pair** on each channel, because one pair talked for fifteen minutes and another for twenty-five and raw seconds mostly compare sessions. Then **Section 2.1, which is the methodological heart of the week**: within a pair the two shares must sum to exactly 1, so the second row of every pair carries no information the first did not, and a correlation across twenty children has ten observations in it wearing a costume. The notebook **proves** this rather than asserting it, recomputing the correlation from the ten pair deviations alone and checking it matches to six decimal places. Every interval from here on is a cluster bootstrap that resamples whole pairs. The result: speech share against action share is **r = +0.208, 95% CI [-0.262, +0.697]**; word share against edge-add share is **r = +0.015, 95% CI [-0.659, +0.784]**. **Your turn 1** points the same machinery at any two channels, and the default, turns against seconds, returns **r = +0.966** as a calibration point for what agreement actually looks like.
 
@@ -151,7 +151,7 @@ For students who finish early or who arrive with programming experience:
 
 **My numbers do not match the ones in this README.** If you changed a **Your turn** cell, that is expected and good, and you should report your numbers rather than these. If you did not, restart and run all. The bootstraps are seeded with `SEED = 8100`, so a clean run reproduces the same intervals every time. If a number still differs, tell the instructor: the dataset repository may have been updated, and that is worth knowing.
 
-**"Why is the correlation different when I use the other file?"** Because it is a different set of children. That is Section 6, and noticing it unprompted is worth more than most of the rest of the assignment.
+**"Why is the correlation different when I use the other file?"** Because it is a different set of children. That is Section 6, and noticing it unprompted is more useful than most of the rest of the assignment.
 
 **My interval looks impossibly narrow.** Check what you resampled. If you resampled children rather than pairs, you broke the pair structure and invented confidence. Use `pair_bootstrap_r`, which resamples whole teams, and read Section 2.1 again.
 

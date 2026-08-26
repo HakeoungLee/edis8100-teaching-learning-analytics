@@ -74,7 +74,7 @@ Here is one workable structure, with times. Adjust the proportions to your proje
 
 **Include a diagram of your design**: one slide showing data sources feeding into the unit of analysis and out to the analyses that answer each research question. It is more useful than three bullet slides.
 
-**Bring a backup.** Export a PDF and have it on a flash drive or in your email, in case of a font substitution or a failed Wi-Fi connection on presentation day.
+**Please bring a backup.** Export a PDF and have it on a flash drive or in your email, in case of a font substitution or a failed Wi-Fi connection on presentation day.
 
 **Number your slides.** It makes question time enormously easier for everyone.
 

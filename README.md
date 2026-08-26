@@ -16,7 +16,7 @@ You need a Google account and a browser. That is all. There is nothing to instal
 
 This repository is public, so a notebook link opens in Colab with nothing to accept and no permission to grant. You need a Google account and a browser.
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you will use for this course.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown, pick `HakeoungLee/edis8100-teaching-learning-analytics`. Leave the branch on `main`.
 

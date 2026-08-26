@@ -42,7 +42,7 @@ You do not need to clone anything or download a CSV by hand. The first code cell
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb`.
@@ -132,7 +132,7 @@ For students who finish early or who arrive with programming experience:
 3. **Message length at the level of the person.** Your turn 3 found that characters and messages rank the eight *groups* almost identically. Do it for individuals instead. Is there anyone here for whom the two channels disagree sharply, and what would a dashboard built on each have said about them?
 4. **Cluster the day, not the group.** Treat all 16 sessions as the unit and ask whether 16 February looks systematically different from 18 February. If it does, you have found a day effect that a group-level dashboard would have charged to teams.
 5. **Do the nesting properly.** Fit a model of session Gini with a random intercept for group and report the intraclass correlation *with its uncertainty*. With eight groups the estimate will be unstable, and reporting the instability rather than the estimate is the exercise. Then say what sample size the question would actually need.
-6. **Sensitivity of the session rule.** We defined a session as a group-day. Rebuild it with the idle rule from Your turn 2 and check whether anything in Sections 3 or 4 changes. A conclusion that survives both definitions is worth more than one that needs the right definition.
+6. **Sensitivity of the session rule.** We defined a session as a group-day. Rebuild it with the idle rule from Your turn 2 and check whether anything in Sections 3 or 4 changes. A conclusion that survives both definitions is more useful than one that needs the right definition.
 7. **The full Villa-Torrano release.** The original Zenodo record also holds document edit logs, Moodle logs and questionnaires for these same students. Download it and ask what this extract cannot: how much of the recorded unevenness in chat is offset by the same students' work in the shared document?
 8. **The chance floor, in general.** Section 4 simulates a floor for the Gini under equal propensities. Derive or simulate the same floor for a measure you plan to use in your own project, and report your observed value beside it. Most published participation numbers have never been read against their floor.
 

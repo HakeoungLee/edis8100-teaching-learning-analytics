@@ -141,7 +141,7 @@ fairness finding in the Portuguese half of the audit exists at all.
 
 Section 6 asks you to write **one question these data cannot answer**. Write one that no
 further work with this file would resolve, rather than one you simply ran out of time for.
-Bring it to Week 2, when the setting changes to a UK distance-teaching university and one
+Please bring it to Week 2, when the setting changes to a UK distance-teaching university and one
 flat file of 395 rows becomes six files and 922,449 rows, and we find out whether more data,
 and messier data, actually helps.
 
@@ -167,7 +167,7 @@ required and none are graded.
    schools in the file. Then write two sentences: one about students, one about how two
    schools record.
 
-Bring anything interesting to Week 2. Stretch work is a good source of discussion material.
+Please bring anything interesting to Week 2. Stretch work is a good source of discussion material.
 
 ## Troubleshooting
 
@@ -259,7 +259,7 @@ to do, and the only reason you can open the file at all is that somebody chose t
 None of them agreed to be a teaching example. Ask who could be harmed by a claim before you
 make it. Notice when a metric reduces a person to one number. Notice which people are not in
 this file at all. That stance is one of the course's arguments, and the full statement of it
-is in the **Affordances and Limits Guide** in your Canvas module.
+is in the **Affordances and Limitations Guide** in your Canvas module.
 
 Where every dataset in the course comes from, who is in it, and how it is licensed is in the
 course guide *Finding and Evaluating Learning Analytics Data*.

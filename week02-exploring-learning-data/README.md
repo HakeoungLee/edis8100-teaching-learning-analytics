@@ -9,7 +9,7 @@ You find out how far a column in a CSV is from a thing that matters, using recor
 | **Session** | Wednesday, September 2, 2026, 3:30 to 6:00 PM, Ridley 137 |
 | **Topic** | Mapping the Learning Analytics Landscape and Theoretical Lenses |
 | **Guest speaker** | None. Dr. Lee leads the discussion this week so that you can watch the facilitation moves you will be using from Week 3 onward. |
-| **In-class time on this notebook** | 25 minutes, in the hands-on block (4:35 to 5:00). The core path runs about 35 minutes, so treat the studio as a start and finish the rest at home. Section 7b is the designated cut if the room is short. |
+| **In-class time on this notebook** | 25 minutes, in the hands-on block (4:35 to 5:00). The core path runs about 35 minutes, so treat the studio as a start and finish the rest at home. Section 7b is the designated cut if the group is short. |
 | **Deliverable** | None. Week 2 is in-class work only. |
 | **Due date** | Not applicable. The first Canvas deliverable is Mini Project 1 in Week 4. |
 | **Notebook** | `week02_exploring_learning_data.ipynb` |
@@ -74,7 +74,7 @@ You do not need to clone anything, download a CSV, or create an account. The fir
 The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
 
 1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Choose **File > Open notebook**.
+2. Please choose **File > Open notebook**.
 3. Click the **GitHub** tab.
 4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
 5. Select `week02-exploring-learning-data/week02_exploring_learning_data.ipynb`.
@@ -93,13 +93,13 @@ You can also run the notebook locally with Jupyter if you prefer. It needs panda
 
 ## Step-by-step walkthrough
 
-The core path is about 35 minutes if you keep moving, and the studio block is 4:35 to 5:00, so the last stretch is yours to finish at home. The per-section estimates below sum to more than 35 minutes on purpose: they assume you stop and argue at every prompt, and the arguing continues in the 5:10 discussion block. If the room is running behind, **Section 7b is the one to read aloud rather than run**, because it is the only section whose numbers are all printed in the walkthrough above. The three **Your turn** cells already contain working values, so the notebook runs start to finish without you typing anything. Most of the work is in the reading; the code is short.
+The core path is about 35 minutes if you keep moving, and the studio block is 4:35 to 5:00, so the last stretch is yours to finish at home. The per-section estimates below sum to more than 35 minutes on purpose: they assume you stop and argue at every prompt, and the arguing continues in the 5:10 discussion block. If the group is running behind, **Section 7b is the one to read aloud rather than run**, because it is the only section whose numbers are all printed in the walkthrough above. The three **Your turn** cells already contain working values, so the notebook runs start to finish without you typing anything. Most of the work is in the reading; the code is short.
 
 **Setup (1 minute).** Run the first code cell. It downloads six files and prints a table of what arrived: 922,449 rows in total, module BBB, presentations 2013J and 2014J. Read the "Where this data came from" cell above it before you run anything. You should never analyze data whose origin you cannot state.
 
 **1. Meet the tables (3 minutes).** The three files have genuinely different origins. `studentVle` is a **log**, a by-product of a website's ordinary operation, and nobody designed it to answer a research question. `studentAssessment` is a **measurement**, produced on purpose by an instrument somebody built. `studentInfo` is an **administrative record**, assembled by a registry for funding and compliance. Learning analytics almost always means putting those kinds of data next to each other and arguing about the pairing. Notice the grain of each file before you go on.
 
-**2. What an export actually looks like when it arrives (8 minutes).** This is the section Week 1 could not teach. The notebook works through four problems in the export, deciding each one in front of you and naming what the decision costs.
+**2. What an export actually looks like when it arrives (8 minutes).** This is the section Week 1 could not teach. The notebook works through four problems in the export, making each decision visibly and naming what the decision costs.
 
 - **2a, one module run twice.** 4,529 enrollment rows but only 4,482 distinct students: 47 people sat the module twice, once in each presentation. Student 151917 failed 2013J with 909 clicks and passed 2014J with 713. A `groupby` on `id_student` alone reports one imaginary person with 1,622 clicks who both failed and passed. The decision: the unit of analysis is the **enrollment**, keyed on `(id_student, code_presentation)`. The section also says where the dependency does and does not matter: 589 of the 4,529 rows record a previous attempt at this module in `num_of_prev_attempts`, only 47 of those repeats are visible here as a duplicated person, and scoping to one presentation in 2e removes the duplication entirely. Your turn 2 pools the years and puts 25 of them back.
 - **2b, activity before the course starts.** `date` runs from -23 to 268, and 46,884 rows (5.3 percent) sit before day 0. Those are not corrupt; they are 2,739 people looking at the site before it opens. The decision: keep them, because the most voluntary engagement in the file should not be deleted. The cost: total clicks is not a rate, so students had unequal windows in which to accumulate them. The section is careful about the size of that inequality: registration runs from 198 days early to 44 days late, but the 2013J log holds no row before day -23 and the 2014J log none before day -9, so the extra pre-start opportunity is capped at about three weeks, not six months.
