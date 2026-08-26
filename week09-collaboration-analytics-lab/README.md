@@ -1,176 +1,395 @@
 # Week 9: Collaboration Analytics Lab
 
-Reading a group by its chat, in two settings, then deciding what a dashboard should refuse to show.
+This is the hands-on session for Week 9. Together we will open a real chat export from eight student
+groups, find out what the platform's clock could and could not record, measure how evenly each group's
+messages were distributed, ask how much of that spread chance alone would produce, carry the same
+question to a second dataset in a completely different setting, and finish by deciding what a
+collaboration dashboard should refuse to show.
+
+Coding experience is not assumed and is not what this session is about. Nothing here asks you to write
+code from scratch. You run cells, read what comes out, and change a few clearly marked values to see
+what those choices were doing to the result. Questions are welcome at any point, including questions
+about a single line of code.
 
 ## At a glance
 
 | | |
 |---|---|
-| **Session** | Wednesday, October 28, 2026, 3:30 to 6:00 PM, Ridley 137 |
+| **Session** | Week 9, Wednesday, October 21, 2026, Ridley Hall 137 |
 | **Topic** | Learning Analytics for Understanding and Supporting Collaboration |
-| **Guest speaker** | None this week. The 60-minute discussion block is entirely student led. |
-| **In-class time on this notebook** | About 30 minutes, in the hands-on block (4:30 to 5:00). Section 6 is written to spill into the 5:00 discussion on purpose. |
-| **Deliverable** | None from this notebook. It is a lab, not a graded submission. |
-| **Due date** | The **Course Research Project Outline** is due this week via Canvas, submitted separately from this notebook, together with your AI interaction log and reflection. |
+| **Notebook portion** | Approximately 4:50 to 5:50 PM, instructor guided, after the student-led discussion hour and the break |
+| **Guest speaker** | None this week. The discussion hour is entirely student led. |
 | **Notebook** | `week09_collaboration_analytics_lab.ipynb` |
-| **Data used** | Two published, openly licensed datasets, downloaded by the notebook. `collab-chat/chat_logs.csv` (1,374 chat messages, 8 groups of 4 or 5 undergraduates, four days in February 2021; CC BY 4.0; Villa-Torrano, 2021, Zenodo 5150537) and the Week 6 JUSThink files `justhink/per_participant.csv` and `justhink/pehri_team_outcomes.csv` (78 children in 39 teams of two, 34 teams with an outcome; CC BY 4.0; Norman et al., 2021, Zenodo 4627104; Nasir et al., 2021, Zenodo 4633092). |
+| **Data** | **Real, published, openly licensed.** `collab-chat/chat_logs.csv` (1,374 chat messages, 8 groups of 4 or 5 undergraduates, four days in February 2021; CC BY 4.0) and the Week 6 JUSThink files `justhink/per_participant.csv` and `justhink/pehri_team_outcomes.csv` (78 children in 39 teams of two, 34 teams with an outcome row; CC BY 4.0). Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets` |
+| **Citations** | Villa-Torrano, C. (2021). *Dataset on an online collaborative learning situation in a computer networks course* [Data set]. Zenodo. Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink dialogue and actions corpus* [Data set]. Zenodo. Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal dataset for the study of productive engagement in a robot mediated collaborative educational setting* [Data set]. Zenodo. |
 | **Libraries** | pandas, numpy, matplotlib, scipy |
+| **Needs internet?** | **Yes**, for the first code cell. Every notebook in this course downloads its data. |
+| **Deliverable** | None from this notebook. Nothing in it is collected and nothing in it is graded. |
+| **Due** | The **Course Research Project Outline**, on Canvas, by 11:59 PM on Sunday, October 25, 2026, together with your AI interaction log and AI reflection. It is a separate submission from anything in this folder. |
+| **Prior coding experience needed** | None |
 
-## Objectives
+Discussion Leadership runs in Weeks 2 through 11, and each of the four of you leads two of those
+weeks. There is no guest speaker this week, so the full discussion hour belongs to this week's leader.
 
-By the end of this activity you will be able to:
+## What I hope you leave with
 
-1. **Open** a real, messy export, name each cleaning decision out loud, and state what the decision costs.
-2. **Recognise** when a measure is reporting the instrument's resolution rather than anyone's behaviour, and retire the measure rather than caveat it.
-3. **Compute** the unevenness of a group's recorded participation, read it against both its ceiling of (n - 1) / n and against what chance alone would produce at that group size and volume, and describe the spread across groups without over-testing it.
-4. **Say precisely** why eight groups, two sittings each, will not support a group-level significance claim, and what nesting does to any interval you might print.
-5. **Argue**, with evidence from two settings, what a collaboration dashboard should refuse to display, and to whom.
+1. A way of opening a real, messy export, naming each cleaning decision, and saying what the decision
+   costs.
+2. A way of noticing when a measure is reporting the instrument's resolution rather than anyone's
+   behaviour, and of retiring the measure rather than reporting it with a caveat.
+3. The unevenness of a group's recorded participation, read against both its ceiling of (n - 1) / n
+   and against what chance alone would produce at that group size and volume.
+4. A precise account of why eight groups, two sittings each, will not support a group-level
+   significance claim, and of what nesting does to any interval we might print.
+5. An argument, with evidence from two settings, about what a collaboration dashboard should refuse to
+   display, and to whom.
 
-The through-line of the session: Week 6 measured collaboration with one set of instruments and found something. This week you point a different instrument at a different room, then ask the only question that matters for anything you would build. **Does the finding travel?** The parts that do not travel are not noise. They are the reason the last hour of class is an argument about what to build.
+None of these is a coding objective.
+
+The through-line of the session: Week 6 measured collaboration with one set of instruments and found
+something. This week we point a different instrument at a different setting, then ask the question
+that matters for anything anyone would build. **Does the finding travel?** The parts that do not
+travel are not noise, and they are what the design question at the end is about.
 
 ## What is in this folder
 
 | File | What it is |
 |---|---|
-| `week09_collaboration_analytics_lab.ipynb` | The notebook. It downloads its own data from the course dataset repository and runs top to bottom untouched. |
+| `week09_collaboration_analytics_lab.ipynb` | The notebook. Everything happens here. |
 | `README.md` | This file. |
 
-You do not need to clone anything or download a CSV by hand. The first code cell fetches all three files. If your connection drops, that cell prints a plain message naming the repository rather than a traceback.
+There is nothing to download by hand and nothing to upload. The first code cell fetches three files
+over plain HTTPS and prints what arrived: 1,374 chat messages by 4 columns, 78 children by 12, and 34
+team outcome rows by 6. If the download fails, the cell prints a plain-English message naming the
+repository it was trying to reach rather than a long error trace.
 
-## How to open this in Colab
+## Opening it in Colab
 
-The course repository is public, so the Colab badge opens the notebook directly. Do this once and it keeps working all semester.
-
-1. Go to [colab.research.google.com](https://colab.research.google.com) and sign in with the Google account you use for class.
-2. Please choose **File > Open notebook**.
-3. Click the **GitHub** tab.
-4. In the repository dropdown pick `HakeoungLee/edis8100-teaching-learning-analytics`.
-5. Select `week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb`.
-
-Once you have authorized Colab, this badge works too:
+This repository is public, so you need only a Google account and a browser. There is nothing to accept
+or authorize.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb)
 
+Direct link:
 `https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb`
 
-**Want to keep your edits?** In Colab choose **File > Save a copy in Drive** before you start changing cells. Your copy is yours, and nothing you do to it affects the course repository. Your Section 6 specification is worth keeping: Week 11's co-design studio starts from exactly that kind of artifact.
+If you would rather not use the badge, go to
+[colab.research.google.com](https://colab.research.google.com), sign in, choose
+**File > Open notebook**, click the **GitHub** tab, enter
+`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`, and select
+`week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb`.
 
-You can also run the notebook locally with Jupyter if you prefer. It needs pandas, numpy, matplotlib and scipy, all of which ship with Anaconda, plus an internet connection for the three CSV files.
+The notebook opens. Run the first code cell to begin.
 
-## The data, and where it came from
+You can also run it locally with Jupyter. It needs pandas, numpy, matplotlib and scipy, all of which
+ship with Anaconda, plus an internet connection for the three CSV files.
 
-Nothing here was collected by this course. Both datasets are redistributed under the licence their authors chose, and both citations belong in your reference manager the moment you use anything from them.
+### Keeping your own copy
 
-**Villa-Torrano (2021), `collab-chat/chat_logs.csv`, CC BY 4.0.** 1,374 messages, four columns, from undergraduates in a computer networks course working through Moodle and a platform called CoTrackV2. Eight groups of four or five, each recorded on two days between 15 and 18 February 2021, online, in Spanish. Semicolon delimited, UTF-8 with a byte order mark, day-first dates.
+Colab discards the session when you close the tab. **File > Save a copy in Drive** keeps a personal
+version, and **File > Download > Download .ipynb** saves a local one. Nothing is lost if you forget:
+the datasets are fixed published files and the simulations are seeded, so re-running the notebook from
+the top reproduces the same numbers on any machine. Your Section 6 specification is worth keeping.
+Week 11's co-design studio starts from that kind of artifact.
 
-> Villa-Torrano, C. (2021). *Dataset on an online collaborative learning situation in a computer networks course* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5150537
+## Walkthrough
 
-**JUSThink and PE-HRI (2021), `justhink/`, CC BY 4.0.** The Week 6 children: 78 nine to twelve year olds in 39 teams of two, building a minimum spanning tree with a robot in the room. Interface actions for all 78, speech for 20 of them, team level learning outcomes for 34 of the 39 teams.
+We will move through this together in class. The timings below are a rough guide rather than a target,
+and it is fine if we spend longer somewhere and skip something else. The five **Your turn** cells
+already contain working values, so the notebook runs start to finish without anyone typing anything.
 
-> Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink dialogue and actions corpus* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4627104
->
-> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal dataset for the study of productive engagement in a robot mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092
+| Step | Section | Minutes | What happens |
+|---|---|---|---|
+| 1 | Setup | 2 | One cell: the imports, a colourblind safe palette, and a loader that fetches three CSVs and, if the network is down, says so in plain English. |
+| 2 | 1. The file as it arrived | 8 | Three ordinary problems, each shown going wrong before it goes right, then the inventory and the four cleaning decisions with their costs. |
+| 3 | Your turn 1: read one session | 3 | The opening of any session, with authors relabelled `P1` to `P5` within that session, ordered by message count. |
+| 4 | 2. The clock the platform kept | 8 | What resolution the platform's timestamps have, the latency tile computed anyway, and the decision to retire it. |
+| 5 | Your turn 2: where one stretch of talk ends | 3 | Change the idle rule from 2 minutes to 1 and to 5, and watch the count of stretches move. |
+| 6 | 3. Who the log recorded, and how evenly | 7 | The Gini coefficient, its ceiling of (n - 1) / n, and the stacked bar of each group's shares. |
+| 7 | 4. Chance, the group, and the day | 10 | Two null models side by side, each group's two sittings, and what eight units do to an interval. |
+| 8 | Your turn 3: what counts as a contribution | 3 | Characters and words instead of messages. |
+| 9 | 5. Does any of this travel? | 10 | The Week 6 children again, the dyad ceiling of 0.5, the missingness report, and three wide intervals. |
+| 10 | 6. The design question | 6 | Ten tiles, four possible audiences each, a hazard review, and one written refusal. |
 
-Neither dataset carries a name, an age band for the chat students, a gender, a language background, a prior grade, or in the chat data any measure at all of what a group produced. Those absences shape the whole week, and the notebook names each one where it bites rather than working around it quietly.
+**Going further (optional)** is a clearly marked section at the end, followed by an appendix with one
+worked answer for each **Your turn** cell. Neither is part of the class time and nobody needs to work
+through them today.
 
-## Step-by-step walkthrough
+## The figures we will make
 
-Total time is about 40 minutes if you keep moving, which is roughly the hands-on block. The five **Your turn** cells already contain working values, so the notebook runs start to finish without you typing anything. You are not expected to write code from scratch today. You are expected to read output carefully and argue about what it means.
+1. **Every recorded chat session on a clock.** Groups 1 and 2 in the afternoon of 15 and 17 February,
+   Groups 3 to 8 after ten at night on 16 and 18 February, sessions running 13 to 35 minutes with a
+   median of 17.5. The file does not say why the two blocks of groups sit at different hours.
+2. **What the platform's clock could see.** 80.3 percent of consecutive within-session gaps are
+   recorded as exactly 0 seconds, every gap is a whole number of minutes, and each occupied minute
+   holds 4.9 messages on average and 22 at the busiest.
+3. **Who the chat log recorded.** Each group's messages divided among its members, with a tick marking
+   where an even split would fall. Group 6's segments sit close to those ticks; Group 8's most
+   recorded member holds 44 percent of 106 messages, which is 2.22 times an even share, against 1.18
+   times for Group 1.
+4. **Unevenness against the ceiling, against chance, and against the same group's other day.** Every
+   group sits well below its ceiling. Two sit inside their own chance floor. Group 7's two sittings
+   read 0.064 and 0.446.
+5. **Message volume against unevenness, with the chance floor drawn in.** The floor falls as volume
+   rises, which is why the notebook draws it rather than subtracting it.
+6. **Two settings, three channels, one measure.** The busiest member's share as a multiple of an even
+   split, for the chat groups and for both JUSThink channels, each with its own chance floor.
+7. **What the second setting can and cannot settle.** Action unevenness against learning gain across
+   34 teams, and action unevenness against speech unevenness across the 10 teams that have both.
 
-**Setup (2 minutes).** One cell: `%matplotlib inline`, the imports, a colourblind safe palette, and a loader that fetches three CSVs and, if the network is down, says so in English and names the repository. It confirms 1,374 chat messages by 4 columns, 78 children by 12, and 34 teams by 6.
+## What the analysis shows, and what it does not
 
-**1. The file as it arrived (6 minutes).** Three ordinary problems, each shown going wrong before it goes right. A default `pd.read_csv` returns **one** column, because the file is semicolon delimited. Reaching for `encoding="latin-1"`, the reflex for a file full of Spanish accents, produces a first column named `ï»¿timestamp` and mangles the accents in 185 messages; the three bytes in front are `EF BB BF`, a byte order mark, and `encoding="utf-8-sig"` is the honest name for what the file is. Month-first date parsing raises `ValueError`, because there is no month 15. Then the inventory: 1,374 messages, zero missing values, 8 groups, 34 authorids, 4 or 5 authors per group, nobody writing in two groups, four calendar days, and every group recorded on exactly two of them.
+The notebook keeps three things apart at each step, and it may be useful to have the central case in
+front of you before class.
 
-Four decisions go into a table with their price tags. The one worth the argument: **there is no roster**, so the only people visible are the people who typed. Three member-sessions do show somebody typing on one of their group's two days and not the other, and those get filled in as zeros. Anyone silent across all four days leaves no trace, which makes every unevenness number in the notebook a **lower bound**. The figure maps all sixteen sessions on a clock: groups 1 and 2 in the afternoon of 15 and 17 February, groups 3 to 8 after ten at night on 16 and 18 February, sessions running 13 to 35 minutes with a median of 17.5.
+| | |
+|---|---|
+| **What the data directly show** | 1,333 of the 1,374 messages (97.0 percent) share a minute stamp with another message in the same session; every recorded gap is a whole number of minutes; the smallest non-zero gap in the file is 60 seconds; the median seconds until a different person posts is 0.0 in 16 of 16 sessions |
+| **A plausible interpretation** | The platform rounded its timestamps to the minute, so intervals shorter than a minute were never written down |
+| **What this file cannot establish** | How quickly anybody actually replied, and whether any two of these groups differed in responsiveness at all |
 
-**Your turn 1: read a room (2 minutes).** Print the opening of any session with authors relabelled `P1` to `P5` **within that session, ordered by message count**. The prompt names that relabelling as a decision, because it builds a ranking into the labels and makes every group look like it has a leading contributor.
+That is why the notebook retires the latency tile rather than reporting it with a caveat. What the
+decision costs is stated too: no responsiveness measure, no uptake speed, and no burst structure finer
+than a minute. What survives is co-presence at minute grain, with 222 of 283 occupied minutes (78.4
+percent) holding two or more writers, printed with counts beside every rate.
 
-**2. The clock the platform kept (7 minutes).** The section that decides what the rest of the week can measure. **97.0 percent of messages (1,333 of 1,374) share a minute stamp with another message in the same session.** The file has 283 occupied minutes holding 4.9 messages each on average and 22 in the busiest. **80.3 percent of consecutive within-session gaps are exactly 0 seconds**, every gap is a whole number of minutes, and the smallest non-zero gap anywhere is 60 seconds. So the tile the section came to build, median seconds until somebody else posts, reads **0.0 seconds in 16 of 16 sessions**. That number is about the export format.
+The same discipline applies to the group comparison. Gini runs from 0.092 (Group 6) to 0.306 (Group
+8), a ratio of 3.32, and the eight groups have four or five members each, so group size on its own
+does not account for the spread. What the measure records is the unevenness of *recorded messages*,
+which is not the same as participation: this extract holds the chat and not the shared document, and
+with no roster a student who never typed is missing from the denominator, so every number is a lower
+bound.
 
-The decision is stated and priced: **retire the tile**, do not caveat it. What that costs is no responsiveness measure, no uptake speed, and no burst structure finer than a minute. What survives is co-presence at minute grain, 222 of 283 occupied minutes (78.4 percent) holding two or more writers, printed with counts beside every rate.
+Three questions come before that spread counts as a finding.
 
-**Your turn 2: where does one stretch of talk end? (2 minutes).** With latency retired, the temporal question gets coarser. At the default 2 minute idle rule the file holds 25 stretches and 11 of 16 sessions are a single unbroken one; at 1 minute it fragments to 38, at 5 minutes it collapses to 18. The rule is a claim, not a fact, and the appendix says so.
+**Chance.** Twenty thousand simulated draws per group give each group its own floor, and the floor is
+neither zero nor constant. The obvious null treats each of the 1,374 messages as an independent draw,
+and that null is too generous, because people type in runs: the file's 1,374 messages arrive in 982
+runs, averaging 1.40 messages and reaching 7. Independent draws are smoother than bursty ones, so that
+null puts the floor too low. The burst-preserving floor, which resamples **turns** with run lengths
+drawn from that group's own runs, sits about 35 percent higher than the naive one on average and
+nearly half again as high for Group 8: 0.077 for Group 5 with 260 messages, and 0.143 for Group 8 with
+106 messages and five members, against 0.053 and 0.098 naive. Six of the eight groups are more uneven
+than 95 percent of their own simulations, and Groups 1 and 6 are not distinguishable from chance at
+all. The verdict is the same under either null. The distances are not, which is the transferable
+lesson: a distance from a floor is only as good as the floor. The two rankings also disagree at the
+top, since the most uneven group by raw Gini is Group 8 while the most uneven above its own floor is
+Group 5.
 
-**3. Who the log recorded, and how evenly (6 minutes).** The Gini coefficient is defined here rather than recalled, since Week 6 works in pairs and a Gini on two people carries no information the larger share does not already carry. The part dashboards get wrong is stated plainly: the ceiling is **(n - 1) / n**, so **0.75** for the six four-person groups and **0.80** for the two five-person ones. The measure is named for what it is, unevenness of *recorded messages*, and the stacked bar figure marks where an even split would fall for each group. **Gini runs from 0.092 (Group 6) to 0.306 (Group 8), a ratio of 3.32, while group size is nearly constant, so the spread is not a size artifact.** Group 8's most recorded member holds 44 percent of 106 messages, 2.22 times an even share; Group 1's holds 1.18 times.
+**The day.** Every group was recorded twice, and the figure plots both sittings beside the pooled
+value. Group 7 reads 0.064 on one day and 0.446 on the other, a swing of 0.382, which is larger than
+the entire spread of 0.214 across all eight groups. A dashboard labelling a group after one session is
+labelling a single sitting. The notebook leaves both readings of that swing open: the measure may be
+noisy at this sample size, or groups may genuinely reorganise between sittings.
 
-**4. How much is chance, how much is the group, how much is the day (8 minutes).** Three questions before that spread counts as a finding.
+**The units.** The nesting is written out: 1,374 messages inside 34 people inside 8 groups, each seen
+twice. Group-level claims have eight units. The section then asks whether groups that send more
+messages spread them more evenly, and answers with the interval rather than the estimate: Spearman
++0.26 with a bootstrap interval of [-0.59, +1.00] over 4,000 resamples of the eight groups. "This file
+cannot tell" is presented as a complete answer.
 
-*Chance, and the null model most people get wrong.* Twenty thousand simulated draws per group give each group its own floor, and the floor is not zero and not constant. The obvious null treats each of the 1,374 messages as an independent draw, and it is **wrong**, because people type in runs: the file's 1,374 messages arrive in 982 runs, averaging 1.40 messages and reaching 7. Independent draws are smoother than bursty ones, so that null puts the floor too low and flatters every group. The notebook simulates both and prints them side by side. The honest floor, which resamples **turns** with run lengths drawn from that group's own runs, sits about **35 percent higher** than the naive one on average and nearly half again as high for Group 8: **0.077 for Group 5 with 260 messages, 0.143 for Group 8 with 106 messages and five members**, against 0.053 and 0.098 naive. Six of the eight groups are still more uneven than 95 percent of their own simulations, and **Groups 1 and 6 are still not distinguishable from chance at all**, so the verdict survives the correction. The distances do not, which is the transferable lesson: a distance from a floor is only as good as the floor. The two rankings still disagree at the top: the most uneven group by raw Gini is Group 8, the most uneven above its own floor is Group 5.
+**Your turn 3** offers a check on the measure itself. Ranking the eight groups by characters typed
+agrees with ranking them by messages sent at Spearman +0.929, and words agrees at the same level. The
+notebook declines to read that as reassurance: both measures count typing, 28.5 percent of messages
+are two words or fewer, and neither measure sees the student who solved the problem on a voice call.
 
-*The day.* Every group was recorded twice, and the figure plots both sittings beside the pooled value. **Group 7 reads 0.064 on one day and 0.446 on the other, a swing of 0.382, which is larger than the entire spread of 0.214 across all eight groups.** Any dashboard labelling a group after one session is labelling a Tuesday.
+## Does it travel?
 
-*The units.* The nesting is written out: 1,374 messages inside 34 people inside 8 groups, each seen twice. Group-level claims have **eight** units. The section then asks whether groups that send more messages spread them more evenly, and answers with the interval rather than the estimate: Spearman +0.26 with a bootstrap interval of **[-0.59, +1.00]** over 4,000 resamples of the eight groups. "This file cannot tell" is presented as a complete answer. The scatter draws the chance floor as a curve rather than subtracting it, because subtracting a floor that falls with volume builds a correlation with volume into the statistic by construction.
+Everything above describes eight groups of undergraduates typing Spanish in February 2021. Section 5
+changes almost every variable at once and looks again at the Week 6 children: 78 of them, in 39 teams
+of two, with a robot, in a different country, language, medium and age band. The dyad ceiling is 0.5,
+which is why the cross-setting comparison uses the busiest member's share as a multiple of an even
+split, defined identically at any group size, with the chance floor drawn beside each strip.
 
-**Your turn 3: change what counts as a contribution (2 minutes).** Real text allows what a message count cannot reach: count characters or words rather than messages. Ranking the eight groups by characters agrees with ranking them by messages at Spearman **+0.929**, and words the same. The prompt refuses to call that reassuring: both measures count typing, 28.5 percent of messages are two words or fewer, and neither measure sees the student who solved the problem on a voice call.
+Two honesty notes travel with that figure. The chat floor keeps the burst structure; the two JUSThink
+floors cannot, because those files record totals and not sequences, so they are lower bounds and the
+gap above them is an upper bound. And the speech floor is computed on speaking **turns** while the
+plotted statistic is a share of **seconds**, which pushes the same way, since seconds arrive in
+unequal lumps.
 
-**5. Does any of this travel? (7 minutes).** Everything so far describes eight groups of undergraduates typing Spanish in February 2021. So the notebook changes almost every variable at once and looks again at the Week 6 children: 78 of them, in 39 teams of **two**, with a robot, in a different country, language, medium and age band. The dyad ceiling is **0.5**, which is why the cross-setting comparison uses the busiest member's share as a multiple of an even split, defined identically at any group size, with the chance floor drawn beside each strip. Two honesty notes travel with that figure. The chat floor keeps the burst structure; the two JUSThink floors cannot, because those files record totals and not sequences, so they are lower bounds and the gap above them is an upper bound. And the speech floor is computed on speaking **turns** while the plotted statistic is a share of **seconds**, which pushes the same way: seconds arrive in unequal lumps, so the real floor for seconds is higher than the one drawn.
+The notebook is explicit that this is an exercise in reading a recorded difference between two
+settings cautiously. The two settings differ in country, language, age band, medium, group size, task
+and instrument all at once, so a gap between them is in the first instance evidence about the
+recording conditions rather than about either set of people. "University students collaborate less
+evenly than children" is named in the notebook as a claim these data do not support.
 
-Missingness is reported, not absorbed: 34 of 39 teams have an outcome row, teams 11, 33, 34, 35 and 36 do not, 10 teams have speech, 9 have both. A cross-file check confirms `T_LG_absolute` equals the pair's mean test change divided by 10 to within 0.000000, which is how you learn what a derived column actually means. Base rates come before any comparison: pre-test mean 5.85 of 10, post-test 5.95, with 17 teams rising, 8 unchanged and 14 falling.
+Missingness is reported rather than absorbed: 34 of the 39 teams have an outcome row, teams 11, 33,
+34, 35 and 36 do not, 10 teams have speech, and 9 have both. A cross-file check confirms that
+`T_LG_absolute` equals the pair's mean test change divided by 10 to within 0.000000, which is one way
+to learn what a derived column actually means. Base rates come before any comparison: pre-test mean
+5.85 of 10, post-test 5.95, with 17 teams rising, 8 unchanged and 14 falling.
 
-Then the question the chat data cannot ask, because it records no outcome at all. Across 34 teams, unevenness of interface actions against absolute learning gain gives Spearman **-0.008, interval [-0.37, +0.36]**; against final task error, **-0.183, interval [-0.50, +0.18]**. Across the 10 teams with both channels, action unevenness against speech unevenness gives **-0.200, interval [-0.80, +0.63]**, and the prompt insists on the difference between "the channels disagree" and "ten teams cannot tell us whether they agree." Three comparisons are reported as three, not as the best of three.
+Then the question the chat data cannot ask, because it records no outcome at all. Across 34 teams,
+unevenness of interface actions against absolute learning gain gives Spearman -0.008 with an interval
+of [-0.37, +0.36]; against final task error, -0.183 with [-0.50, +0.18]. Across the 10 teams with both
+channels, action unevenness against speech unevenness gives -0.200 with [-0.80, +0.63]. The notebook
+holds apart "the channels disagree" and "ten teams cannot tell us whether they agree." Three
+comparisons are reported as three, not as the best of three.
 
-**6. The design question (5 minutes, and then the rest of the hour).** **Your turn 4** gives you ten tiles and four possible audiences each: `teacher`, `group`, `student`, `nobody`. You assign every tile and the cell checks your specification against hazards **drawn only from what this notebook found**, then prints a review. Change at least three defaults and be ready to defend them. **This is the heart of the week.** The principle underneath: a measure may be shown to an audience only if that audience can act on it in a way that helps, and only if being wrong about a person costs less than staying silent. **Your turn 5** then asks for one sentence, written out: what should this dashboard refuse to show, to whom, and who decided. The appendix shows one worked refusal and names the test it has to pass, which is that every clause of the "because" describes the instrument rather than a student.
+## The design question
 
-**Reflection.** Six prompts, tied to the three readings, to your own outline, and to the two research teams whose open data made the week possible.
+**Your turn 4** offers ten tiles and four possible audiences each: `teacher`, `group`, `student`,
+`nobody`. You assign every tile and the cell checks your specification against hazards drawn only from
+what this notebook found, then prints a review. Changing at least three of the defaults, and being
+ready to say why, is the useful version of the exercise. The principle underneath: a measure may be
+shown to an audience only if that audience can act on it in a way that helps, and only if being wrong
+about a person costs less than staying silent.
 
-**Submission checklist.** This notebook is not submitted. What is due is the Course Research Project Outline, and the checklist says exactly what goes with it.
+**Your turn 5** then asks for one sentence, written out: what should this dashboard refuse to show, to
+whom, and who decided. The appendix shows one worked refusal and names the test it has to pass, which
+is that every clause of the "because" describes the instrument rather than a student.
 
-## What this connects to in the readings
+The closing question is the one worth bringing to the discussion leader: **what should a collaboration
+dashboard refuse to show, and to whom?**
 
-- **Chen and Teasley (2022)**, *Learning analytics for understanding and supporting collaboration*: specify the construct before you specify the sensor. This notebook deliberately runs the other way, taking the sensor it was handed and asking which construct survives it. Section 2 is what happens when the sensor's resolution and the construct's definition never meet: "how fast does this group answer each other" is a perfectly good construct that this instrument cannot express, and no amount of analysis repairs that.
-- **Praharaj, Scheffel, Drachsler, and Specht (2021)**, *Literature review on co-located collaboration modeling using multimodal learning analytics: Can we go the whole nine yards?*: the chain from sensing to feedback and the places it breaks. Here the chain breaks at the first link for one measure and holds for another, and the section that separates them is worth the discussion. Note also which channel turned out to be affordable: in the JUSThink data the interface log is complete for all 39 teams and unrelated to the outcome, while the speech transcript exists for 10 teams and cannot be evaluated at that size. Neither cost nor completeness rescued the finding.
-- **Martinez-Maldonado, Kay, Buckingham Shum, and Yacef (2019)**, *Collocated collaboration analytics: Principles and dilemmas for mining multimodal interaction data*: the dilemmas are concrete in Section 6. You resolve one per tile, ten times, and write down who sees the result. The sharpest one this year is the roster: the notebook's participation shares have a denominator that cannot be observed, and a tile displaying them to a group presents a lower bound as if it were a fact about people.
+## Going further (optional)
 
-There is no guest this week, which means the full hour belongs to your discussion leader. The closing question is the one worth bringing them: **what should a collaboration dashboard refuse to show, and to whom?**
+The notebook ends with a clearly marked optional section for anyone who wants to keep going after
+class. None of it is required and none of it is graded. It includes recomputing every Gini under one
+and then two assumed silent members, building a minute-grain co-presence graph and comparing it
+against a shuffle, repeating the character-count comparison at the level of the individual, treating
+all 16 sessions as the unit, fitting a random intercept model and reporting the instability of the
+intraclass correlation, rebuilding the sessions with an idle rule instead of a group-day rule, and
+downloading the full Villa-Torrano release, which also holds document edit logs, Moodle logs and
+questionnaires for these same students.
 
-## Stretch goals
-
-For students who finish early or who arrive with programming experience:
-
-1. **The roster you cannot see.** Every unevenness number is a lower bound because a student who never typed is missing from the denominator. Recompute each group's Gini assuming one, then two, additional silent members, and plot how far the numbers move. Then write the limitations sentence for a denominator you cannot observe.
-2. **Minute-grain interaction structure.** The clock cannot support latency but it can support a graph: an edge between two people whenever both wrote inside the same minute. Build it per group and compare its density against a null that shuffles authorship within each minute. Which groups still look connected once the shuffle has had its say?
-3. **Message length at the level of the person.** Your turn 3 found that characters and messages rank the eight *groups* almost identically. Do it for individuals instead. Is there anyone here for whom the two channels disagree sharply, and what would a dashboard built on each have said about them?
-4. **Cluster the day, not the group.** Treat all 16 sessions as the unit and ask whether 16 February looks systematically different from 18 February. If it does, you have found a day effect that a group-level dashboard would have charged to teams.
-5. **Do the nesting properly.** Fit a model of session Gini with a random intercept for group and report the intraclass correlation *with its uncertainty*. With eight groups the estimate will be unstable, and reporting the instability rather than the estimate is the exercise. Then say what sample size the question would actually need.
-6. **Sensitivity of the session rule.** We defined a session as a group-day. Rebuild it with the idle rule from Your turn 2 and check whether anything in Sections 3 or 4 changes. A conclusion that survives both definitions is more useful than one that needs the right definition.
-7. **The full Villa-Torrano release.** The original Zenodo record also holds document edit logs, Moodle logs and questionnaires for these same students. Download it and ask what this extract cannot: how much of the recorded unevenness in chat is offset by the same students' work in the shared document?
-8. **The chance floor, in general.** Section 4 simulates a floor for the Gini under equal propensities. Derive or simulate the same floor for a measure you plan to use in your own project, and report your observed value beside it. Most published participation numbers have never been read against their floor.
+An appendix after that gives one worked answer for each of the five **Your turn** cells.
 
 ## Troubleshooting
 
-**"Could not download: collab-chat/chat_logs.csv".** The notebook could not reach the internet. The files live at `github.com/HakeoungLee/edis8100-datasets`. Check your connection and run the first cell again. Nothing else in the notebook will work until that cell prints "All three files loaded."
+**"Could not download: collab-chat/chat_logs.csv"**
+The runtime could not reach the internet. The files live at `github.com/HakeoungLee/edis8100-datasets`,
+which is public, so this is never about a GitHub account or an invitation. Run the cell again, since
+brief network failures are common, then check that address in a browser tab. Nothing else in the
+notebook works until that cell prints "All three files loaded."
 
-**"NameError: name 'groups' is not defined".** You skipped ahead. `groups` is built in Section 3 and Sections 4 and 5 both need it. Use **Runtime > Restart and run all** in Colab, or **Kernel > Restart & Run All** in Jupyter. This fixes the large majority of problems.
+**"NameError: name 'groups' is not defined"**
+A cell ran out of order, or the runtime restarted. `groups` is built in Section 3, and Sections 4 and
+5 both need it. **Runtime > Restart session and run all** in Colab, or **Kernel > Restart & Run All**
+in Jupyter, then wait for every cell to finish. This resolves most notebook problems.
 
-**"KeyError: 'timestamp'".** You are reading the file without `encoding="utf-8-sig"` on a pandas version that does not strip the byte order mark, or you guessed `latin-1`. Section 1 shows exactly this happening on purpose.
+**"KeyError: 'timestamp'"**
+The file is being read without `encoding="utf-8-sig"` on a pandas version that does not strip the byte
+order mark, or with `latin-1`. Section 1 shows exactly this happening on purpose.
 
-**My charts do not appear.** The very first line of the first code cell is `%matplotlib inline`. If that cell did not run, no figure will render. Restart and run all.
+**"ValueError: time data ... does not match format"**
+The date format string has changed. The file is day first: `%d/%m/%Y %H:%M`.
 
-**"ValueError: time data ... does not match format".** You changed the date format string. The file is day first: `%d/%m/%Y %H:%M`.
+**My charts do not appear**
+The first line of the first code cell is `%matplotlib inline`. If that cell did not run, no figure
+renders. Restart session and run all.
 
-**Your turn 1 prints nothing.** You asked for a group and day that do not go together. Groups 1 and 2 met on `2021-02-15` and `2021-02-17`. Groups 3 to 8 met on `2021-02-16` and `2021-02-18`. The dates are strings in quotes.
+**Your turn 1 prints nothing**
+The group and day do not go together. Groups 1 and 2 met on `2021-02-15` and `2021-02-17`. Groups 3 to
+8 met on `2021-02-16` and `2021-02-18`. The dates are strings in quotes.
 
-**The messages are in Spanish and I do not read Spanish.** That is expected and it is the honest cost of using this dataset. Every measure in the notebook is built from metadata: who wrote, when, and how much. Nothing asks you to interpret content. The notebook says plainly that giving up content is a large thing to give up in a week about collaboration.
+**The messages are in Spanish and I do not read Spanish**
+That is expected, and it is the honest cost of using this dataset. Every measure in the notebook is
+built from metadata: who wrote, when, and how much. Nothing asks you to interpret content. The
+notebook says plainly that giving up content is a large thing to give up in a week about
+collaboration.
 
-**My numbers do not match the ones in the text.** If you changed a **Your turn** cell, that is expected and good. If you did not, restart and run all. The simulations and bootstraps are seeded, so a clean run reproduces the same numbers every time.
+**My numbers do not match the ones in the text**
+If you changed a **Your turn** cell, that is expected and useful. If you did not, restart and run all.
+The simulations and bootstraps are seeded, so a clean run reproduces the same numbers every time.
 
-**The design review flagged fewer tiles than I expected.** Read the line underneath, which is the important one: the hazard list holds only the problems this notebook happened to surface, from eight groups over four days. A clean review is not a safe dashboard, and treating it as one is the exact failure mode Section 6 is about.
+**The design review flagged fewer tiles than I expected**
+The line underneath is the important one: the hazard list holds only the problems this notebook
+happened to surface, from eight groups over four days. A clean review is not the same as a safe
+dashboard, and treating it as one is the failure mode Section 6 is about.
 
-**My refusal list is completely different from my partner's.** Good. There is no answer key in Section 6, only better and worse arguments. Compare the principles you each used, not the slots you each chose.
+**My refusal list is completely different from my neighbour's**
+There is no answer key in Section 6, only better and worse arguments. Comparing the principles you
+each used, rather than the slots you each chose, is a useful thing to do.
 
-## A reminder about documenting AI use
+**Red text appeared**
+Python errors are wordy, and none of them means something has been damaged. The **last line** of the
+error usually names the real problem. Please ask, and we will read it together.
 
-This notebook is not a graded submission, but something is due this week: the **Course Research Project Outline**, uploaded to Canvas separately from anything here.
+## Documenting AI use
 
-If you used an AI assistant while drafting that outline, or while working through this notebook, the course AI policy requires two things, and they go in two different places in the **AI Reflection** submission on Canvas:
+This notebook is not a graded submission, but something is due this week: the **Course Research
+Project Outline**, uploaded to Canvas by 11:59 PM on Sunday, October 25, 2026, separately from
+anything in this folder.
 
-- **The conversation record goes in an attached Word file.** Copy the actual exchanges into a `.docx` and attach it. Prompts, responses, the record itself, not a summary of it.
-- **The four reflection questions from the syllabus are answered in the Canvas text box**, directly, not inside the attachment. Copy them in and answer each one: how you used it; whether it helped and how; whether it made your work more challenging in any way; and what lesson about AI from this week you would pass on to a friend or the class.
+If you used an AI assistant while drafting that outline, or while working through this notebook, the
+course AI policy asks for two things, and they go in two different places in the **AI Reflection**
+submission on Canvas:
+
+- **The conversation record goes in a Word file, attached to the submission.** The full exchange,
+  across every tool and every session, pasted in rather than summarized.
+- **The reflection goes in the Canvas text box**, where you copy in the four questions from the
+  syllabus and answer each one: how you used it; whether it helped and how; whether it made your work
+  more challenging in any way; and what lesson about AI you would pass on to a friend or the class.
 
 If you used no AI at all, one line in the text box saying so is a complete and acceptable submission.
+AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code
+violation.
 
-AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code violation. Disclosed use costs you nothing.
+## Connections to this week's readings
+
+The required readings are Chen and Teasley (2022), Praharaj, Scheffel, Drachsler and Specht (2021),
+and Martinez-Maldonado, Kay, Buckingham Shum and Yacef (2019). Cohn and colleagues (2025) and
+Schneider and colleagues (2018) are additional. The notebook draws on the three required readings
+briefly at a few points, and the reflection returns to them:
+
+- **Chen and Teasley (2022)**, *Learning analytics for understanding and supporting collaboration*,
+  argue that indicators of collaboration should be anchored in a construct of collaboration quality
+  rather than in whatever a platform happens to log. This notebook runs that argument backwards on
+  purpose, taking the sensor it was handed and asking which construct survives it. They also treat
+  understanding collaboration and supporting it as two connected but distinct tasks, which is the
+  question Section 6 puts to every tile.
+- **Praharaj, Scheffel, Drachsler, and Specht (2021)**, *Literature review on co-located collaboration
+  modeling using multimodal learning analytics: Can we go the whole nine yards?*, review the chain
+  from sensing through analysis to feedback and report how rarely published work carries it all the
+  way through. Here the chain breaks at the first link for one measure and holds for another. Note
+  also which channel turned out to be affordable: in the JUSThink data the interface log is complete
+  for all 39 teams and unrelated to the outcome, while the speech transcript exists for 10 teams and
+  cannot be evaluated at that size.
+- **Martinez-Maldonado, Kay, Buckingham Shum, and Yacef (2019)**, *Collocated collaboration analytics:
+  Principles and dilemmas for mining multimodal interaction data*, set out the dilemmas that Section 6
+  makes concrete. You resolve one per tile, ten times, and write down who sees the result. The
+  sharpest one this year is the roster: the notebook's participation shares have a denominator that
+  cannot be observed, and a tile displaying them to a group presents a lower bound as if it were a
+  fact about people.
+
+## Data and ethics
+
+Everything we touch this semester is real. Nothing here was collected by this course, and no notebook
+in this course generates a row. Both datasets are redistributed under the licence their authors chose,
+and both citations belong in your reference manager the moment you use anything from them.
+
+**Villa-Torrano (2021), `collab-chat/chat_logs.csv`, CC BY 4.0.** 1,374 messages, four columns, from
+undergraduates in a computer networks course working through Moodle and a platform called CoTrackV2.
+Eight groups of four or five, each recorded on two days between 15 and 18 February 2021, online, in
+Spanish. Semicolon delimited, UTF-8 with a byte order mark, day-first dates.
+
+> Villa-Torrano, C. (2021). *Dataset on an online collaborative learning situation in a computer
+> networks course* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5150537
+
+**JUSThink and PE-HRI (2021), `justhink/`, CC BY 4.0.** The Week 6 children: 78 nine to twelve year
+olds in 39 teams of two, building a minimum spanning tree with a robot in the room. Interface actions
+for all 78, speech for 20 of them, team level learning outcomes for 34 of the 39 teams.
+
+> Norman, U., Dinkar, T., Nasir, J., Bruno, B., Clavel, C., & Dillenbourg, P. (2021). *JUSThink
+> dialogue and actions corpus* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4627104
+>
+> Nasir, J., Norman, U., Bruno, B., Chetouani, M., & Dillenbourg, P. (2021). *PE-HRI: A multimodal
+> dataset for the study of productive engagement in a robot mediated collaborative educational
+> setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4633092
+
+Neither dataset carries a name, an age band for the chat students, a gender, a language background, a
+prior grade, or, in the chat data, any measure at all of what a group produced. Those absences shape
+the whole week, and the notebook names each one where it bites rather than working around it quietly.
+
+None of these students or children agreed to be a teaching example. It is worth asking who could be
+harmed by a claim before making it, noticing when a metric reduces a person to one number, and
+noticing which people are not in the file at all. That stance runs through every week of the course.
+
+Where every dataset in the course comes from, who is in it, and how it is licensed is in the course
+guide *Finding and Evaluating Learning Analytics Data*.
 
 ---
 
-EDIS 8100: Teaching and Learning Analytics · Fall 2026 · Dr. Hakeoung Hannah Lee · University of Virginia School of Education and Human Development
+*EDIS 8100: Teaching and Learning Analytics · Fall 2026 · Dr. Hakeoung Hannah Lee ·
+University of Virginia, School of Education and Human Development.*
