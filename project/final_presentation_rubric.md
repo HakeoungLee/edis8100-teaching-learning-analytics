@@ -24,8 +24,9 @@ From the syllabus:
 4. A description of your proposed data collection and analysis plan.
 5. Expected outcomes, hypotheses, or intended impact.
 6. Affordances and limitations.
+7. A brief explanation of how you responded to peer and instructor feedback from the Week 12 Project Day workshop.
 
-That is a lot for twelve minutes. Rather than reading your paper in compressed form, present the argument your paper makes, having decided in advance what matters most.
+That is a lot for twenty minutes. Rather than reading your paper in compressed form, please present the argument your paper makes, having decided in advance what matters most.
 
 ## The rubric
 
@@ -41,22 +42,22 @@ The presentation is scored out of one hundred points across five criteria, each 
 
 Note what the top level of the first two criteria rewards: **concise** and **coherent** rather than comprehensive. A presentation that rushes through everything scores lower than one that covers the argument at a pace people can follow.
 
-## Structuring the twelve minutes
+## Structuring the twenty minutes
 
-Here is one workable structure, with times. Adjust the proportions to your project, but keep the order: the audience needs the problem before the framework, and the framework before the methods.
+Each student has a 30-minute block: about 20 minutes of presentation, leaving about 10 minutes for questions and targeted feedback. Here is one workable structure, with times. Adjust the proportions to your project, but keep the order: the audience needs the problem before the framework, and the framework before the methods.
 
 | Minutes | Segment | What you are doing |
 |---|---|---|
-| 0:00 to 1:30 | **The problem and its setting** | Name the setting, the people, and what currently happens. Be concrete rather than general. Do not open with a definition of learning analytics: everyone here already has one. |
-| 1:30 to 3:00 | **The framework** | The theory and the two or three constructs you are borrowing, and the sentence that connects them to what the data could show. |
-| 3:00 to 4:30 | **Where this sits in the literature** | Two or three strands, what each has established, and the gap or tension your work addresses. Put three or four citations on the slide rather than thirty. |
-| 4:30 to 7:30 | **Methods and design** | Your longest segment. Data sources, unit of analysis, cleaning, and the analysis mapped to the research questions. Show the plan as a diagram if you can. |
-| 7:30 to 9:30 | **Expected findings** | What you expect, and what would surprise you. If you can sketch the figure that would answer your main question, put it on a slide with labeled axes, even as a hand drawing. |
-| 9:30 to 11:00 | **Affordances, limits, ethics, and equity** | What the approach makes visible, what it hides, who it could misrepresent, and what you would do about that. Give this a full segment rather than a closing caveat. |
-| 11:00 to 12:00 | **Contribution and close** | Who could act on this, and what changes if it works. End on a sentence you have written down and rehearsed rather than on "so, yeah, that's it." |
-| 12:00 to 15:00 | **Questions** | See below. |
+| 0:00 to 2:30 | **The problem and its setting** | Name the setting, the people, and what currently happens. Be concrete rather than general. Do not open with a definition of learning analytics: everyone here already has one. |
+| 2:30 to 5:00 | **The framework** | The theory and the two or three constructs you are borrowing, and the sentence that connects them to what the data could show. |
+| 5:00 to 7:30 | **Where this sits in the literature** | Two or three strands, what each has established, and the gap or tension your work addresses. Put three or four citations on the slide rather than thirty. |
+| 7:30 to 12:30 | **Methods and design** | Your longest segment. Data sources, unit of analysis, cleaning, and the analysis mapped to the research questions. Show the plan as a diagram if you can. |
+| 12:30 to 15:30 | **Expected findings** | What you expect, and what would surprise you. If you can sketch the figure that would answer your main question, put it on a slide with labeled axes, even as a hand drawing. |
+| 15:30 to 18:00 | **Affordances, limits, ethics, and equity** | What the approach makes visible, what it hides, who it could misrepresent, and what you would do about that. Give this a full segment rather than a closing caveat. |
+| 18:00 to 20:00 | **Contribution and close** | Who could act on this, and what changes if it works. End on a sentence you have written down and rehearsed rather than on "so, yeah, that's it." |
+| 20:00 to 30:00 | **Questions and targeted feedback** | See below. |
 
-**On the three minutes of questions.** Prepare for two or three you expect, and prepare one you are afraid of. When someone asks a question you cannot answer, say so and say what would let you answer it. That answer scores better with a doctoral audience than an improvised defense.
+**On the ten minutes of questions.** Please prepare for two or three you expect, and prepare one you are afraid of. If there is a specific part of your proposal where you would especially value feedback, you are welcome to use part of this time to ask the group directly. When someone asks a question you cannot answer, say so and say what would let you answer it. That answer scores better with a doctoral audience than an improvised defense.
 
 **On timing.** Twelve minutes is short and it is enforced. Rehearse out loud with a timer at least twice, all the way through, because reading slides silently underestimates your real pace by about a third. If you run long in rehearsal, cut a segment rather than speaking faster. The most common cut is the literature strand you are least invested in.
 

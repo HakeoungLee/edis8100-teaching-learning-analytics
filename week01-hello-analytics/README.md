@@ -258,8 +258,7 @@ to do, and the only reason you can open the file at all is that somebody chose t
 
 None of them agreed to be a teaching example. Ask who could be harmed by a claim before you
 make it. Notice when a metric reduces a person to one number. Notice which people are not in
-this file at all. That stance is one of the course's arguments, and the full statement of it
-is in the **Affordances and Limitations Guide** in your Canvas module.
+this file at all. That stance is one of the course's arguments, and it runs through every week of the course.
 
 Where every dataset in the course comes from, who is in it, and how it is licensed is in the
 course guide *Finding and Evaluating Learning Analytics Data*.
