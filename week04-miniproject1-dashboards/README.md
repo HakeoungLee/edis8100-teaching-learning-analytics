@@ -25,7 +25,7 @@ point, including questions about a single line of code.
 | **Prior coding experience needed** | None |
 
 There is no Discussion Leadership block this week. Discussion Leadership runs in weeks 2 through 11,
-and each of the four of you leads two of those weeks.
+and each of the three of you leads two of those weeks.
 
 ## What is assessed
 
@@ -39,7 +39,7 @@ produces every finding the assignment is about.
 
 1. A three-panel teacher-facing dashboard built in plotly from a real virtual learning environment
    export, with a static matplotlib snapshot of every panel for readers who cannot run the code.
-2. Being able to state the provenance of a dataset: who collected it, under what licence, and what it
+2. Being able to state the provenance of a dataset: who collected it, under what license, and what it
    may be used for.
 3. A reason attached to every automated flag, by decomposing a model's predicted probability into the
    per-feature contributions that produced it, and a look at how the resulting list falls across
@@ -114,7 +114,7 @@ group. Before anyone argues about whether the model is fair, the notebook asks w
 ## A note on the deprivation variable
 
 Chart 4 in Part B and the audit in Part C both split the class by the UK Index of Multiple
-Deprivation. That index is an **area-level** measure: it scores small neighbourhoods on income,
+Deprivation. That index is an **area-level** measure: it scores small neighborhoods on income,
 employment, health, education, housing, crime, and living environment, and the band in this file is
 the band of the area a student's address fell in. It is not a measurement of the student, of their
 household, or of anything they did, and reading an area score as a property of the people who live
@@ -183,7 +183,7 @@ target, and it is fine if we spend longer somewhere and skip something else. Par
 finished afterwards. The four **Your turn** cells appear in reading order and already contain working
 answers, so the notebook runs start to finish without you typing anything.
 
-**Setup.** The provenance cell comes before any number: who collected this data, under what licence,
+**Setup.** The provenance cell comes before any number: who collected this data, under what license,
 and what we owe the people in it. Then the first code cell. It fetches six files and prints a line
 per file saying how many rows arrived and what one row means.
 
@@ -199,10 +199,10 @@ presentation, because BBB ran twice and the archive can address a question a tea
 a term never can: is this a property of my course, or of this particular group of people? How each
 run ended, when the module was worked, completion by fifth of first-30-day clicks, and completion by
 deprivation decile. Every point on charts 3 and 4 carries a 95 percent interval, because the reading
-of both turns on whether two lines coincide and whether a decile is genuinely below its neighbour.
+of both turns on whether two lines coincide and whether a decile is genuinely below its neighbor.
 Chart 3 replicates: every 2013J interval overlaps its 2014J twin. Chart 4 is a different kind of
 finding: completion rises about 2.7 points per decile step in 2013J, 95 percent interval [2.0, 3.5],
-and 2.2 points [1.4, 2.9] in 2014J. Neighbouring deciles overlap, so the dip at decile 5 is not a
+and 2.2 points [1.4, 2.9] in 2014J. Neighboring deciles overlap, so the dip at decile 5 is not a
 finding and the gradient is.
 
 **Part C: the early warning panel (about 35 minutes).** Week 3's redesigned model goes on screen
@@ -318,7 +318,7 @@ programming experience.
    report what it gains, what it costs in lateness, and whether the reason column starts saying
    something different.
 4. **The 1,018 who never appear.** The list names 12.6 percent of the enrollments that go on to fail
-   or withdraw. Characterise the rest. What do they have in common, what would a panel have to look at
+   or withdraw. Characterize the rest. What do they have in common, what would a panel have to look at
    to surface them, and what would that panel cost in attention and in privacy?
 5. **Rebuild the panel for 2014J.** Change `FOCAL_TERM` and run everything again. Which findings hold
    and which were properties of one cohort? This is the replication question the two presentations
@@ -411,7 +411,7 @@ Everything we touch this semester is real. Nine published, openly licensed datas
 the lab weeks, and no notebook in this course generates a row.
 
 These records describe real adults, many of them studying part time around jobs and families, which
-is what the Open University is for. Their records were anonymised and released under CC BY 4.0 so
+is what the Open University is for. Their records were anonymized and released under CC BY 4.0 so
 that the field could check its own work on data more than one lab can see. None of them agreed to be
 a teaching example. It is worth asking who could be harmed by a claim before making it, noticing when
 a metric reduces a person to one number, and noticing which people are not in the file at all.

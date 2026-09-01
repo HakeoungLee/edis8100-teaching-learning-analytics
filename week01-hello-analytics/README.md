@@ -22,7 +22,7 @@ point, including questions about a single line of code.
 | **Libraries** | pandas, matplotlib |
 | **Needs internet?** | **Yes**, for the first code cell. Every notebook in this course downloads its data. |
 | **Deliverable** | None. This is in-class work, and nothing goes to Canvas. |
-| **Due** | Nothing. Discussion Leadership sign-ups happen in class today: each of the four of you signs up for **two** weeks across the semester. |
+| **Due** | Nothing. Discussion Leadership sign-ups happen in class today: each of the three of you signs up for **two** weeks across the semester. |
 | **Prior coding experience needed** | None |
 
 Mini projects begin in Week 4. This week is for getting oriented and getting the tools working.
@@ -107,7 +107,7 @@ and nobody needs to work through it today.
    instance, evidence about the conditions under which people studied and about how a school
    recorded outcomes. Whether it is evidence about the people themselves is a separate question that
    this file cannot settle.
-2. **A histogram of all 395 final grades.** Roughly a bell centred near 11, with a tall spike at
+2. **A histogram of all 395 final grades.** Roughly a bell centered near 11, with a tall spike at
    exactly 0 and nothing at 1, 2 or 3. That is an unusual shape for a grade distribution, and the
    next section takes a closer look.
 
@@ -169,7 +169,7 @@ right corner, switch to the account you want, and open the link again.
 Colab discards untitled sessions. **File > Save a copy in Drive** at the start of any session where
 you plan to keep something.
 
-**My chart looks different from my neighbour's**
+**My chart looks different from my neighbor's**
 One of you has flipped the Your turn value. Comparing the two settings and explaining the difference
 to each other is a useful thing to do.
 
@@ -227,7 +227,7 @@ the lab weeks, and no notebook in this course generates a row.
 
 Today's file holds records for real teenagers in two Portuguese secondary schools, assembled from
 school reports and a student questionnaire in the 2005 to 2006 school year. They answered questions
-about their households and their lives. Their records were anonymised and published under CC BY 4.0
+about their households and their lives. Their records were anonymized and published under CC BY 4.0
 so that others could learn from them, which is what we are about to do, and the only reason the file
 can be opened at all is that somebody chose to release it.
 

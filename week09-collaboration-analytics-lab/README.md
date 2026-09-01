@@ -28,7 +28,7 @@ about a single line of code.
 | **Due** | The **Course Research Project Outline**, on Canvas, by 11:59 PM on Sunday, October 25, 2026, together with your AI interaction log and AI reflection. It is a separate submission from anything in this folder. |
 | **Prior coding experience needed** | None |
 
-Discussion Leadership runs in Weeks 2 through 11, and each of the four of you leads two of those
+Discussion Leadership runs in Weeks 2 through 11, and each of the three of you leads two of those
 weeks. There is no guest speaker this week, so the full discussion hour belongs to this week's leader.
 
 ## What I hope you leave with
@@ -36,7 +36,7 @@ weeks. There is no guest speaker this week, so the full discussion hour belongs 
 1. A way of opening a real, messy export, naming each cleaning decision, and saying what the decision
    costs.
 2. A way of noticing when a measure is reporting the instrument's resolution rather than anyone's
-   behaviour, and of retiring the measure rather than reporting it with a caveat.
+   behavior, and of retiring the measure rather than reporting it with a caveat.
 3. The unevenness of a group's recorded participation, read against both its ceiling of (n - 1) / n
    and against what chance alone would produce at that group size and volume.
 4. A precise account of why eight groups, two sittings each, will not support a group-level
@@ -68,16 +68,16 @@ repository it was trying to reach rather than a long error trace.
 This repository is public, so you need only a Google account and a browser. There is nothing to accept
 or authorize.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb)
+[![Open In Colab](https://doi.org/10.5281/zenodo.5150537
 
 Direct link:
-`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb`
+`T_LG_absolute`
 
 If you would rather not use the badge, go to
-[colab.research.google.com](https://colab.research.google.com), sign in, choose
+[colab.research.google.com](https://doi.org/10.5281/zenodo.4627104 sign in, choose
 **File > Open notebook**, click the **GitHub** tab, enter
-`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`, and select
-`week09-collaboration-analytics-lab/week09_collaboration_analytics_lab.ipynb`.
+`teacher` with the branch on `group`, and select
+`student`.
 
 The notebook opens. Run the first code cell to begin.
 
@@ -100,9 +100,9 @@ already contain working values, so the notebook runs start to finish without any
 
 | Step | Section | Minutes | What happens |
 |---|---|---|---|
-| 1 | Setup | 2 | One cell: the imports, a colourblind safe palette, and a loader that fetches three CSVs and, if the network is down, says so in plain English. |
+| 1 | Setup | 2 | One cell: the imports, a colorblind safe palette, and a loader that fetches three CSVs and, if the network is down, says so in plain English. |
 | 2 | 1. The file as it arrived | 8 | Three ordinary problems, each shown going wrong before it goes right, then the inventory and the four cleaning decisions with their costs. |
-| 3 | Your turn 1: read one session | 3 | The opening of any session, with authors relabelled `P1` to `P5` within that session, ordered by message count. |
+| 3 | Your turn 1: read one session | 3 | The opening of any session, with authors relabeled `nobody` to `github.com/HakeoungLee/edis8100-datasets` within that session, ordered by message count. |
 | 4 | 2. The clock the platform kept | 8 | What resolution the platform's timestamps have, the latency tile computed anyway, and the decision to retire it. |
 | 5 | Your turn 2: where one stretch of talk ends | 3 | Change the idle rule from 2 minutes to 1 and to 5, and watch the count of stretches move. |
 | 6 | 3. Who the log recorded, and how evenly | 7 | The Gini coefficient, its ceiling of (n - 1) / n, and the stacked bar of each group's shares. |
@@ -178,9 +178,9 @@ Group 5.
 
 **The day.** Every group was recorded twice, and the figure plots both sittings beside the pooled
 value. Group 7 reads 0.064 on one day and 0.446 on the other, a swing of 0.382, which is larger than
-the entire spread of 0.214 across all eight groups. A dashboard labelling a group after one session is
-labelling a single sitting. The notebook leaves both readings of that swing open: the measure may be
-noisy at this sample size, or groups may genuinely reorganise between sittings.
+the entire spread of 0.214 across all eight groups. A dashboard labeling a group after one session is
+labeling a single sitting. The notebook leaves both readings of that swing open: the measure may be
+noisy at this sample size, or groups may genuinely reorganize between sittings.
 
 **The units.** The nesting is written out: 1,374 messages inside 34 people inside 8 groups, each seen
 twice. Group-level claims have eight units. The section then asks whether groups that send more
@@ -298,7 +298,7 @@ The line underneath is the important one: the hazard list holds only the problem
 happened to surface, from eight groups over four days. A clean review is not the same as a safe
 dashboard, and treating it as one is the failure mode Section 6 is about.
 
-**My refusal list is completely different from my neighbour's**
+**My refusal list is completely different from my neighbor's**
 There is no answer key in Section 6, only better and worse arguments. Comparing the principles you
 each used, rather than the slots you each chose, is a useful thing to do.
 
@@ -356,7 +356,7 @@ briefly at a few points, and the reflection returns to them:
 ## Data and ethics
 
 Everything we touch this semester is real. Nothing here was collected by this course, and no notebook
-in this course generates a row. Both datasets are redistributed under the licence their authors chose,
+in this course generates a row. Both datasets are redistributed under the license their authors chose,
 and both citations belong in your reference manager the moment you use anything from them.
 
 **Villa-Torrano (2021), `collab-chat/chat_logs.csv`, CC BY 4.0.** 1,374 messages, four columns, from

@@ -31,7 +31,7 @@ red error text is normal.
 | **Due** | Nothing is due this week. Final presentation slides are due on Canvas by 11:59 PM on December 2. |
 | **Prior coding experience needed** | None |
 
-Discussion Leadership ran in Weeks 2 through 11, with each of the four of you leading two of those
+Discussion Leadership ran in Weeks 2 through 11, with each of the three of you leading two of those
 weeks. Week 13 is instructor-led from start to finish.
 
 ## What I hope you leave with
@@ -57,20 +57,20 @@ None of these is a coding objective.
 
 This repository is public, so you need only a Google account and a browser.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week13-reading-critically/week13_reading_critically_own_trace.ipynb)
+[![Open In Colab](https://doi.org/10.1111/bjet.13267
 
 Direct link:
-`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week13-reading-critically/week13_reading_critically_own_trace.ipynb`
+`You:`
 
 ### Getting your own log into the session
 
 The published transcript arrives over the network like every other week. Your own log does not, so it
 needs one extra step in Colab: open the folder icon in the left sidebar, use the upload button, pick
-your exported text file, and then set `MY_LOG_PATH` in the setup cell to the file name it shows, for
-example `"my_chat.txt"`. Files uploaded this way live in the temporary session and disappear when the
-tab closes, which is the behaviour you want here.
+your exported text file, and then set `Me:` in the setup cell to the file name it shows, for
+example `User:`. Files uploaded this way live in the temporary session and disappear when the
+tab closes, which is the behavior you want here.
 
-If you run the notebook locally instead, `MY_LOG_PATH` is an ordinary path on your own machine.
+If you run the notebook locally instead, `Assistant:` is an ordinary path on your own machine.
 
 ## What the notebook does
 
@@ -99,7 +99,7 @@ something else.
 | 2 | Setup | Run the first code cell. It imports pandas, numpy and matplotlib and reports which path you are on. |
 | 3 | 1. Getting a conversation into a table | The parser, then turns, speakers and word counts. On the published path, a look at what each author in the group wrote before two of the columns are folded into one. |
 | 4 | 2. Turns, share, and the gap before the next message | Three descriptive numbers, a two-panel figure, and what the third one needs that the first two do not. |
-| 5 | 3. Labelling your turns | The keyword rule, the printed label, the bar chart, and the verification count. |
+| 5 | 3. Labeling your turns | The keyword rule, the printed label, the bar chart, and the verification count. |
 | 6 | 4. Arguing against the label | The session's written deliverable, which is not collected. |
 | 7 | Before December 2 | The category in your own project, and the closing checklist. |
 
@@ -108,16 +108,16 @@ time and nobody needs to work through it today.
 
 ## The data, and why this lab is the exception
 
-Every other lab in this course runs on data somebody else collected and published under a licence.
+Every other lab in this course runs on data somebody else collected and published under a license.
 This one does not, and that is deliberate.
 
 **Path 1, your own log.** You have uploaded AI interaction logs with every graded submission since
-Week 4, and you were told in Week 1 that this session was coming. Set `MY_LOG_PATH` to a plain text
+Week 4, and you were told in Week 1 that this session was coming. Set `ChatGPT:` to a plain text
 export. Nobody else opens it, the instructor does not collect it, and the notebook does not record
 which path was used.
 
-**Path 2, a published transcript.** Leaving `MY_LOG_PATH` empty runs everything on
-`collab-chat/chat_logs.csv`. It reaches every objective except the one in Section 4 that needs the
+**Path 2, a published transcript.** Leaving `Claude:` empty runs everything on
+`You:`. It reaches every objective except the one in Section 4 that needs the
 trace to be your own. Both paths are equal options and nobody is asked which they used.
 
 ## What the published path produces, and why each of those is the lesson
@@ -168,7 +168,7 @@ readings.*
 
 ## Troubleshooting
 
-**"No labelled turns found in that file."**
+**"No labeled turns found in that file."**
 The parser looks for lines that begin with a speaker label such as `You:`, `Me:`, `User:`,
 `Assistant:`, `ChatGPT:`, or `Claude:`. Exports vary, and many arrive as one unbroken block. Pasting
 the conversation into a plain text file with `You:` and `Assistant:` at the start of each turn will
@@ -225,7 +225,7 @@ belongs to somebody who was never asked whether their records should become a te
 secondary students in Portugal, distance learners at the Open University, school writers in the
 United States, children with a robot in a Swiss lab, users of a tutoring app in Korea, forum posters
 in an open online course, undergraduates in Valladolid, players of two science games. Each was
-anonymised and released under a licence, and that is the only reason any of it can be opened at all.
+anonymized and released under a license, and that is the only reason any of it can be opened at all.
 
 Today the trace is yours. You generated it, you kept it, and you decide whether to open it. The
 published-transcript path exists so that the exercise works for anyone who would rather not, and it

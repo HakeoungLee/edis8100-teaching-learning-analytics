@@ -34,13 +34,14 @@ upload; the literature review is the graded submission.
 | Time | Segment |
 |---|---|
 | 3:30 to 3:40 | Opening and introduction |
-| 3:40 to 4:40 | Student-led discussion |
+| 3:40 to 4:40 | Reading discussion, led by the instructor |
 | 4:40 to 4:50 | Guest speaker preparation, including questions for the Q&A |
 | 4:50 to 5:00 | Break |
 | 5:00 to 6:00 | Guest lecture and Q&A: Chaewon Kim, Southern Illinois University |
 
-Discussion Leadership runs weeks 2 through 11, and each of the four of you leads **two** of those
-weeks. One of you leads the hour this week.
+Discussion Leadership runs weeks 2 through 11 across six weeks, and each of the three of you leads
+**two** of them. This is not one of those weeks. Six turns divide exactly among three of us, and
+Weeks 7 and 10 are the two with a guest, so the instructor runs the reading hour in both.
 
 The notebook is not opened together in class. Please bring one plot or one question from it to
 Week 11, the co-design studio.
@@ -53,7 +54,7 @@ Week 11, the co-design studio.
 | **Who collected it** | **Field Day Lab**, Wisconsin Center for Educational Research, **University of Wisconsin-Madison**, through their Open Game Data infrastructure |
 | **Who is in it** | Children. The age item was answered in 6,092 of 18,959 player-months, which is 32.1 percent, and among those who answered, 86.5 percent selected a band at 15 or younger, the largest single group selected 12 to 13, and 79.4 percent said they were playing at school. Those are the demographics of the third who answered rather than of the file as a whole |
 | **When** | Ten monthly AQUALAB extracts, September 2025 through June 2026, plus a set of individual WAVES sessions |
-| **Licence** | **CC0 1.0 Universal**, the Creative Commons public domain dedication. No rights reserved, no permission needed, no attribution legally required |
+| **License** | **CC0 1.0 Universal**, the Creative Commons public domain dedication. No rights reserved, no permission needed, no attribution legally required |
 | **Citation** | For the data, the form Field Day's own per-game readme asks for: Field Day. (2019). *Open educational game play logs: AQUALAB and WAVES* [Data set]. Field Day Lab, University of Wisconsin-Madison. Retrieved from https://opengamedata.fielddaylab.wisc.edu <br> For the infrastructure, the paper the site names: Gagnon, D., & Swanson, L. (2023). Open Game Data: A technical infrastructure for open science with educational games. In M. Haahr, A. Rojas-Salazar, & S. Göbel (Eds.), *Serious Games. JCSG 2023* (Lecture Notes in Computer Science, Vol. 14309, pp. 3-19). Springer. https://doi.org/10.1007/978-3-031-44751-8_1 |
 | **Source** | Field Day Lab, University of Wisconsin-Madison. https://opengamedata.fielddaylab.wisc.edu |
 | **This extract** | Course-sized subsets, redistributed unchanged, at github.com/HakeoungLee/edis8100-datasets |
@@ -68,12 +69,12 @@ What is different here is that the record is play rather than assessed work.
 
 ## What I hope you leave with
 
-1. Being able to state where a dataset came from before analysing it: who logged it, from whom,
-   under what licence, and what the file cannot see.
+1. Being able to state where a dataset came from before analyzing it: who logged it, from whom,
+   under what license, and what the file cannot see.
 2. A way of finding the mess in a real telemetry extract, meaning columns that hold one value, a
    category that is not an activity, durations that run backwards, rows with no player at all, and
    answers in two languages, and a habit of saying what each repair costs.
-3. A sense of how to summarise a heavily skewed count, and of why the mean is a poor number for the
+3. A sense of how to summarize a heavily skewed count, and of why the mean is a poor number for the
    hardest job in AQUALAB and the median is not obviously the right one either.
 4. Being able to separate a selection question from an effect question when the same event switches
    both variables on, and to carry an interval that respects rows nested inside people.
@@ -114,16 +115,16 @@ text.
 
 The course repository is public, so you need only a Google account and a browser.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb)
+[![Open In Colab](https://opengamedata.fielddaylab.wisc.edu
 
 Direct link:
-`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`
+`argtime`
 
 If you would rather not use the badge, go to
-[colab.research.google.com](https://colab.research.google.com), sign in, choose
+[colab.research.google.com](https://opengamedata.fielddaylab.wisc.edu sign in, choose
 **File > Open notebook**, click the **GitHub** tab, enter
-`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`, and select
-`week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`.
+`0:00:00` with the branch on `JobTriesInArgumentPerDifficulty`, and select
+`no-active-job`.
 
 ### Keeping your own copy
 
@@ -141,11 +142,11 @@ The four **Your turn** cells already contain working answers, so the notebook ru
 without you typing anything. Take the sections at whatever pace suits you; there is no clock on this.
 
 **Setup.** One short code cell. It downloads three files and prints their shapes. The provenance
-table follows immediately: who logged this, from whom, under what licence, with what citation.
-Being able to state where a dataset came from before analysing it is a habit the course keeps
+table follows immediately: who logged this, from whom, under what license, with what citation.
+Being able to state where a dataset came from before analyzing it is a habit the course keeps
 returning to.
 
-**1. What is one row, and who is in it?** The dataset repository calls `players.csv.gz` "one row
+**1. What is one row, and who is in it?** The dataset repository calls `ExperimentalCondition` "one row
 per player." It is not. It is 19,031 rows over 16,384 codenames across ten monthly extracts, and
 1,922 codenames appear in more than one month with no way to tell whether that is a child returning
 or a name collision. Two panels draw the shape. The section names the unit of analysis as the
@@ -153,7 +154,7 @@ or a name collision. Two panels draw the shape. The section names the unit of an
 than rows.
 
 **2. Real data is messy, and the mess is the lesson.** The cheapest check in data analysis, run
-first: how many distinct values does each column hold? It finds `attempted` (one value, `True`, in
+first: how many distinct values does each column hold? It finds `production` (one value, `priorcomplete`, in
 all 96,322 rows), `argtime` (one value, `0:00:00`, in all of them), and five
 `JobTriesInArgumentPerDifficulty` columns that are zero in all 19,031 rows. Then the pseudo-category
 `no-active-job` (10,340 rows, 10.7 percent), ten rows with no codename at all and hundreds of
@@ -227,7 +228,7 @@ this topic interesting" (14.1 percent), "This is too easy" (13.8 percent), and "
 need to know this" (12.3 percent). Asked why they felt frustrated, they chose "I don't know what to
 do next" (14.9 percent), "This is too hard" (11.8 percent), and "The game isn't working properly"
 (9.2 percent). Those answers point at the content and the pitch rather than at the child, and here
-the course is not inferring that from behaviour: the children selected it. A three-row table records
+the course is not inferring that from behavior: the children selected it. A three-row table records
 what the menu can and cannot establish.
 
 **Your turn 3.** Compare any two of the six feeling words. The optional solution runs all six at
@@ -305,7 +306,7 @@ points:
 - **Reardon, Kumar, and Revelle (2022)**, *Game learning analytics*: telemetry grain, and what games
   give learning analytics that a course platform cannot. Section 1 borrows their prior question
   about what a row is and whether the identifier attached to it is a person; section 4 borrows their
-  question about what has to be true of a game's design before behaviour in it can serve as evidence
+  question about what has to be true of a game's design before behavior in it can serve as evidence
   of learning rather than of activity.
 - **D'Mello and Jensen (2022)**, *Emotional learning analytics*: affect as a dynamic state rather
   than a trait, and the trade-offs among asking, watching, and inferring. Section 5 works an item
@@ -337,7 +338,7 @@ Optional extensions, for anyone whose project touches games, telemetry, or affec
 4. **The `argfails` column, unused here.** Section 3 built everything on `tries`. Repeat it on
    `argfails`, which counts failed arguments rather than attempts, and see whether the same job comes
    out hardest. Where the two disagree, work out which one a game designer would want.
-5. **WAVES slider behaviour.** The WAVES extract carries `PercentAmplitudeMoves`,
+5. **WAVES slider behavior.** The WAVES extract carries `PercentAmplitudeMoves`,
    `PercentOffsetMoves`, `PercentWavelengthMoves`, and slider ranges per level. Build a measure of
    strategy rather than effort (are the moves systematic or scattered?) and ask whether *that*
    predicts progress where sheer failure count did not. This is among the most promising unexplored

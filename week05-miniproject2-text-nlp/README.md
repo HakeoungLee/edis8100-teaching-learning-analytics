@@ -17,7 +17,7 @@ including questions about a single line of code.
 | **Notebook portion** | 3:30 to 4:20 PM, instructor-guided, opening the class |
 | **Guest speaker** | Jiayi (Joyce) Zhang, Worcester Polytechnic Institute, 4:30 to 5:30 PM |
 | **Debrief** | 5:30 to 5:50 PM, with time to return to the notebook |
-| **Discussion Leadership** | None this week. Student-led discussion runs in Weeks 2 through 11, and each of the four of you leads **two** of those weeks. |
+| **Discussion Leadership** | None this week. Student-led discussion runs in Weeks 2 through 11, and each of the three of you leads **two** of those weeks. |
 | **Notebook** | `week05_miniproject2_text_analytics.ipynb` |
 | **Data** | **PERSUADE 2.0**, real, published, openly licensed: argumentative essays by United States students. A four-prompt subset: 5,531 essays and 63,211 human-annotated stretches of text, 55,070 of them named as a specific argumentative move. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `persuade-4prompts`. **Not synthetic.** |
 | **License and citation** | CC BY-NC-SA 4.0 (attribution, non-commercial, share-alike). Crossley, S. A., Baffour, P., Tian, Y., Franklin, A., Benner, M., & Boser, U. (2024). A large-scale corpus for assessing written argumentation: PERSUADE 2.0. *Assessing Writing, 61*, 100865. https://doi.org/10.1016/j.asw.2024.100865 |
@@ -363,7 +363,7 @@ You may see one if you raise the number of topics in Your turn 3, or if you lowe
 It is harmless: the model has fit, and the optimizer simply stopped at the iteration cap. Raising
 `max_iter` makes it go away.
 
-**My numbers differ from my neighbour's.**
+**My numbers differ from my neighbor's.**
 Check that you both ran every cell in a fresh runtime and that neither of you edited a "Your turn"
 cell before this point. The data file is fixed and every model is seeded with `RANDOM_STATE = 8100`,
 so identical input gives identical output.
@@ -434,7 +434,7 @@ Everything we touch this semester is real. Nine published, openly licensed datas
 the lab weeks, and no notebook in this course generates a row.
 
 This week's corpus holds writing by real children in United States public schools, produced in a
-testing session, rated by paid human raters, anonymised, and released under CC BY-NC-SA 4.0 so that
+testing session, rated by paid human raters, anonymized, and released under CC BY-NC-SA 4.0 so that
 others could learn from it. None of them agreed to be a teaching example. It is worth asking who
 could be harmed by a claim before making it, noticing when a metric reduces a person to one number,
 and noticing which people are not in the file at all.

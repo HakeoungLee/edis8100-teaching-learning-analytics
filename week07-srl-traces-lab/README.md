@@ -14,7 +14,7 @@ about a single line of code, and red error text is a normal part of working in a
 |---|---|
 | **Session** | Week 7, Wednesday, October 7, 2026, Ridley Hall 137 |
 | **Topic** | Learning Analytics for Self-Regulated Learning |
-| **How the session runs** | Opening, then the student-led discussion hour from 3:40 to 4:40, guest speaker preparation from 4:40 to 4:50, a break, and our guest from 5:00 to 6:00 |
+| **How the session runs** | Opening, then the reading discussion hour from 3:40 to 4:40, led by the instructor, guest speaker preparation from 4:40 to 4:50, a break, and our guest from 5:00 to 6:00 |
 | **Guest speaker** | Conrad Borchers, Vanderbilt University, a coauthor of one of this week's required readings |
 | **In-class time on this notebook** | None. Our guest holds the last hour, so there is no notebook block in class this week. The notebook is worked through outside class, at your own pace |
 | **Notebook** | `week07_srl_traces_lab.ipynb` |
@@ -27,9 +27,11 @@ about a single line of code, and red error text is a normal part of working in a
 | **Prior coding experience needed** | None |
 | **Next session** | Wednesday, October 14, Week 8, where Mini Project 4 launches in class. |
 
-Discussion leadership runs from Week 2 through Week 11, and each of the four of you leads **two** of
-those weeks. Week 7's discussion hour is one of them, and it comes first in the session this week so
-that the questions it raises can be carried into the preparation block before our guest.
+Discussion leadership runs across six weeks between Week 2 and Week 11, and each of the three of you
+leads **two** of them. Week 7 is not one of them: six turns divide exactly among three of us, and
+Weeks 7 and 10 are the two with a guest, so the instructor runs the reading hour in both. It still
+comes first in the session so that the questions it raises can be carried into the preparation block
+before our guest.
 
 ## What I hope you leave with
 
@@ -41,7 +43,7 @@ that the questions it raises can be carried into the preparation block before ou
    when the order is set by the interface rather than chosen by the person.
 4. Using inter-action timing to separate a screen that was displayed from a screen that was read,
    and being able to say what the clock still cannot tell us.
-5. Recognising a logging artifact: a comparison that appears to be about learning and turns out to
+5. Recognizing a logging artifact: a comparison that appears to be about learning and turns out to
    be about a logging convention.
 
 None of these is a coding objective.
@@ -62,7 +64,7 @@ written to run a product rather than to answer a research question.
 That changes what is in the file and what is missing from it. There is no answer key, because
 correctness lived elsewhere in Riiid's systems. There is no demographic column, no score, and no
 name. What there is, in enormous quantity, is what the interface did and exactly when. The lab is
-built on that asymmetry, and it ends with two patterns that look like learner behaviour and that the
+built on that asymmetry, and it ends with two patterns that look like learner behavior and that the
 timing gives good reason to read as the application instead.
 
 ## What is in this folder
@@ -87,11 +89,11 @@ any, and which platform the person was using. The extract runs from 30 August 20
 2019.
 
 **Who collected it.** Riiid, the company that operates Santa, logged every interface event its own
-product generated as a by-product of running the service. Its research group then anonymised and
+product generated as a by-product of running the service. Its research group then anonymized and
 released four nested versions of that log, KT1 through KT4, so that researchers with no access to a
 commercial tutor could work on real interaction data at scale.
 
-**License.** **CC BY-NC 4.0.** The licence permits use, sharing, and adaptation **with attribution
+**License.** **CC BY-NC 4.0.** The license permits use, sharing, and adaptation **with attribution
 and for non-commercial purposes only**. That last clause is not decorative and the notebook says so
 twice. Anything built on this file in this course stays inside this course, which rules out a
 product, a consulting deliverable, or a paid workshop. If your course project uses it, please cite
@@ -153,7 +155,7 @@ belongs.
 
 **Setup.** The first code cell imports three libraries, sets the plotting defaults, and downloads
 `actions.csv.gz`. It prints 1,893,105 rows, 7 columns, 500 learners, about 225 MB, and a reminder
-that the licence is non-commercial.
+that the license is non-commercial.
 
 **1. One row, and the alphabet of this log.** The vocabulary is not documented anywhere in the file,
 so the notebook reads it out of the file, which is the ordinary situation. Crossing `action_type`
@@ -179,7 +181,7 @@ matching bundle, **42** learners with no explanation event and 91 with no lectur
 shape of the people. That last one carries the most weight: rows per learner run from **5 to
 52,917**, the busiest ten learners hold 16.0 percent of all rows, and the quietest 250 hold 4.6
 percent. The rule the whole notebook then obeys is stated once and applied everywhere: **compute per
-person, then summarise across people; put a count next to every rate; when an interval is needed,
+person, then summarize across people; put a count next to every rate; when an interval is needed,
 resample the people, not the rows.**
 
 **2. What a learner's action profile does and does not say.** Per-learner shares of the five
@@ -224,7 +226,7 @@ visual signal is about 0.2 to 0.25 seconds, and that is before deciding anything
 
 The second half of that chart is sharper still. **On mobile 98.6 percent of these screens appear
 within a fifth of a second (median 0.057 s); on web the median is 1.317 s and the share under 0.2
-seconds is 18 screens out of 114,214.** Same product, same behaviour, different client. A latency
+seconds is 18 screens out of 114,214.** Same product, same behavior, different client. A latency
 that might have been read as how quickly a learner turns to help tracks what device they were
 holding.
 
@@ -267,7 +269,7 @@ The notebook then does two things most treatments do not. It states the caveat t
 not independent either, because the same 500 learners recur across them, so the interval is
 optimistic. And it is explicit that the reproduction reading rests on an assumption the extract
 cannot confirm, namely that a Santa explanation screen presents the solution: the log records that a
-screen opened, not what was on it. What the notebook can generalise is the direction. Wherever a
+screen opened, not what was on it. What the notebook can generalize is the direction. Wherever a
 tutor logs help before the outcome it scores, the outcome after help is partly determined by the
 logging. The transfer exercise asks for three things to check about **when a row gets written**,
 before computing anything at all. **Your turn 3** ships a stricter minimum of 25 answers per
@@ -305,7 +307,7 @@ drafted question for Conrad Borchers about window choice in ordered network anal
 straight out of Section 3.
 
 **Before we meet again.** A checklist. The two items worth taking seriously are being able to
-explain both logging artifacts to somebody who was not in the room, and remembering that the licence
+explain both logging artifacts to somebody who was not in the room, and remembering that the license
 is non-commercial.
 
 **Going further (optional).** Worked versions of all four Your turn cells, including a twelve-point
@@ -317,7 +319,7 @@ showing that of the 85 learners who could ever land in the bottom decile of expl
 
 - **Winne (2022)**, *Learning analytics for self-regulated learning*: the argument the whole lab is
   built on, that self-regulated learning is not directly observable and that traces are observable
-  behaviour tightly coupled to unobservable cognitive operations, with inferences that are
+  behavior tightly coupled to unobservable cognitive operations, with inferences that are
   probabilistic rather than certain. He also sets out four features of ideal trace data: near
   complete sampling of operations, identification of the information operated on, timestamps, and a
   record of the products produced. This file has the second and the third, and neither of the
@@ -392,7 +394,7 @@ stuck, it is almost always the download rather than the arithmetic.
 Learner ids are not a contiguous range. The cell prints six valid ids and says when the one you
 typed is not in the file. `u1`, `u170`, or any id from the printed list will work.
 
-**My session numbers are different from my neighbour's.**
+**My session numbers are different from my neighbor's.**
 Compare `MY_GAP_MINUTES` first. That is almost always the difference, and noticing it is the point
 of Section 3.
 
@@ -419,13 +421,13 @@ Python errors are wordy, and none of them means something has been damaged. Noth
 your computer, the course data, or your grade. The **last line** of the error usually names the real
 problem. Please ask, and we can read it together.
 
-## A reminder about the licence
+## A reminder about the license
 
 EdNet is released under **CC BY-NC 4.0**, and two obligations follow. **Attribution**: please cite
 Choi and colleagues (2020) wherever this data appears in your work. **Non-commercial**: nothing
 built on this file may be used commercially, which includes consulting deliverables, paid workshops,
 and product prototypes shown to a buyer. If your course research project wants to go further with
-tutor logs, that is a conversation worth having with Dr. Lee early, because the licence, rather than
+tutor logs, that is a conversation worth having with Dr. Lee early, because the license, rather than
 the analysis, is usually what decides it.
 
 ## Documenting AI use
@@ -449,7 +451,7 @@ this work reaches a mini project or your course research project:
   class.
 
 Keeping the log as you go is easier than reconstructing it afterward, and a week with nothing due is
-the cheapest possible time to practise.
+the cheapest possible time to practice.
 
 ## Data and ethics
 

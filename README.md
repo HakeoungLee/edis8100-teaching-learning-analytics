@@ -55,7 +55,7 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 
 Fall reading days run Saturday to Tuesday, so no Wednesday meeting is affected and the class meets every week from 8/26 to 11/18. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
 
-Guest speakers join us in weeks 4, 5, 7, and 10. Weeks 4 and 5 hold 4:30 to 5:30. Weeks 7 and 10 hold 5:00 to 6:00, so those two weeks keep a student-led hour while weeks 4 and 5 do not. Weeks 2, 3, 6, 7, 8, 9, 10, and 11 include a student-led discussion block at 3:40 to 4:40, so each of the four of you leads twice, alone.
+Guest speakers join us in weeks 4, 5, 7, and 10. Weeks 4 and 5 hold 4:30 to 5:30. Weeks 7 and 10 hold 5:00 to 6:00. With three students there are six leadership turns, so all four guest weeks run without a student-led block and the instructor takes the 3:40 to 4:40 hour in weeks 7 and 10. Weeks 2, 3, 6, 8, 9, and 11 include a student-led discussion block at 3:40 to 4:40, so each of the three of you leads twice, alone.
 
 ## Sequence of the semester
 
@@ -121,9 +121,9 @@ No data file needs to be cloned, uploaded, or authorized. Every notebook pulls i
 
 ## The data
 
-**Every lab in every week runs on real, published, openly licensed data. There is no synthetic data anywhere in this course.** The labs run on nine sources released under four licenses, each one collected by somebody else for their own reasons and released so that people outside the institution could work on it. Every notebook states its origin, its licence, and its citation before it loads a single row, because you should never analyze data whose origin you cannot state.
+**Every lab in every week runs on real, published, openly licensed data. There is no synthetic data anywhere in this course.** The labs run on nine sources released under four licenses, each one collected by somebody else for their own reasons and released so that people outside the institution could work on it. Every notebook states its origin, its license, and its citation before it loads a single row, because you should never analyze data whose origin you cannot state.
 
-| Source | Weeks | What one row is | Licence |
+| Source | Weeks | What one row is | License |
 |---|---|---|---|
 | **UCI Student Performance** (mathematics file), 395 Portuguese secondary students, 2005-06 | 1, and the second setting of 3 | one student | CC BY 4.0 |
 | **OULAD**, UK Open University, module BBB, presentations 2013J and 2014J: 4,529 enrollments, 891,062 daily click rows, 21,783 submissions, with an area-level deprivation decile | 2, 3, 4, and the temporal half of 8 | one enrollment, or one student-resource-day | CC BY 4.0 |
@@ -135,7 +135,7 @@ No data file needs to be cloned, uploaded, or authorized. Every notebook pulls i
 | **Field Day Lab Open Game Data**: AQUALAB (*Wake: Tales from the Aqualab*) and WAVES (*Wave Combinator*), play logs from children in classrooms | 10 | one player-month, or one session | CC0 1.0 |
 | **Canvas Network Person-Course (1/2014 - 9/2015)**: 325,199 rows across 238 open courses, including what registrants said they intended to do | 11 | one person in one course | CC BY 4.0 |
 
-Course-sized extracts of all nine, with their licences and the scripts that rebuild them from the originals, live at **[HakeoungLee/edis8100-datasets](https://github.com/HakeoungLee/edis8100-datasets)**.
+Course-sized extracts of all nine, with their licenses and the scripts that rebuild them from the originals, live at **[HakeoungLee/edis8100-datasets](https://github.com/HakeoungLee/edis8100-datasets)**.
 
 Full citations:
 
@@ -171,7 +171,7 @@ Full citations:
 
 ### Ethics
 
-Learning analytics runs on data about people who usually did not get to weigh in on being measured. Every person in every file this semester is real. Most of them were students, several of them were children, and none of them were asked whether a doctoral seminar in Virginia should analyze their records in 2026. Anonymisation and an open licence protect the people in these files. Consent is a separate matter, and it was never given.
+Learning analytics runs on data about people who usually did not get to weigh in on being measured. Every person in every file this semester is real. Most of them were students, several of them were children, and none of them were asked whether a doctoral seminar in Virginia should analyze their records in 2026. Anonymization and an open license protect the people in these files. Consent is a separate matter, and it was never given.
 
 So the standing ask, from week 1 to week 11: **ask who could be harmed by a claim before you make it.** Notice when a metric reduces a person to one number. Notice when a model is confidently wrong about a group. And say what was measured rather than what a person is, because that is what the data supports.
 

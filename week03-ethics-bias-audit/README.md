@@ -30,8 +30,8 @@ normal part of working in a notebook.
 Mini projects begin in week 4, and the model audited here returns there as the early-warning panel
 of a teacher-facing dashboard.
 
-One student leads the discussion hour each week from week 2 through week 11, and each of the four
-of you leads **two** of those weeks. Week 3 is one of them.
+One student leads the discussion hour in six of the weeks from week 2 through week 11, and each of
+the three of you leads **two** of those weeks. Week 3 is one of them.
 
 ## What I hope you leave with
 
@@ -44,7 +44,7 @@ of you leads **two** of those weeks. Week 3 is one of them.
    which of those differences can be distinguished from noise once thirty comparisons have been made.
 5. Redesigning the feature set, re-running the same audit, and being precise about what the redesign
    changed and what it did not.
-6. Repeating the identical audit in a second real setting, and saying which findings travelled,
+6. Repeating the identical audit in a second real setting, and saying which findings traveled,
    which did not, and which protocol choice was doing the work.
 
 None of these is a coding objective.
@@ -171,7 +171,7 @@ two headline findings.
 ## The naming decision, which is the first design decision
 
 The literature calls this an *at-risk model* producing a list of *at-risk students*. This notebook
-does not, and it spends a markdown cell on why before any modelling code runs.
+does not, and it spends a markdown cell on why before any modeling code runs.
 
 The column it builds is `did_not_pass`, and it means one thing: this enrollment's `final_result` was
 `Fail` or `Withdrawn`. That is a fact about an outcome a registry recorded. "At risk" is not: it
@@ -204,7 +204,7 @@ redesign: three assignments fall on or before day 60 in 2013J and two in 2014J, 
 from submitted work is not on the same scale in the two cohorts.
 
 **2. The gaps before any model.** Pass rates by deprivation decile run from 36.9 percent for
-enrollments from the most deprived tenth of neighbourhoods to 61.9 percent for the least deprived.
+enrollments from the most deprived tenth of neighborhoods to 61.9 percent for the least deprived.
 Enrollments with a recorded disability pass at 40.3 percent against 50.0 percent. Median clicks in
 the first 60 days track the same gradient, 86 against 164.
 
@@ -213,7 +213,7 @@ A gradient across deprivation deciles measures the conditions under which people
 institution that produced different outcomes for people in different circumstances. It does not
 measure the people, and the Index of Multiple Deprivation is an area-level index in the first place.
 A small table separates what the data directly show, what a plausible interpretation would be, and
-what these files cannot establish. The third chart is then the crux for the modelling: a
+what these files cannot establish. The third chart is then the crux for the modeling: a
 recorded-activity feature is partly a proxy for material circumstance.
 
 **3. Train and read the accuracy.** A logistic regression predicting `did_not_pass` from `clicks`,
@@ -232,7 +232,7 @@ rate: about 0.094 for the two error rates and about 0.075 for the share flagged,
 is larger than either error-rate spread observed. Then it replaces the range with a **gradient**, a
 weighted least squares slope of the rate on decile number, which is one question rather than ten,
 and puts a bootstrap interval on it. Then it audits the gradient itself: a weighted lack-of-fit check
-asks whether one straight line summarises the ten points at all, and a second bootstrap resamples
+asks whether one straight line summarizes the ten points at all, and a second bootstrap resamples
 *people* rather than enrollments so that the 47 repeat rows stop being a caveat and become a number.
 
 The result is that two panels disagree on purpose, and now defensibly. The error-rate gradients are
@@ -307,7 +307,7 @@ are needed, and 55 rural students passed in total. One framing note travels with
 instance, evidence about those places and their schools rather than about the students living in
 them, and the subject of the section is the protocol rather than the comparison.
 
-**9 and 10. The audit, and what travelled.** Five metrics, two settings, every rate beside the
+**9 and 10. The audit, and what traveled.** Five metrics, two settings, every rate beside the
 denominator it rests on, every gap with a 95 percent bootstrap interval, figure 6 plotting all ten at
 once against a line at zero.
 
@@ -406,7 +406,7 @@ a course project. None of this is part of the session.
 6. **Split the label.** `did_not_pass` merges Fail and Withdrawn. Build two models, one for each, and
    compare which enrollments each one finds. If they disagree, the single label was hiding two
    different phenomena and one intervention was never going to serve both.
-7. **Use the resource catalogue.** `vle.csv` says what kind of thing each `id_site` is: forum, quiz,
+7. **Use the resource catalog.** `vle.csv` says what kind of thing each `id_site` is: forum, quiz,
    resource, subpage, and more. Build features from *what* students clicked rather than how much, and
    audit that model. Does looking at the kind of activity rather than the amount change who gets
    flagged?
@@ -446,7 +446,7 @@ resolves the large majority of notebook problems.
 **The Portuguese file loaded as one enormous column.**
 `sep=";"` was changed or dropped. That file is semicolon delimited, and pandas does not warn you: it
 hands back a single column of 33 things glued together and no error at all. It is worth doing once on
-purpose so the shape of the mistake is recognisable later.
+purpose so the shape of the mistake is recognizable later.
 
 **Section 8 is the slowest cell in the notebook.**
 That is correct. It fits the model 200 times under one protocol and 5,000 times under the other, and
@@ -470,7 +470,7 @@ Both downloads are fixed snapshots, every fold sequence is seeded, and every boo
 carries its own generator, so running a cell twice or out of order cannot change the interval it
 prints. A clean run reproduces the same numbers every time.
 
-**My numbers differ from my neighbour's.**
+**My numbers differ from my neighbor's.**
 Compare feature lists first, then thresholds. That is almost always the difference, and noticing it is
 one of the points of the session.
 
@@ -538,7 +538,7 @@ the lab weeks, and no notebook in this course generates a row.
 
 Today's files hold records for several thousand adults who enrolled in a distance-learning module in
 2013 and 2014, and for 395 teenagers in two Portuguese secondary schools in 2005 and 2006. Their
-records were anonymised and published under CC BY 4.0 so that others could learn from them, which is
+records were anonymized and published under CC BY 4.0 so that others could learn from them, which is
 what we are about to do, and the only reason either file can be opened at all is that somebody chose
 to release it.
 

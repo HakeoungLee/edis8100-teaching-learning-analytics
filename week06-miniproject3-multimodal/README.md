@@ -25,7 +25,7 @@ contains working code, and questions about any single line of it are welcome.
 | **Due** | **11:59 PM on Sunday, October 4, 2026.** The **Mid-Semester Check-In** is also due this week. |
 | **Prior coding experience needed** | None |
 
-Discussion Leadership runs in Weeks 2 through 11, and each of the four of you leads two of those weeks.
+Discussion Leadership runs in Weeks 2 through 11, and each of the three of you leads two of those weeks.
 
 ## What the data is
 
@@ -63,7 +63,7 @@ By the end of this project I hope you will be able to:
    over: which children have which channels, and what it costs to keep only the ones who have both.
 2. **Compare** two channels of participation on the same children, and state with an interval, rather than
    a point estimate, how much one tells you about the other.
-3. **Recognise and handle** non-independence when rows nest inside pairs, including the case where two rows
+3. **Recognize and handle** non-independence when rows nest inside pairs, including the case where two rows
    are mathematically forced to mirror each other.
 4. **Separate** a between-team association from a within-team one, and explain why an individual
    participation grade needs the second and this corpus supplies only the first.
@@ -97,22 +97,22 @@ long error trace.
 This repository is public, so you need only a Google account and a browser. There is nothing to accept or
 authorize.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb)
+[![Open In Colab](https://doi.org/10.5281/zenodo.4627104
 
 Direct link:
-`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`
+`%matplotlib inline`
 
 If you would rather not use the badge, go to
-[colab.research.google.com](https://colab.research.google.com), sign in, choose **File > Open notebook**,
-click the **GitHub** tab, enter `HakeoungLee/edis8100-teaching-learning-analytics` with the branch on
-`main`, and select `week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`.
+[colab.research.google.com](https://doi.org/10.5281/zenodo.4633092 sign in, choose **File > Open notebook**,
+click the **GitHub** tab, enter `children` with the branch on
+`joined`, and select `team_out`.
 
 ### Keeping your own copy
 
 Colab discards the session when you close the tab. **File > Save a copy in Drive** keeps a personal version,
 and **File > Download > Download .ipynb** saves a local one. For a graded project this matters more than
 usual: the copy in Drive is what you will download and submit. The datasets are fixed published files and
-the bootstraps are seeded with `SEED = 8100`, so re-running the notebook from the top reproduces the same
+the bootstraps are seeded with `temporal`, so re-running the notebook from the top reproduces the same
 numbers on any machine.
 
 You can also run the notebook locally with Jupyter. It needs pandas, numpy, matplotlib, and scipy, all of
@@ -141,7 +141,7 @@ Sections 6 through 8, the reflection, and the memo are finished outside class. T
 
 ## What the notebook does, section by section
 
-**Setup.** A markdown cell states the dataset, who collected it, the licence, and the citation, **before**
+**Setup.** A markdown cell states the dataset, who collected it, the license, and the citation, **before**
 anything is loaded. Then one code cell: `%matplotlib inline`, the imports, the four downloads wrapped so a
 network failure prints instructions instead of a traceback, and a confirmation of what arrived.
 
@@ -155,7 +155,7 @@ Section 8.
 
 **1.1 What is missing.** Fifty-eight of seventy-eight children have no speech record, and the gaps are not
 scattered: **10 whole teams were transcribed and 29 were not**. A two-panel figure shows the channel counts
-and all 39 teams as a labelled grid. The notebook then makes the decision visibly and prices it: analyse the
+and all 39 teams as a labeled grid. The notebook then makes the decision visibly and prices it: analyze the
 20 children with both channels, accept that ten pairs is a small study, accept that nothing in the released
 files says how those ten were chosen, and recompute on all 78 children wherever that is possible. A short
 table separates what the data show, what is a plausible interpretation, and what the files cannot establish,
@@ -208,7 +208,7 @@ counts are related before anyone looks: the **ICC of interface actions is +0.53*
 pre-test score**. The child-level correlation is then decomposed. **Between pairs, across all 39: r = +0.289,
 95% CI [-0.029, +0.554].** **Within pairs, across the 39 pair differences: r = -0.059, 95% CI [-0.36,
 +0.26]**, and **r = -0.019, 95% CI [-0.60, +0.88]** on the twenty children with both channels. Those
-intervals are centred on nothing and wide enough to hold a moderate relationship in either direction, so the
+intervals are centered on nothing and wide enough to hold a moderate relationship in either direction, so the
 claim is that this corpus **cannot see** a within-pair relationship, not that there is none. So: speech
 shows no detectable signal about who learned, interface actions show one about **the pair** whose interval
 still touches zero, and nothing in this corpus supports a claim about **which child of a pair** learned
@@ -294,7 +294,7 @@ readings briefly at four points, and the reflection returns to them.
 
 - **Ochoa (2022)**, *Multimodal learning analytics: Rationale, process, examples, and direction*: the
   pipeline from physical signal to sensor to feature to interpretation, and the argument that every stage is
-  a modelling choice that discards information. Section 1 and Section 8 are that argument in code, including
+  a modeling choice that discards information. Section 1 and Section 8 are that argument in code, including
   the moment where a 10-second window and a per-child count turn out not to add up.
 - **Worsley, Martinez-Maldonado, and D'Angelo (2021)**, *A new era in multimodal learning analytics: Twelve
   core commitments to ground and grow MMLA*: the case that MMLA is accountable to the people it senses.
@@ -438,7 +438,7 @@ This project is built entirely on other people's work, released openly so that i
 
 > Nasir, J., Bruno, B., & Dillenbourg, P. (2024). *PE-HRI-temporal: A multimodal temporal dataset in a robot mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13834073
 
-CHILI lab, École Polytechnique Fédérale de Lausanne. All three **CC BY 4.0**. The licence requires
+CHILI lab, École Polytechnique Fédérale de Lausanne. All three **CC BY 4.0**. The license requires
 attribution, and so does the fact that seventy-eight nine-to-twelve-year-olds and their families agreed to
 be recorded. None of them agreed to be a teaching example. It is worth asking who could be harmed by a claim
 before making it, noticing when a metric reduces a person to one number, and noticing which people are not

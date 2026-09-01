@@ -24,7 +24,7 @@ Questions are welcome at any point, including questions about a single line of c
 | **Needs internet?** | **Yes**, for the first code cell. Every notebook in this course downloads its data. |
 | **Deliverable** | None. This is in-class work, and nothing from the notebook goes to Canvas. |
 | **Due** | Nothing this week. The first Canvas deliverable is Mini Project 1 in Week 4. |
-| **Discussion leadership** | Weeks 2 to 11 are student-led. Each of the four of you leads **two** of those weeks, from the sign-up sheet completed in Week 1. |
+| **Discussion leadership** | Weeks 2 to 11 are student-led. Each of the three of you leads **two** of those weeks, from the sign-up sheet completed in Week 1. |
 | **Prior coding experience needed** | None |
 
 ## What I hope you leave with
@@ -406,7 +406,7 @@ right corner, switch to the account you want, and open the link again.
 Colab discards untitled sessions. **File > Save a copy in Drive** at the start of any session where
 you plan to keep something.
 
-**My chart looks different from my neighbour's**
+**My chart looks different from my neighbor's**
 Compare your **Your turn** settings first. That is almost always the difference, and explaining it to
 each other is a useful thing to do.
 
@@ -436,11 +436,11 @@ scatterplot, please save the transcript.
 
 ## Connections to this week's readings
 
-The required readings are Baker and Inventado (2014), Reich (2022), and Nathan and Sawyer (2014).
+The required readings are Baker and Siemens (2014), Reich (2022), and Nathan and Sawyer (2014).
 Gray and Bergner (2022) on measurement and Sawyer (2006) are the additional readings. The notebook
 draws on the required three briefly at a few points, and the reflection returns to them:
 
-- **Baker and Inventado (2014)**, *Educational data mining and learning analytics*: two research
+- **Baker and Siemens (2014)**, *Educational data mining and learning analytics*: two research
   traditions that handle the gap between a feature and a construct differently. Educational data
   mining tends to work bottom up from features toward automated discovery; learning analytics tends
   to keep a person responsible for the construct and asking whether the indicator deserves the name
