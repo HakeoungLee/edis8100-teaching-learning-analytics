@@ -2,9 +2,8 @@
 
 Whose dashboard is this, and who was consulted when we decided?
 
-This is the last hands-on session of the semester. We open the notebook after the reading hour,
-the rough draft work time, and the break, work through it together, and spend the final third of it turning
-the semester's own instruments back on the semester.
+This is the last notebook of the semester, and it is worked through on your own schedule rather than
+in class. Its final third turns the semester's own instruments back on the semester.
 
 Nothing in the notebook asks you to write code from scratch. Every edit is changing a word inside
 quotes or a number in a list, and coding skill is not what is assessed anywhere in this course.
@@ -16,8 +15,8 @@ Questions are welcome at any point, including questions about a single line of c
 |---|---|
 | **Session** | Week 11, Wednesday, November 4, 2026, Ridley Hall 137 |
 | **Topic** | Designing and Co-Designing Learning Analytics Systems |
-| **Guest speaker** | None this week. The reading hour is led by the instructor and runs 3:40 to 4:20, and 4:20 to 4:40 is rough draft work time. |
-| **Notebook portion** | Approximately 4:50 to 5:50 PM, instructor-guided, after the reading hour, the draft time, and the break |
+| **Guest speaker** | Zifeng Liu, [Affiliation: confirm], from 4:30 to 5:30 |
+| **Notebook portion** | **None.** Our guest holds 4:30 to 5:30 and the twenty minutes after that are the guest debrief and rough draft work time, so there is no in-class notebook block. You work through the notebook outside class, at your own pace, before or after we meet |
 | **Notebook** | `week11_codesign_studio.ipynb` |
 | **Data** | **Real, published, openly licensed.** Canvas Network Person-Course (1/2014 - 9/2015) De-Identified Open Dataset: 325,199 rows by 26 columns, one row per person per course across 238 Canvas Network open courses, January 2014 to September 2015. Collected by Canvas Network, the open-course arm of Instructure, from its own platform logs and its own registration survey. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `canvas-network` |
 | **License** | **CC BY 4.0.** Free to use, share and adapt, including commercially, with attribution |
@@ -29,9 +28,11 @@ Questions are welcome at any point, including questions about a single line of c
 | **Prior coding experience needed** | None |
 
 Week 11 has no student discussion leader. Six leadership turns divided exactly among the three of
-you across weeks 2, 3, 6, 7, 8, and 9, so the last student-led hour was Week 9. Tonight the reading
-hour runs forty minutes with the instructor, and the twenty minutes before the break are yours to
-work on your own rough draft.
+you across weeks 2, 3, 6, 7, 8, and 9, so the last student-led hour was Week 9. The reading hour runs
+forty minutes with the instructor from 3:40 to 4:20, the break runs to 4:30, our guest holds 4:30 to
+5:30, and the twenty minutes from 5:30 to 5:50 are the guest debrief and then your own rough draft
+work time, with the instructor there for questions. The last ten minutes close the discussion
+leadership arc.
 
 ## What I hope you leave with
 
@@ -114,8 +115,9 @@ your Rough Draft notes.
 
 ## Walkthrough
 
-We will move through this together in class. The timings below are a rough guide rather than a
-target, and it is fine if we spend longer somewhere and skip something else.
+You work through this on your own, at whatever pace suits you. The minutes below are a rough guide
+to how long a section takes rather than a target, and it is fine to spend longer on one and skip
+another.
 
 | Step | Section | Minutes | What happens |
 |---|---|---|---|
@@ -131,7 +133,7 @@ target, and it is fine if we spend longer somewhere and skip something else.
 | 10 | Reflection and closing | 2 | Four prompts, and the checklist. |
 
 **Going further** is a clearly marked optional section near the end, followed by an optional appendix
-of worked examples. Neither is part of class time.
+of worked examples. Neither is needed for the main path.
 
 ## What happens in each section
 
@@ -218,7 +220,7 @@ establish, and the prompt walks the instrument, the setting, and the circumstanc
 about the person becomes a candidate. The file never says whether a 0.00 means "submitted and scored
 zero" or "never submitted anything gradeable".
 
-**5. The leaderboards.** The center of the session, in four steps, because the first answer is wrong in
+**5. The leaderboards.** The center of the notebook, in four steps, because the first answer is wrong in
 an instructive way.
 
 *Step 1.* Sort the whole file and take the top 500 by each measure, which is literally what a
@@ -328,14 +330,14 @@ screen**.
 cell to write in. These are the questions the discussion block opens with, and they are directly usable
 in your Rough Draft.
 
-**Before you leave.** Nothing here is submitted. Save your copy, and paste three things into your
+**Wrapping up.** Nothing here is submitted. Save your copy, and paste three things into your
 project notes: your metric set with a one-sentence account of why those and not others, the one audit
 cell you moved with your reason, and the sentence you would say to Malik with your dashboard on the
 screen.
 
 ## Going further (optional)
 
-Optional, and not part of class time. Nothing later depends on any of it.
+Optional. Nothing later depends on any of it.
 
 1. **Add the fifth persona this platform has no column for.** Copy an entry in `PERSONAS`, write a
    guardian of a child in the week 6 or week 10 data, a disability services coordinator, a translator,

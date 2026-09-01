@@ -55,7 +55,7 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 
 Fall reading days run Saturday to Tuesday, so no Wednesday meeting is affected and the class meets every week from 8/26 to 11/18. Thanksgiving break runs 11/25 to 11/29, so there is no class on 11/25. Exact due dates and times live in Canvas.
 
-Guest speakers join us in weeks 4, 5, 7, and 10. Weeks 4 and 5 hold 4:30 to 5:30. Weeks 7 and 10 hold 5:00 to 6:00. With three students there are six leadership turns. Weeks 2, 3, 6, 7, 8, and 9 include a student-led discussion block at 3:40 to 4:40, so each of the three of you leads twice, alone. Weeks 4, 5, 10, and 11 do not: weeks 4 and 5 give the hour to a guest, and in weeks 10 and 11 the instructor runs it.
+Guest speakers join us in weeks 4, 5, 7, 10, and 11. Weeks 4, 5, and 11 hold 4:30 to 5:30. Weeks 7 and 10 hold 5:00 to 6:00. With three students there are six leadership turns. Weeks 2, 3, 6, 7, 8, and 9 include a student-led discussion block at 3:40 to 4:40, so each of the three of you leads twice, alone. Weeks 4, 5, 10, and 11 do not: weeks 4 and 5 give the hour to a guest, and in weeks 10 and 11 the instructor runs it.
 
 ## Sequence of the semester
 
