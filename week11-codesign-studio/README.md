@@ -2,8 +2,8 @@
 
 Whose dashboard is this, and who was consulted when we decided?
 
-This is the last hands-on session of the semester. We open the notebook after the student-led
-discussion hour and the break, work through it together, and spend the final third of it turning
+This is the last hands-on session of the semester. We open the notebook after the reading hour,
+the rough draft work time, and the break, work through it together, and spend the final third of it turning
 the semester's own instruments back on the semester.
 
 Nothing in the notebook asks you to write code from scratch. Every edit is changing a word inside
@@ -28,8 +28,10 @@ Questions are welcome at any point, including questions about a single line of c
 | **Due** | The **Course Research Project Rough Draft**, by 11:59 PM on Sunday, November 8, 2026, submitted on Canvas separately from anything in this folder, together with your AI interaction log and reflection. |
 | **Prior coding experience needed** | None |
 
-Week 11 is the last of the Discussion Leadership weeks. Leadership runs from Week 2 through Week 11,
-and each of the three of you leads **two** of those weeks.
+Week 11 has no student discussion leader. Six leadership turns divided exactly among the three of
+you across weeks 2, 3, 6, 7, 8, and 9, so the last student-led hour was Week 9. Tonight the reading
+hour runs forty minutes with the instructor, and the twenty minutes before the break are yours to
+work on your own rough draft.
 
 ## What I hope you leave with
 

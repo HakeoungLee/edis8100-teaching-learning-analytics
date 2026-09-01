@@ -14,7 +14,7 @@ about a single line of code, and red error text is a normal part of working in a
 |---|---|
 | **Session** | Week 7, Wednesday, October 7, 2026, Ridley Hall 137 |
 | **Topic** | Learning Analytics for Self-Regulated Learning |
-| **How the session runs** | Opening, then the reading discussion hour from 3:40 to 4:40, led by the instructor, guest speaker preparation from 4:40 to 4:50, a break, and our guest from 5:00 to 6:00 |
+| **How the session runs** | Opening, then the student-led discussion hour from 3:40 to 4:40, guest speaker preparation from 4:40 to 4:50, a break, and our guest from 5:00 to 6:00 |
 | **Guest speaker** | Conrad Borchers, Vanderbilt University, a coauthor of one of this week's required readings |
 | **In-class time on this notebook** | None. Our guest holds the last hour, so there is no notebook block in class this week. The notebook is worked through outside class, at your own pace |
 | **Notebook** | `week07_srl_traces_lab.ipynb` |
@@ -28,10 +28,8 @@ about a single line of code, and red error text is a normal part of working in a
 | **Next session** | Wednesday, October 14, Week 8, where Mini Project 4 launches in class. |
 
 Discussion leadership runs across six weeks between Week 2 and Week 11, and each of the three of you
-leads **two** of them. Week 7 is not one of them: six turns divide exactly among three of us, and
-Weeks 7 and 10 are the two with a guest, so the instructor runs the reading hour in both. It still
-comes first in the session so that the questions it raises can be carried into the preparation block
-before our guest.
+leads **two** of them. Week 7 is one of them, and it comes first in the session so that the questions
+it raises can be carried into the preparation block before our guest.
 
 ## What I hope you leave with
 
