@@ -16,8 +16,8 @@ Questions are welcome at any point, including questions about a single line of c
 |---|---|
 | **Session** | Week 11, Wednesday, November 4, 2026, Ridley Hall 137 |
 | **Topic** | Designing and Co-Designing Learning Analytics Systems |
-| **Guest speaker** | None this week. The discussion hour is entirely student led. |
-| **Notebook portion** | Approximately 4:50 to 5:50 PM, instructor-guided, after the discussion hour and the break |
+| **Guest speaker** | None this week. The reading hour is led by the instructor and runs 3:40 to 4:20, and 4:20 to 4:40 is rough draft work time. |
+| **Notebook portion** | Approximately 4:50 to 5:50 PM, instructor-guided, after the reading hour, the draft time, and the break |
 | **Notebook** | `week11_codesign_studio.ipynb` |
 | **Data** | **Real, published, openly licensed.** Canvas Network Person-Course (1/2014 - 9/2015) De-Identified Open Dataset: 325,199 rows by 26 columns, one row per person per course across 238 Canvas Network open courses, January 2014 to September 2015. Collected by Canvas Network, the open-course arm of Instructure, from its own platform logs and its own registration survey. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `canvas-network` |
 | **License** | **CC BY 4.0.** Free to use, share and adapt, including commercially, with attribution |
