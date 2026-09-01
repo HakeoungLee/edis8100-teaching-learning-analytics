@@ -47,6 +47,11 @@ Two companion releases describe the same activity at the level of the **team**: 
 affect and speech-activity summaries plus learning outcomes) and PE-HRI-temporal (32 teams re-described in
 10-second windows, 4,676 rows, about 13 hours of interaction).
 
+Those two channels, where the children looked and what a model inferred about affect from video, are
+recorded for the pair rather than for either child, so both members of a pair carry the same value.
+Setting them beside the per-child channels raises the further question the memo can close on: what can
+a team-level measure say about an individual?
+
 Both corpora are **CC BY 4.0**. You may download, adapt, and redistribute them, including commercially, as
 long as you give credit. Section 7 of the notebook explains why that fact deserves a paragraph of its own.
 
