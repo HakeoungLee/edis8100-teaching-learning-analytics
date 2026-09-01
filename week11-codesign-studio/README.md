@@ -15,7 +15,7 @@ Questions are welcome at any point, including questions about a single line of c
 |---|---|
 | **Session** | Week 11, Wednesday, November 4, 2026, Ridley Hall 137 |
 | **Topic** | Designing and Co-Designing Learning Analytics Systems |
-| **Guest speaker** | Zifeng Liu, [Affiliation: confirm], from 4:30 to 5:30 |
+| **Guest speaker** | Zifeng Liu, University of Florida, from 4:30 to 5:30 |
 | **Notebook portion** | **None.** Our guest holds 4:30 to 5:30 and the twenty minutes after that are the guest debrief and rough draft work time, so there is no in-class notebook block. You work through the notebook outside class, at your own pace, before or after we meet |
 | **Notebook** | `week11_codesign_studio.ipynb` |
 | **Data** | **Real, published, openly licensed.** Canvas Network Person-Course (1/2014 - 9/2015) De-Identified Open Dataset: 325,199 rows by 26 columns, one row per person per course across 238 Canvas Network open courses, January 2014 to September 2015. Collected by Canvas Network, the open-course arm of Instructure, from its own platform logs and its own registration survey. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `canvas-network` |
