@@ -39,15 +39,15 @@ in the memo rather than in the code.
 
 ## The data, and why it changed
 
-Weeks 1 through 4 were real too, but they were all *tables*: one row per student or per click, with
-the interesting quantity already reduced to a number by somebody else. A grade is a number. A click
+The earlier datasets in this course were tables: one row per student or per click, with the
+interesting quantity already reduced to a number by somebody else. A grade is a number. A click
 count is a number. Somebody decided, upstream of you, what counted.
 
 This week the unit of analysis is a sentence a student wrote. Nothing has been reduced yet, and every
 reduction from here is one you perform and have to account for.
 
-**PERSUADE 2.0** is a corpus of argumentative essays written by students in United States public
-schools, collected through state and district writing assessments. Every essay carries a **holistic
+**PERSUADE 2.0** is a corpus of argumentative essays written by students in grades 6 through 12 in
+the United States (Crossley et al., 2024). Every essay carries a **holistic
 score from 1 to 6** assigned by a trained human rater. Every essay was then read again by human
 annotators who marked the **boundaries of each argumentative move** in it (Lead, Position, Claim,
 Counterclaim, Rebuttal, Evidence, Concluding Statement) and rated each move **Effective, Adequate, or
@@ -55,25 +55,25 @@ Ineffective**.
 
 The subset in this notebook is four prompts, 5,531 essays by students in grades 8 through 12, and
 63,211 marked stretches of text. 55,070 of those were named as a specific argumentative move, 55,068
-of which also carry an effectiveness rating; the other 8,141 are the text the annotators judged was
-not doing argumentative work. Nothing was altered except the choice of prompts and the packaging.
+of which also carry an effectiveness rating; the other 8,141 are the text the annotators did not
+assign to any move. Nothing was altered except the choice of prompts and the packaging.
 
 That second annotation layer is the reason for the switch. It is human ground truth, and it means a
-model can be checked against what a person actually decided about the writing rather than against
-your own intuition. No earlier file in this course carries one: a registry outcome tells you how an
-enrollment ended, not what a reader thought of a sentence.
+model can be checked against what a person decided about the writing rather than against your own
+intuition. A registry outcome tells you how an enrollment ended, not what a reader thought of a
+sentence.
 
-The cost is worth naming out loud, because the notebook does. Real students, most of them thirteen to
-eighteen years old, sat in a testing session and argued about driverless cars, cell phone policy,
+Real students in grades 8 through 12 wrote to a set prompt about driverless cars, cell phone policy,
 distance learning, and the Electoral College. Their work was kept, obtained by researchers, rated by
-paid humans, stripped of names, and released openly. Data does not appear on its own. Somebody's
-labor is always underneath it, and here some of that labor was done by children. Please cite the
-corpus in your memo, do not redistribute the text, and do not use it commercially.
+human raters, stripped of names, and released openly. Please cite the corpus in your memo, do not
+redistribute the text, and do not use it commercially.
 
-The mess comes with it. One third of the corpus is missing two demographic fields entirely, and the
-hole is shaped exactly like one prompt. The spelling is the students' own. Two spans out of 63,211
-lost their rating somewhere upstream. The notebook shows each of these, makes the decision in view,
-and says what the decision cost.
+One third of the corpus is missing two demographic fields entirely, and every missing row is in one
+prompt. The spelling is the students' own. Two spans out of 63,211 carry no rating. Each prompt was
+answered by a different grade level (cell phones grade 8, electoral college grade 9, driverless cars
+grade 10, distance learning grades 9 to 12), so a comparison across prompts is also a comparison
+across grades. The notebook shows each of these, makes the decision in view, and says what the
+decision changes.
 
 ## What I hope you leave with
 
@@ -89,8 +89,9 @@ and says what the decision cost.
 5. **Disaggregating** both the human ratings and the model's errors by writer group, and discussing
    what the pattern might mean without pretending the data settles it.
 
-None of these is a coding objective. The pipeline is the more mechanical part of the week; what is
-graded is the reading of what the pipeline found.
+None of these is a coding objective. Objectives 2 and 3 belong to sections completed at home before
+submission. The pipeline is the more mechanical part of the week; what is graded is the reading of
+what the pipeline found.
 
 ## What is in this folder
 
@@ -131,11 +132,20 @@ scikit-learn, all of which ship with Anaconda, plus a working internet connectio
 ## Walkthrough
 
 We open this together in class and get the pipeline running with colleagues available to ask. The
-whole notebook executes in well under a minute. Sections marked **Going further (optional)** sit
-outside the core path.
+whole notebook executes in about a minute. The route below is the one the notebook itself prints
+after its instructions.
+
+| | Sections |
+|---|---|
+| **CORE, about 55 to 60 minutes** | Setup; 1. Meet the corpus; 2. Cleaning and tokenizing, through the stoplist check; 6. Human ground truth; 7. Whose writing gets called effective? |
+| **IF TIME** | Your turn 1; 3. Word frequencies; Your turn 4 |
+| **EXPLORE LATER, at home before the Sunday deadline** | 4. A stance lexicon and Your turn 2; 5. Topic modeling and Your turn 3; the reflection and the memo; 8. Going further and Your turn 5 (optional); the appendix |
+
+This is a mini project, so EXPLORE LATER means completed at home before submission: the checklist
+requires all five Your turn cells, and Sections 4 and 5 carry two of them. Section 8 is optional.
 
 **Setup: where this data comes from.** A markdown cell to read before anything runs. It names the
-dataset, its license, its citation, and the one-line story of who collected it and at what cost.
+dataset, its license, its citation, and who collected it.
 Stating where a dataset came from before opening it is a habit worth keeping. Then one code cell
 downloads both files and prints a confirmation: 5,531 essays, 63,211 spans, 2,470,005 words of
 student writing.
@@ -145,15 +155,14 @@ spans. The four prompts are unbalanced (1,818 electoral college essays against 8
 and score very differently (4.41 for distance learning against 3.01 for the electoral college). Then
 the receipt on missing data, which is the first real-data lesson: **every one of the 1,818 electoral
 college essays is missing both economic status and disability status**, and the 66 blank ELL values
-all come from one other prompt. That is a signature of an upstream release decision rather than
-random noise. The notebook makes its decision in view (keep all essays for the text work, use only
-recorded rows for group comparisons, never impute) and states the cost: the economic comparison rests
-on 3,697 essays and the disability comparison on 3,713, not 5,531.
+all come from one other prompt. The missing rows are all in one prompt; the release does not say why. The notebook makes its decision in view (keep all essays for the text work, use only
+recorded rows for group comparisons, never impute) and states what that changes: the economic comparison
+rests on 3,697 essays and the disability comparison on 3,713, not 5,531.
 
-**Section 2: Cleaning and tokenizing, and a receipt for what you deleted.** One real essay,
+**Section 2: Cleaning and tokenizing, with a record of what was deleted.** One real essay,
 misspellings intact, passes through lowercasing, punctuation stripping, tokenizing, and stopword
 removal. Then the receipt: 56.6 percent of every word in the corpus is gone, along with all 5,697
-question marks, and scikit-learn's default stoplist has quietly removed `not` (22,632 uses),
+question marks, and scikit-learn's default stoplist has removed `not` (22,632 uses),
 `because` (14,417), `but` (11,703), and `however` (1,546). On argumentative writing those are not
 filler, they are the load-bearing vocabulary of the genre. `alot` appears 422 times across 280 essays
 and gets its own column, unconnected to the standard spelling, so a writer whose spelling differs
@@ -195,9 +204,9 @@ different composition: 12.7, 27.9, and 37.5 percent English language learners, s
 and 4.25. Nobody gave the model a demographic column. A model trained on language has access to
 language, and language carries traces of the writer.
 
-**Section 6: The step no earlier week could take, human ground truth.** 55,068 rated spans, 19,200
-claims against 2,215 rebuttals (8.7 to 1, which is a fact about a timed prompt that never asked for a
-rebuttal at least as much as about young writers), and 76.7 percent of everything rated Adequate.
+**Section 6: Human ground truth.** 55,068 rated spans, 19,200 claims against 2,215 rebuttals (8.7
+to 1, on prompts of which only one asked writers to address counterclaims), and 76.7 percent of
+everything rated Adequate.
 Train a bag-of-words naive Bayes to predict the discourse move and check it against 13,767 human
 judgments it has never seen: 54.7 percent accurate against a 34.9 percent baseline. Then read the
 rows instead of the average. Position 65.6 percent, Evidence 61.1 percent, Counterclaim 34.3 percent,
@@ -205,8 +214,8 @@ rows instead of the average. Position 65.6 percent, Evidence 61.1 percent, Count
 and Rebuttal are defined by their relationship to other moves, and the model was handed a sentence
 with no essay attached. The same cell also checks the split itself: 99.9 percent of test spans come
 from an essay that also supplied training spans, so it refits the model with `GroupShuffleSplit` on
-`essay_id` and prints both accuracies (0.5472 random span split, 0.5644 split by essay). A leak you
-can name is not the same as a leak that matters, and this one does not.
+`essay_id` and prints both accuracies (0.5472 random span split, 0.5644 split by essay). The two
+accuracies are within two points of each other on different test sets; no test is run.
 
 **Your turn 4.** Swap in logistic regression. Accuracy climbs from 0.547 to 0.680 and Rebuttal recall
 only from 0.153 to 0.265, while Counterclaim gets slightly worse (0.343 to 0.318). When a better
@@ -215,8 +224,8 @@ four sentences and see whether you agree with it.
 
 **Then the harder question:** can a bag of words predict whether a move *worked*? It reports 83.4
 percent accuracy. Saying "not Effective" to everything reports 81.5 percent. The model finds 31.1
-percent of the genuinely effective spans, and a model whose only feature is span word count reaches
-82.7 percent.
+percent of the spans a human rated Effective, and a model whose only feature is span word count
+reaches 82.7 percent.
 
 **Section 7: Whose writing gets called effective?** The scores raters assigned differ by writer
 group: essays by writers classified as English language learners average 3.10 against 3.49 (n = 537
@@ -228,22 +237,21 @@ notebook says so on the figure and in the text around it. This is an exercise in
 group difference carefully, and the notebook keeps what each variable records, the group size, and
 the interval in view alongside every point estimate.
 
-Then the Simpson's paradox detour: the pooled ELL gap of -0.39 is **smaller than the gap inside every
-single prompt**, because ELL-classified writers are concentrated in the highest-scoring prompt. Then
+Then the aggregation detour: the pooled ELL gap of -0.39 is **smaller than the gap inside every
+single prompt**, because ELL-classified writers are concentrated in the highest-scoring prompt, which
+is also the only prompt answered by grades 11 and 12. Then
 the sharper comparison. Among spans a human already identified as a **Counterclaim**, 17.1 percent by
 non-ELL-classified writers were rated Effective against 5.5 percent by ELL-classified writers. For
 **Evidence** it is 21.9 against 6.6, with Ineffective running the other way at 7.6 against 11.4. The
 structural work is already credited. What differs is the judgment of how well it was done.
 
 Because those are percentages of spans and one essay supplies about eleven spans, the notebook puts
-an **essay-clustered bootstrap interval** on every one of them: 5,342 ELL spans are 537 people, not
-5,342 people. Pooled across moves the gap is -13.7 points, 95 percent [-15.1, -12.2], and all seven
+an **essay-clustered bootstrap interval** on every one of them: 5,342 ELL spans come from 537 essays. Pooled across moves the gap is -13.7 points, 95 percent [-15.1, -12.2], and all seven
 per-move intervals sit on the same side of zero. Clustering nearly doubles the interval, from a
-half-width of 0.74 points to 1.43, and the finding survives it. A result that holds only when
-clustered data is treated as independent was never a result.
+half-width of 0.74 points to 1.43, and the finding survives it.
 
 **Then the notebook turns its own lesson on its own finding.** The span-level comparison was pooled
-across four prompts, which is the mistake the Simpson's paradox detour just described. So it is
+across four prompts, which is the aggregation effect the essay scores just showed. So it is
 recomputed one prompt at a time. The gap survives: it is negative in all four prompts, running from
 -5.0 to -24.9 percentage points against a pooled -13.7. And a second thing falls out. Holding the
 classification constant and changing only the prompt, the Effective rate for the same group moves
@@ -264,9 +272,9 @@ resting on 88 effective spans from 60 essays), and traces the chain link by link
 **Section 8, Going further (optional), and Your turn 5.** Try another group and another move.
 Evidence spans by writers classified as economically disadvantaged: 15.1 percent Effective against
 26.6, a gap of -11.5 points with a 95 percent essay-clustered interval of [-13.8, -9.3]. Then try
-`gender`, where the gap is +4.6 points, interval about [+2.7, +6.4], smaller and running the other
+`gender`, where the gap is +4.6 points, interval [+2.8, +6.5], smaller and running the other
 way, which is the point of the exercise: the gaps are not all the same size, and the largest fall on
-the classifications that track schooling conditions. The cell prints which prompts each comparison
+the ELL, economic and disability classifications. The cell prints which prompts each comparison
 drew on, because economic status is blank for every electoral college essay and gender is not, so the
 two comparisons are not on the same corpus until you make them so.
 
@@ -321,12 +329,11 @@ required.
    `student_disability_status` on `Counterclaim` and notice how a group of 183 spans changes how much
    there is to say.
 2. **Split by essay for the effectiveness model too.** Section 6 already checks this for the
-   discourse-move classifier and finds the leak costs nothing there. The effectiveness model in the
+   discourse-move classifier and finds the two accuracies within two points of each other. The effectiveness model in the
    next cell still uses a random span split. Redo that one with `GroupShuffleSplit` on `essay_id`,
    and while you are there, put an essay-clustered interval on the 1.9 point accuracy gain over the
    majority-class rule. Report the interval next to the point, whichever way it comes out, and say
-   what the width tells a district that was about to buy something on the strength of the point
-   alone.
+   what the width tells a reader who saw only the point.
 3. **Give the classifier context.** Counterclaim and Rebuttal fail because a span has no essay
    attached. Add features the bag of words cannot see: the span's relative position in the essay, the
    type of the preceding span, whether the essay's Position span is for or against. Feature
@@ -336,7 +343,7 @@ required.
    disability identification. Which groups does your model systematically under-score relative to the
    rater, and does the residual gap shrink once you control for prompt?
 5. **Measure recall on the effectiveness model by prompt.** The model was trained across four prompts
-   of very different difficulty. Does it do better on the easy one?
+   with very different mean scores. Does it do better on the highest-scoring one?
 6. **Read fifty spans.** Take fifty Counterclaim spans, twenty-five rated Effective and twenty-five
    Adequate, strip the ratings, and code them yourself against a rubric you write first. Then
    compare. That is a small reliability study, and it is more publishable than the pipeline.
@@ -369,7 +376,7 @@ cell before this point. The data file is fixed and every model is seeded with `R
 so identical input gives identical output.
 
 **The notebook runs but a figure looks empty.**
-Re-run the cell. If a figure is genuinely blank, the cell that produces its data probably did not
+Re-run the cell. If a figure is blank, the cell that produces its data probably did not
 run.
 
 **Colab says "Cannot find notebook" or shows a 404.**
@@ -433,9 +440,8 @@ reflection returns to them:
 Everything we touch this semester is real. Nine published, openly licensed datasets are used across
 the lab weeks, and no notebook in this course generates a row.
 
-This week's corpus holds writing by real children in United States public schools, produced in a
-testing session, rated by paid human raters, anonymized, and released under CC BY-NC-SA 4.0 so that
-others could learn from it. None of them agreed to be a teaching example. It is worth asking who
+This week's corpus holds writing by real children in United States schools, rated by human raters,
+anonymized, and released under CC BY-NC-SA 4.0 so that others could learn from it. None of them agreed to be a teaching example. It is worth asking who
 could be harmed by a claim before making it, noticing when a metric reduces a person to one number,
 and noticing which people are not in the file at all.
 
