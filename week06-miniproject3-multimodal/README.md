@@ -29,17 +29,17 @@ Discussion Leadership runs in Weeks 2 through 11, and each of the three of you l
 
 ## What the data is
 
-Thirty-nine pairs of children aged 9 to 12, in Switzerland, each pair at two screens with a humanoid robot
-between them, solving a **minimum spanning tree** problem: connect every town on a map of Swiss railways
-using the cheapest set of tracks. A logger recorded every edge each child added and removed and every
+Thirty-nine pairs of children aged 9 to 12, each pair at two screens with a humanoid robot, solving a
+**minimum spanning tree** problem: connect every node on a map of Switzerland using the cheapest set of
+edges (Nasir et al., 2021). A logger recorded every edge each child added and removed and every
 button they pressed. Each child took a **10-item test** of the underlying idea before and after, so `gain`
 runs from -10 to +10 and in practice from -3 to +3.
 
-For **10 of the 39 pairs**, the sessions were also transcribed, giving speech seconds, speaking turns, and
-word counts per child.
+For **10 of the 39 pairs**, the release also carries a dialogue transcript, from which speech seconds,
+speaking turns, and word counts per child were derived.
 
-So for **20 children** there are two independent records of the same session: what they said, and what they
-did. Sessions in the temporal file run from 10.7 to 36.0 minutes, median 23.2, so the two records cover the
+So for **20 children** there are two independent records of the same session: what the transcript recorded,
+and what the event log recorded. Sessions in the temporal file run from 10.7 to 36.0 minutes, median 23.2, so the two records cover the
 same stretch of time as each other but not the same length of time across pairs, which is why Section 2
 works in shares. The project is what happens when those two records are laid side by side.
 
@@ -47,38 +47,36 @@ Two companion releases describe the same activity at the level of the **team**: 
 affect and speech-activity summaries plus learning outcomes) and PE-HRI-temporal (32 teams re-described in
 10-second windows, 4,676 rows, about 13 hours of interaction).
 
-Those two channels, where the children looked and what a model inferred about affect from video, are
+Those two channels, gaze estimates and affect estimates, are
 recorded for the pair rather than for either child, so both members of a pair carry the same value.
 Setting them beside the per-child channels raises the further question the memo can close on: what can
 a team-level measure say about an individual?
 
 Both corpora are **CC BY 4.0**. You may download, adapt, and redistribute them, including commercially, as
-long as you give credit. Section 7 of the notebook explains why that fact deserves a paragraph of its own.
+long as you give credit.
 
 ## Objectives
 
 By the end of this project I hope you will be able to:
 
 1. **Read** a real multimodal corpus at its true grain, including the part most published analyses pass
-   over: which children have which channels, and what it costs to keep only the ones who have both.
+   over: which children have which channels, and what changes when only the children with both are kept.
 2. **Compare** two channels of participation on the same children, and state with an interval, rather than
    a point estimate, how much one tells you about the other.
 3. **Recognize and handle** non-independence when rows nest inside pairs, including the case where two rows
    are mathematically forced to mirror each other.
 4. **Separate** a between-team association from a within-team one, and explain why an individual
    participation grade needs the second and this corpus supplies only the first.
-5. **Audit** a dataset for what it does not record, and discuss what that absence does to an equity
-   question.
+5. **Audit** a dataset for what it does not record, and, in the memo, discuss what that absence does to an
+   equity question. The class hour covers objectives 1 to 4; the memo covers objective 5.
 
 The through-line of the session: participation is not a thing sitting in the data, it is a thing somebody
 decides to measure, and the sensor chosen decides who looks engaged. In this corpus the microphone and the
 event log disagree about the same children, and both of them are "the data".
 
-Two notes on where this sits in the semester. First, this is the week the claim ladder from Week 2 gets its
-hardest test: `speech_secs` is a feature, "participation" is a construct, and the memo is an argument about
-the rung in between. Second, this is the week the course stops treating **sample size and nesting** as a
-caveat and starts treating them as the subject. Week 9 assumes you can tell a between-group claim from a
-within-group one, so Section 5.2 repays the time.
+One note on where this sits in the semester: this is the week the claim ladder from Week 2 gets its hardest
+test. `speech_secs` is a feature, "participation" is a construct, and the memo is an argument about the rung
+in between.
 
 ## What is in this folder
 
@@ -97,22 +95,22 @@ long error trace.
 This repository is public, so you need only a Google account and a browser. There is nothing to accept or
 authorize.
 
-[![Open In Colab](https://doi.org/10.5281/zenodo.4627104
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb)
 
 Direct link:
-`%matplotlib inline`
+`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`
 
 If you would rather not use the badge, go to
-[colab.research.google.com](https://doi.org/10.5281/zenodo.4633092 sign in, choose **File > Open notebook**,
-click the **GitHub** tab, enter `children` with the branch on
-`joined`, and select `team_out`.
+[colab.research.google.com](https://colab.research.google.com), sign in, choose **File > Open notebook**,
+click the **GitHub** tab, enter `HakeoungLee/edis8100-teaching-learning-analytics` with the branch on
+`main`, and select `week06-miniproject3-multimodal/week06_miniproject3_multimodal_participation.ipynb`.
 
 ### Keeping your own copy
 
 Colab discards the session when you close the tab. **File > Save a copy in Drive** keeps a personal version,
 and **File > Download > Download .ipynb** saves a local one. For a graded project this matters more than
 usual: the copy in Drive is what you will download and submit. The datasets are fixed published files and
-the bootstraps are seeded with `temporal`, so re-running the notebook from the top reproduces the same
+the bootstraps are seeded with `SEED = 8100`, so re-running the notebook from the top reproduces the same
 numbers on any machine.
 
 You can also run the notebook locally with Jupyter. It needs pandas, numpy, matplotlib, and scipy, all of
@@ -121,20 +119,23 @@ which ship with Anaconda.
 ## Walkthrough
 
 We will move through the first half together in class. The timings below are a rough guide rather than a
-target, and it is fine if we spend longer somewhere and skip something else.
+target. The route is the one the notebook itself prints after its instructions: CORE is steps 1 to 8 below;
+IF TIME is the Your turn 1, 2 and 3 edits and Section 6; EXPLORE LATER is Section 7.1's verification task,
+Your turn 4, Going further, and the appendix.
 
 | Step | Section | Minutes | What happens |
 |---|---|---|---|
 | 1 | How the notebook works, and where the data comes from | 5 | Orientation, provenance before any number, then the setup cell. |
 | 2 | 1. The grain of each file | 6 | What one row of each of the four files means, and the window size checked rather than assumed. |
-| 3 | 1.1 What is missing | 8 | Ten whole teams transcribed and twenty-nine not, the decision that forces, and what it costs. |
+| 3 | 1.1 What is missing | 8 | Ten whole teams transcribed and twenty-nine not, the decision that forces, and what it changes. |
 | 4 | 2. Two records of the same session | 10 | Shares of the pair, the two headline scatters, and the mirror structure inside every pair. |
 | 5 | 2.1 Twenty rows are not twenty observations | 8 | The cluster bootstrap, demonstrated rather than asserted. |
-| 6 | 3. Half the pairs swap places | 8 | Counting pairs rather than children, and the slopegraph. |
-| 7 | 4. Team 47 | 7 | One pair, two records, opposite verdicts. |
+| 6 | 3. Counting the pairs that swap | 8 | Counting pairs rather than children, and the slopegraph. |
+| 7 | 4. Team 47 | 7 | One pair, two records, opposite majority contributors. |
 | 8 | 5 and 5.2 The question the memo turns on | 8 | The outcome first, then the two channels, then between pairs against within pairs. |
 
-Sections 6 through 8, the reflection, and the memo are finished outside class. The three code cells marked
+Sections 6 through 11, the reflection, and the memo are finished outside class before the due date, and
+the memo requires Sections 6 and 7. The three code cells marked
 **Your turn** already hold working values, so the notebook runs start to finish without you typing anything.
 **Your turn 4** is an optional exercise rather than a code cell, and it sits with the **Going further
 (optional)** section near the end.
@@ -155,15 +156,15 @@ Section 8.
 
 **1.1 What is missing.** Fifty-eight of seventy-eight children have no speech record, and the gaps are not
 scattered: **10 whole teams were transcribed and 29 were not**. A two-panel figure shows the channel counts
-and all 39 teams as a labeled grid. The notebook then makes the decision visibly and prices it: analyze the
+and all 39 teams as a labeled grid. The notebook then makes the decision visibly and states what it changes: analyze the
 20 children with both channels, accept that ten pairs is a small study, accept that nothing in the released
 files says how those ten were chosen, and recompute on all 78 children wherever that is possible. A short
 table separates what the data show, what is a plausible interpretation, and what the files cannot establish,
 and the interpretation prompt asks for plausible explanations of the selection pattern rather than for one.
 
 **2. Two records of the same session.** Each child gets their **share of their own pair** on each channel,
-because one pair talked for fifteen minutes and another for twenty-five and raw seconds mostly compare
-sessions. Then **Section 2.1, which is the methodological heart of the week**: within a pair the two shares
+because one pair's recorded speech totals seven minutes and another's twenty-four, and raw seconds mostly
+compare sessions. Then **Section 2.1, which is the methodological heart of the week**: within a pair the two shares
 must sum to exactly 1, so the second row of every pair carries no information the first did not, and a
 correlation across twenty children has ten observations in it. The notebook demonstrates this rather than
 asserting it, recomputing the correlation from the ten pair deviations alone and checking it matches to six
@@ -173,7 +174,7 @@ share is **r = +0.015, 95% CI [-0.659, +0.784]**. **Your turn 1** points the sam
 channels, and the default, turns against seconds, returns **r = +0.966, 95% CI [+0.781, +0.994]** as a
 calibration point for what agreement looks like.
 
-**3. Half the pairs swap places.** Counting, done correctly. A swap is a property of the **pair**, not the
+**3. Counting the pairs that swap.** Counting, done correctly. A swap is a property of the **pair**, not the
 child: if A is above 0.5 on speech and below on actions, B is necessarily the mirror. So counting children
 double counts. **5 of 10 pairs swap, 95% CI [24%, 76%]**; the tempting child-level version gives the same
 50% with an interval **24% narrower** than it should be, and the notebook prints both side by side. A
@@ -182,17 +183,17 @@ line. **Your turn 2** replaces the arbitrary 0.50 threshold with a question abou
 6 of 10 pairs disagree by at least 0.05, 4 by at least 0.10, 3 by at least 0.15, 2 by at least 0.20, none by
 0.30.
 
-**4. Team 47.** One pair, about twenty minutes. Child A produced **505 seconds of speech against child B's
-163**, which is **75.6% of the pair's speech** and **78.4% of its words**. On the map child A made **84
-moves against child B's 99**, which is **45.9% of the pair's interface actions**. Both children scored one
+**4. Team 47.** One pair, about twenty minutes. Child A's recorded speech is **505 seconds against child
+B's 163**, **75.6% of the pair's recorded speech seconds** and **78.4% of its transcribed words**. The event
+log records **84 interface actions for child A against 99 for child B**, **45.9% of the pair's total**. Both children scored one
 point lower after the session than before. Two panels: the split by channel, and the raw seconds against the
 raw clicks on two axes, because seconds and clicks are not comparable numbers. The interpretation prompt
 asks which child you would have recorded as the active participant and which channel you were using, then
 asks for plausible explanations of the pattern, including ones about the situation rather than the children.
 
 **5. The question the memo turns on.** The outcome comes before any correlation with it. Mean gain is
-**+0.10 items on a 10-item test, 95% CI [-0.24, +0.44]**, an interval containing zero: this activity
-produced no detectable average improvement on this instrument. Thirty-one children scored higher, 24 the
+**+0.10 items on a 10-item test, 95% CI [-0.24, +0.44]**, an interval containing zero: the mean change
+on this instrument is not distinguishable from zero. Thirty-one children scored higher, 24 the
 same, 23 lower. Then the comparison, all with cluster-bootstrap intervals and Spearman beside Pearson:
 **speech seconds against gain r = +0.015 [-0.36, +0.35]**, speech share against gain **r = -0.089**,
 **interface actions against gain r = +0.404 [-0.13, +0.79]**, and on all 78 children **+0.170 [-0.09,
@@ -200,7 +201,7 @@ same, 23 lower. Then the comparison, all with cluster-bootstrap intervals and Sp
 **r(actions, gain) minus r(speech, gain) = +0.388, 95% CI [-0.04, +0.71]**. So the tempting headline, that
 the channel an instructor would instinctively grade is the one carrying no signal, is a point estimate
 rather than a result. What ten pairs support is narrower: **neither channel licenses a statement about who
-learned.**
+gained on the test.**
 
 **5.2 The +0.40 is about pairs, not about children.** This is the section that makes the finding correct
 rather than merely striking. Children in a pair worked on the same map for the same length of time, so their
@@ -210,9 +211,9 @@ pre-test score**. The child-level correlation is then decomposed. **Between pair
 +0.26]**, and **r = -0.019, 95% CI [-0.60, +0.88]** on the twenty children with both channels. Those
 intervals are centered on nothing and wide enough to hold a moderate relationship in either direction, so the
 claim is that this corpus **cannot see** a within-pair relationship, not that there is none. So: speech
-shows no detectable signal about who learned, interface actions show one about **the pair** whose interval
-still touches zero, and nothing in this corpus supports a claim about **which child of a pair** learned
-more, in either direction. **Your turn 3** runs the decomposition on any channel and flags the case where
+shows no detectable signal about who gained on the test, interface actions correlate with gain at the level
+of **the pair** with an interval that contains zero, and nothing in this corpus supports a claim about
+**which child of a pair** gained more, in either direction. **Your turn 3** runs the decomposition on any channel and flags the case where
 the ICC is so high that the channel cannot tell two children apart at all.
 
 **6. How fragile is a number built on ten pairs?** Two checks small studies should publish and rarely do.
@@ -228,14 +229,14 @@ audit of all **125 columns across the four files** against a list of person-attr
 matches**. A classification of every column shows 41 for interface actions, 24 for speech, 16 for gaze, 13
 for affect, 13 for bookkeeping, 11 for outcomes, 7 for shares, and **0 for attributes of the child**. The
 corpus records the age range and nothing else. A three-row table keeps apart what the files show, what is a
-plausible reading of the setting, and what these data cannot establish about any child in them: the study
-ran in Switzerland in an activity conducted in English, so variation in language background was plausibly
-present, and the speech-technology literature reports that transcription and voice activity detection
-perform unevenly across accents and speaking styles, but nothing in the release lets that be checked here.
-**Section 7.1 revisits a claim this course has been making**: multimodal data is mostly gated, the corpora at
-Oulu and Monash among them, and **this one is not**, because one lab did the work of releasing derived
-features under CC BY 4.0. That claim about Oulu and Monash is itself put to the students to verify against
-the data availability statements. Gating is a choice rather than a law of nature. **Your turn 4** is
+plausible reading of the setting, and what these data cannot establish about any child in them: the
+release does not state where the sessions ran or in what language; if the activity language was not every
+child's first language, variation in language background was plausibly present, and transcription and voice
+activity detection can perform unevenly across accents and speaking styles, but nothing in the release lets
+that be checked here. **Section 7.1** notes that much multimodal data is gated and **this corpus is not**,
+because one lab released anonymized transcripts, event logs, test responses, and derived features under CC
+BY 4.0. The claim about gated corpora is itself put to the students to verify against a data availability
+statement. Gating is a choice rather than a law of nature. **Your turn 4** is
 optional and is not a code cell: pick another open corpus, fill in a seven-row audit table, and bring it to
 class.
 
@@ -246,7 +247,7 @@ turns out to equal the pair's mean gain divided by 10 to within 1e-16, so report
 one thing twice. Then a real inconsistency that is not explained away: team action totals differ across
 files, agreeing exactly in **2 of 32 teams**, differing by **-13 to +30 actions**, a mean absolute gap of
 **8.1 actions or 4.4% of the team total**. The notebook names the decision (per-child counts for per-child
-questions, team counts for team questions, never divide one by the other) and its cost. The figure plots
+questions, team counts for team questions, never divide one by the other) and what it changes. The figure plots
 team 47 across 117 windows, and the point of it is that there is one green line where Section 4 showed a
 76-to-24 split.
 
@@ -277,7 +278,7 @@ Mini Project 3 is worth 100 points. Five criteria, 20 points each.
 | **Critical Reflection: Limits, Ethics, Equity** | Thoughtfully addresses limitations and ethical and equity implications. | Identifies key considerations. | Mentions considerations superficially. | Does not address considerations. |
 
 What this means in practice for Week 6. **Data Preparation and Technical Care** is earned in Sections 1.1
-and 2.1: saying why you kept 20 children out of 78 and what that cost, and why the intervals resample pairs
+and 2.1: saying why you kept 20 children out of 78 and what that changed, and why the intervals resample pairs
 rather than children. **Analysis and Visualization Choices** is the decomposition in Section 5.2 and the
 choice to show a scatter rather than quote a threshold count. **Interpretation and Educational Meaning** and
 **Critical Reflection** live in the memo, and the fifth criterion is not a paragraph added at the end:
@@ -306,15 +307,15 @@ readings briefly at four points, and the reflection returns to them.
   part of their argument this corpus can still speak to.
 - **Mohammadi and colleagues (2025)**, *Artificial intelligence in multimodal learning analytics: A
   systematic literature review*: a map of how AI is being used across MMLA, with sample size and ethical
-  accountability among its recurring concerns. Given Section 5.2, where the only signal with any support was
-  about pairs, what would you require of an automated system before it produced a number attached to an
+  accountability among its recurring concerns. Given Section 5.2, where no correlation's interval excluded zero and
+  the one closest to doing so was about pairs, what would you require of an automated system before it produced a number attached to an
   individual child's name?
 - **Sharma and Giannakos (2020)**, *Multimodal data capabilities for learning: What can multimodal data tell
   us about learning?*: different modalities capture different aspects of a situation, so combining them is a
   design decision. Section 2 is a small version of that.
 - **Norman, Dinkar, Nasir, Bruno, Clavel, and Dillenbourg (2021)** and **Nasir, Norman, Bruno, Chetouani, and
   Dillenbourg (2021)**, the data papers. The Zenodo records are short, and reading the documentation of a
-  corpus before criticising it is worth the few minutes.
+  corpus before criticizing it is worth the few minutes.
 
 ## Going further
 
@@ -325,8 +326,8 @@ For anyone who finishes early or arrives with programming experience. None of th
    Every one of them is a **team** value repeated on both of the pair's rows. Verifying that, and then
    writing two sentences on what it means that a file with one row per child contains eight columns that
    cannot vary between children, is the exercise. Then check whether the five gaze percentages sum to 100 in
-   the temporal file. They sum to exactly 100 in 8 percent of rows, and about half of the rows are within
-   five points of 100. Decide what that permits you to say about gaze and what it does not.
+   the temporal file; Section 8's gaze audit prints the shares. Decide what that permits you to say about
+   gaze and what it does not.
 2. **Rebuild Section 5 as a mixed model.** The notebook decomposes by hand, which is transparent and
    slightly crude. Fit `gain ~ actions + (1 | team)` with `statsmodels` and compare the fixed effect to the
    within-pair correlation. Report whether the conclusion changes and, more usefully, whether the interval
@@ -349,8 +350,7 @@ For anyone who finishes early or arrives with programming experience. None of th
 **"The data did not download."**
 The first code cell prints a four-step check. Working through it in order usually resolves it. The most
 common cause is a campus, school, or hospital network blocking `raw.githubusercontent.com`. Running the
-notebook in Google Colab almost always fixes it. Please do not spend twenty minutes alone with this; post on
-Canvas with a screenshot.
+notebook in Google Colab almost always fixes it. If it still fails, please post on Canvas with a screenshot.
 
 **"NameError: name 'both' is not defined" or something similar**
 A cell ran out of order, or the runtime restarted. **Runtime > Restart session and run all** in Colab, or
@@ -400,8 +400,7 @@ graders need to see the outputs, which is why the checklist asks you to run it t
 before downloading.
 
 **Red text appeared**
-Python errors are wordy, and none of them means something has been damaged. Nothing here can harm your
-computer, the course data, or your grade. The **last line** of the error usually names the real problem.
+Python errors are wordy, and none of them means something has been damaged. The **last line** of the error usually names the real problem.
 Please ask, and we will read it together.
 
 ## Documenting AI use
@@ -425,8 +424,7 @@ this dataset, check whether it **invented a demographic variable**. There is no 
 125, and a confident answer that assumes one is the exact failure Section 7 is built to catch.
 
 AI use is permitted in designated activities and must be documented. Undisclosed use is an Honor Code
-violation. Disclosed use is normal scholarly practice, and in a course about analytics it is also a data
-point about your own learning process.
+violation. Disclosed use is normal scholarly practice.
 
 ## Data and ethics
 
@@ -439,8 +437,7 @@ This project is built entirely on other people's work, released openly so that i
 > Nasir, J., Bruno, B., & Dillenbourg, P. (2024). *PE-HRI-temporal: A multimodal temporal dataset in a robot mediated collaborative educational setting* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.13834073
 
 CHILI lab, École Polytechnique Fédérale de Lausanne. All three **CC BY 4.0**. The license requires
-attribution, and so does the fact that seventy-eight nine-to-twelve-year-olds and their families agreed to
-be recorded. None of them agreed to be a teaching example. It is worth asking who could be harmed by a claim
+attribution. It is worth asking who could be harmed by a claim
 before making it, noticing when a metric reduces a person to one number, and noticing which people are not
 in the file at all.
 
