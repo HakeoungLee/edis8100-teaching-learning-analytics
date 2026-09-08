@@ -21,10 +21,10 @@ normal part of working in a notebook.
 | **Notebook** | `week03_ethics_bias_audit.ipynb` |
 | **Deliverable** | None. Nothing from this notebook is collected, and nothing goes to Canvas. |
 | **Due** | Nothing. The first Canvas deliverable is Mini Project 1 in week 4. |
-| **Data** | **Two real datasets, published and openly licensed, and no synthetic data anywhere.** Part 1: the Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J, CC BY 4.0. Part 2: UCI Student Performance, the mathematics file, 395 Portuguese secondary students, CC BY 4.0, the same file we met in week 1. Both downloaded from `github.com/HakeoungLee/edis8100-datasets` |
+| **Data** | **Two real datasets, published and openly licensed, and no synthetic data anywhere.** Part 1: the Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J, CC BY 4.0. Part 2: UCI Student Performance, the mathematics file, 395 Portuguese secondary students, CC BY 4.0. Both downloaded from `github.com/HakeoungLee/edis8100-datasets` |
 | **Needs internet?** | **Yes**, for two cells: the setup cell at the top and the Part 2 setup cell. Both fail with a plain-English message naming the repository rather than a long error trace. |
 | **Libraries** | pandas, numpy, matplotlib, scikit-learn, scipy (all present in Colab, and scipy is a dependency of scikit-learn anyway) |
-| **Runtime** | Under a minute end to end on a laptop, including both downloads. The two 200-run loops in section 8 are the slow part, and the wait is the argument of that section. |
+| **Runtime** | Under a minute end to end on a laptop, including both downloads. The two 200-run loops in section 8 are the slow part. |
 | **Prior coding experience needed** | None |
 
 Mini projects begin in week 4, and the model audited here returns there as the early-warning panel
@@ -42,15 +42,10 @@ the three of you leads **two** of those weeks. Week 3 is one of them.
 3. Training that model on activity data, and reading its accuracy against a do-nothing baseline.
 4. Disaggregating the model's errors by socioeconomic decile and by disability status, and saying
    which of those differences can be distinguished from noise once thirty comparisons have been made.
-5. Redesigning the feature set, re-running the same audit, and being precise about what the redesign
-   changed and what it did not.
-6. Repeating the identical audit in a second real setting, and saying which findings traveled,
-   which did not, and which protocol choice was doing the work.
+None of these is a coding objective. If time allows, sections 5 and 7 to 10 add the redesigned
+feature set and a second setting.
 
-None of these is a coding objective.
-
-The through-line: a fairness audit measures a model, a group gap measures a world, and the two get
-reported in the same table as though they were the same kind of fact. Part 2 adds a second: which
+The through-line: a fairness audit measures a model's errors by group, a group gap in outcomes measures recorded outcomes, and the two are different kinds of fact that are often reported in one table. Part 2 adds a second: which
 metric you audit determines whether you see unfairness at all, which is a claim we verify twice with
 our own arithmetic rather than take on trust.
 
@@ -93,32 +88,24 @@ any machine.
 
 ## Walkthrough
 
-We move through this together in class. The timings below are a rough guide rather than a target,
-and it is fine if we spend longer somewhere and finish something else afterwards. The four
-**Your turn** cells already contain working values, so the notebook runs start to finish without
-anything being typed.
+We move through this together in class. The four **Your turn** cells already contain working
+values, so the notebook runs start to finish without anything being typed. The route below is the
+one the notebook itself prints after its instructions.
 
-| Step | Section | Minutes | What happens |
-|---|---|---|---|
-| 1 | Setup and orientation | 6 | The first code cell downloads six OULAD files and prints what arrived. Then the provenance section, which names the dataset, its license, its citation, and who collected it, before any number appears. |
-| 2 | The concepts the audit needs | 10 | Away from the keyboard: what the field calls an at-risk model and the three human decisions inside it, the confusion matrix stated in terms of what happens to a person, accuracy read against the do-nothing baseline, and why calibration and equal error rates generally cannot both hold when base rates differ. |
-| 3 | Sections 1 to 4, the audit itself | 15 | Real data does not arrive clean; the gaps before any model exists; the logistic regression on clicks, active days, and resources; and the disaggregated audit, in pairs. |
-| 4 | Sections 7 to 11, the same audit somewhere else | 10 | One recipe, held fixed, run on the Portuguese file and on a rebuilt OULAD table, and the five gaps side by side. |
-| 5 | Section 8, the seed | 7 | One fairness quantity measured 200 times under each of two protocols. |
-| 6 | Section 5, the redesign round | 6 | Swap the feature set on the OULAD model and run the audit again. |
-| 7 | The close | 6 | Which of the two results you believe, and how you would have decided having run only one of them. |
+| | Sections | What it is for |
+|---|---|---|
+| **CORE, about 55 to 60 minutes** | Where this data came from, Setup, 1, 2, 3, 4, Your turn 1, 6, Reflection prompts 1 to 3 | Provenance, the four decisions and the name of the target, the gaps before any model, the model read against the do-nothing rule, error rates by decile and by recorded disability, the threshold, and the population the accuracy figure describes |
+| **IF TIME** | Part 2 setup, 7, 9, 10, then 5 with Your turn 2 | The same audit in a second setting and which gaps replicated, then the redesigned feature set |
+| **EXPLORE LATER** | Your turn 3, 8, 11, Your turn 4, Why the course runs the audit twice, Going further | Another column, the seed, the accuracy gap and the 38 zeros, the comparison count, and the notes on the Your turn cells |
 
-The notebook itself reads top to bottom, and section 5 sits where it belongs in the argument rather
-than where it falls in the hour. Anything still open at 5:50 is fine to finish afterwards.
-
-**Going further** sections are clearly marked and optional: the audit of a group nobody asked about
-after section 6, and the notes on the Your turn cells at the end. Nothing later depends on either.
+The notebook reads top to bottom, and section 5 sits where it belongs in the argument rather than
+where it falls in the hour. Anything still open at 5:50 is fine to finish afterwards. Your turn 3
+and the notes on the Your turn cells are optional, and nothing later depends on either.
 
 ## The data, and where it came from
 
-Two datasets, both real, both openly licensed, both already familiar. Part 1 audits the Open
-University module we read in week 2. Part 2 runs the same audit on the Portuguese file we read in
-week 1.
+Two datasets, both real, both openly licensed. Part 1 audits the Open University module from week
+2. Part 2 runs the same audit on the UCI Student Performance file.
 
 | | |
 |---|---|
@@ -132,13 +119,9 @@ week 1.
 A university that teaches almost entirely online already holds a complete record of what every
 student clicked, when they submitted, and how it ended. A research group inside that university
 pulled two years of one module, stripped the names, replaced them with numbers, aggregated the
-clicks to daily counts, and published the result so that people outside the institution could study
-early warning systems without needing a data-sharing agreement.
+clicks to daily counts, and published the result under an open license.
 
-Every row is a person who enrolled in a distance-learning module in 2013 or 2014. None of them
-enrolled in order to be a teaching example in Charlottesville in 2026. Anonymization and an open
-license are real protections, and they are not consent. The notebook says this in its second
-markdown cell, and the ask is the same as it was in weeks 1 and 2: **treat these rows as people.**
+Every row is a person who enrolled in a distance-learning module in 2013 or 2014.
 
 ### The second setting
 
@@ -154,19 +137,16 @@ markdown cell, and the ask is the same as it was in weeks 1 and 2: **treat these
 
 **Why the audit runs twice, and why the second dataset is this one.** A fairness result from one
 course at one university is a hypothesis. The next thing anyone might do with it is take the recipe
-somewhere else and see whether it survives, and that is what Part 2 does. It picks a setting about
-as unlike OULAD as a learning dataset gets: 3,136 enrollments belonging to 3,127 adults studying at
-a distance in the United Kingdom, measured by a server log, against 395 teenagers in two buildings
-in Portugal, measured by a school register and a paper questionnaire. Different country, different
-decade, different age group, different instrument.
+somewhere else and see whether it survives, and that is what Part 2 does. It picks a setting that
+differs from OULAD in country, decade, age group and instrument: 3,136 enrollments belonging to
+3,127 adults studying at a distance in the United Kingdom, measured by a server log, against 395
+teenagers at two schools in Portugal, measured by a school register and a paper questionnaire.
 
-We also arrive at it already knowing something a stranger downloading the file would not. In week 1
-we found that 38 of the 395 final grades are exactly 0, that all 38 belong to students with zero
-recorded absences, and that most of those students were being graded normally in the second period.
-The dataset documentation does not say what those zeros are, so whether they are grades or records
-that were never entered remains a hypothesis rather than a finding. Part 2 makes the decision about
-them out loud, keeps them, and then reruns the whole audit without them, which changes one of the
-two headline findings.
+The Part 2 setup cell audits the file before building on it: 38 of the 395 final grades are exactly
+0, all 38 have zero recorded absences, all 38 have a nonzero first-period grade, 25 have a nonzero
+second-period grade, and no other student scored below 4. The documentation does not say what a 0
+means, so whether they are grades or unentered records remains a hypothesis. Part 2 keeps them and
+then reruns the whole audit without them.
 
 ## The naming decision, which is the first design decision
 
@@ -197,9 +177,11 @@ module twice, 738 enrollments never appear in the clickstream at all, 46,884 cli
 before the module officially starts, and the outcome column has four categories rather than two.
 Four decisions are made visibly, each with its cost named. Because 47 people appear twice, every
 join in the notebook keys on `(code_presentation, id_student)` rather than on the student id alone,
-including the join that attaches submitted coursework. All 47 did not pass in 2013J, which is why
-they were back in 2014J, and section 4 later checks whether their double-counting moves the headline
-interval. It does not. The section also names an asymmetry the two presentations carry into the
+including the join that attaches submitted coursework. All 47 have a 2013J result of Withdrawn or
+Fail, and section 4 later checks whether their double-counting moves the headline interval. The 266
+`studentAssessment` rows marked `is_banked`, results carried over from an earlier presentation, are
+audited and set aside before the coursework features are built, because 134 of them fall inside the
+day-60 window. It does not. The section also names an asymmetry the two presentations carry into the
 redesign: three assignments fall on or before day 60 in 2013J and two in 2014J, so a feature built
 from submitted work is not on the same scale in the two cohorts.
 
@@ -239,30 +221,28 @@ The result is that two panels disagree on purpose, and now defensibly. The error
 about -0.003 and +0.002 per decile step with intervals straddling zero: no detectable trend. The
 share-flagged gradient is about -0.014 with an interval nowhere near zero, and its observed spread of
 0.151 is double what noise would produce. A bootstrap cell then shows the disability difference in
-error rates straddling zero, on a group whose pass rate is nearly ten points lower. The audit came
-back clean on a group whose recorded outcomes were measurably worse.
+error rates straddling zero, on a group whose pass rate is nearly ten points lower. The audit came back clean on a group whose recorded pass rate was 9.7 points lower.
 
-**Your turn 1: the threshold.** Change one number, the cutoff that turns a risk score into a phone
-call, and watch a staffing decision move a fairness metric.
+**Your turn 1: the threshold.** Change one number, the cutoff that turns a predicted probability into a flag, and watch that decision move a fairness metric.
 
 **5. Redesign and re-audit.** Drop the two schedule-shape features, add three about what an
-enrollment produced by day 60, keep everything else identical. Accuracy rises from 0.735 to 0.788, a
-gain of +0.053 with a bootstrap interval of roughly [+0.040, +0.066], and the overall false positive
-rate falls from 0.287 to 0.082. The notebook prints both errors as counts as well as rates, because
-a rate that small is easy to over-read: 638 false positives become 183, and 562 missed enrollments
-become 776. That is 455 letters not sent, bought with 214 more people who did not pass and got
-nothing. The share-flagged gradient does not flatten: it goes from about -0.014 to about -0.018 per
+enrollment produced by day 60, keep everything else identical. Accuracy rises from 0.735 to 0.795, a
+gain of +0.060 with a bootstrap interval of roughly [+0.048, +0.074], and the overall false positive
+rate falls from 0.287 to 0.074. The notebook prints both errors as counts as well as rates, because
+a rate that small is easy to over-read: 638 false positives become 164, and 562 missed enrollments
+become 763. That is 474 fewer false positives and 201 more false negatives. The share-flagged gradient does not flatten: it goes from about -0.014 to about -0.018 per
 decile step, and the change between them has an interval that includes zero, so the defensible
 sentence is that the redesign did not flatten it and may have steepened it. Then come the cautions,
-because an early mark is not innocent either, and because `n_submitted` carries the two
+because an early mark may carry earlier schooling, and because `n_submitted` carries the two
 presentations' different assignment calendars.
 
-**6. What our one big decision bought us.** Rerun on only the enrollments still registered at day 60.
-Accuracy falls from 0.735 to 0.692 while the do-nothing baseline rises from 0.491 to 0.631. Most of
-the impressive margin was bookkeeping about students the registry had already lost. Which number goes
+**6. Accuracy on the enrollments still registered at day 60.** Rerun on only the enrollments still
+registered at day 60. Accuracy falls from 0.735 to 0.692 while the do-nothing baseline rises from
+0.491 to 0.631. Most of the margin over the do-nothing rule came from enrollments with a recorded
+unregistration date on or before day 60. Which number goes
 in the abstract is a reporting decision, and it is yours.
 
-**Going further (optional): auditing a group nobody asked about.** Point the same audit at
+**Your turn 3 (optional): auditing another column.** Point the same audit at
 `age_band`, `gender`, `region`, or `highest_education`, and find a gap nobody asked you to look for.
 Nothing later in the notebook depends on this section.
 
@@ -272,13 +252,12 @@ One recipe, held fixed, run on both settings. Same outcome definition, same algo
 threshold, same protocol, activity and support features only and **no prior grades on either side**,
 because `G1` and `G2` would predict `G3` by being a grade and would mirror nothing in Part 1. OULAD
 is rebuilt to match: the 1,393 withdrawn enrollments come out, leaving 3,136 that ran to a graded
-end, and activity is counted over the first four weeks rather than sixty days. The Portuguese outcome
+end, and activity is counted over the first four weeks rather than sixty days, a choice made for the comparison rather than a property of either file. The Portuguese outcome
 is `G3 < 10`, the Portuguese pass mark.
 
 **7. One recipe, two settings.** The two models are almost indistinguishable. AUC **0.688** in both.
 Accuracy **0.714** in Portugal against a do-nothing rule of 0.671, and **0.724** in OULAD against
-0.709. Base rates 0.329 and 0.291. That is an ordinary published early warning model, twice, on two
-continents, and the second panel of figure 4 is the part worth sitting with: the do-nothing rule is
+0.709. Base rates 0.329 and 0.291. That is an ordinary activity-based model, twice, on two continents, and the second panel of figure 4 is the part worth sitting with: the do-nothing rule is
 four points behind one of them and one and a half points behind the other.
 
 The grouping column gets a paragraph of its own, because it has to. Portugal is audited by the higher
@@ -349,14 +328,14 @@ whether these instruments genuinely read students in the lower band worse or whe
 students look like when you cut them in half, **does not get an answer**, and the notebook says so
 rather than picking one.
 
-Then the last turn. Week 1's 38 zero grades are not spread evenly: **21 of the 135 students in the
+The 38 zero grades are not spread evenly: **21 of the 135 students in the
 lower band against 17 of the 260 in the higher band**, 15.6 percent against 6.5 percent, Fisher exact
 p = 0.006. Rerun the whole of setting two without them and the one clean finding, the false alarm
 gap, falls from **+0.115 [+0.025, +0.209] to +0.046 [-0.028, +0.124]** and stops clearing zero. Those
 38 records are not in the false alarm comparison at all, since a false positive rate is computed among
 students who passed and a recorded grade of zero is a `did_not_pass` row: the denominators are 81 and
-184 either way. The gap moved because those rows were in the model's **training** data. The audit
-measured a model, and part of what it measured was a filing cabinet.
+184 either way. The gap moved because those rows were in the model's **training** data. Part of what the audit
+measured was how 38 records were treated.
 
 **Your turn 4.** Point the same two-group audit at any column of the Portuguese file. `sex` is the
 working default and it produces a gap nobody went looking for: a false negative gap of **+0.219,
@@ -370,9 +349,7 @@ them is picked.
 **Why the course runs the audit twice.** One replication, one failure to replicate, and one metric
 that was clean in both settings on models that miss most of the students they are looking for. A
 single-setting fairness result is a hypothesis, and the next thing anyone might do with it is take
-the recipe somewhere else. The section closes with a short coda pointing at week 5, where the same
-audit runs on **human raters** rather than a model, using PERSUADE 2.0. You cannot rerun a rater with
-a different seed.
+the recipe somewhere else.
 
 **Reflection.** Seven prompts tied to this week's readings and to both datasets. They are for
 talking rather than for uploading, and nothing from them is collected. The discussion hour runs
@@ -388,10 +365,9 @@ a course project. None of this is part of the session.
    there any threshold at which the activity-only model closes it? What does that imply about "just
    tune the cutoff" as a remedy?
 2. **Move the checkpoint.** The notebook looks at days 0 to 60. Rerun it at day 30 and at day 120.
-   Accuracy climbs steadily with the window, and so does the circularity, since students who withdraw
-   stop clicking. Where would you stop, and why?
-3. **Build a better regularity feature.** `active_days` penalises compressed schedules. Design a
-   feature that captures "this student has stopped showing up" without penalising "this student
+   Accuracy is likely to climb with the window, and so is the circularity, since students who withdraw stop clicking. Where would you stop, and why?
+3. **Build a better regularity feature.** `active_days` penalizes compressed schedules. Design a
+   feature that captures "this student has stopped showing up" without penalizing "this student
    studies in long blocks," compute it from `studentVle.csv.gz`, and audit a model that uses it. Gaps
    between consecutive active days are a good place to start.
 4. **A different model for the gradient.** The notebook fits weighted least squares to ten proportions
@@ -449,8 +425,8 @@ hands back a single column of 33 things glued together and no error at all. It i
 purpose so the shape of the mistake is recognizable later.
 
 **Section 8 is the slowest cell in the notebook.**
-That is correct. It fits the model 200 times under one protocol and 5,000 times under the other, and
-the wait is the argument of the section. The whole notebook runs end to end in under a minute.
+That is correct. It fits the model 200 times under one protocol and 5,000 times under the other. The
+whole notebook runs end to end in under a minute.
 
 **My charts do not appear.**
 The first code cell contains `%matplotlib inline`, so it needs to have run. If they still do not
@@ -554,7 +530,7 @@ guide *Finding and Evaluating Learning Analytics Data*.
 *EDIS 8100: Teaching and Learning Analytics · Fall 2026 · Dr. Hakeoung Hannah Lee ·
 University of Virginia, School of Education and Human Development.*
 
-Both datasets are used under CC BY 4.0, with attribution and no modification to the published files.
+Both datasets are used under CC BY 4.0, with attribution; the OULAD files are filtered to module BBB and otherwise unmodified.
 
 Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset.
 *Scientific Data, 4*, 170171.
