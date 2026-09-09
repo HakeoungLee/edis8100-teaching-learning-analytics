@@ -6,7 +6,7 @@ This week's notebook works through that question on a real commercial tutor log.
 Coding expertise is not assumed. Nothing in the notebook asks you to write code from scratch, this
 week or in any other week of the course. You run cells, read what comes out, and change four clearly
 marked values to watch a headline move. Questions are welcome at any point, including questions
-about a single line of code, and red error text is a normal part of working in a notebook.
+about a single line of code.
 
 ## At a glance
 
@@ -28,8 +28,8 @@ about a single line of code, and red error text is a normal part of working in a
 | **Next session** | Wednesday, October 14, Week 8, where Mini Project 4 launches in class. |
 
 Discussion leadership runs across six weeks between Week 2 and Week 11, and each of the three of you
-leads **two** of them. Week 7 is one of them, and it comes first in the session so that the questions
-it raises can be carried into the preparation block before our guest.
+leads **two** of them. Week 7 is one of them, and it comes first in the session so that the
+questions it raises can be carried into the preparation block before our guest.
 
 ## What I hope you leave with
 
@@ -41,17 +41,18 @@ it raises can be carried into the preparation block before our guest.
    when the order is set by the interface rather than chosen by the person.
 4. Using inter-action timing to separate a screen that was displayed from a screen that was read,
    and being able to say what the clock still cannot tell us.
-5. Recognizing a logging artifact: a comparison that appears to be about learning and turns out to
-   be about a logging convention.
+5. Recognizing a logging artifact: a measure that appears to be about a learner's choices and turns
+   out to be about a logging convention.
 
 None of these is a coding objective.
 
 The through-line of the session: **self-regulated learning is not directly observable, so everything
-here is an inference from residue.** There is no column in the log for intention, confidence, or
-effort. There is a column for what happened on a screen and when. The distance between those two
-things is what the lab is about, and it is the Week 2 claim ladder again: `enter_e` is a feature,
-help seeking is an indicator somebody has to argue for, and self-regulation is a construct with a
-literature behind it. Section 5 asks whether one of those features reaches even the first rung.
+here is an inference from recorded events.** There is no column in the log for intention,
+confidence, or effort. There is a column for what happened on a screen and when. The distance
+between those two things is what the lab is about, and it is the Week 2 claim ladder again:
+`enter_e` is a feature, help seeking is an indicator somebody has to argue for, and self-regulation
+is a construct with a literature behind it. Section 5 asks whether one of those features reaches
+even the first rung.
 
 ## Something changed this week
 
@@ -63,7 +64,7 @@ That changes what is in the file and what is missing from it. There is no answer
 correctness lived elsewhere in Riiid's systems. There is no demographic column, no score, and no
 name. What there is, in enormous quantity, is what the interface did and exactly when. The lab is
 built on that asymmetry, and it ends with two patterns that look like learner behavior and that the
-timing gives good reason to read as the application instead.
+timing is consistent with the application, not the learner, generating them.
 
 ## What is in this folder
 
@@ -84,7 +85,9 @@ released log of **Santa**, a commercial multi-platform tutoring service in South
 **TOEIC** English proficiency test. KT3 is the action-level release: one row per interface event,
 with the timestamp, what kind of event it was, which item it happened on, which option was chosen if
 any, and which platform the person was using. The extract runs from 30 August 2018 to 27 November
-2019.
+2019. EdNet's documentation states that the timestamps were shifted by fixed values for security, so
+these dates are approximate; within-learner intervals are unaffected if the shift is constant within
+a learner.
 
 **Who collected it.** Riiid, the company that operates Santa, logged every interface event its own
 product generated as a by-product of running the service. Its research group then anonymized and
@@ -92,23 +95,22 @@ released four nested versions of that log, KT1 through KT4, so that researchers 
 commercial tutor could work on real interaction data at scale.
 
 **License.** **CC BY-NC 4.0.** The license permits use, sharing, and adaptation **with attribution
-and for non-commercial purposes only**. That last clause is not decorative and the notebook says so
-twice. Anything built on this file in this course stays inside this course, which rules out a
-product, a consulting deliverable, or a paid workshop. If your course project uses it, please cite
-Choi and colleagues (2020) and say which release and which extract you used. "EdNet" alone is not a
-citation.
+and for non-commercial purposes only**. Anything built on this file in this course stays inside
+this course, which rules out a product, a consulting deliverable, or a paid workshop. If your
+course project uses it, please cite Choi and colleagues (2020) and say which release and which
+extract you used. "EdNet" alone is not a citation.
 
-**Who is in it.** People in South Korea preparing for a high-stakes English proficiency test, on a
-commercial app they chose and in most cases paid for, studying on their own time and, for the
-majority of these rows, on a phone. Choi and colleagues describe the service, not these 500
-individuals. The extract itself carries no age, no gender, no location, and no score.
+**Who is in it.** People in South Korea preparing for a high-stakes English proficiency test (Choi
+et al., 2020), on a commercial app with a free daily allowance and paid access (riiid/ednet README)
+and, for the majority of these rows, on a phone. Choi and colleagues describe the service, not these
+500 individuals. The extract itself carries no age, no gender, no location, and no score.
 
-**What it cost to get here.** Identity is gone: every person is an integer with a `u` in front of it.
+**What the extract omits.** Identity is gone: every person is an integer with a `u` in front of it.
 Item content is gone: a question is `q4142` and nothing more, so we cannot see what was asked or
 judge whether the item was fair. **And the answer key is gone.** KT3 records the option chosen and
-never the option that was correct. That single absence removes the most common analysis in this
-literature, and Section 6 of the notebook argues that the absence is useful, because it makes room
-to ask what that analysis would have been measuring.
+never the option that was correct. That absence rules out any analysis of correctness, and Section 6
+of the notebook argues that the absence is useful, because it makes room to ask what that analysis
+would have been measuring.
 
 **The file the notebook reads** (from `HakeoungLee/edis8100-datasets`, folder `ednet-kt3-500`):
 
@@ -119,7 +121,8 @@ to ask what that analysis would have been measuring.
 Nothing is sampled or thinned inside the notebook. Loaded with sensible column types the whole file
 is about 225 MB in memory and every computation finishes in seconds, so the notebook keeps all
 1,893,105 rows and says so. Where a step drops rows, it drops them in view with a count and a
-reason, and the largest such drop is 178 rows.
+reason, and the largest drop of rows from the file is 178; later sections restrict summaries to
+learners with 20 or more screens and to questions with 10 or more answers, and print the counts.
 
 ## Opening it in Colab
 
@@ -151,36 +154,53 @@ The four **Your turn** cells already contain working values, so the notebook run
 without you typing anything. The interpretation prompts after each figure are where the attention
 belongs.
 
+The notebook is worked through outside class rather than opened in class, so the route below is for
+working alone. It says what to do first when the time available is short, and the notebook prints
+the same table after its instructions.
+
+| | Sections | What it is for |
+|---|---|---|
+| **CORE, about 55 to 60 minutes** | Where this data came from, Setup, 1, 1.1, 1.2, 2, 3, 3.1 with Your turn 2, 4, 5, and 7 through its **Let's look at the output** | Provenance and license, the grain and the vocabulary, the audit of the download, the profile and its structural ties, the session rule and its sensitivity, the transition matrix, the submit-to-explanation latency, and the dwell distribution with its interval. Then the Reflection prompts on Winne and on Viberg, Khalil and Baars |
+| **IF TIME** | 6 with Your turn 3, 7.1, 7.2, Your turn 1, Your turn 4, the Zhang, Borchers and Barany prompt, the prompt that reaches back to Week 3, and A question for our guest | The concentration comparison and its sample-size correction, the within-learner dwell comparison and its breakdown, time to the first recorded response, the other threshold exercises, and the question for the preparation block |
+| **EXPLORE LATER** | Going further 1 to 4 | Several learners at once, the twelve-point session sweep, the concentration sweep, and the bottom-decile overlap grid |
+
 **Setup.** The first code cell imports three libraries, sets the plotting defaults, and downloads
 `actions.csv.gz`. It prints 1,893,105 rows, 7 columns, 500 learners, about 225 MB, and a reminder
 that the license is non-commercial.
 
-**1. One row, and the alphabet of this log.** The vocabulary is not documented anywhere in the file,
-so the notebook reads it out of the file, which is the ordinary situation. Crossing `action_type`
-against the first letter of `item_id` shows that four action types and four item kinds combine into
-exactly **seven** legal events rather than sixteen: `enter_b`, `respond_q`, `submit_b`, `enter_e`,
-`quit_e`, `enter_l`, `quit_l`. Two of the seven are worth treating carefully as measures of a
-person, because `enter_b` and `submit_b` occur exactly 314,791 times each: in this app a bundle that
-is opened is a bundle that is submitted, so a profile reporting both reports one number twice. The
-section closes by checking, in the column list, that **there is no correctness column**.
+**1. One row, and the vocabulary of this log.** The vocabulary is not documented anywhere in the
+file, so the notebook reads it out of the file. Crossing `action_type` against the first letter of
+`item_id` shows that four action types and four item kinds combine into exactly **seven** legal
+events rather than sixteen: `enter_b`, `respond_q`, `submit_b`, `enter_e`, `quit_e`, `enter_l`,
+`quit_l`. Two of the seven are worth treating carefully as measures of a person, because `enter_b`
+and `submit_b` occur exactly 314,791 times each: in this extract every recorded bundle open has a
+matching recorded submit, so a profile reporting both reports one number twice. The section closes
+by checking, in the column list, that **there is no correctness column**.
 
 Section 1.1 prints 25 consecutive actions by one learner. It is the screen to slow down for. Three
 timescales live in the `seconds_since_previous` column: gaps of **0.05 seconds**, faster than a
 person can act; gaps of twenty to thirty seconds between opening a bundle and answering it, which is
 the only stretch that plausibly contains thinking; and one place where the learner submits `b1073`,
-re-enters it 3.23 seconds later, answers the same question twice with different options, and submits
-again. The prompt invites two stories that produce those rows, one about the person and one about
-the interface, and leaves them both open.
+re-enters it 3.23 seconds later, records two responses to the same question with different options,
+and submits again. The prompt invites two stories that produce those rows, one about the person and
+one about the interface, and leaves them both open.
 
-Section 1.2 sets out the mess with a decision and a stated cost for each of six items: **2,637** rows
-tied to the millisecond, **19** learners whose logs begin mid-flow (costing 178 rows and zero
+Section 1.2 sets out the mess with a decision and a stated cost for each of seven items: **2,637**
+rows tied to the millisecond, **19** learners whose logs begin mid-flow (costing 178 rows and zero
 answers), **14,417** bundles submitted with nothing answered, **18** explanation items with no
-matching bundle, **42** learners with no explanation event and 91 with no lecture event, and the
-shape of the people. That last one carries the most weight: rows per learner run from **5 to
-52,917**, the busiest ten learners hold 16.0 percent of all rows, and the quietest 250 hold 4.6
-percent. The rule the whole notebook then obeys is stated once and applied everywhere: **compute per
-person, then summarize across people; put a count next to every rate; when an interval is needed,
-resample the people, not the rows.**
+matching bundle, **42** learners with no explanation event and 91 with no lecture event, the shape
+of the people, and what EdNet's documentation says about this log. The shape of the people carries
+the most weight: rows per learner run from **5 to 52,917**, the busiest ten learners hold 16.0
+percent of all rows, and the quietest 250 hold 4.6 percent.
+
+The seventh item is the audit of the download against the documentation. Only the last response
+before a submit counts as an answer, which sets aside **159,923** rows that record a changed
+selection inside one question attempt; **1,218** of the 11,520 questions appear under more than one
+bundle number in this extract, covering 89,219 response rows, so any count of answers preceded by an
+explanation is a lower bound; and the timestamps were shifted by fixed values for security, so every
+calendar date and clock time in the notebook is approximate. The rule the whole notebook then obeys
+is stated once and applied everywhere: **compute per person, then summarize across people; put a
+count next to every rate; when an interval is needed, resample the people, not the rows.**
 
 **2. What a learner's action profile does and does not say.** Per-learner shares of the five
 substantive events. Most boxes are narrow: the middle half of learners spend between 21.0 and 25.2
@@ -204,11 +224,10 @@ about 8.75 bundles and 16.0 minutes**, computed per learner and then medianed ac
 also prints, for contrast, what comes out of pooling over the 23,810 sessions and forgetting the
 nesting.
 
-Then it moves the rule, which is the part most papers skip. Across gap rules from 5 to 120 minutes
-the headline runs from **5.0 to 10.0** bundles, a factor of 2.0, and the minutes figure from **6.5
-to 22.8**, a factor of 3.5. The number of sessions found runs from 48,578 to 17,535. Nothing about
-the learners changes between those rows. **Your turn 2** ships a 10 minute rule so a number moves on
-the first run.
+Then it moves the rule. Across gap rules from 5 to 120 minutes the headline runs from **5.0 to
+10.0** bundles, a factor of 2.0, and the minutes figure from **6.5 to 22.8**, a factor of 3.5. The
+number of sessions found runs from 48,578 to 17,535. Nothing about the learners changes between
+those rows. **Your turn 2** ships a 10 minute rule, deliberately different from the notebook's 30.
 
 **4. Order: what follows what.** A bigram matrix over 1,892,605 within-learner pairs. Only **19 of
 49** cells ever occur, and the notebook labels never-occurred cells with a dot and rounds-to-zero
@@ -216,52 +235,53 @@ cells with `<1`, so that the five cells that happened but round away stay visibl
 everything that follows: `submit bundle` is followed by `open explanation` **94.4 percent** of the
 time, and `close explanation` is followed by `open explanation` 12.9 percent of the time.
 
-**5. The first logging artifact: the explanation nobody asked for.** The section opens with an
-abstract anybody could write this afternoon, operationalising help seeking as the number of
-explanation screens opened. Then it measures the seconds between submitting a bundle and the
-explanation appearing. The overall median is **0.077 seconds**. Human simple reaction time to a
-visual signal is about 0.2 to 0.25 seconds, and that is before deciding anything.
+**5. The first logging artifact.** The section opens with an abstract anybody could write this
+afternoon, operationalizing help seeking as the number of explanation screens opened. Then it
+measures the seconds between submitting a bundle and the explanation appearing. The overall median
+is **0.077 seconds**. Human simple reaction time to a visual signal is commonly reported as
+roughly 0.2 to 0.25 seconds, and that is before deciding anything.
 
 The second half of that chart is sharper still. **On mobile 98.6 percent of these screens appear
 within a fifth of a second (median 0.057 s); on web the median is 1.317 s and the share under 0.2
-seconds is 18 screens out of 114,214.** Same product, same behavior, different client. A latency
+seconds is 18 screens out of 114,214.** Same product, same event type, different client. A latency
 that might have been read as how quickly a learner turns to help tracks what device they were
 holding.
 
 The consequence is then made quantitative: across the 500 learners, explanation screens opened
 correlates with bundles submitted at **Spearman 0.995**, with a median of 1.008 explanations per
 bundle, so ranking people on "explanation use" reproduces ranking them on volume. And the hypothesis
-from Section 2 gets its evidence: all **42** learners with no explanation event have between 7 and 40
-total logged events against a class median of 1,051, and **no** learner with 100 or more events is
-among them. Among the 409 regular users the explanation share sits between 18.3 and 26.0 percent
+from Section 2 gets its evidence: all **42** learners with no explanation event have between 7 and
+40 total logged events against a class median of 1,051, and **no** learner with 100 or more events
+is among them. Among the 409 regular users the explanation share sits between 18.3 and 26.0 percent
 from the 5th to the 90th percentile. The lower tail is people with almost no log, which is a general
 failure mode worth naming: a measure that behaves differently for people with little data
 manufactures a group that is really a sample-size artifact.
 
-**6. The second logging artifact: the answer you have already been shown.** The study everybody
-wants to run on a tutor log is whether learners who use the help do better, comparing accuracy with
-and without help. This extract has no answer key, so that study cannot be run, and the section works
-out what it would have been measuring.
+**6. The second logging artifact.** The most common study on a tutor log is whether learners who use
+the help do better, comparing accuracy with and without help. This extract has no answer key, so
+that study cannot be run, and the section works out what it would have been measuring.
 
-Three steps. First, **222,958 of 544,487 answers (40.9 percent)** are repeats of a question that
-learner had already answered. Second, **83,779 answers (15.4 percent of all of them, and 35.7
-percent of repeats)** were given by somebody who had already opened the explanation for that bundle.
-Third, and this is the move that needs no answer key: if a post-explanation answer is reproduction
-rather than knowledge, the chosen options should pile up on one option. They do. Across **1,241**
-questions with at least ten independent answers in each condition, the share of answers falling on
-the single most chosen option rises from a median of **0.551** at first exposure to **0.700** after
-the explanation has been shown, with the difference rising on 81.6 percent of questions and a
-bootstrap interval over questions of [+0.125, +0.145].
+Three steps. First, an answer is the last response before the submit, as EdNet's documentation
+defines it, which sets aside 159,923 rows that record a changed selection inside one attempt; of the
+**384,564** answers that remain, **63,035 (16.4 percent)** are a second attempt at a question that
+learner had already answered. Second, **63,885 answers (16.6 percent of all of them, and 94.5
+percent of second attempts)** were recorded after the explanation for that bundle had already been
+opened. Third, and this is the move that needs no answer key: if a post-explanation answer is
+reproduction rather than knowledge, the chosen options should pile up on one option. They do. Across
+**1,241** questions with at least ten independent answers in each condition, the share of answers
+falling on the single most chosen option rises from a median of **0.587** at first exposure to
+**0.750** after the explanation has been shown, with the difference rising on 83.8 percent of
+questions and a bootstrap interval over questions of [+0.133, +0.154].
 
 Then the notebook corrects its own statistic, because "share on the most chosen option" is inflated
 when a question has fewer answers and the two conditions here do not have the same number: 67 per
 question at first exposure against 14 afterwards. Thinning the first-exposure side to match,
-question by question, the median difference falls from **+0.136 to about +0.110**, so roughly a
-fifth of the raw effect was sample size and four fifths was not. The bootstrap interval quoted above
-is an interval on the uncorrected statistic and does not contain the corrected one, which is worth a
+question by question, the median difference falls from **+0.142 to about +0.132**, so the matched
+difference is about 93 percent of the unmatched one. The bootstrap interval quoted above is an
+interval on the uncorrected statistic and does not contain the corrected one, which is worth a
 sentence of its own. Restricted to answers arriving within 24 hours of the explanation, the
-post-explanation median is **0.812** against 0.496, and the same thinning lifts the 0.496 to about
-0.527.
+post-explanation median is **0.833** against 0.511, and the same thinning lifts the 0.511 to about
+0.544.
 
 The notebook then does two things most treatments do not. It states the caveat that questions are
 not independent either, because the same 500 learners recur across them, so the interval is
@@ -280,24 +300,25 @@ seconds; 8.7 percent close within two seconds and 40.2 percent within ten. Per l
 404 with at least 20 screens, the share held for ten seconds or more has a median of **0.629, 95
 percent interval [0.604, 0.660] from resampling learners**, and runs from 0.316 at the tenth
 percentile to 0.866 at the ninetieth. The 96 excluded learners are named and the notebook says
-plainly that they are not missing at random.
+plainly that they are excluded by a rule on an observed count.
 
-Section 7.1 is where a hypothesis dies. An explanation the learner opened themselves ought to hold
-their attention longer than one the app put in front of them. Within learner, among the 258 with at
-least 20 screens of each kind, the difference goes the **other** way: **-7.77 seconds, 95 percent
-interval [-9.76, -5.50]**, entirely below zero. Then the breakdown: of the screens not opened by the
-flow, **54.9 percent** are the learner reopening the explanation they had just closed, at a median
-of 6.5 seconds each. Flicking back is quick. The label "opened it themselves" was ours rather than
-the log's, and the repair required is to the operationalisation rather than to the theory.
+Section 7.1 compares explanations opened by the flow with those opened another way. An explanation
+the learner opened themselves ought to hold their attention longer than one the app put in front of
+them. Within learner, among the 258 with at least 20 screens of each kind, the difference goes the
+**other** way: **-7.77 seconds, 95 percent interval [-9.76, -5.50]**, entirely below zero. Then the
+breakdown: of the screens not opened by the flow, **54.9 percent** are the learner reopening the
+explanation they had just closed, at a median of 6.5 seconds each. Reopened screens are short. The
+label "opened it themselves" was ours rather than the log's, and the repair required is to the
+operationalization rather than to the theory.
 
-Section 7.2 measures the seconds from a bundle opening to the first answer inside it. Per learner,
-the middle half of the 415 learners with enough bundles sit between **17.6 and 23.2 seconds**, a
-startlingly narrow band, and again the instrument and the setting get asked first. This is also
-where the field's vocabulary appears: 1.3 percent of bundles are answered within three seconds, the
-field calls patterns like this **"gaming the system"** and **"hint spam"**, and the notebook quotes
-those phrases, points out that each names a motive no timestamp can see, and then says what was
-actually recorded. **Your turn 4** moves the ten second line and prints how many learners change
-decile because of it.
+Section 7.2 measures the seconds from a bundle opening to the first recorded response inside it.
+Per learner, the middle half of the 415 learners with enough bundles sit between **17.6 and 23.2
+seconds**, a narrow band, and again the instrument and the setting get asked first. This is also
+where the field's vocabulary appears: 1.3 percent of bundles are answered within three seconds,
+the field calls patterns like this **"gaming the system"** and **"hint spam"**, and the notebook
+quotes those phrases, points out that each names a motive no timestamp can see, and then says what
+was actually recorded. **Your turn 4** moves the ten second line and prints how many learners
+change decile because of it.
 
 **Reflection.** Four prompts, three tied to this week's readings by author and one that reaches back
 to Week 3 and lists the six choices this notebook made. Then the guest question section, with a
@@ -305,8 +326,8 @@ drafted question for Conrad Borchers about window choice in ordered network anal
 straight out of Section 3.
 
 **Before we meet again.** A checklist. The two items worth taking seriously are being able to
-explain both logging artifacts to somebody who was not in the room, and remembering that the license
-is non-commercial.
+explain the explanation artifact (and, if Section 6 was worked, the repeat answer artifact) to
+somebody who has not read the notebook, and remembering that the license is non-commercial.
 
 **Going further (optional).** Worked versions of all four Your turn cells, including a twelve-point
 sweep of the session rule, a full sweep of the concentration threshold, and a Jaccard overlap grid
@@ -398,8 +419,8 @@ of Section 3.
 
 **My concentration numbers are different.**
 Compare `MY_MIN_ANSWERS`. At 5 the comparison keeps 3,295 questions and the median difference is
-+0.121; at 30 it keeps 104 and the difference is +0.184. Both are real, and the optional section
-explains why the gap widens as the bar rises.
++0.124; at 30 it keeps 104 and the difference is +0.221. Both are real, and the optional section
+shows the difference rising to 30 and falling at 40 and 50, where few questions remain.
 
 **The dwell histogram has a gap on the left.**
 That is the log scale rather than a bug. Dwell times below about a tenth of a second are rare
@@ -456,11 +477,9 @@ the cheapest possible time to practice.
 Everything we touch this semester is real. Nine published, openly licensed datasets are used across
 the lab weeks, and no notebook in this course generates a row.
 
-This week's file holds records of adults in South Korea studying for a test that gates jobs,
-generated by a product that was measuring them in order to sell them something. Nobody in it agreed
-to be a teaching example. It is worth asking who could be harmed by a claim before making it,
-noticing when a metric reduces a person to one number, and remembering that "the log shows" is a
-sentence about a file. That stance runs through every week of the course.
+This week's file holds records of people in South Korea studying for an English proficiency test on
+a commercial app (Choi et al., 2020). The extract carries no age, gender, location, or score, and
+"the log shows" is a sentence about a file.
 
 Where every dataset in the course comes from, who is in it, and how it is licensed is in the course
 guide *Finding and Evaluating Learning Analytics Data*.
