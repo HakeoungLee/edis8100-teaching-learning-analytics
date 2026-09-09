@@ -51,9 +51,7 @@ produces every finding the assignment is about.
    Teasley, and Wise (2022) and Wise and Jung (2019).
 6. A 300-word design memo arguing for one specific design change and saying who it protects.
 
-The through-line of the session: a dashboard is not a report, it is an intervention in somebody's
-Monday morning. The design question is less "is this accurate" than "what would a teacher do because
-of this, and who pays if they are wrong."
+
 
 ## Building by vibe coding
 
@@ -72,32 +70,31 @@ Two things change, and they change together.
 
 **Where the records end up.** Weeks 2 and 3 already ran on these same Open University records, but
 they ran in a notebook only this seminar read. This week the records go onto an interface a teacher
-acts on: the same data from a distance-teaching university in the United Kingdom, 2,237 people who
-registered for one module in October 2013, and 2,292 more who registered for the same module a year
-later. They were anonymized and released by the Open University's Knowledge Media Institute so that
-the field could check its own work on data more than one lab can see. They were not asked about a
-doctoral seminar in Virginia. What they were given is anonymity and banded categories, and what we
-owe them in return is that we do not pretend a row is a person, and that we do not say anything about
-them we could not defend to them.
+acts on: the same data from a distance-teaching university in the United Kingdom, 2,237 enrollments
+in the October 2013 presentation and 2,292 in the October 2014 presentation, 47 of them the same
+student ids. They were anonymized and released by the Open University's Knowledge Media Institute.
+Students are informed at admission that their data are used for research and may be shared with
+other researchers, with no opt-out (Kuzilek, Hlosta, and Zdrahal, 2017).
 
-**Real data does not arrange itself into a lesson.** Part A prints a decision log of six places the
-export was ragged: a column that spells its own categories two ways, 29 enrollments with no
-deprivation band, 738 enrollments with no recorded click at all, 1,062 with no first assignment,
-negative day numbers from students who read ahead, and 576 enrollments that unregistered before day 1
-and stayed in the enrollment table anyway. Every one of those is a decision somebody has to make in
-public, and the notebook makes them in view and then says what each one cost. The last one, the
-enrollment table, is the one that decides what the dashboard does on Monday.
+**Six irregularities in the export.** Part A prints a decision log: a column that spells its own
+categories two ways, 29 enrollments with no deprivation band, 738 enrollments with no recorded click
+at all, 1,112 with no first assignment recorded for this presentation, click rows dated before day 0,
+and 576 enrollments that unregistered before day 1 and stayed in the enrollment table anyway. Every
+one of those is a decision somebody has to make in public, and the notebook makes them in view and
+then says what each one affects. It also audits the 50 assignment-1 results that were banked from an
+earlier presentation and sets them aside, as week 3 did with its own banked rows, so an enrollment
+carrying one counts as no submission this term.
 
 You also come in holding a finding from week 3, and this week is careful to inherit what week 3
-established rather than a tidier version of it. Week 3 concluded three things: swapping the
-schedule-shape features out cut false positives a great deal overall, no error-rate *gradient* across
-the deprivation deciles was ever distinguishable from noise, and the gradient in *who gets flagged*
-did not flatten. So the model shipped here uses week 3's redesigned feature set, with `active_days`
-and its relatives left out.
+established rather than a tidier version of it. Week 3 concluded three things: the redesign, which
+added assessment features and left out `active_days` and `resources`, lowered the overall false
+positive rate from 0.287 to 0.074; no error-rate *gradient* across the deprivation deciles was ever
+distinguishable from noise; and the gradient in *who gets flagged* did not flatten. So the model
+shipped here uses week 3's redesigned feature set, with `active_days` and its relatives left out.
 
 The dashboard then adds a lesson week 3 could not produce. Its flag rule is a caseload of 150 rather
 than a probability threshold, and at that caseload the false positive rate collapses to a handful of
-events: three false positives in the whole class. The gap between subgroups on that rate is therefore
+events: four false positives in the whole class. The gap between subgroups on that rate is therefore
 not a fairness measurement at all, and the notebook says so with the counts printed beside it.
 Meanwhile enrollments from the most deprived third of areas are flagged at 8.5 percent against 5.6
 percent for the rest, a ratio of 1.52 with a 95 percent interval of [1.11, 2.07], built from 71 flags
@@ -105,20 +102,21 @@ in 833 enrollments against 78 in 1,388. That one has enough events under it to b
 notebook says which numbers on the screen came with an interval and which could not. Part C puts both
 in view, and the memo asks what a module team should do about the skew without leaning on the gap.
 
-Part C also asks the question a dashboard is rarely asked. The model's 150 names are right 98.0
+Part C also asks the question a dashboard is rarely asked. The model's 150 names are right 97.3
 percent of the time, which sounds like a working model until the baseline that is not chance is
-printed alongside it: the one-line rule "no assignment 1 recorded as submitted" matches 542
-enrollments, 98.7 percent of which ended in Fail or Withdraw. Every one of the 150 comes from that
-group. Before anyone argues about whether the model is fair, the notebook asks what it is adding.
+printed alongside it: the one-line rule "no assignment 1 recorded as submitted" matches 592
+enrollments, 96.5 percent of which ended in Fail or Withdraw. Every one of the 150 comes from that
+group, and the interval on 146 correct out of 150 runs from 93.3 to 99.0 percent, so it contains the
+rule's rate. Before anyone argues about whether the model is fair, the notebook asks what it is
+adding.
 
 ## A note on the deprivation variable
 
 Chart 4 in Part B and the audit in Part C both split the class by the UK Index of Multiple
-Deprivation. That index is an **area-level** measure: it scores small neighborhoods on income,
-employment, health, education, housing, crime, and living environment, and the band in this file is
-the band of the area a student's address fell in. It is not a measurement of the student, of their
-household, or of anything they did, and reading an area score as a property of the people who live
-there is a well-known hazard.
+Deprivation. The `imd_band` column is the band of the place where the student lived during the module
+presentation (Kuzilek, Hlosta, and Zdrahal, 2017), and the index is an **area-level** measure. It is
+not a measurement of the student, of their household, or of anything they did, and reading an area
+score as a property of the people who live there is an error.
 
 The decile groups hold between 126 and 302 enrollments, which is why every point on those charts
 carries a 95 percent interval. What the comparison is for is practice in reading a recorded group
@@ -136,10 +134,10 @@ cannot establish" table beside each of these moments.
 
 There is no `data/` folder this week and nothing to clone. The first code cell reads six CSV files
 straight from the course dataset repository, `github.com/HakeoungLee/edis8100-datasets`, and prints
-what arrived. No account, no authorization, no install. It takes a second or two.
+what arrived. It takes a second or two.
 
 That repository is public and read-only. If it is unreachable, the cell prints a plain-English
-message naming the repository and saying what to try, rather than a wall of red traceback.
+message naming the repository and saying what to try.
 
 ## Opening it in Colab
 
@@ -173,26 +171,33 @@ is not.
 
 That is deliberate. Plotly charts do not render when a notebook is read on GitHub, because GitHub
 does not run javascript. If your reader never opens Colab, the plotly panels are blank rectangles to
-them. The static snapshots are what they see. Building both is a habit worth keeping past this
-course.
+them. The static snapshots are what they see.
 
 ## Walkthrough
 
-We move through Parts A to C together in class. The timings below are a rough guide rather than a
-target, and it is fine if we spend longer somewhere and skip something else. Parts D to F are
-finished afterwards. The four **Your turn** cells appear in reading order and already contain working
-answers, so the notebook runs start to finish without you typing anything.
+We move through Parts A to C together in class. The route below is the one the notebook itself
+prints after its instructions, and the timings are a rough guide rather than a target. The three
+**Your turn** code cells already contain working values, so the notebook runs start to finish without
+you typing anything; Your turn 4 is a table to fill in.
+
+| | Sections |
+|---|---|
+| **CORE, about 55 to 60 minutes** | Provenance and setup; Part A and Your turn 1; Part B; Part C |
+| **IF TIME** | Your turn 2; Part D with Your turn 3 |
+| **EXPLORE LATER, after class and before the September 20 deadline** | Part E and Your turn 4; Part F, the design memo; the optional student-facing section; the appendix |
+
+Parts E and F are the graded core of Mini Project 1 and are completed after class.
 
 **Setup.** The provenance cell comes before any number: who collected this data, under what license,
 and what we owe the people in it. Then the first code cell. It fetches six files and prints a line
 per file saying how many rows arrived and what one row means.
 
 **Part A: orientation (about 20 minutes).** Build the one table every panel needs, one row per
-enrollment, and watch the decision log print as it goes. Six ragged places in the export, six
-decisions made in public, and a stated cost for each. Three of them come back in Part E, and the one
-to hold on to is the enrollment table: 576 enrollments unregistered on or before day 0 and are still
-sitting in it. Then **Your turn 1**: one question these files can inform and one they cannot touch.
-The second one is worth keeping in view all week.
+enrollment, and watch the decision log print as it goes. Six irregularities in the export, six
+decisions made in public, and a stated effect for each. Three of them come back in Part E, and the
+one to hold on to is the enrollment table: 576 enrollments unregistered on or before day 0 and are
+still sitting in it. Then **Your turn 1**: one question these files can inform and one they cannot
+touch. The second one is worth keeping in view all week.
 
 **Part B: the class overview panel (about 25 minutes).** Four charts, each drawn once per
 presentation, because BBB ran twice and the archive can address a question a teacher in the middle of
@@ -200,24 +205,24 @@ a term never can: is this a property of my course, or of this particular group o
 run ended, when the module was worked, completion by fifth of first-30-day clicks, and completion by
 deprivation decile. Every point on charts 3 and 4 carries a 95 percent interval, because the reading
 of both turns on whether two lines coincide and whether a decile is genuinely below its neighbor.
-Chart 3 replicates: every 2013J interval overlaps its 2014J twin. Chart 4 is a different kind of
-finding: completion rises about 2.7 points per decile step in 2013J, 95 percent interval [2.0, 3.5],
-and 2.2 points [1.4, 2.9] in 2014J. Neighboring deciles overlap, so the dip at decile 5 is not a
-finding and the gradient is.
+Chart 3 shows the same direction and similar rates in both runs; every 2013J interval overlaps its
+2014J interval, and no test of the difference is run. Chart 4 is a different kind of finding:
+completion rises about 2.7 points per decile step in 2013J, 95 percent interval [2.0, 3.5], and 2.2
+points [1.4, 2.9] in 2014J. Neighboring deciles' intervals overlap; the slope is the quantity
+reported, and its interval excludes zero in both runs.
 
 **Part C: the early warning panel (about 35 minutes).** Week 3's redesigned model goes on screen
 (`clicks_first30`, `tma1_score_filled`, `tma1_submitted`), with a model card printed above it:
 features, the flag rule, the base rate, and the false positive rate gaps with the event counts they
-are built from. Every predicted probability is out of sample. Then the part most systems in the field
-skip: each flagged enrollment's score is decomposed into what each feature contributed, so the panel
-can say why a name is on the list.
+are built from. Every predicted probability is out of sample. Then each flagged enrollment's score is
+decomposed into what each feature contributed, so the panel can say why a name is on the list.
 
-The tallies underneath the chart repay a slow read, because they are what the memo argues from: 402
-enrollments the model cannot tell apart, because all three of their feature values are identical; 128
-of the 150 flag slots going to that block; 101 of the 150 names belonging to people who had
-unregistered before the module opened, and 116 by day 30, which is the earliest the list could have
-been drawn; and false positive rate gaps built from one, two, four, and six events. Then **Your turn
-2**: change the caseload and the roster rule, and watch a staffing budget move a fairness statistic.
+The tallies underneath the chart are what the memo argues from: 422 enrollments the model cannot tell
+apart, because all three of their feature values are identical; 140 of the 150 flag slots going to
+that block; 103 of the 150 names belonging to enrollments that had unregistered before the module
+opened, and 117 by day 30, the earliest day the list's features exist; and false positive rate gaps
+built from two, two, four, and six events. Then **Your turn 2**: change the caseload and the roster
+rule, and read what changes.
 
 **Part D: the individual drilldown (about 25 minutes).** One person, four charts: tutor-marked
 assignment trajectory against the middle half of the enrollments that submitted each assignment, a
@@ -237,22 +242,22 @@ probability of all 2,237, and who unregistered on day 117. The panel never menti
 never could have. Then **Your turn 3**: the cell prints six students worth drilling into and why each
 one breaks the panel in a different direction. Please pick one that is not the default.
 
-**Part E: critique (about 30 minutes).** A cell computes six things the dashboard never shows the
-teacher: how few of the enrollments that ended badly the list names (12.6 percent), how many flag
-slots go to people who had already left (101 of 150 by day 0, 116 by day 30), how much the list
-changes when only the random seed changes (5 of 150 names appear on all five draws, and 429 distinct
-enrollments compete for the 150 slots), why the deprivation skew is not something a fairness metric
-computed on completers will catch, what a 30-day window cannot see, and what the model added over one
-column.
+**Part E: critique.** A cell computes six things the dashboard never shows the teacher: how few of
+the enrollments that ended badly the list names (12.5 percent), how many flag slots go to enrollments
+that had already unregistered (103 of 150 by day 0, 117 by day 30), how much the list changes when
+only the random seed changes (3 of 150 names appear on all five draws, and 421 distinct enrollments
+compete for the 150 slots), why the deprivation skew is not something a fairness metric computed on
+completers will catch, what a 30-day window cannot see, and what the model added over one column.
 
 Three of those six are places where an obvious comparison is misleading and the notebook says why.
-The roster rule appears to lift "reach" from 12.6 to 17.2 percent, but that comparison moves its own
+The roster rule appears to lift "reach" from 12.5 to 16.2 percent, but that comparison moves its own
 denominator; a comparison that holds its denominator still counts correct names belonging to somebody
-still registered on day 1, and goes from 46 to 143, and the version that uses day 30, the earliest
-the list can exist, goes from 31 to 96. The false positive rate gap looks closed, but it is built
-from three events across the whole class, so it cannot distinguish one design from another at this
-caseload. And the 98.0 percent precision looks like a model earning its place until it is set beside
-the 98.7 percent of a rule with no model in it. Then **Your turn 4**, the critique table, which is the
+still registered on day 1, and goes from 43 to 134, and the version that uses day 30, the earliest
+the list can exist, goes from 29 to 96. The false positive rate gap looks closed, but it is built
+from four events across the whole class, so it cannot distinguish one design from another at this
+caseload. And the 97.3 percent precision looks like a model earning its place until it is set beside
+the 96.5 percent of a rule with no model in it, with the model's interval containing the rule's
+rate. Then **Your turn 4**, the critique table, which is the
 analytic core of the assignment.
 
 **Part F: the design memo.** 300 words, in the marked markdown cell. Argue for one specific change
@@ -261,7 +266,7 @@ team should do about the deprivation skew, and "fix the model" is not available 
 
 **Going further (optional).** A working student-facing rewrite of the drilldown, an invitation to
 improve it, and an appendix of worked examples for the Your turn cells. This is outside the class
-session and nobody needs to work through it.
+session.
 
 **Reflection and submission checklist.** Please bring the reflection answers to the debrief from 5:30
 to 5:50.
@@ -308,8 +313,8 @@ programming experience.
    display without an available action is a report card that arrived early.
 2. **Show the uncertainty.** Replace the risk score bar with an interval built from the spread across
    cross validation splits, and sort the list into "consistently flagged" and "borderline" instead of
-   ranking one to fifteen. Part E already shows why this matters: across five random splits, only 5
-   enrollments appear on all five lists and 429 distinct enrollments compete for 150 slots. Then say
+   ranking one to fifteen. Part E already shows why this matters: across five random splits, only 3
+   enrollments appear on all five lists and 421 distinct enrollments compete for 150 slots. Then say
    what a hurried teacher does with the borderline group, and whether that is better or worse than
    what they do now.
 3. **Move the window.** The model sees days 0 to 29 and assignment 1, and then never looks again. 134
@@ -317,7 +322,7 @@ programming experience.
    that also sees days 30 to 59 and the second tutor-marked assignment, score the same class, and
    report what it gains, what it costs in lateness, and whether the reason column starts saying
    something different.
-4. **The 1,018 who never appear.** The list names 12.6 percent of the enrollments that go on to fail
+4. **The 1,019 who never appear.** The list names 12.5 percent of the enrollments that go on to fail
    or withdraw. Characterize the rest. What do they have in common, what would a panel have to look at
    to surface them, and what would that panel cost in attention and in privacy?
 5. **Rebuild the panel for 2014J.** Change `FOCAL_TERM` and run everything again. Which findings hold
@@ -377,8 +382,8 @@ Colab does not save changes back to GitHub. **File > Save a copy in Drive** at t
 session where you plan to keep something.
 
 **Red text appeared.**
-Python errors are wordy, and none of them means something has been damaged. The **last line** of the
-error usually names the real problem. Please ask, and we will read it together.
+The **last line** of the error usually names the real problem. Please ask, and we will read it
+together.
 
 ## Documenting AI use
 
@@ -403,18 +408,18 @@ Code violation.
 The reflection carries more weight than the log. The question worth answering is not whether you used
 an assistant, it is what you accepted from it and how you checked. A memo that repeats a
 plausible-sounding critique the assistant produced, without verification against your own printed
-numbers, is the failure mode this course is about.
+numbers, does not meet the standard.
 
 ## Data and ethics
 
 Everything we touch this semester is real. Nine published, openly licensed datasets are used across
 the lab weeks, and no notebook in this course generates a row.
 
-These records describe real adults, many of them studying part time around jobs and families, which
-is what the Open University is for. Their records were anonymized and released under CC BY 4.0 so
-that the field could check its own work on data more than one lab can see. None of them agreed to be
-a teaching example. It is worth asking who could be harmed by a claim before making it, noticing when
-a metric reduces a person to one number, and noticing which people are not in the file at all.
+These records describe students at a distance-learning university that requires no previous
+qualifications for entry (Kuzilek, Hlosta, and Zdrahal, 2017). Their records were anonymized and
+released under CC BY 4.0 so that the field could check its own work on data more than one lab can
+see. It is worth noticing when a metric reduces a person to one number, and noticing which people are
+not in the file at all.
 
 If you reuse any figure or number from this notebook outside this course, please cite the dataset:
 
@@ -422,8 +427,7 @@ If you reuse any figure or number from this notebook outside this course, please
 > *Scientific Data, 4*, 170171.
 
 Licensed CC BY 4.0: you may use, share, and adapt it, including commercially, as long as you credit
-the source. Attribution is not a formality here. It is the condition on which a research team made
-records about real students available to people like you.
+the source.
 
 Where every dataset in the course comes from, who is in it, and how it is licensed is in the course
 guide *Finding and Evaluating Learning Analytics Data*.
