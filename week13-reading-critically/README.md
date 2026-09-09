@@ -21,8 +21,9 @@ red error text is normal.
 | **Session** | Week 13, Wednesday, November 18, 2026, Ridley Hall 137 |
 | **Topic** | Reading Research Critically, and Your Own AI Trace |
 | **Session type** | Instructor-led throughout. Week 13 has no student Discussion Leadership block. |
+| **Notebook portion** | 4:50 to 5:50 PM, instructor-guided, after the discussion hour and the break. |
 | **Notebook** | `week13_reading_critically_own_trace.ipynb` |
-| **Data** | **Your own exported AI conversation.** For anyone who would rather not use one, a published alternative: `collab-chat/chat_logs.csv`, 1,374 messages from eight groups of four or five undergraduates in a computer networks course at Universidad de Valladolid, recorded between 15 and 18 February 2021, each group on two of those days, in Spanish. CC BY 4.0. Downloaded by the notebook from `github.com/HakeoungLee/edis8100-datasets`, folder `collab-chat` |
+| **Data** | **Your own exported AI conversation.** For anyone who would rather not use one, a published alternative: `collab-chat/chat_logs.csv`, 1,374 chat messages recorded between 15 and 18 February 2021, in eight groups with four or five author ids each, every group on two of those four days, of which the notebook uses one group's 260. The messages are in Spanish, and the deposit describes students enrolled in two undergraduate courses on computer networks; it does not say where they were enrolled. CC BY 4.0. Downloaded by the notebook from `github.com/HakeoungLee/edis8100-datasets`, folder `collab-chat` |
 | **Citation** | Villa-Torrano, C. (2021). *Dataset on an online collaborative learning situation in a computer networks course* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5150537 |
 | **Libraries** | pandas, numpy, matplotlib |
 | **Needs internet?** | **Yes** for the published-transcript path. On your own-log path the file needs to be on the machine you are working from, since it does not arrive over the network. |
@@ -34,17 +35,25 @@ red error text is normal.
 Discussion Leadership ran in Weeks 2 through 11, with each of the three of you leading two of those
 weeks. Week 13 is instructor-led from start to finish.
 
+## The route for today
+
+| | Sections | What it is for |
+|---|---|---|
+| **CORE, about 55 to 60 minutes** | Setup; 1; 2; 3; 4; Before December 2 | The trace as a table of turns, three descriptive measures and what the third one needs, the category rule and the verification count, and the written argument against the label |
+| **IF TIME** | Whose share is on screen (the per-author cell and the paragraph under it); the `RULES` edit in Section 3 | Who gets folded into `them`, and what moving the dial does |
+| **EXPLORE LATER** | Going further, all four parts | A different group and a different author id, rule order, the Spanish translation, and reading turns against their labels |
+
 ## What I hope you leave with
 
 1. A conversation seen as a table of turns, and a sense of how little structure that is.
 2. Three descriptive measures over a trace, and what each one needs before it means anything.
-3. A category built about you by a rule somebody else wrote, held at the evidential status it has.
-4. A count of how often you asked an assistant to justify, cite, or check itself, read next to what
-   you were asking it for at the time.
+3. A category built by a rule somebody else wrote, held at the evidential status it has.
+4. A count of how many turns in the trace ask for a source, evidence, or a check, read next to
+   what those turns were asking for.
 5. The habit of naming the evidence that would settle a claim, and then checking whether the trace
    contains any of it.
 
-None of these is a coding objective.
+None of these is a coding objective. Each one sits in a section on the CORE route: 1, 2, 3 and 4.
 
 ## What is in this folder
 
@@ -57,20 +66,26 @@ None of these is a coding objective.
 
 This repository is public, so you need only a Google account and a browser.
 
-[![Open In Colab](https://doi.org/10.1111/bjet.13267
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week13-reading-critically/week13_reading_critically_own_trace.ipynb)
 
 Direct link:
-`You:`
+`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week13-reading-critically/week13_reading_critically_own_trace.ipynb`
+
+If you would rather not use the badge, go to
+[colab.research.google.com](https://colab.research.google.com), sign in, choose
+**File > Open notebook**, click the **GitHub** tab, enter
+`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`, and select
+`week13-reading-critically/week13_reading_critically_own_trace.ipynb`.
 
 ### Getting your own log into the session
 
 The published transcript arrives over the network like every other week. Your own log does not, so it
 needs one extra step in Colab: open the folder icon in the left sidebar, use the upload button, pick
-your exported text file, and then set `Me:` in the setup cell to the file name it shows, for
-example `User:`. Files uploaded this way live in the temporary session and disappear when the
+your exported text file, and then set `MY_LOG_PATH` in the setup cell to the file name it shows, for
+example `my_chat.txt`. Files uploaded this way live in the temporary session and disappear when the
 tab closes, which is the behavior you want here.
 
-If you run the notebook locally instead, `Assistant:` is an ordinary path on your own machine.
+If you run the notebook locally instead, `MY_LOG_PATH` is an ordinary path on your own machine.
 
 ## What the notebook does
 
@@ -86,12 +101,16 @@ If you run the notebook locally instead, `Assistant:` is an ordinary path on you
 4. **Argues against the label.** Three things it gets wrong, the evidence that would settle each,
    and whether that evidence is anywhere in the trace.
 
-Both rules are dials. Editing them moves both numbers, and that is the second thing worth noticing.
+Both rules are dials, and editing them moves both numbers on a trace whose language they can reach.
 
 ## Walkthrough
 
 We will move through this together in class, and it is fine if we spend longer somewhere and skip
 something else.
+
+The route is the one the notebook prints after its instructions. CORE is steps 1 through 7 below.
+IF TIME is the per-author cell and the paragraph under it in step 3, and the `RULES` edit in step
+5. EXPLORE LATER is Going further, all four parts.
 
 | Step | Section | What happens |
 |---|---|---|
@@ -112,46 +131,48 @@ Every other lab in this course runs on data somebody else collected and publishe
 This one does not, and that is deliberate.
 
 **Path 1, your own log.** You have uploaded AI interaction logs with every graded submission since
-Week 4, and you were told in Week 1 that this session was coming. Set `ChatGPT:` to a plain text
-export. Nobody else opens it, the instructor does not collect it, and the notebook does not record
-which path was used.
+Week 4. Set `MY_LOG_PATH` to a plain text export. Nobody else opens it, the instructor does not
+collect it, and the notebook does not record which path was used.
 
-**Path 2, a published transcript.** Leaving `Claude:` empty runs everything on
-`You:`. It reaches every objective except the one in Section 4 that needs the
+**Path 2, a published transcript.** Leaving `MY_LOG_PATH` empty runs everything on
+`collab-chat/chat_logs.csv`. It reaches every objective except the one in Section 4 that needs the
 trace to be your own. Both paths are equal options and nobody is asked which they used.
 
 ## What the published path produces, and why each of those is the lesson
 
-**The gaps come out as 60 seconds at every quartile.** That file records time to the nearest minute,
-so every gap it can express is a multiple of 60. The distribution on screen is the clock's rather
-than the conversation's, and a defensible thing to write is that latency is not measurable there at
-the resolution the question needs.
+**The gaps come out as 60 seconds at every quartile.** That file records time to the nearest
+minute, so the only intervals it can express are 0 seconds and whole minutes, and 217 of the 259
+intervals between consecutive messages in that group are recorded as 0 and are dropped before the
+quartiles are computed. The distribution on screen is the clock's rather than the conversation's,
+and a defensible thing to write is that latency is not measurable there at the resolution the
+question needs.
 
-**The category rule classifies nothing.** It reports 100 percent unclassified. Those students were
-working in Spanish and the four rules are English keywords. The instrument does not announce that it
-is out of its depth: it returns zeros while looking as authoritative as it did before. Somebody
-reading only the output would come away with a description of students who never asked for anything.
+**The category rule classifies nothing.** It reports 100 percent unclassified. The messages in
+that file are in Spanish and the four rules are English keywords. A category count has no way to
+report that it could not classify this language: the zeros print in the same layout as any other
+result, and a table of proportions copied out of that output would carry none of it.
 
-**The verification count comes out at zero.** On a student's own log it often does too. Zero is a
-fact about how a tool got used and about how a rule was written, rather than a result about a
-person. It is only worth something read next to the first count: a run of production requests with
-no backing requests is a different picture from a run of fact requests with no backing requests.
+**The verification count comes out at zero.** It may well come out at zero on a student's own log.
+Zero is a fact about how the rule was written and about what the trace contains, rather than a
+result about a person. It is only worth something read next to the first count: a run of production
+requests with no backing requests is a different picture from a run of fact requests with no backing
+requests.
 
 None of the three is a bug and none is hidden. All three are in the notebook's own text, before the
 cells that produce them, and each is followed by a short table separating what the data show, what
-is a plausible interpretation, and what the run cannot establish.
+is a plausible interpretation, and what the file cannot establish.
 
 ## Readings this lab sits under
 
-- Yang, Y., Yuan, K., Li, X., & van Aalst, J. (2022). Fostering low-achieving students' productive
-  disciplinary engagement through knowledge-building inquiry and reflective assessment. *British
-  Journal of Educational Technology, 53*(6). https://doi.org/10.1111/bjet.13267
+- Yang, Y., Yuan, K., Feng, X., Li, X., & van Aalst, J. (2022). Fostering low-achieving students'
+  productive disciplinary engagement through knowledge-building inquiry and reflective assessment.
+  *British Journal of Educational Technology, 53*(6), 1511-1529. https://doi.org/10.1111/bjet.13267
 - Koretsky, M. D., Vauras, M., Jones, C., Iiskala, T., & Volet, S. (2021). Productive disciplinary
   engagement in high- and low-outcome student groups. *Research in Science Education, 51*(Suppl 1),
   S159-S182. https://doi.org/10.1007/s11165-019-9838-8
 - Kaliisa, R., Misiejuk, K., López-Pernas, S., & Saqr, M. (2025). How does artificial intelligence
   compare to human feedback? A meta-analysis of performance, feedback perception, and learning
-  dispositions. *Educational Psychology*. Advance online publication.
+  dispositions. *Educational Psychology, 46*(1), 80-111.
   https://doi.org/10.1080/01443410.2025.2553639
 
 The first two share a framing question: both sort learners before analyzing them, and the thing to
@@ -196,8 +217,9 @@ a finding about the export rather than a problem to work around, and Section 2 h
 **Everything came out unclassified on my own log**
 The four rules are English keyword patterns, matched case-insensitively, and `classify` returns on
 the first rule that matches. A conversation in another language, or one phrased in ways the patterns
-do not cover, returns zeros. The optional section at the end of the notebook is where to take that
-further.
+do not cover, returns zeros. On the published transcript everything comes out unclassified for the
+same reason, and that outcome is discussed in Section 3. The optional section at the end of the
+notebook is where to take that further.
 
 **Red text appeared**
 Python errors are wordy, and none of them means something has been damaged. Your own log file is
@@ -220,12 +242,14 @@ on, which is a reasonable argument for keeping them carefully.
 
 ## Data and ethics
 
-This lab inverts the arrangement the other twelve weeks depend on. Every other file we have opened
-belongs to somebody who was never asked whether their records should become a teaching example:
-secondary students in Portugal, distance learners at the Open University, school writers in the
-United States, children with a robot in a Swiss lab, users of a tutoring app in Korea, forum posters
-in an open online course, undergraduates in Valladolid, players of two science games. Each was
-anonymized and released under a license, and that is the only reason any of it can be opened at all.
+This lab inverts the arrangement every other lab in the course depends on. Every other file we have
+opened was released without any record that the people in it were asked whether their records could
+become a teaching example: secondary students in Portugal, distance learners at the Open University,
+school writers in the United States, children working with a robot in a corpus released by a lab in
+Switzerland, users of a tutoring app in Korea, forum posters in an open online course,
+undergraduates in two computer networks courses writing in Spanish, players of two science games,
+and people registered for open courses on Canvas Network. Each was released under a license, and
+that is the only reason any of it can be opened at all.
 
 Today the trace is yours. You generated it, you kept it, and you decide whether to open it. The
 published-transcript path exists so that the exercise works for anyone who would rather not, and it

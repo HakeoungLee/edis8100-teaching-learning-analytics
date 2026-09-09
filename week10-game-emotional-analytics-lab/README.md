@@ -23,7 +23,7 @@ questions about a single line of code.
 | **Needs internet?** | **Yes**, for the first code cell. Every notebook in this course downloads its data |
 | **Runtime** | Well under a minute end to end on a normal connection, most of it the download |
 | **Deliverable from this notebook** | **None.** Nothing here is collected, and Week 10 is not a mini project |
-| **Due this week (separately)** | **Course Research Project Literature Review**, plus the **AI Reflection** submission, uploaded to Canvas by **11:59 PM on Sunday, November 1, 2026** |
+| **Due this week (separately)** | **Course Research Project Literature Review**, plus the **AI Reflection** submission, which is the AI interaction log in a Word file together with the four reflection answers in the text box, uploaded to Canvas by **11:59 PM on Sunday, November 1, 2026** |
 | **Prior coding experience needed** | None |
 
 The mini projects were weeks 4, 5, 6, and 8. This week the notebook carries no rubric and no
@@ -46,6 +46,17 @@ Weeks 7 and 10 are the two with a guest, so the instructor runs the reading hour
 The notebook is not opened together in class. Please bring one plot or one question from it to
 Week 11, the co-design studio.
 
+## The route through the notebook
+
+The notebook is independent work rather than an in-class block, so the route below is for working
+alone. It says what to do first when the time available is short.
+
+| | Sections | What it is for |
+|---|---|---|
+| **CORE, about 55 to 60 minutes** | Where this data came from; Setup; 1; 2; 3 through its three-row table; 4, all of it; 5 through the reason panel and its three-row table; 6 through the three-answer table; 7; the Reflection prompts | Provenance and license, what one row is, the mess in the raw files and what each repair costs, a skewed count summarized two ways, the selection question separated from the effect question, the affect item and the exposure control, the second game and the disagreement, who is in the file, and the Reflection prompts on Reardon, Kumar and Revelle, on D'Mello and Jensen, and on Kim and colleagues |
+| **IF TIME** | 6.1; Your turn 1, 2, 3 and 4; A question for our guest | The `pre`, `post` and `gain` columns; moving the job, the threshold, the feeling pair and the level; and the question for the preparation block before the guest hour |
+| **EXPLORE LATER** | Going further, Solutions 1 to 4; the seven extensions below | All 51 common jobs, the threshold sweep with the confound beside it, all six feeling words, all four optional WAVES levels, and the survival, reweighting and two-game modeling extensions |
+
 ## The data
 
 | | |
@@ -59,13 +70,13 @@ Week 11, the co-design studio.
 | **Source** | Field Day Lab, University of Wisconsin-Madison. https://opengamedata.fielddaylab.wisc.edu |
 | **This extract** | Course-sized subsets, redistributed unchanged, at github.com/HakeoungLee/edis8100-datasets |
 
-CC0 means the class is legally free to do anything with these files. The notebook spends a section
-on why that makes the ethical question louder rather than quieter, given who is in them.
+CC0 means the class is legally free to do anything with these files. Section 7 works through what
+CC0 does and does not settle, given who is in them.
 
 This is the only week that uses the Field Day data. It is not the only week whose learners are
-young: week 1 and week 3 work with Portuguese secondary school students, week 5 with school
-students writing to a test prompt, and week 6 with nine to twelve year olds working with a robot.
-What is different here is that the record is play rather than assessed work.
+young: week 3 works with Portuguese secondary school students, week 5 with students in grades 8
+through 12 writing to a set prompt, and week 6 with children aged nine to twelve working with a
+robot. What is different here is that the record is play rather than assessed work.
 
 ## What I hope you leave with
 
@@ -84,15 +95,16 @@ What is different here is that the record is play rather than assessed work.
 
 None of these is a coding objective.
 
-The through-line: **the same question, asked of two games, gets two answers, and neither of them
-was planted.** In AQUALAB, children who argued more than ten times at the hardest job in the game
-completed 14.81 more jobs that month, interval [+12.24, +17.24]. Take that apart and 67.1 percent
-of the persisting group went on to complete another job against 3.1 percent of the others, and
-among the player-months whose record demonstrably continued, argumentation tries and later
-completions are uncorrelated (rho = -0.007, n = 210). Carry the same question to WAVES, where the
-game supplies the next level whether or not you struggled, and the gap is +0.85 levels out of 25
-(rho = +0.055). On one common scale the three answers are **0.749**, **0.454**, and **0.531**. The
-work is deciding which question each of them answers.
+The through-line: **the same question, asked of two games, gets two answers.** In AQUALAB,
+player-months with more than ten recorded argumentation tries at the hardest job in the game
+averaged 14.81 more completed jobs that month, interval [+12.24, +17.24]. Take that apart and 67.1
+percent of the player-months above the threshold recorded at least one further completed job
+against 3.1 percent of the others, and among the player-months whose record demonstrably
+continued, argumentation tries and later completions are uncorrelated (rho = -0.007, n = 210).
+Carry the same question to WAVES, where the game supplies the next level whether or not you
+struggled, and the gap is +0.85 levels out of 25 (rho = +0.055). On one common scale the three
+answers are **0.749**, **0.454**, and **0.531**. The work is deciding which question each of them
+answers.
 
 The second through-line, and the reason this week matters beyond method: **the learners are
 children.** Most of the design proposals made this semester assumed a consenting adult. The
@@ -115,16 +127,16 @@ text.
 
 The course repository is public, so you need only a Google account and a browser.
 
-[![Open In Colab](https://opengamedata.fielddaylab.wisc.edu
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb)
 
 Direct link:
-`argtime`
+`https://colab.research.google.com/github/HakeoungLee/edis8100-teaching-learning-analytics/blob/main/week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`
 
 If you would rather not use the badge, go to
-[colab.research.google.com](https://opengamedata.fielddaylab.wisc.edu sign in, choose
+[colab.research.google.com](https://colab.research.google.com), sign in, choose
 **File > Open notebook**, click the **GitHub** tab, enter
-`0:00:00` with the branch on `JobTriesInArgumentPerDifficulty`, and select
-`no-active-job`.
+`HakeoungLee/edis8100-teaching-learning-analytics` with the branch on `main`, and select
+`week10-game-emotional-analytics-lab/week10_game_emotional_analytics_lab.ipynb`.
 
 ### Keeping your own copy
 
@@ -146,58 +158,63 @@ table follows immediately: who logged this, from whom, under what license, with 
 Being able to state where a dataset came from before analyzing it is a habit the course keeps
 returning to.
 
-**1. What is one row, and who is in it?** The dataset repository calls `ExperimentalCondition` "one row
-per player." It is not. It is 19,031 rows over 16,384 codenames across ten monthly extracts, and
-1,922 codenames appear in more than one month with no way to tell whether that is a child returning
-or a name collision. Two panels draw the shape. The section names the unit of analysis as the
-**player-month** and explains why every interval later in the notebook resamples codenames rather
-than rows.
+**1. What is one row, and who is in it?** The course dataset repository's own README describes
+`players.csv.gz` as "One row per player, 145 derived features." It is not one row per player. It
+is 19,031 rows over 16,384 codenames across ten monthly extracts, and 1,922 codenames appear in
+more than one month with no way to tell whether that is a child returning or a name collision. Two
+panels draw the shape. The section names the unit of analysis as the **player-month** and explains
+why every interval later in the notebook resamples codenames rather than rows.
 
 **2. Real data is messy, and the mess is the lesson.** The cheapest check in data analysis, run
-first: how many distinct values does each column hold? It finds `production` (one value, `priorcomplete`, in
+first: how many distinct values does each column hold? It finds `attempted` (one value, `True`, in
 all 96,322 rows), `argtime` (one value, `0:00:00`, in all of them), and five
-`JobTriesInArgumentPerDifficulty` columns that are zero in all 19,031 rows. Then the pseudo-category
-`no-active-job` (10,340 rows, 10.7 percent), ten rows with no codename at all and hundreds of
-sessions each, thirteen values of `ExperimentalCondition` of which only four begin with
-`production`, 2,631 player-months with a negative duration (the most negative about minus 3.27
-million seconds), and an affect column carrying both English and Spanish.
+`JobTriesInArgumentPerDifficulty` columns that are zero in all 19,031 rows. Then the label
+`no-active-job`, which the extract uses for rows carrying no job name (10,340 rows, 10.7 percent),
+ten rows with no codename at all that carry hundreds of sessions and zero completed jobs each,
+twelve distinct `ExperimentalCondition` strings plus nineteen blanks, of which only four strings
+begin with `production`, 2,631 player-months with a negative duration (the most negative about
+minus 3.27 million seconds), and an affect column carrying both English and Spanish.
 
 Three exclusions follow, each with its own line in a costs table, and one consistency check that
-earns the right to use `priorcomplete` for temporal ordering later: the largest "completed before"
-count in a player-month equals that month's total in 100.0 percent of cases.
+makes `priorcomplete` usable for temporal ordering later: the largest "completed before" count in a
+player-month equals that month's total in 100.0 percent of cases over all job rows. The same check
+is run again on the working table, where `no-active-job` has been dropped, and reaches 74.9
+percent, so the section says what that shortfall does to the flag section 4 builds.
 
 **3. The hardest thing in the game.** `coral-hunting-lions` averages **31.98** argumentation tries
-against a median of **8**, while the typical job in AQUALAB has a median of 1. Two panels: mean
-against median for the ten hardest jobs, and the raw distribution with both lines drawn on it. 42.3
-percent of the player-months that took this job logged zero tries, and the busiest 5 percent supply
-29.1 percent of them all. The prompt asks what each of the two summaries misses rather than which
-one wins, and a short table separates what the data show from what would be an interpretation.
+against a median of **8**, while among jobs attempted by at least 300 player-months the median of
+the per-job medians is 1. Two panels: mean against median for the ten hardest jobs, and the raw
+distribution with both lines drawn on it. 42.3 percent of the player-months that took this job
+logged zero tries, and the busiest 5 percent supply 29.1 percent of them all. The prompt asks what
+each of the two summaries misses rather than which one wins, and a short table separates what the
+data show from what would be an interpretation.
 
 **Your turn 1.** Point the same three summaries at another job. The optional solution then scores
 all 51 common jobs and shows the busiest 5 percent supplying a **median of 37.4 percent** of a job's
 tries, with a floor of 20.5 percent. The concentration is not a property of the hard job; it is a
-property of voluntary-play counts.
+property of counts of optional in-game activity.
 
-**4. Did persisting pay? Two questions that look like one.** The heart of the lab. The trap is named
+**4. Persisting at the hardest job, and what followed it.** The heart of the lab. The trap is named
 before any code runs: argumentation tries and jobs completed are both counts of activity, so some
 association follows from arithmetic alone.
 
-The headline arrives anyway and it is large. Children who argued more than ten times completed
-**32.76** jobs against **17.96**, gap **+14.81** [+12.24, +17.24], from a cluster bootstrap over the
-508 codenames rather than the 617 rows. `priorcomplete` then splits that gap in time: only **+3.52**
-[+1.12, +5.90] was banked before the job, and **+11.29** [+9.67, +12.91] came after.
+The headline arrives anyway and it is large. Player-months with more than ten recorded tries at
+this job averaged **32.76** completed jobs against **17.96**, gap **+14.81** [+12.24, +17.24],
+from a cluster bootstrap over the 508 codenames rather than the 617 rows. `priorcomplete` then
+splits that gap in time: only **+3.52** [+1.12, +5.90] was banked before the job, and **+11.29**
+[+9.67, +12.91] came after.
 
-Then the boring question that dissolves it, asked precisely. **67.1 percent** of the persisting
-group completed at least one further job that month; **3.1 percent** of the others did. The rank
-correlation between tries and jobs-completed-afterwards is +0.654, and between tries and that flag
-it is +0.649, because they are nearly the same variable: they agree on 607 of the 617 rows. The
-notebook says so rather than calling the flag "was the child still playing", and then measures the
-limit: **64 percent** of the player-months the flag calls "no further completion" took other jobs at
-the same completion depth, so they attempted more and finished nothing more, and with no timestamps
-on job rows nothing can order them. The panel is a decomposition of the outcome, not an independent
-check on who was still playing. Among the **210** player-months that completed at least one more
-job, the correlation is **-0.007** and the four try-quartiles average 17.22, 17.75, 16.81, and 18.55
-jobs afterwards. Flat.
+Then the boring question that dissolves it, asked precisely. **67.1 percent** of the player-months
+above the threshold recorded at least one further completed job that month; **3.1 percent** of the
+others did. The rank correlation between tries and jobs-completed-afterwards is +0.654, and
+between tries and that flag it is +0.649, because they are nearly the same variable: they agree on
+607 of the 617 rows. The notebook says so rather than calling the flag "was the child still
+playing", and then measures the limit: **64 percent** of the player-months the flag calls "no
+further completion" took other jobs at the same completion depth, so they attempted more and
+finished nothing more, and with no timestamps on job rows nothing can order them. The panel is a
+decomposition of the outcome, not an independent check on who was still playing. Among the **210**
+player-months that completed at least one more job, the correlation is **-0.007** and the four
+try-quartiles average 17.22, 17.75, 16.81, and 18.55 jobs afterwards. Flat.
 
 The section states what the file supports in full, including that the two-group comparison inside
 the still-playing subset has only 10 player-months on one side and therefore cannot rule out a
@@ -213,23 +230,24 @@ the thing you defined is what you think it is.
 **5. What children said they felt.** AQUALAB interrupts children and asks what they are feeling and
 **why**. Three quarters of the file never answered; the median respondent answered exactly once.
 
-The counterintuitive comparison the field likes: children who said "frustrated" and never "bored"
-completed **18.32** jobs, children who said "bored" and never "frustrated" completed **11.42**, gap
-**+6.89** [+5.26, +8.50]. Then the exposure control. The frustration group answered 3.66 prompts to
-the boredom group's 2.23 and played 14.6 median hours to their 3.4, and "frustrated" was said by
-only 9.2 percent of respondents, so a child who answers eight times has eight chances at a rare
-word. Hold the number of answers fixed and the four bands read 5.17 against 5.52, 12.79 against
-13.32, 18.74 against 18.98, 30.16 against 32.48. The size-weighted gap falls from +6.89 to **+0.75**
-[+0.02, +1.44], which removes **89 percent** of it. The section is candid that the residue in the
-widest band may be the same difference in exposure, not yet fully held fixed.
+The counterintuitive comparison the field likes: player-months in which Frustrated was selected
+and Bored never was averaged **18.32** completed jobs, player-months in which Bored was selected
+and Frustrated never was averaged **11.42**, gap **+6.89** [+5.26, +8.50]. Then the exposure
+control. The frustration group answered 3.66 prompts to the boredom group's 2.23 and played 14.6
+median hours to their 3.4, and "frustrated" was said by only 9.2 percent of respondents, so a
+child who answers eight times has eight chances at a rare word. Hold the number of answers fixed
+and the four bands read 5.17 against 5.52, 12.79 against 13.32, 18.74 against 18.98, 30.16 against
+32.48. The size-weighted gap falls from +6.89 to **+0.75** [+0.02, +1.44], which removes **89
+percent** of it. The section is candid that the residue in the widest band may be the same
+difference in exposure, not yet fully held fixed.
 
-Then the part that needed no statistics. Asked **why** they felt bored, children chose "I don't find
-this topic interesting" (14.1 percent), "This is too easy" (13.8 percent), and "I'm not sure why I
-need to know this" (12.3 percent). Asked why they felt frustrated, they chose "I don't know what to
-do next" (14.9 percent), "This is too hard" (11.8 percent), and "The game isn't working properly"
-(9.2 percent). Those answers point at the content and the pitch rather than at the child, and here
-the course is not inferring that from behavior: the children selected it. A three-row table records
-what the menu can and cannot establish.
+Then the part that is a set of percentages. Asked **why** they felt bored, children chose "I
+don't find this topic interesting" (14.1 percent), "This is too easy" (13.8 percent), and "I'm not
+sure why I need to know this" (12.3 percent). Asked why they felt frustrated, they chose "I don't
+know what to do next" (14.9 percent), "This is too hard" (11.8 percent), and "The game isn't
+working properly" (9.2 percent). Those answers point at the content and the pitch rather than at
+the child, and here the course is not inferring that from behavior: the children selected it. A
+three-row table records what the menu can and cannot establish.
 
 **Your turn 3.** Compare any two of the six feeling words. The optional solution runs all six at
 once: raw gaps of +10.47, +10.24, +6.61, +4.85, +3.93, and +2.03, all of which collapse into the
@@ -243,9 +261,9 @@ met it the answer is 17.29; averaged over all 1,581 it is 11.38. Both are correc
 different questions.
 
 Then the structural fact that decides the section: **100.0 percent** of the sessions that began
-level 9 went on to begin level 10. In WAVES the game moves you on. In AQUALAB the child decides, and
-at `coral-hunting-lions` there was no next completed job 66.0 percent of the time against 21.9
-percent across all job rows.
+level 9 went on to begin level 10. In WAVES the game moves you on. In AQUALAB no further job was
+recorded as completed after `coral-hunting-lions` in 66.0 percent of the player-months that reached
+it, against 21.9 percent across all job rows.
 
 The replication gives **+0.85** levels [+0.13, +1.60] out of 25, rho = **+0.055**, with failure
 quartiles averaging 14.09, 14.67, 14.92, and 15.00. Same direction, negligible size. A rank-based
@@ -255,10 +273,12 @@ least one more job, **0.531** [0.496, 0.567] in WAVES. The notebook leaves the d
 unresolved on purpose, offers one mechanism, and then names three rival explanations that the two
 files cannot separate.
 
-**Section 6.1** is a further trap, and it is free. WAVES ships `pre`, `post`, and `gain`. `pre` is
-two questions, `post` is two **different** questions, and mean `gain` is **-0.42** with 45.9 percent
-of sessions below zero. The sentence "playing WAVES made children worse at waves" is available and
-arithmetically correct, and it is more than these four items can support.
+**Section 6.1** is a further trap, and it is free. WAVES ships `pre`, `post`, and `gain`. `pre`
+is `c0` plus `c1`, `post` is `c2` plus `c3`, nothing in the extract or in Field Day's published
+documentation says whether `c2` and `c3` are the same two items re-asked or two different ones,
+and mean `gain` is **-0.42** with 45.9 percent of sessions below zero. The sentence "playing
+WAVES made children worse at waves" is available and arithmetically correct, and it is more than
+these four items can support.
 
 **Your turn 4.** Try the other optional levels. The optional solution runs all four (9, 17, 29, 32)
 split at each level's own median, and shows both that the two denominators diverge by a factor
@@ -267,13 +287,14 @@ zero.
 
 **7. These are children.** The demographic items settle what kind of data this is, read with their
 denominator attached: of the 6,092 player-months that answered, 86.5 percent selected a band at 15
-or younger, the largest group selected 12 to 13, and 79.4 percent said they were playing at school.
-The section then says plainly what changes when the user is eleven: who consented and who was
-logged, that "voluntary use" does not survive a class period, that the affect item is the most
-intimate data in this course, and that a child who stops playing is not deficient. The last point is
-the one section 5 shows rather than asserts.
+or younger, the largest group selected 12 to 13, and 79.4 percent said they were playing at
+school. The section then says plainly what changes when the user is eleven: that nothing in the
+extract records who agreed to the logging or what they were told, that "voluntary use" does not
+describe a class period, that the affect item is the most intimate data in this course, and that a
+child who stops playing is not deficient. The last point is the one section 5 shows rather than
+asserts.
 
-**Reflection.** Five prompts tied to this week's readings, ending with the one worth answering:
+**Reflection.** Five prompts tied to this week's readings, ending with one that asks you to
 rewrite one of your own design proposals for an eleven year old. Plus two suggested questions for
 the guest, both drawn from something you have just done.
 
@@ -348,8 +369,10 @@ Optional extensions, for anyone whose project touches games, telemetry, or affec
    through whether pooling two games with different logging, different children, and different
    session lengths into one model is defensible at all.
 7. **The ethics of the intervention.** Design, in code, a detector that would flag a child in real
-   time for the pattern section 4 found. Compute its false positive rate against the base rate. Then
-   write the memo arguing that it should not be deployed, and see whether the memo persuades you.
+   time for the pattern section 4 found, and work out first what would have to be logged for it to
+   be computable before the month ends, since section 4 is built from whole-month totals. Compute
+   its false positive rate against the base rate. Then write the memo arguing that it should not be
+   deployed, and see whether the memo persuades you.
 
 ## Troubleshooting
 
@@ -398,14 +421,16 @@ error usually names the real problem. Please ask, and we will read it together.
 ## Documenting AI use
 
 There is nothing to upload from **this notebook**. There is something to upload this week: your
-**literature review**, and alongside it your **AI interaction log plus a short reflection**, in the
-Canvas AI Reflection submission.
+**literature review**, and alongside it your **AI interaction log**, pasted into a Word file and
+attached to the Canvas AI Reflection submission, plus **the four reflection answers** typed into
+the text box on that same page.
 
 The course AI policy is straightforward. AI use is permitted in designated activities and is to be
 documented. If an assistant helped you find sources, summarize a paper, tighten a paragraph, or
-question your framing, log the exchange and write a few sentences on what it did for you and what
-you verified yourself. The AI Reflection is required whether or not you used AI; if you used none,
-saying so in the text box is a complete answer. Undisclosed use is an Honor Code violation.
+question your framing, the full exchange goes in the Word file and your answers to the syllabus's
+four reflection questions go in the Canvas text box. The AI Reflection is required whether or not
+you used AI; if you used none, saying so in the text box is a complete answer. Undisclosed use is
+an Honor Code violation.
 
 If you used an AI assistant on this notebook as well, to explain a line of pandas or to check your
 reading of a chart, it is worth saving that exchange now. It costs nothing today and is easier than
@@ -416,10 +441,10 @@ reconstructing it later.
 Everything we touch this semester is real, and no notebook in this course generates a row.
 
 This week's files hold play by real children, logged automatically as they played, and released
-into the public domain by the lab that collected them so that others could learn from them without a
-new cohort being recorded for every study. None of those children agreed to be a teaching example.
-It is worth asking who could be harmed by a claim before making it, noticing when a metric reduces a
-person to one number, and noticing which people are not in the file at all.
+into the public domain under CC0 by the lab that collected them. Nothing in the extract records
+who agreed to this logging or what they were told. It is worth asking who could be harmed by a
+claim before making it, noticing when a metric reduces a person to one number, and noticing which
+people are not in the file at all.
 
 Where every dataset in the course comes from, who is in it, and how it is licensed is in the course
 guide *Finding and Evaluating Learning Analytics Data*.

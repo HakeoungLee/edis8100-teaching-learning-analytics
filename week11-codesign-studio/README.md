@@ -41,7 +41,7 @@ leadership arc.
 2. A comparison of four "top 500" lists built from four defensible measures of the same enrollments,
    read against what chance and course composition alone would produce.
 3. Some practice reading your own sketch as a second persona would, with a file that records what
-   learners said they wanted before they started.
+   learners said at registration they expected to do.
 4. An audit of our own semester: artifact by artifact from weeks 1 through 11, who might have had a
    voice in the design.
 
@@ -52,10 +52,10 @@ being measured have not been consulted once.
 
 ## Why this dataset, and not another
 
-Canvas Network was a platform for free, open online courses. Anyone could register, nobody had to
-finish, and the platform logged everything anyway. Instructure anonymized a slice of that record and
-released it under CC BY 4.0 in 2016. Two properties make it a good file for a co-design studio, and
-both are unusual.
+Canvas Network was a platform for open online courses that its documentation describes as freely
+available to anyone (Canvas Network, 2016). Registration was open, the platform logged activity as
+people used it, and Instructure anonymized a slice of that record and released it under CC BY 4.0 in
+2016. Two properties make it a good file for a co-design studio, and both are unusual.
 
 **One. The choice of measure visibly changes who looks successful.** The file carries four defensible
 measures of the same enrollment: the final grade the course recorded, the number of recorded page
@@ -64,16 +64,16 @@ reached. Give each of the four personas the measure they would reach for, take t
 and the lists barely overlap. The notebook gets there in four steps, because the first answer it
 produces is spectacular and wrong, and finding out why is half of the lesson.
 
-**Two. The file records what people said they wanted before they started.** At registration Canvas
-Network asked what kind of participant someone expected to be and why they had signed up. 35,110
-enrollments answered the participant-type question and 36,495 gave a reason. In almost every other
-learning analytics dataset the learner persona is a role-play, and your imagination does the arguing.
-Here, when a group builds a completion dashboard and swaps into the learner's chair, something in the
-data can answer back.
+**Two. The file records what people said at registration they expected to do.** At registration, or
+at the start of the course, Canvas Network asked what kind of participant someone expected to be and
+why they had signed up (Canvas Network, 2016). 35,110 enrollments answered the participant-type
+question and 36,495 gave a reason. In most learning analytics files the learner persona has to be
+imagined. Here, when a group builds a completion dashboard and swaps into the learner's chair, the
+file records answers from people the dashboard would be about.
 
 **And one boundary that travels with property two.** The survey covers 10.8 percent of the rows.
 Anyone reasoning from it is reasoning about respondents, and the notebook says so in three separate
-places, because it is the same lesson as Week 5's annotated spans nested inside single essays and
+places. It is the same restriction as Week 5's annotated spans nested inside its 5,531 essays and
 Week 9's eight groups.
 
 ## What is in this folder
@@ -109,9 +109,11 @@ with Anaconda. Every figure is a static matplotlib image, so they render on the 
 ### Keeping your own copy
 
 Colab discards the session when you close the tab. **File > Save a copy in Drive** keeps a personal
-version, and **File > Download > Download .ipynb** saves a local one. Your persona choice, your metric
-set, and your audit numbers are the record of what you decided today, and three of them belong in
-your Rough Draft notes.
+version, and **File > Download > Download .ipynb** saves a local one. Your persona choice, your
+metric set, and your audit numbers are the record of what you decided, and three things from the
+notebook belong in your Rough Draft notes: your metric set with the one-sentence account of why
+those and not others, the one audit cell you moved with your reason for moving it, and the sentence
+you would say to Malik with your dashboard on the screen.
 
 ## Walkthrough
 
@@ -132,22 +134,38 @@ another.
 | 9 | 7. Retroactive design audit | 5 | Weeks 1 to 11, scored 0 to 3 for whose voice was owed. |
 | 10 | Reflection and closing | 2 | Four prompts, and the checklist. |
 
+The notebook carries the same route in its own box, and it is written for working alone:
+
+| | Sections |
+|---|---|
+| **CORE, about 55 to 60 minutes** | Setup; 1. The mess, before anything else; 2. The personas as data; 3. The candidate metrics; 4. Your turn, run with the values already in it; 5. The leaderboards, steps 1 to 4 and Holding the course constant; 6. The swap; 7. Retroactive design audit; Reflection |
+| **IF TIME** | The correlation check at the end of section 5; editing `MY_PERSONA` and `MY_METRICS` and re-running the sketch and the swap; moving an audit score in section 7 and re-running |
+| **EXPLORE LATER** | Going further, with its worked example; the appendix of worked examples |
+
+The four objectives above are met on the CORE path.
+
 **Going further** is a clearly marked optional section near the end, followed by an optional appendix
 of worked examples. Neither is needed for the main path.
 
 ## What happens in each section
 
 **Setup.** The provenance table comes before any number: the dataset, who collected it, the license,
-the citation, and one paragraph on what these people were told, which is close to nothing. Instructure
-published this file under no obligation to do so, and the people in it did not choose to be a dataset.
+the citation, and one paragraph on what these people were told, which is close to nothing. The file
+was assembled from Canvas Network's own platform records and its registration survey rather than
+from a study that recruited participants, and the release documents record no consent process for
+publication (Canvas Network, 2016, *De-Identification*).
 
 **1. The mess, before anything else.** On purpose, first, because two decisions made here change every
 number afterwards.
 
 Three columns hold one value on every row: `registered` is 1 because the file only contains
 registrations, and `final_cc_cname_DI` (country) and `gender` were withheld to protect the people in
-it. That is the price of publishing at all, and it means any fairness question about gender or country
-cannot be asked here. Week 3 asked those questions of a dataset that allowed them.
+it. The de-identification document records that country yielded no useful values after
+de-identification and was omitted, and that the process removed gender and country of origin
+(Canvas Network, 2016, *De-Identification*, pp. 2 to 3), so any fairness question about gender or
+country cannot be asked here. Week 3 asked those questions of a dataset that allowed them. The cell
+also reports the fourth flattened column: `age_DI` holds an empty-brace placeholder on 288,119 of
+the 325,199 rows, 88.6 percent, and only 37,080 rows carry an age bracket.
 
 Then the figure that sets up the whole notebook: how much of each column is recorded at all.
 `ndays_act` on 31.1 percent of rows, `nevents` on 26.5, `grade` on 25.2, `ncontent` on 12.7, the four
@@ -169,7 +187,7 @@ what they cannot change, the grain they think in, their access reality, and **th
 would reach for first**, which is what makes the rest of the notebook possible.
 
 The access-reality lines are worth reading together. Three of the four can change something. The
-fourth can change only which tab he has open, and he is the one every row of the file is about.
+fourth can change only whether he opens the course, and he is the one every row of the file is about.
 
 The goals repay as much attention as the decision rights, because a persona card is where a deficit
 assumption hides most comfortably. Dana's third stated fear is reading a low grade as a fact about a
@@ -192,6 +210,14 @@ platform nobody was required to use there is no measure where less of it is stra
 That is a reason to question any dashboard here that flags a person for having too little of
 something.
 
+The platform's `explored` flag is then audited against the modules-reached percent before it is
+allowed to stay on the menu. The data dictionary defines it as 1 where the user viewed at least half
+the course modules, and in the common population the flag and `ncontent` disagree on 10,029 of the
+21,693 enrollments: 9,353 at 50 percent or more of the modules carry `explored` = 0, and 676 below
+50 percent carry `explored` = 1. The documented definition is the platform's, this file cannot
+reproduce it, and the flag stays on the menu as a platform flag rather than as a second measure of
+modules reached.
+
 Then the diagnostic that decides what section 5 is allowed to claim: can each measure even produce a
 ranking? Page views can, with essentially no ties. Active days can, with 52 tied at the cut. Grade
 cannot cleanly, with 1,370 tied at a perfect 1.0. And modules reached cannot at all, because **10,587
@@ -205,20 +231,22 @@ plainly if one is mistyped.
 
 The sketch is two matplotlib panels: the population distribution of your first metric, and the focus
 enrollment's percentile on each metric you chose, **shown twice**, once against all 21,693 and once
-against only the people in the same course. That second bar is the point. Of the 66 courses here with
-at least 30 such enrollments, 17 have a median final grade at or below 0.10 and 7 have a median at or
-above 0.95, so a percentile computed across courses is averaging over an enormous difference in how
-courses grade.
+against only the people in the same course. Of the 66 courses here with at least 30 such
+enrollments, 17 have a median final grade at or below 0.10 and 7 have a median at or above 0.95, so
+a percentile computed across courses is averaging over an enormous difference in how courses grade.
 
 The default focus enrollment is chosen because it fits none of the easy stories. This person said at
-registration that they intended to do the assignments. They then produced the highest page-view count
-among all 436 registrations in their course, were the only one of the 64 with a modules-reached number
-to reach every module, and the course's own `completed_%` column says they completed 75 percent of the
-required modules. Their grade is 0.00, in a course whose median grade is a perfect 1.00. A short table
+registration that they intended to do the assignments. None of the 436 registrations in their course
+has a higher recorded page-view count, they are the one row of the 64 with a modules-reached
+number that sits at 100 percent, and the course's own `completed_%` column says they completed 75
+percent of the required items, which the data dictionary defines over the items a course explicitly
+requires rather than over its modules. Their grade is 0.00, and the median final grade among the 62
+enrollments in that course with all four measures recorded is a perfect 1.00. A short table
 separates what the data show, what a plausible interpretation would be, and what the file cannot
 establish, and the prompt walks the instrument, the setting, and the circumstances before anything
 about the person becomes a candidate. The file never says whether a 0.00 means "submitted and scored
-zero" or "never submitted anything gradeable".
+zero" or "never submitted anything gradeable", and the data dictionary calls the column an estimated
+or actual final grade, so a third reading is that the platform computed it.
 
 **5. The leaderboards.** The center of the notebook, in four steps, because the first answer is wrong in
 an instructive way.
@@ -247,18 +275,18 @@ largely the same course.
 
 *Step 4, one more ordinary explanation.* Rows nest inside courses. The active-days top 500 turns out to
 be **83 percent a single Humanities course**, and the page-views top 500 is 68 percent that same
-course. A leaderboard across 156 courses is substantially a list of courses, and a funder who read it
-as a fact about people would be making the mistake the whole section exists to prevent.
+course. A leaderboard across 156 courses is substantially a list of courses, which is a fact about
+courses.
 
 *Holding the course constant.* Rank within each course, then take the top 500 by within-course
 standing. Now the lists span 90 to 155 courses instead of 28 to 56, and the answer is: grade against
 page views share **82 of 500**, grade against active days 82, grade against modules reached 70, page
 views against active days 145, active days against modules reached 65. Read those against the
-course-matched baseline, which runs **42 to 46** for these pairs, and not against the uniform 11: the
-measures sit above chance by a factor of roughly one and a half to two for the grade pairs, rather than
-by the factor of six or more the uniform number would suggest. They are not unrelated, they are not the
-same, and at least four in five of the people on any grade-based list are absent from any clicking-based
-one.
+course-matched baseline, which runs **42 to 46** for these pairs, and not against the uniform 11:
+each pair overlaps more than course composition alone would produce, by factors of 1.5 to 3.4, where
+the uniform baseline would have made the same overlaps look like six to thirteen times chance. They
+are not unrelated, they are not the same, and at least four in five of the enrollments on any
+grade-based list are absent from any clicking-based one.
 
 The section closes with the objection a good colleague will raise: surely they just correlate? Spearman
 rank correlations among the four run from 0.22 to 0.56, and the notebook reports Pearson beside them for
@@ -271,11 +299,13 @@ dashboard lives at the end of the distribution where the agreement has run out.*
 **6. The swap.** First the mechanical part: for each of the other three personas, what they could do
 with your chosen metrics and which of their stated fears each one touches. Then the actionability
 figure over all seven metrics and all four people, where a `!` marks a metric that touches that
-person's fear. Out of a maximum of 14, the platform can act on 11, the course team on 10, the funder on
-9, and the learner on 6. The person every row is about can act **directly** on exactly one metric of
-the seven; the company that owns the file can act directly on four.
+person's fear. Summing the ordinal codes orders the four stakeholders without counting metrics:
+platform 11, course team 10, funder 9, learner 6, out of a maximum of 14. The person every row is
+about can act **directly** on exactly one metric of the seven; the company that owns the file can
+act directly on four.
 
-Then something in the file answers back, which is why this dataset is here.
+Then the file records answers from the people the dashboard would be about, which is why this
+dataset is here.
 
 A completion bar at 0.70 is cleared by 17,515 of the 82,002 enrollments that have a grade, which is 21.4
 percent, and by 5.4 percent of all 325,199 rows. Which denominator a dashboard uses is a design decision
@@ -286,14 +316,16 @@ And of the 35,110 enrollments that answered the participant-type question, from 
 the assignments**: 13,582 passive participants, 2,820 drop-ins, 2,539 observers. Their median grades are
 0.083, 0.022 and 0.007 against 0.175 for the people who said they intended to do the work, each with a
 95 percent interval from **resampling the 145 courses rather than the rows**, because a course's grading
-design is the thing these people have in common. The intervals on adjacent plans overlap, so the file
-separates the ends of that list rather than the neighbors. The figure carries the counts beside the
-rates and the base rate as a dotted line, and it makes the point that these answers are not a clean
-sorting of people either: 257 of the 1,926 self-declared observers with a grade, 13.3 percent, cleared
-the bar anyway.
+design is the thing these people have in common. Each plan has its own median and its own interval
+and no test of the difference between two plans is run: the interval on each plan overlaps the
+interval on the plan next to it, and the Active and Observer intervals do not overlap. The figure
+carries the counts beside the rates and the base rate as a dotted line, and it makes the point that
+these answers are not a clean sorting of people either: 257 of the 1,926 self-declared observers
+with a grade, 13.3 percent, cleared the bar anyway.
 
-The notebook is explicit that `learner_type` records one answer to one menu, chosen once, before the
-course began, rather than a stable property of anyone, and that the four groups differ greatly in size.
+The notebook is explicit that `learner_type` records one answer to one menu, chosen once at
+registration or at the start of the course, rather than a stable property of anyone, and that the
+four groups differ greatly in size.
 The section is framed as an exercise in reading a recorded group difference carefully.
 
 Last, what they said they came for. 36,495 enrollments gave a reason, and the most common one, given by
@@ -304,8 +336,7 @@ there because they matter most; they are there because they are what a web serve
 The prompt then draws the boundary, with a short table separating what the data show, what a plausible
 interpretation would be, and what the file cannot establish. The survey is 10.8 percent of the file. The
 defensible sentence is "of the people who answered, a majority said they were not planning to do the
-assignments", not "most learners were not trying to complete", and the difference between those two
-sentences is most of what this course has to say about range restriction.
+assignments", not "most learners were not trying to complete".
 
 **7. Retroactive design audit.** Every artifact this course built from week 1 to week 11, **with the
 real dataset each one used**, the design decision each one quietly made, and a score from 0 to 3 for how
@@ -318,17 +349,23 @@ The four personas travel across the weeks under different names: somebody who bu
 experience, somebody it was for, an institution or company whose system did the recording, and somebody
 who paid for the work. The names change and the four positions do not.
 
-In the default scoring the learner column totals 32 out of 33 and no learner was consulted for any of
-it. The dictionary is my first guess, and revising it is the exercise.
+In the default scoring the learner column's codes sum to 32 out of a maximum of 33, and no learner
+was consulted for any of it. The dictionary is my first guess, and revising it is the exercise.
 
-The last row is today. This notebook ranked 21,693 enrollments four ways and put 500 names on each list
-without asking one of them which measure they would have chosen, and the second prompt asks the useful
-version of the question: not what would have felt better, but what would have been **different on the
-screen**.
+One stakeholder veto on this list was actually exercised. The de-identification document records
+that the organizations and instructors who had built Canvas Network courses were able to opt out of
+the release, and that the courses of those who did were excluded (Canvas Network, 2016,
+*De-Identification*), so the 238 courses in the file are the ones whose course teams did not
+refuse.
+
+The last row is today. This notebook ranked 21,693 enrollments four ways and put 500 enrollments on
+each list without asking one of them which measure they would have chosen, and the second prompt
+asks the useful version of the question: not what would have felt better, but what would have been
+**different on the screen**.
 
 **Reflection.** Four prompts, one per reading plus one that turns the lens on your own project, with a
-cell to write in. These are the questions the discussion block opens with, and they are directly usable
-in your Rough Draft.
+cell to write in. They are directly usable material for your Rough Draft, and the guest debrief and
+rough draft work time from 5:30 to 5:50 is where questions about them are welcome.
 
 **Wrapping up.** Nothing here is submitted. Save your copy, and paste three things into your
 project notes: your metric set with a one-sentence account of why those and not others, the one audit
@@ -370,7 +407,7 @@ Optional. Nothing later depends on any of it.
    of that sentence.
 
 The notebook also ends with an optional appendix of worked examples: a defensible metric set for each
-persona, what the four steps in section 5 were for, and the audit cells people most often move. It is
+persona, what the four steps in section 5 were for, and two audit cells worth a second look. It is
 worth reading after your own attempt rather than before.
 
 ## Troubleshooting
@@ -402,8 +439,8 @@ That is the design constraint rather than a bug. Four is the ceiling on purpose.
 **A cell is taking ten seconds**
 Expected, three times. The chance baseline simulates 2,000 random pairs of lists, each overlap matrix
 rebuilds the four top-500 lists 200 times with different random tie-breaks, and the grade-by-plan figure
-resamples 145 courses 400 times. Each of those buys an interval instead of a single number. The whole
-notebook runs in well under a minute.
+resamples 145 courses 400 times. Each of those gives an interval instead of a single number. The whole
+notebook runs in about a minute.
 
 **My numbers are slightly different from the ones in this README**
 If you changed a **Your turn** cell, that is expected. If you did not, check the third digit: every
@@ -427,10 +464,6 @@ and it is worth reading after an attempt rather than before.
 **Colab says "Cannot find notebook" or shows a 404**
 You are most likely signed into a different Google account. Check the profile picture in the top right
 corner, switch to the account you want, and open the link again.
-
-**Red text appeared**
-Python errors are wordy, and none of them means something has been damaged. The **last line** of the
-error usually names the real problem. Please ask, and we will read it together.
 
 ## Documenting AI use
 
@@ -469,24 +502,29 @@ measures them, disclosure is the same courtesy, pointed at yourself.
   four. That asymmetry is the relation, and it is worth naming before proposing another one.
 - **Prieto-Alvarez, Martinez-Maldonado, and Anderson (2018)**, on co-designing learning analytics tools
   with learners: learners as designers rather than as data sources. Section 7 is the uncomfortable
-  receipt for eleven weeks of not doing this, and section 6 is the closest a dataset comes to letting
-  the learners answer back on their own behalf.
+  receipt for eleven weeks of not doing this, and section 6 is the closest a dataset in this course
+  comes to recording what the measured people said about themselves.
 
 ## Data and ethics
 
 Everything we touch this semester is real. Nine published, openly licensed datasets are used across the
 lab weeks, and no notebook in this course generates a row.
 
-Today's file holds records for real people who signed up for free online courses on the open internet
-between 2014 and 2015. Their clicks were logged because logging is what a learning platform does, and
-some of them also answered a short survey at registration. They were not recruited into a study.
-Instructure anonymized the file and published it under CC BY 4.0 so that people outside the company
-could learn from it, which is what we are about to do, and the only reason the file can be opened at all
-is that somebody chose to release it.
+Today's file holds records for real people who registered for open online courses between 2014 and
+2015. Their activity was logged because logging is what a learning platform does, and some of them
+also answered a short survey at registration. The file was assembled from Canvas Network's own
+platform records and its registration survey rather than from a study that recruited participants,
+and the release documents record no consent process for publication. Instructure anonymized the file
+and published it under CC BY 4.0.
 
-None of them agreed to be a teaching example. It is worth asking who could be harmed by a claim before
-making it, noticing when a metric reduces a person to one number, and noticing which people are not in
-the file at all. That stance runs through every week of the course.
+Two exclusions are documented in the release and both bear on who is in the file. Every user who
+reported an age under 18 was excluded, so the file is a record of adults who said so at
+registration. The organizations and instructors who had built Canvas Network courses were able to
+opt out, and the courses of those who did were excluded, so the 238 courses here are the ones whose
+course teams did not refuse (Canvas Network, 2016, *De-Identification*). It is worth asking who
+could be harmed by a claim before making it, noticing when a metric reduces a person to one number,
+and noticing which people are not in the file at all. That stance runs through every week of the
+course.
 
 Where every dataset in the course comes from, who is in it, and how it is licensed is in the course
 guide *Finding and Evaluating Learning Analytics Data*.
