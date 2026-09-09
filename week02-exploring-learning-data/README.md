@@ -236,7 +236,7 @@ about learning at all. Of the 540 set aside, 441 withdrew and 99 failed, and **n
 Withdrawn is 28.8 percent of the cohort and 12.0 percent of the panel. An inner join is the correct
 operation and the distortion is real anyway.
 
-**6. Does activity buy achievement?** Recorded activity on x, outcome on y, which is the plot behind
+**6. How are recorded activity and coursework scores associated?** Recorded activity on x, outcome on y, which is the plot behind
 a great many dashboards and which quietly invites a reader to call the x axis effort. Two
 correlations are reported, not one, because click counts are heavy tailed and a single Pearson
 number cannot tell "barely related" from "related, but not in a straight line." Pearson `r = 0.258`
