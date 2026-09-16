@@ -188,7 +188,7 @@ you typing anything; Your turn 4 is a table to fill in.
 | | Sections |
 |---|---|
 | **CORE, about 55 to 60 minutes** | Provenance and setup; Part A and Your turn 1; Part B; Part C |
-| **IF TIME** | Your turn 2; Part D with Your turn 3 |
+| **IF TIME** | Your turn 2; Part D with Your turn 3; the design vocabulary |
 | **EXPLORE LATER, after class and before the September 20 deadline** | Part E and Your turn 4; Part F, the design memo; Part G, rebuilding with an AI tool; the optional student-facing section; the two appendices |
 
 Parts E and F are the graded core of Mini Project 1 and are completed after class.
@@ -246,6 +246,13 @@ the first 30 days are the highest in the presentation, to whom the model gave th
 probability of all 2,237, and who unregistered on day 117. The panel never mentioned this person and
 never could have. Then **Your turn 3**: the cell prints six students worth drilling into and why each
 one breaks the panel in a different direction. Please pick one that is not the default.
+
+**The vocabulary the critique and the memo use.** Between the drilldown and the critique, a short
+section gives the frameworks by name, because Parts E and F are graded on whether you use them:
+van Leeuwen, Teasley, and Wise's seven-coordinate design space and their mirroring, alerting, and
+advising distinction; the five places Wise and Jung found an instructor's cycle breaking, from no
+intention through no feedback loop; three ways a dashboard misleads without bad data, a bad model,
+or bad intent; five design heuristics; and the three readings in one line each.
 
 **Part E: critique.** A cell computes six things the dashboard never shows the teacher: how few of
 the enrollments that ended badly the list names (12.5 percent), how many flag slots go to enrollments
