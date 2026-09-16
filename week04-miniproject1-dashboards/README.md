@@ -197,10 +197,12 @@ on its own.
 What it covers: three of the six decisions in Part A, each as its own step with the reasoning in the
 prose and only counts in the printout; a two-chart class overview; the early warning panel with its
 model card; and three things the panel does not show the teacher. It ends with a two-row critique
-table and one question.
+table, one question, and the vibe coding build, where a cell prints a summary of the notebook, an AI
+assistant turns that into a build prompt, and Claude builds the page.
 
-What it leaves to the full notebook: the other three decisions, the interactive charts, the
-individual drilldown, the fairness audit in detail, the design memo, Part G, and the appendices.
+It is a session in its own right rather than a preview. What it leaves out, for anyone who wants it
+later: the other three decisions, the interactive charts, the individual drilldown, the fairness
+audit in detail, the design memo, and the appendices.
 
 | | Sections |
 |---|---|
