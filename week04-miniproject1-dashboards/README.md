@@ -189,21 +189,29 @@ you typing anything; Your turn 4 is a table to fill in.
 
 ## The 30-minute version
 
-`week04_teacher_dashboard_30min.ipynb` is a shorter notebook for a session that has half an hour
-rather than a full block. It runs on the same six files and reaches the same numbers, and it keeps
-the two things this project is about: a panel that is evidence about the conditions under which
-people study rather than about the people, and a flag list that a single column would have produced
-on its own.
+`week04_teacher_dashboard_30min.ipynb` is a shorter session for a class that has half an hour
+rather than a full block. It does not run an analysis. It reads three learning analytics tools that
+were deployed and studied, critiques them with the same five questions each time, and ends with you
+specifying and building your own.
 
-What it covers: three of the six decisions in Part A, each as its own step with the reasoning in the
-prose and only counts in the printout; a two-chart class overview; the early warning panel with its
-model card; and three things the panel does not show the teacher. It ends with a two-row critique
-table, one question, and the vibe coding build, where a cell prints a summary of the notebook, an AI
-assistant turns that into a build prompt, and Claude builds the page.
+The three: **Check My Activity** at UMBC, which let students compare their LMS activity and grades
+against their classmates, and where attention went to the grade views. **A Blackboard-derived
+dashboard** built by Corrin and de Barba, showing assessment scores next to LMS engagement, where
+students could articulate and interpret the feedback but there was little evidence they could
+connect it to their learning strategies. **A weekly message** in the OnTask tradition, studied by
+Jung and Wise (2025) across five weeks with 91 students, where access ran from 77 to 95 percent and
+the changes that followed were indirect rather than clicks.
 
-It is a session in its own right rather than a preview. What it leaves out, for anyone who wants it
-later: the other three decisions, the interactive charts, the individual drilldown, the fairness
-audit in detail, the design memo, and the appendices.
+The five questions come from van Leeuwen, Teasley, and Wise's design space: who it is for, what it
+compares you to, how far it interprets (mirror, alert, advise), what the viewer can do about it, and
+whether it is pushed or visited.
+
+Then you write a specification for the dashboard you would build, including the line that does the
+most work, what you refuse to put on the screen. The last cell turns that specification into a build
+prompt, and Claude builds the page.
+
+`week04_teacher_dashboard_30min_instructor.ipynb` is the same notebook with the side-by-side table
+filled in, for use while teaching.
 
 | | Sections |
 |---|---|
