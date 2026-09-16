@@ -135,6 +135,7 @@ cannot establish" table beside each of these moments.
 | File | What it is |
 |---|---|
 | `week04_miniproject1_teacher_dashboard.ipynb` | The notebook. It downloads its data in the first code cell and writes nothing to disk. |
+| `week04_teacher_dashboard_30min.ipynb` | The 30-minute version. Same data, two panels instead of three, three of the six decisions. |
 | `README.md` | This file. |
 
 There is no `data/` folder this week and nothing to clone. The first code cell reads six CSV files
@@ -184,6 +185,22 @@ We move through Parts A to C together in class. The route below is the one the n
 prints after its instructions, and the timings are a rough guide rather than a target. The three
 **Your turn** code cells already contain working values, so the notebook runs start to finish without
 you typing anything; Your turn 4 is a table to fill in.
+
+## The 30-minute version
+
+`week04_teacher_dashboard_30min.ipynb` is a shorter notebook for a session that has half an hour
+rather than a full block. It runs on the same six files and reaches the same numbers, and it keeps
+the two things this project is about: a panel that is evidence about the conditions under which
+people study rather than about the people, and a flag list that a single column would have produced
+on its own.
+
+What it covers: three of the six decisions in Part A, each as its own step with the reasoning in the
+prose and only counts in the printout; a two-chart class overview; the early warning panel with its
+model card; and three things the panel does not show the teacher. It ends with a two-row critique
+table and one question.
+
+What it leaves to the full notebook: the other three decisions, the interactive charts, the
+individual drilldown, the fairness audit in detail, the design memo, Part G, and the appendices.
 
 | | Sections |
 |---|---|
