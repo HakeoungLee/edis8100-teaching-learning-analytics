@@ -136,6 +136,7 @@ cannot establish" table beside each of these moments.
 |---|---|
 | `week04_miniproject1_teacher_dashboard.ipynb` | The notebook. It downloads its data in the first code cell and writes nothing to disk. |
 | `week04_teacher_dashboard_30min.ipynb` | The 30-minute version. Same data, two panels instead of three, three of the six decisions. |
+| `week04_teacher_dashboard_30min_instructor.ipynb` | The instructor copy of the 30-minute version. Identical except that the critique table is filled in. |
 | `README.md` | This file. |
 
 There is no `data/` folder this week and nothing to clone. The first code cell reads six CSV files
