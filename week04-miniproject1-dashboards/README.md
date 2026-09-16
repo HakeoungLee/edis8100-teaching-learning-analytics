@@ -14,7 +14,7 @@ point, including questions about a single line of code.
 | **Session** | Week 4, Wednesday, September 16, 2026, 3:30 to 5:50 PM, Ridley Hall 137 |
 | **Topic** | Teacher and Student Facing Learning Analytics and Dashboards |
 | **Guest speaker** | Yeonji Jung, Texas A&M University, 4:30 to 5:30 PM |
-| **Notebook portion** | 3:30 to 4:20, alongside building a dashboard by vibe coding, and again in the debrief from 5:30 to 5:50. Class launches the project; the rest is finished afterwards. |
+| **Notebook portion** | 3:30 to 4:20, and again in the debrief from 5:30 to 5:50. Class launches the project; the rest is finished afterwards. |
 | **Notebook** | `week04_miniproject1_teacher_dashboard.ipynb` |
 | **Data** | **Real, published, openly licensed.** The Open University Learning Analytics Dataset (OULAD), module BBB, presentations 2013J and 2014J: 4,529 enrollments, 891,062 rows of daily clickstream, 21,783 assessment submissions. Downloaded by the first code cell from `github.com/HakeoungLee/edis8100-datasets`, folder `oulad-bbb`. CC BY 4.0. |
 | **Citation** | Kuzilek, J., Hlosta, M., & Zdrahal, Z. (2017). Open University Learning Analytics dataset. *Scientific Data, 4*, 170171. |
@@ -38,8 +38,7 @@ produces every finding the assignment is about.
 ## What I hope you leave with
 
 1. A three-panel teacher-facing dashboard built in plotly from a real virtual learning environment
-   export, with a static matplotlib snapshot of every panel for readers who cannot run the code, and
-   a fourth panel built by prompting an AI coding tool and then checked against the file.
+   export, with a static matplotlib snapshot of every panel for readers who cannot run the code.
 2. Being able to state the provenance of a dataset: who collected it, under what license, and what it
    may be used for.
 3. A reason attached to every automated flag, by decomposing a model's predicted probability into the
@@ -54,25 +53,22 @@ produces every finding the assignment is about.
 
 
 
-## Building by vibe coding
+## Part G, rebuilding the dashboard with an AI tool
 
-Part of the first block is spent building by vibe coding, and the notebook has a marked cell for it:
-**Your turn 1b**, at the end of Part B. You ask an AI coding tool for one more panel, when did people
-leave, and then check what it returns against a printout of the numbers that panel has to agree with.
-The reading and the correcting are the parts that carry the learning, since a chart that renders is
-not yet a chart that is true of these records. Whatever you generate that way belongs in your AI
-interaction log along with your prompts.
+After the critique and the memo, Part G asks you to build the version you argued for by vibe
+coding it, which is to say without writing the code. It runs in two steps, and neither asks you to describe the data from memory. A
+cell prints a summary of everything the notebook established: the six decisions from Part A, the
+numbers behind each panel, and the two questions you wrote in Your turn 1. You paste that block into
+any AI assistant and ask it to turn the block into a build prompt. Then you take the prompt to Claude
+and let it build the page.
 
-The check is the exercise. Of the 2,237 enrollments in this presentation, 647 have an unregistration
-date recorded and 1,590 do not, and the ones without a date are almost exactly the ones that
-completed. A panel that plots `date_unregistration` and drops the missing values is therefore a panel
-about the withdrawals, drawn as though it were about the class. Your turn 1b asks four questions of
-whatever comes back: what denominator it used, whether the figure says anything about the rows it
-could not plot, whether the title names a recorded event or a kind of person, and whether anything
-separates the 336 enrollments that unregistered on or before day 0.
+Three things are worth checking against the printout: the denominator under each panel and whether
+the screen says anywhere that rows are missing, whether a title names a recorded event or a kind of
+person, and whether anything shows that 422 enrollments are indistinguishable to the model. A panel
+that renders is not yet a panel that is true of these records.
 
-If you do not have access to an AI coding tool, please let me know before class. Access is being
-arranged for anyone who needs it, and nobody needs to purchase anything for this session.
+Part G sits outside the class session. Both prompts and a screenshot or link to what Claude built
+go in your AI interaction log.
 
 ## What is different about this week
 
@@ -192,9 +188,9 @@ you typing anything; Your turn 4 is a table to fill in.
 
 | | Sections |
 |---|---|
-| **CORE, about 55 to 60 minutes** | Provenance and setup; Part A and Your turn 1; Part B; Your turn 1b, the vibe coding exercise; Part C |
+| **CORE, about 55 to 60 minutes** | Provenance and setup; Part A and Your turn 1; Part B; Part C |
 | **IF TIME** | Your turn 2; Part D with Your turn 3 |
-| **EXPLORE LATER, after class and before the September 20 deadline** | Part E and Your turn 4; Part F, the design memo; the optional student-facing section; the appendix |
+| **EXPLORE LATER, after class and before the September 20 deadline** | Part E and Your turn 4; Part F, the design memo; Part G, rebuilding with an AI tool; the optional student-facing section; the two appendices |
 
 Parts E and F are the graded core of Mini Project 1 and are completed after class.
 
@@ -219,8 +215,7 @@ Chart 3 shows the same direction and similar rates in both runs; every 2013J int
 2014J interval, and no test of the difference is run. Chart 4 is a different kind of finding:
 completion rises about 2.7 points per decile step in 2013J, 95 percent interval [2.0, 3.5], and 2.2
 points [1.4, 2.9] in 2014J. Neighboring deciles' intervals overlap; the slope is the quantity
-reported, and its interval excludes zero in both runs. Then **Your turn 1b**: build a fifth panel by
-vibe coding and check it against the file.
+reported, and its interval excludes zero in both runs.
 
 **Part C: the early warning panel (about 35 minutes).** Week 3's redesigned model goes on screen
 (`clicks_first30`, `tma1_score_filled`, `tma1_submitted`), with a model card printed above it:
@@ -275,9 +270,12 @@ analytic core of the assignment.
 and respond to the strongest objection you can think of. One element is required: say what the module
 team should do about the deprivation skew, and "fix the model" is not available as an answer.
 
+**Part G: the rebuild.** A printed summary of the notebook, an AI assistant to turn it into a build
+prompt, and Claude to build the page. Outside the class session.
+
 **Going further (optional).** A working student-facing rewrite of the drilldown, an invitation to
-improve it, and an appendix of worked examples for the Your turn cells. This is outside the class
-session.
+improve it, an appendix of worked examples for the Your turn cells, and Appendix B, which holds the
+modeling and charting decisions in full. This is outside the class session.
 
 **Reflection and submission checklist.** Please bring the reflection answers to the debrief from 5:30
 to 5:50.
@@ -401,7 +399,7 @@ together.
 Mini Project 1 is the first submission where the course AI policy applies in full.
 
 If you used an AI assistant at any point, to explain a line of code, to check your reading of a
-chart, to help you name a design flaw, to build a panel by vibe coding, or to draft the memo,
+chart, to help you name a design flaw, to build the Part G rebuild, or to draft the memo,
 everything goes to the Canvas **AI Reflection** submission, in two different places on that page:
 
 - **The conversation record goes in a Word file, attached to that submission.** The full exchanges,
