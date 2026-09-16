@@ -38,7 +38,8 @@ produces every finding the assignment is about.
 ## What I hope you leave with
 
 1. A three-panel teacher-facing dashboard built in plotly from a real virtual learning environment
-   export, with a static matplotlib snapshot of every panel for readers who cannot run the code.
+   export, with a static matplotlib snapshot of every panel for readers who cannot run the code, and
+   a fourth panel built by prompting an AI coding tool and then checked against the file.
 2. Being able to state the provenance of a dataset: who collected it, under what license, and what it
    may be used for.
 3. A reason attached to every automated flag, by decomposing a model's predicted probability into the
@@ -55,11 +56,20 @@ produces every finding the assignment is about.
 
 ## Building by vibe coding
 
-Part of the first block is spent building by vibe coding: describing the panel you want to an AI
-coding tool such as Claude Code or Codex, then reading what it returns, running it, and correcting
-it against the data. The reading and the correcting are the parts that carry the learning, since a
-chart that renders is not yet a chart that is true of these records. Whatever you generate that way
-belongs in your AI interaction log along with your prompts.
+Part of the first block is spent building by vibe coding, and the notebook has a marked cell for it:
+**Your turn 1b**, at the end of Part B. You ask an AI coding tool for one more panel, when did people
+leave, and then check what it returns against a printout of the numbers that panel has to agree with.
+The reading and the correcting are the parts that carry the learning, since a chart that renders is
+not yet a chart that is true of these records. Whatever you generate that way belongs in your AI
+interaction log along with your prompts.
+
+The check is the exercise. Of the 2,237 enrollments in this presentation, 647 have an unregistration
+date recorded and 1,590 do not, and the ones without a date are almost exactly the ones that
+completed. A panel that plots `date_unregistration` and drops the missing values is therefore a panel
+about the withdrawals, drawn as though it were about the class. Your turn 1b asks four questions of
+whatever comes back: what denominator it used, whether the figure says anything about the rows it
+could not plot, whether the title names a recorded event or a kind of person, and whether anything
+separates the 336 enrollments that unregistered on or before day 0.
 
 If you do not have access to an AI coding tool, please let me know before class. Access is being
 arranged for anyone who needs it, and nobody needs to purchase anything for this session.
@@ -182,7 +192,7 @@ you typing anything; Your turn 4 is a table to fill in.
 
 | | Sections |
 |---|---|
-| **CORE, about 55 to 60 minutes** | Provenance and setup; Part A and Your turn 1; Part B; Part C |
+| **CORE, about 55 to 60 minutes** | Provenance and setup; Part A and Your turn 1; Part B; Your turn 1b, the vibe coding exercise; Part C |
 | **IF TIME** | Your turn 2; Part D with Your turn 3 |
 | **EXPLORE LATER, after class and before the September 20 deadline** | Part E and Your turn 4; Part F, the design memo; the optional student-facing section; the appendix |
 
@@ -209,7 +219,8 @@ Chart 3 shows the same direction and similar rates in both runs; every 2013J int
 2014J interval, and no test of the difference is run. Chart 4 is a different kind of finding:
 completion rises about 2.7 points per decile step in 2013J, 95 percent interval [2.0, 3.5], and 2.2
 points [1.4, 2.9] in 2014J. Neighboring deciles' intervals overlap; the slope is the quantity
-reported, and its interval excludes zero in both runs.
+reported, and its interval excludes zero in both runs. Then **Your turn 1b**: build a fifth panel by
+vibe coding and check it against the file.
 
 **Part C: the early warning panel (about 35 minutes).** Week 3's redesigned model goes on screen
 (`clicks_first30`, `tma1_score_filled`, `tma1_submitted`), with a model card printed above it:
