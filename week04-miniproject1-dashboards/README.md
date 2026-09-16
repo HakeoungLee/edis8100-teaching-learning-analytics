@@ -187,31 +187,45 @@ prints after its instructions, and the timings are a rough guide rather than a t
 **Your turn** code cells already contain working values, so the notebook runs start to finish without
 you typing anything; Your turn 4 is a table to fill in.
 
-## The 30-minute version
+## What Mini Project 1 is now
 
-`week04_teacher_dashboard_30min.ipynb` is a shorter session for a class that has half an hour
-rather than a full block. It does not run an analysis. It reads three learning analytics tools that
-were deployed and studied, critiques them with the same five questions each time, and ends with you
-specifying and building your own.
+The project is the dashboard you specify and build in the studio block, not an analysis of the
+Open University records. The studio reads three learning analytics tools that were deployed and
+studied, critiques all three with the same five questions, and then asks you to specify and build
+your own.
 
-The three: **Check My Activity** at UMBC, which let students compare their LMS activity and grades
-against their classmates, and where attention went to the grade views. **A Blackboard-derived
-dashboard** built by Corrin and de Barba, showing assessment scores next to LMS engagement, where
-students could articulate and interpret the feedback but there was little evidence they could
-connect it to their learning strategies. **A weekly message** in the OnTask tradition, studied by
-Jung and Wise (2025) across five weeks with 91 students, where access ran from 77 to 95 percent and
-the changes that followed were indirect rather than clicks.
+**The three tools.** Check My Activity at UMBC, which let students compare their course-site
+activity and their grades against their classmates, and where attention went to the grade views.
+A Blackboard-derived dashboard built by Corrin and de Barba, showing assessment scores beside
+course-site engagement, where students could articulate and interpret the feedback but there was
+little evidence they could connect it to their learning strategies. A weekly message in the OnTask
+tradition, studied by Jung and Wise (2025) across five weeks with 91 students, where access ran from
+77 to 95 percent and the changes that followed were indirect rather than clicks.
 
-The five questions come from van Leeuwen, Teasley, and Wise's design space: who it is for, what it
+**The five questions**, from van Leeuwen, Teasley, and Wise's design space: who it is for, what it
 compares you to, how far it interprets (mirror, alert, advise), what the viewer can do about it, and
 whether it is pushed or visited.
 
-Then you write a specification for the dashboard you would build, including the line that does the
-most work, what you refuse to put on the screen. The last cell turns that specification into a build
-prompt, and Claude builds the page.
+**What you submit**, by 11:59 PM on Sunday, September 20:
 
-`week04_teacher_dashboard_30min_instructor.ipynb` is the same notebook with the side-by-side table
-filled in, for use while teaching.
+1. Your critique of the three tools, the five questions each, and where each one breaks.
+2. Your specification, all seven lines, including what you refuse to put on the screen.
+3. What you built: a link or screenshots, and the prompts you used.
+4. Your critique of your own dashboard, run through your own five questions.
+
+Your AI interaction log goes to the separate AI Reflection submission, as every week.
+
+The slides for the studio are `Week 04 Studio Slides.pptx` in the Course Weekly Materials folder.
+
+## The notebooks in this folder
+
+`week04_miniproject1_teacher_dashboard.ipynb` builds a three-panel teacher dashboard on the Open
+University records and audits it. It is no longer the assignment. It is kept because it is a worked
+example of every critique the studio asks you to make, carried out in code on real records, and
+because the Open University data and the decisions behind it are worth seeing once.
+
+`week04_teacher_dashboard_30min.ipynb` and its instructor copy carry the studio in notebook form,
+for anyone who would rather read than sit through slides.
 
 | | Sections |
 |---|---|
