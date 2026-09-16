@@ -40,7 +40,7 @@ Before you start changing anything you want to keep, choose **File > Save a copy
 |---|---|---|---|---|---|
 | 1 | 8/26 | Course Introduction and Planning | [`week01-hello-analytics`](week01-hello-analytics/) | Meet Colab, read one real table, find what the summary was hiding | Discussion leader sign-ups |
 | 3 | 9/9 | Responsible and Human-Centered LA | [`week03-ethics-bias-audit`](week03-ethics-bias-audit/) | Predict non-completion, then audit whose errors the model makes | None |
-| 4 | 9/16 | Teacher and Student Facing LA and Dashboards | [`week04-miniproject1-dashboards`](week04-miniproject1-dashboards/) | Build a teacher dashboard, then critique it | Mini Project 1 plus AI interactions |
+| 4 | 9/16 | Teacher and Student Facing LA and Dashboards | [`week04-miniproject1-dashboards`](week04-miniproject1-dashboards/) | Build a teacher dashboard, then critique it. A [30-minute version](week04-miniproject1-dashboards/week04_teacher_dashboard_30min.ipynb) of the notebook is in the same folder | Mini Project 1 plus AI interactions |
 | 5 | 9/23 | Text-Based Analytics and NLP | [`week05-miniproject2-text-nlp`](week05-miniproject2-text-nlp/) | Student essays: frequencies, topics, and human-annotated discourse moves | Mini Project 2 plus AI interactions |
 | 6 | 9/30 | Multimodal Learning Analytics | [`week06-miniproject3-multimodal`](week06-miniproject3-multimodal/) | Two ledgers of the same session: speech against interface actions | Mini Project 3 plus AI interactions; mid-semester check-in |
 | 7 | 10/7 | LA for Self-Regulated Learning | [`week07-srl-traces-lab`](week07-srl-traces-lab/) | Sessions, order, and dwell in 1.9 million tutor actions, and two logging artifacts | None |
@@ -104,7 +104,7 @@ edis8100-teaching-learning-analytics/
 │   └── week01_hello_learning_analytics.ipynb
 ├── week02-exploring-learning-data/
 ├── week03-ethics-bias-audit/
-├── week04-miniproject1-dashboards/
+├── week04-miniproject1-dashboards/   also holds a 30-minute version of the notebook
 ├── week05-miniproject2-text-nlp/
 ├── week06-miniproject3-multimodal/
 ├── week07-srl-traces-lab/
