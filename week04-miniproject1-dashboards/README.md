@@ -74,9 +74,8 @@ go in your AI interaction log.
 
 Two things change, and they change together.
 
-**Where the records end up.** Weeks 2 and 3 already ran on these same Open University records, but
-they ran in a notebook only this seminar read. This week the records go onto an interface a teacher
-acts on: the same data from a distance-teaching university in the United Kingdom, 2,237 enrollments
+**Where the records end up.** A result that stays inside a notebook is read by the person who
+produced it. This week the records go onto an interface a teacher acts on: the same data from a distance-teaching university in the United Kingdom, 2,237 enrollments
 in the October 2013 presentation and 2,292 in the October 2014 presentation, 47 of them the same
 student ids. They were anonymized and released by the Open University's Knowledge Media Institute.
 Students are informed at admission that their data are used for research and may be shared with
@@ -88,17 +87,17 @@ at all, 1,112 with no first assignment recorded for this presentation, click row
 and 576 enrollments that unregistered before day 1 and stayed in the enrollment table anyway. Every
 one of those is a decision somebody has to make in public, and the notebook makes them in view and
 then says what each one affects. It also audits the 50 assignment-1 results that were banked from an
-earlier presentation and sets them aside, as week 3 did with its own banked rows, so an enrollment
-carrying one counts as no submission this term.
+earlier presentation and sets them aside, so an enrollment carrying one counts as no submission
+this term.
 
-You also come in holding a finding from week 3, and this week is careful to inherit what week 3
-established rather than a tidier version of it. Week 3 concluded three things: the redesign, which
-added assessment features and left out `active_days` and `resources`, lowered the overall false
-positive rate from 0.287 to 0.074; no error-rate *gradient* across the deprivation deciles was ever
-distinguishable from noise; and the gradient in *who gets flagged* did not flatten. So the model
-shipped here uses week 3's redesigned feature set, with `active_days` and its relatives left out.
+The feature set the panel ships is inherited from an audit of the same module over a 60-day window,
+and the notebook inherits what that audit established rather than a tidier version of it. It
+concluded three things: adding assessment features and leaving out `active_days` and `resources`
+lowered the overall false positive rate from 0.287 to 0.074; no error-rate *gradient* across the
+deprivation deciles was ever distinguishable from noise; and the gradient in *who gets flagged* did
+not flatten. So the model shipped here leaves `active_days` and its relatives out.
 
-The dashboard then adds a lesson week 3 could not produce. Its flag rule is a caseload of 150 rather
+The dashboard then adds a lesson that audit could not produce. Its flag rule is a caseload of 150 rather
 than a probability threshold, and at that caseload the false positive rate collapses to a handful of
 events: four false positives in the whole class. The gap between subgroups on that rate is therefore
 not a fairness measurement at all, and the notebook says so with the counts printed beside it.
@@ -217,7 +216,7 @@ completion rises about 2.7 points per decile step in 2013J, 95 percent interval 
 points [1.4, 2.9] in 2014J. Neighboring deciles' intervals overlap; the slope is the quantity
 reported, and its interval excludes zero in both runs.
 
-**Part C: the early warning panel (about 35 minutes).** Week 3's redesigned model goes on screen
+**Part C: the early warning panel (about 35 minutes).** The model goes on screen
 (`clicks_first30`, `tma1_score_filled`, `tma1_submitted`), with a model card printed above it:
 features, the flag rule, the base rate, and the false positive rate gaps with the event counts they
 are built from. Every predicted probability is out of sample. Then each flagged enrollment's score is
