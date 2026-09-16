@@ -208,10 +208,12 @@ whether it is pushed or visited.
 
 **What you submit**, by 11:59 PM on Sunday, September 20:
 
-1. Your critique of the three tools, the five questions each, and where each one breaks.
-2. Your specification, all seven lines, including what you refuse to put on the screen.
-3. What you built: a link or screenshots, and the prompts you used.
-4. Your critique of your own dashboard, run through your own five questions.
+1. Your specification, all seven lines, including what you intentionally leave off the screen.
+2. What you built: a link or screenshots, and the prompts you used.
+3. Your critique of your own dashboard, run through the same design questions.
+
+The critique of the three tools happens in class, together, and is not submitted. Keep your
+comparison table: it is the vocabulary the three submitted pieces are written in.
 
 Your AI interaction log goes to the separate AI Reflection submission, as every week.
 
